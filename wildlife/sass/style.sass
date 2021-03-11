@@ -167,7 +167,6 @@ body
 .survival 
 	@include contentWidth($size: $xxlContent)
 	padding-top: 120px
-	padding-left: 120px
 	display: flex
 	flex-direction: column
 	justify-content: space-between
@@ -212,10 +211,12 @@ body
 	width: 1200px
 	margin: 0 auto
 
-.latestArticles 
-	height: 967px
+.main
+	padding: 120px 0 239px 0
 	background-color: #cccccc
-	padding: 120px
+
+.latestArticles 
+	background-color: #cccccc
 
 	&__title 
 		text-align: center
@@ -284,9 +285,8 @@ body
 		box-shadow: 0 0 10px 0 #000
 
 	&__container 
-		width: 89%
+		width: 90%
 		display: grid
-		grid-gap: 12px
 		grid-template-columns: 1fr 1fr 1fr
 		justify-items: center
 
@@ -308,8 +308,7 @@ body
 			padding-top: 10px
 
 .getNotified 
-	padding-bottom: 240px;
-	display: flex
+	padding-top: 240px;
 	background-color: $bgColor_main
 
 	&__title 
