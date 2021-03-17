@@ -1,6 +1,7 @@
 const PIANO = document.querySelector(".piano");
 const KEYS = document.querySelectorAll(".piano-key");
 const btnContainer = document.querySelector(".btn-container");
+const BTNS = document.querySelectorAll('.btn');
 const FULLSCREEN = document.querySelector(".fullscreen")
 
 function playAudio(src) {
@@ -50,40 +51,47 @@ function stopCorrespondOver() {
 PIANO.addEventListener('mousedown', startCorrespondOver, false);
 window.addEventListener('mouseup', stopCorrespondOver);
 
-window.addEventListener('keydown', (event) => {
-	KEYS.forEach(pianoKey => {
-		if (`Key${pianoKey.dataset.letter}` === event.code) {
-			const note = pianoKey.dataset.note;
+function pressKey(event) {
+	var allowed = true;
+	if (event.repeat != undefined) {
+		allowed = !event.repeat;
+	}
+	if (!allowed) return;
+	
+	KEYS.forEach(elem => {
+		if (`Key${elem.dataset.letter}` === event.code) {
+			const note = elem.dataset.note;
 			const src = `assets/audio/${note}.mp3`;
-			pianoKey.classList.add('piano-key-active','piano-key-active-pseudo');
-			pianoKey.classList.remove('piano-key-remove-mouse');
+			elem.classList.add('piano-key-active','piano-key-active-pseudo');
+			elem.classList.remove('piano-key-remove-mouse');
 			playAudio(src);
 		}
 	});
-})
+}
 
-window.addEventListener('keyup', (event) => {
+function keyUp(event) {
 	KEYS.forEach(pianoKey => {
 		if (`Key${pianoKey.dataset.letter}` === event.code) {
 			pianoKey.classList.add('piano-key-remove-mouse');
 			pianoKey.classList.remove('piano-key-active','piano-key-active-pseudo');
 		}
 	})
-});
-
-function toggleBtn() {
-	btnContainer.addEventListener('click', (clickBtn) => {
-		const btns = document.querySelectorAll('.btn');
-		
-		if (clickBtn.target.classList.contains('btn-notes')) {
-			btnActive(btns, clickBtn);
-			KEYS.forEach(pianoKey => pianoKey.classList.remove('piano-key-letter'));
-		} else if (clickBtn.target.classList.contains('btn-letters')) {
-			btnActive(btns, clickBtn);
-			KEYS.forEach(pianoKey => pianoKey.classList.add('piano-key-letter'));
-		}
-	})
 }
+
+window.addEventListener('keydown', pressKey);
+window.addEventListener('keyup', keyUp);
+
+function toggleBtn(clickBtn) {
+	if (clickBtn.target.classList.contains('btn-notes')) {
+		btnActive(BTNS, clickBtn);
+		KEYS.forEach(pianoKey => pianoKey.classList.remove('piano-key-letter'));
+	} else if (clickBtn.target.classList.contains('btn-letters')) {
+		btnActive(BTNS, clickBtn);
+		KEYS.forEach(pianoKey => pianoKey.classList.add('piano-key-letter'));
+	}
+}
+
+btnContainer.addEventListener('click', toggleBtn);
 
 function btnActive(btns, clickBtn) {
 	btns.forEach(btn => {
@@ -93,8 +101,6 @@ function btnActive(btns, clickBtn) {
 	})
 	clickBtn.target.classList.add('btn-active');
 }
-
-toggleBtn();
 
 function toggleFullScreen() {
 	if (!document.fullscreenElement) {
