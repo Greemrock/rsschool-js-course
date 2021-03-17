@@ -13,17 +13,17 @@ function playAudio(src) {
 }
 
 function clickAudio(event) {
-	if(event.target.classList.contains('piano-key')) {
+	if(event.target.classList.contains("piano-key")) {
 		const note = event.target.dataset.note;
 		const src = `assets/audio/${note}.mp3`;
 		playAudio(src);
-		event.target.classList.add('piano-key-active', 'piano-key-active-pseudo');
-		event.target.classList.remove('piano-key-remove-mouse');
+		event.target.classList.add("piano-key-active", "piano-key-active-pseudo");
+		event.target.classList.remove("piano-key-remove-mouse");
     }   
 }
 
 function mouseOut(event) {
-	event.target.classList.remove('piano-key-active-pseudo','piano-key-active');
+	event.target.classList.remove("piano-key-active-pseudo", "piano-key-active");
 }
 
 function mouseOver(event) {
@@ -42,7 +42,7 @@ function startCorrespondOver(event) {
 function stopCorrespondOver() {
 	KEYS.forEach((elem) => {
 		elem.classList.add("piano-key-remove-mouse");
-		elem.classList.remove('piano-key-active', 'piano-key-active-pseudo');
+		elem.classList.remove("piano-key-active", "piano-key-active-pseudo");
 		elem.removeEventListener('mouseout', mouseOut);
 		elem.removeEventListener('mouseover', mouseOver);
 	})
@@ -62,8 +62,8 @@ function pressKey(event) {
 		if (`Key${elem.dataset.letter}` === event.code) {
 			const note = elem.dataset.note;
 			const src = `assets/audio/${note}.mp3`;
-			elem.classList.add('piano-key-active','piano-key-active-pseudo');
-			elem.classList.remove('piano-key-remove-mouse');
+			elem.classList.add("piano-key-active", "piano-key-active-pseudo");
+			elem.classList.remove("piano-key-remove-mouse");
 			playAudio(src);
 		}
 	});
@@ -72,8 +72,8 @@ function pressKey(event) {
 function keyUp(event) {
 	KEYS.forEach(pianoKey => {
 		if (`Key${pianoKey.dataset.letter}` === event.code) {
-			pianoKey.classList.add('piano-key-remove-mouse');
-			pianoKey.classList.remove('piano-key-active','piano-key-active-pseudo');
+			pianoKey.classList.add("piano-key-remove-mouse");
+			pianoKey.classList.remove("piano-key-active", "piano-key-active-pseudo");
 		}
 	})
 }
@@ -82,12 +82,12 @@ window.addEventListener('keydown', pressKey);
 window.addEventListener('keyup', keyUp);
 
 function toggleBtn(clickBtn) {
-	if (clickBtn.target.classList.contains('btn-notes')) {
+	if (clickBtn.target.classList.contains("btn-notes")) {
 		btnActive(BTNS, clickBtn);
-		KEYS.forEach(pianoKey => pianoKey.classList.remove('piano-key-letter'));
-	} else if (clickBtn.target.classList.contains('btn-letters')) {
+		KEYS.forEach(pianoKey => pianoKey.classList.remove("piano-key-letter"));
+	} else if (clickBtn.target.classList.contains("btn-letters")) {
 		btnActive(BTNS, clickBtn);
-		KEYS.forEach(pianoKey => pianoKey.classList.add('piano-key-letter'));
+		KEYS.forEach(pianoKey => pianoKey.classList.add("piano-key-letter"));
 	}
 }
 
@@ -95,11 +95,11 @@ btnContainer.addEventListener('click', toggleBtn);
 
 function btnActive(btns, clickBtn) {
 	btns.forEach(btn => {
-		if (btn.classList.contains('btn-active')) {
-			btn.classList.remove('btn-active');
+		if (btn.classList.contains("btn-active")) {
+			btn.classList.remove("btn-active");
 		}
 	})
-	clickBtn.target.classList.add('btn-active');
+	clickBtn.target.classList.add("btn-active");
 }
 
 function toggleFullScreen() {
@@ -112,4 +112,4 @@ function toggleFullScreen() {
 	}
 }
 
-FULLSCREEN.addEventListener("click", toggleFullScreen, false);
+FULLSCREEN.addEventListener('click', toggleFullScreen, false);
