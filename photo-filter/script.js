@@ -3,6 +3,7 @@ const INPUTS = document.querySelectorAll(".filters input");
 const OUTPUTS = document.querySelectorAll(".filters output");
 const IMG = document.querySelector(".editor img");
 const FILTERS = document.querySelector(".filters");
+const RESET = document.querySelector(".btn-reset");
 
 function toggleFullScreen() {
 	if (!document.fullscreenElement) {
@@ -28,6 +29,15 @@ function outputUpdate(elem) {
     }
 }
 
+function reset() {
+    IMG.removeAttribute('style');
+    for (let i = 0; i < INPUTS.length; i++) {
+        INPUTS.item(i).value = INPUTS.item(i).defaultValue;
+        OUTPUTS.item(i).innerHTML = INPUTS.item(i).defaultValue;
+    }
+}
+
 FULLSCREEN.addEventListener('click', toggleFullScreen);
 INPUTS.forEach(elem => elem.addEventListener('change', handleUpdate));
 INPUTS.forEach(elem => elem.addEventListener('mousemove', handleUpdate));
+RESET.addEventListener('click', reset);
