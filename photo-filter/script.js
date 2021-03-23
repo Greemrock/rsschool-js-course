@@ -5,6 +5,7 @@ const IMG = document.querySelector(".editor img");
 const FILTERS = document.querySelector(".filters");
 const RESET = document.querySelector(".btn-reset");
 const NEXTPICTURE = document.querySelector(".btn-next");
+const FILEINPUT = document.querySelector('input[type="file"]');
 let i = 0;
 
 function toggleFullScreen() {
@@ -79,8 +80,18 @@ function pictureDependOnTheTime() {
     }
 }
 
+function loadPicture() {
+    const file = FILEINPUT.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+        IMG.src = reader.result;
+    }
+    reader.readAsDataURL(file);
+}
+
 FULLSCREEN.addEventListener('click', toggleFullScreen);
 INPUTS.forEach(elem => elem.addEventListener('change', handleUpdate));
 INPUTS.forEach(elem => elem.addEventListener('mousemove', handleUpdate));
 RESET.addEventListener('click', reset);
 NEXTPICTURE.addEventListener('click', nextPicture);
+FILEINPUT.addEventListener('change', loadPicture);
