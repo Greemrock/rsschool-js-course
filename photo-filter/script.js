@@ -8,6 +8,12 @@ const NEXTPICTURE = document.querySelector(".btn-next");
 const FILEINPUT = document.querySelector('input[type="file"]');
 const FILEOUTPUT = document.querySelector('.btn-save');
 let i = 0;
+let blur = 0;
+let invert = 0;
+let sepia = 0;
+let saturate = 100;
+let hue = 0;
+let styleForCanvas = "";
 
 function toggleFullScreen() {
 	if (!document.fullscreenElement) {
@@ -20,9 +26,18 @@ function toggleFullScreen() {
 }
 
 function handleUpdate() {
-    const suffix = this.dataset.sizing || '';
-    IMG.style.setProperty(`--${this.name}`, this.value + suffix);
+    IMG.style.filter = filter(this.name, this.value);
     outputUpdate(this);
+}
+
+function filter(name, value) {
+    if (name == 'blur') blur = value;
+    if (name == 'invert') invert = value;
+    if (name == 'sepia') sepia = value;
+    if (name == 'saturate') saturate = value;
+    if (name == 'hue') hue = value;
+    styleForCanvas = `blur(${blur}px) invert(${invert}%) sepia(${sepia}%) saturate(${saturate}%) hue-rotate(${hue}deg)`
+    return styleForCanvas;
 }
 
 function outputUpdate(elem) {
@@ -39,6 +54,11 @@ function reset() {
         INPUTS.item(i).value = INPUTS.item(i).defaultValue;
         OUTPUTS.item(i).innerHTML = INPUTS.item(i).defaultValue;
     }
+    blur = 0;
+    invert = 0;
+    sepia = 0;
+    saturate = 100;
+    hue = 0;
 }
 
 function viewSrcImage(src) {  
@@ -64,19 +84,15 @@ function pictureDependOnTheTime() {
     let now = new Date();
 
     if (now.getHours() >= 6 && now.getHours() < 12) {
-        console.log(`timesOfDay[0]`, timesOfDay[0])
         return timesOfDay[0];
     }
     if (now.getHours() >= 12 && now.getHours() < 18) {
-        console.log(`timesOfDay[1]`, timesOfDay[1])
         return timesOfDay[1];
     }
     if (now.getHours() >= 18 && now.getHours() < 24) {
-        console.log(`timesOfDay[2]`, timesOfDay[2])
         return timesOfDay[2];
     }
     if (now.getHours() >= 0 && now.getHours() < 6) {
-        console.log(`timesOfDay[3]`, timesOfDay[3])
         return timesOfDay[3];
     }
 }
@@ -92,22 +108,14 @@ function loadPicture() {
 
 function savePicture() {
     const canvas = document.createElement('canvas');
-    const editor = document.querySelector('.editor')
     const img = new Image();
-    // const style = IMG.style.cssText;
-
-    // function style() {
-    //     let string = IMG.style.cssText;
-    //     return string.split(';').map(item => item.replace(/\D/g, ""));
-    // }
-    
     img.setAttribute('crossOrigin', 'anonymous'); 
     img.src = IMG.src;
     img.onload = function() {
         canvas.width = img.width;
         canvas.height = img.height;
         const ctx = canvas.getContext("2d");
-        // ctx.filter = `blur(${style()[0]}px) invert(${style()[1]}%) sepia(${style()[2]}%) saturate(${style()[3]}%) hue-rotate(${style()[4]}deg)`;
+        ctx.filter = styleForCanvas;
         ctx.drawImage(img, 0, 0);
         let link = document.createElement('a');
         link.download = 'download.png';
