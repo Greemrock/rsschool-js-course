@@ -5,8 +5,6 @@ const IMG = document.querySelector(".editor img");
 const FILTERS = document.querySelector(".filters");
 const RESET = document.querySelector(".btn-reset");
 const NEXTPICTURE = document.querySelector(".btn-next");
-const BASE = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/night/';
-const IMAGES = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
 let i = 0;
 
 function toggleFullScreen() {
@@ -50,11 +48,35 @@ function viewSrcImage(src) {
     }
 
 function nextPicture() {
+    const BASE = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
+    const IMAGES = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
     const index = i % IMAGES.length;
-    const imageSrc = BASE + IMAGES[index];
+    const imageSrc = `${BASE}/${pictureDependOnTheTime()}/${IMAGES[index]}`;
 
     viewSrcImage(imageSrc);
     i++;
+}
+
+function pictureDependOnTheTime() {
+    const timesOfDay = ['morning', 'day', 'evening', 'night'];
+    let now = new Date();
+
+    if (now.getHours() >= 6 && now.getHours() < 12) {
+        console.log(`timesOfDay[0]`, timesOfDay[0])
+        return timesOfDay[0];
+    }
+    if (now.getHours() >= 12 && now.getHours() < 18) {
+        console.log(`timesOfDay[1]`, timesOfDay[1])
+        return timesOfDay[1];
+    }
+    if (now.getHours() >= 18 && now.getHours() < 24) {
+        console.log(`timesOfDay[2]`, timesOfDay[2])
+        return timesOfDay[2];
+    }
+    if (now.getHours() >= 0 && now.getHours() < 6) {
+        console.log(`timesOfDay[3]`, timesOfDay[3])
+        return timesOfDay[3];
+    }
 }
 
 FULLSCREEN.addEventListener('click', toggleFullScreen);
