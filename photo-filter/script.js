@@ -6,6 +6,7 @@ const FILTERS = document.querySelector(".filters");
 const RESET = document.querySelector(".btn-reset");
 const NEXTPICTURE = document.querySelector(".btn-next");
 const FILEINPUT = document.querySelector('input[type="file"]');
+const FILEOUTPUT = document.querySelector('.btn-save');
 let i = 0;
 
 function toggleFullScreen() {
@@ -89,9 +90,37 @@ function loadPicture() {
     reader.readAsDataURL(file);
 }
 
+function savePicture() {
+    const canvas = document.createElement('canvas');
+    const editor = document.querySelector('.editor')
+    const img = new Image();
+    // const style = IMG.style.cssText;
+
+    // function style() {
+    //     let string = IMG.style.cssText;
+    //     return string.split(';').map(item => item.replace(/\D/g, ""));
+    // }
+    
+    img.setAttribute('crossOrigin', 'anonymous'); 
+    img.src = IMG.src;
+    img.onload = function() {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext("2d");
+        // ctx.filter = `blur(${style()[0]}px) invert(${style()[1]}%) sepia(${style()[2]}%) saturate(${style()[3]}%) hue-rotate(${style()[4]}deg)`;
+        ctx.drawImage(img, 0, 0);
+        let link = document.createElement('a');
+        link.download = 'download.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        link.delete;
+    };
+}
+
 FULLSCREEN.addEventListener('click', toggleFullScreen);
 INPUTS.forEach(elem => elem.addEventListener('change', handleUpdate));
 INPUTS.forEach(elem => elem.addEventListener('mousemove', handleUpdate));
 RESET.addEventListener('click', reset);
 NEXTPICTURE.addEventListener('click', nextPicture);
 FILEINPUT.addEventListener('change', loadPicture);
+FILEOUTPUT.addEventListener('click', savePicture);
