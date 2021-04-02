@@ -180,6 +180,20 @@ html.transition *:after {
 		flex-direction: row;
 		justify-content: center;
 	}
+	&-margin{
+		margin: 100px 0;
+	}
+	&-title{
+		font-weight: 900;
+		font-size: 48px;
+		position: relative;
+		padding: 0;
+	}
+	
+	&-text{
+		font-size: 14px;
+		color: #4F4F4F;
+	}
 }
 
 .color{
@@ -212,18 +226,26 @@ html.transition *:after {
 }
 
 .btn{
-	background: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
-	border-radius: 3px;
-	border: none;
-  cursor: pointer;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	padding: 0;
-	&__main{
+	justify-content: center;
+	flex-direction: row;
+	&-main{
+		display: block;
+	}
+	&__color{
+		background: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
+		border-radius: 3px;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
 		width: 245px;
 		height: 55px;
 	}
+	
 	&__title{
 		text-align: center;
 		text-transform: uppercase;
@@ -270,20 +292,14 @@ html.transition *:after {
 		justify-content: space-between;
 		align-items: center;
 		flex-direction: row;
+		border: none;
 		width: 113px;
 		height: 24px;
 		&-play{
-			display: none; // убрать
-			position: absolute;
-			top: 295px;
 			background: none;
-			margin-left: 23px;
+			margin-right: 10px; 
 		}
 		&-donate{
-			display: none; // убрать
-			position: absolute;
-			top: 295px;
-			left: 146px;
 			background: none;
 			width: 74px;
 			height: 24px;
@@ -322,74 +338,6 @@ html.transition *:after {
 		top: 499px;
 		overflow: hidden;
 	}
-	&__range {
-		height: 5px;
-		-webkit-appearance: none;
-		margin: 15px 0 32px 0;
-		width: 245px;
-		&:focus {
-			outline: none;
-		}
-		&::-webkit-slider-runnable-track {
-			width: 100%;
-			height: 5px;
-			cursor: pointer;
-			animate: 0.2s;
-			background: #BDBDBD;
-		}
-		&::-webkit-slider-thumb {
-			height: 10px;
-			width: 30px;
-			background: #FFFFFF;
-			cursor: pointer;
-			-webkit-appearance: none;
-			margin-top: -2.5px;
-		}
-		&::-moz-range-track {
-			width: 100%;
-			height: 5px;
-			cursor: pointer;
-			animate: 0.2s;
-			background: #BDBDBD;
-		}
-		&:focus::-webkit-slider-runnable-track {
-			background: #BDBDBD;
-		}
-		&::-moz-range-thumb {
-			height: 10px;
-			width: 30px;
-			background: #FFFFFF;
-			cursor: pointer;
-		}
-		&::-ms-track {
-			width: 100%;
-			height: 5px;
-			cursor: pointer;
-			animate: 0.2s;
-			background: transparent;
-			border-color: transparent;
-			color: transparent;
-		}
-		&::-ms-fill-lower {
-			background: #BDBDBD;
-		}
-		&::-ms-fill-upper {
-			background: #BDBDBD;
-		}
-		&::-ms-thumb {
-			margin-top: 1px;
-			height: 10px;
-			width: 30px;
-			background: #FFFFFF;
-			cursor: pointer;
-		}
-		&:focus::-ms-fill-lower {
-			background: #BDBDBD;
-		}
-		&:focus::-ms-fill-upper {
-			background: #BDBDBD;
-		}
-	}
 }
 
 .poster{
@@ -397,7 +345,8 @@ html.transition *:after {
 	width: 140px;
 	height: 203px;
 	border-radius: 6px;
-	filter: drop-shadow(5px 4px 50px rgba(152, 157, 198, 0.25));
+	&__wrapper{
+	}
 	&-eagle{
 		background-image: url(/assets/images/mainPage/eagle.jpg);
 		background-position: center;
@@ -448,13 +397,89 @@ html.transition *:after {
 	}
 }
 
+.range {
+	height: 5px;
+	-webkit-appearance: none;
+	margin: 15px 0 32px 0;
+	width: 245px;
+	&:focus {
+		outline: none;
+	}
+	&::-webkit-slider-runnable-track {
+		width: 100%;
+		height: 5px;
+		cursor: pointer;
+		animate: 0.2s;
+		background: #BDBDBD;
+	}
+	&::-webkit-slider-thumb {
+		height: 10px;
+		width: 30px;
+		background: #FFFFFF;
+		cursor: pointer;
+		-webkit-appearance: none;
+		margin-top: -2.5px;
+	}
+	&::-moz-range-track {
+		width: 100%;
+		height: 5px;
+		cursor: pointer;
+		animate: 0.2s;
+		background: #BDBDBD;
+	}
+	&:focus::-webkit-slider-runnable-track {
+		background: #BDBDBD;
+	}
+	&::-moz-range-thumb {
+		height: 10px;
+		width: 30px;
+		background: #FFFFFF;
+		cursor: pointer;
+	}
+	&::-ms-track {
+		width: 100%;
+		height: 5px;
+		cursor: pointer;
+		animate: 0.2s;
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+	&::-ms-fill-lower {
+		background: #BDBDBD;
+	}
+	&::-ms-fill-upper {
+		background: #BDBDBD;
+	}
+	// &::-ms-thumb {
+	// 	margin-top: 1px;
+	// 	height: 10px;
+	// 	width: 30px;
+	// 	background: #FFFFFF;
+	// 	cursor: pointer;
+	// }
+	&:focus::-ms-fill-lower {
+		background: #BDBDBD;
+	}
+	&:focus::-ms-fill-upper {
+		background: #BDBDBD;
+	}
+	&-black::-webkit-slider-thumb {
+		background: var(--color-text-range);
+	}
+	&-bigThumb::-webkit-slider-thumb{
+		width: 62px;
+	}
+}
+
 .carousel__item-active{
 	position: relative;
 	bottom: 14px;
 	.poster__about{
 		display: flex;
 	}
-	.poster{
+	.poster, 
+	.poster__wrapper{
 		width: 245px;
 		height: 352px;
 	}
@@ -467,6 +492,17 @@ html.transition *:after {
 			}
 		}
 	}
+	.poster__wrapper:hover{
+		// width: 278px;
+		// height: 399px;
+		filter: drop-shadow(5px 4px 50px rgba(152, 157, 198, 0.25));
+		background: linear-gradient(352.9deg, #000000 4.35%, rgba(0, 0, 0, 0) 58.59%);
+		border-radius: 6px;
+	}
+	// .poster:hover{
+	// 	width: 278px;
+	// 	height: 399px;
+	// }
 }
 
 .counter{
@@ -480,11 +516,17 @@ html.transition *:after {
 		top: 21px;
 		right: 97px;
 	}
+	// &-petsInZoo{
+	// 	margin-top: 
+	// }
 	&__current{
 		font-weight: 900;
 		font-size: 24px;
 		&-mainPage{
 			color: #FEFEFE;
+		}
+		&-white{
+			color: var(--color-text);
 		}
 	}
 	&__total{
@@ -494,6 +536,9 @@ html.transition *:after {
 		font-size: 14px;
 		&-mainPage{
 			color: #BDBDBD;
+		}
+		&-white{
+			color: var(--color-text-total);
 		}
 	}
 	&__numbers{
@@ -505,22 +550,9 @@ html.transition *:after {
 
 .howItWorks{
 	width: 790px;
-	margin: 100px auto;
 	&__title{
 		margin: 0 0 30px 0;
 	}
-}
-
-.main-title{
-	font-weight: 900;
-	font-size: 48px;
-	position: relative;
-	padding: 0;
-}
-
-.main-text{
-	font-size: 14px;
-	color: #4F4F4F;
 }
 
 .box-title{
@@ -531,44 +563,99 @@ html.transition *:after {
 }
 
 .slider{			
-	margin: 30px 0;
 	&__howItWorks{
 		width: 790px;
 		height: 323px;
-		position:static;
+		margin: 30px 0;
 	}
+	&-petsInZoo{
+		margin-top: 35px;
+		margin-bottom: 30px;
+		display: flex;
+		position: relative;
+		align-items: center;
+	}
+
 	&__list{
-		z-index: 0;
-		margin: 0;
-		padding: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-column-gap: 29px;
 	}
 	&__item{
 		list-style-type: none;
-		&-img{
-			border-radius: 5px;
+	}
+	&__img{
+		border-radius: 5px;
+	}
+	&__animal{
+		width: 278px;
+		height: 399px;
+	}
+	&__arrow{
+		width: 18px;
+		height: 30px;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		& img:hover{
+			filter: invert(52%) sepia(13%) saturate(21%) hue-rotate(343deg) brightness(96%) contrast(83%);
+		}
+		&-left{
+			left: -44px;
+		}
+		&-right{
+			right: -44px;
 		}
 	}
 }
-.carousel__range{
-	&-howItWorks::-webkit-slider-thumb {
-		background: var(--color-text-range);
-		width: 62px;
+
+.animal{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	&__wrapper{
+		margin: 44px 22px;
 	}
-}
-
-.counter__current-howItWorks{
-	color: var(--color-text);
-}
-
-.counter__total-howItWorks{
-	color: var(--color-text-total);
+	&-panda{
+		background-image: url(/assets/images/petsInZoo/img_1.jpg);
+		background-repeat: no-repeat;
+		border-radius: 5px;
+	}
+	&-eagle{
+		background-image: url(/assets/images/petsInZoo/img_2.jpg);
+		background-repeat: no-repeat;
+		border-radius: 5px;
+	}
+	&-garilla{
+		background-image: url(/assets/images/petsInZoo/img_3.jpg);
+		background-repeat: no-repeat;
+		border-radius: 5px;
+	}
+	&-alligator{
+		background-image: url(/assets/images/petsInZoo/img_4.jpg);
+		background-repeat: no-repeat;
+		border-radius: 5px;
+	}
+	&__about{
+		width: 180px;
+		margin-bottom: 14px;
+		&-text{
+			color: #FFFFFF;
+			font-size: 14px;
+		}
+	}
 }
 
 .whatInspiringUs{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 30px;
-	margin: 100px 0;
 	&__box{
 		width: 380px;
 		height: 213px;
@@ -584,6 +671,13 @@ html.transition *:after {
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-
 	}
 }
+
+.petsInZoo{
+	width: 1200px;
+	&__title{
+		text-align: center;
+	}
+}
+
