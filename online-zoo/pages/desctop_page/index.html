@@ -51,7 +51,7 @@
         </div>
     </header>
     <main class="main">
-        <div class="main__wrapper">
+        <div class="main__wrapper bg-mainPage">
             <section class="mainPage">
                 <h2 class="mainPage__title">Watch your favorite animal online</h2>
                 <button class="btn btn__main" type="button">
@@ -183,29 +183,22 @@
                     </div>
                 </div>
             </section>
+        </div>
+        <div class="main__wrapper color-first">
             <section class="howItWorks">
-                <h3 class="main__title">How it works?</h3>
-                <p class="howItWorks__about main__text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat, and we are determined to assist in all aspects, including providing veterinary support and raising much-needed emergency funds. Zoo Online saves wildlife and inspires everyone to make conservation a priority in their lives. Animals have the right to a pain-free and happy life. They have equal claim to the resources of this planet, and deserve a life of dignity and compassion.As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                <h3 class="howItWorks__title main-title">How it works?</h3>
+                <p class="howItWorks__about main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat, and we are determined to assist in all aspects, including providing veterinary support and raising much-needed emergency funds. Zoo Online saves wildlife and inspires everyone to make conservation a priority in their lives. Animals have the right to a pain-free and happy life. They have equal claim to the resources of this planet, and deserve a life of dignity and compassion.As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
                 <div class="slider slider__howItWorks">
                     <ul class="slider__list">
                         <li class="slider__item">
                             <img class="slider__item-img" src="/assets/images/howItWorks/img_0.jpg">
                         </li>
-                        <li class="slider__item">
-                            <img class="slider__item-img" src="/assets/images/howItWorks/img_1.jpg">
-                        </li>
-                        <li class="slider__item">
-                            <img class="slider__item-img" src="/assets/images/howItWorks/img_2.jpg">
-                        </li>
-                        <li class="slider__item">
-                            <img class="slider__item-img" src="/assets/images/howItWorks/img_3.jpg">
-                        </li>
                     </ul>
                 </div>
                 <div class="counter counter-howItWorks">
                     <div class="counter__numbers">
-                        <span class="counter__current counter__current-howItWorks" id="current-howItWorks">02/</span>
-                        <span class="counter__total counter__total-howItWorks" id="total-howItWorks">08</span>
+                        <span class="counter__current counter__current-howItWorks" id="current-howItWorks">01/</span>
+                        <span class="counter__total counter__total-howItWorks" id="total-howItWorks">04</span>
                     </div>
                     <input class="carousel__range carousel__range-howItWorks" type="range" name="range" id="" min="1" max="4" value="1">
 
@@ -214,23 +207,33 @@
                     <span class="btn__title btn__title-main">Watch online</span>
                 </button>
             </section>
-            <!-- <div class="whatInspiringUs">
+        </div>
+        <div class="main__wrapper color-second">
+            <div class="whatInspiringUs">
                 <div class="whatInspiringUs__box">
-                    <img class="whatInspiringUs__box-img" src="#" alt="inspiry">
-                    <h4 class="whatInspiringUs__box-title">what inspires us?</h4>
+                    <div class="whatInspiringUs__wrapper">
+                        <img class="whatInspiringUs__box-img" src="/assets/images/whatInspiringUs/light.svg" alt="inspiry">
+                    </div>
+                    <h4 class="whatInspiringUs__box-title box-title">What inspires us?</h4>
                     <p class="whatInspiringUs__box-text main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat, and we are determined to assist in all aspects.</p>
                 </div>
                 <div class="whatInspiringUs__box">
-                    <img class="whatInspiringUs__box-img" src="#" alt="inspiry">
-                    <h4 class="whatInspiringUs__box-title">Our mission</h4>
+                    <div class="whatInspiringUs__wrapper">
+                        <img class="whatInspiringUs__box-img" src="/assets/images/whatInspiringUs/flag.svg" alt="inspiry">
+                    </div>
+                    <h4 class="whatInspiringUs__box-title box-title">Our mission</h4>
                     <p class="whatInspiringUs__box-text main-text">Zoo Online saves wildlife and inspires everyone to make conservation a priority in their lives.</p>
                 </div>
                 <div class="whatInspiringUs__box">
-                    <img class="whatInspiringUs__box-img" src="#" alt="inspiry">
-                    <h4 class="whatInspiringUs__box-title">What we believe in?</h4>
+                    <div class="whatInspiringUs__wrapper">
+                        <img class="whatInspiringUs__box-img" src="/assets/images/whatInspiringUs/heart.svg" alt="inspiry">
+                    </div>
+                    <h4 class="whatInspiringUs__box-title box-title">What we believe in?</h4>
                     <p class="whatInspiringUs__box-text main-text">Animals have the right to a pain-free and happy life. They have equal claim to the resources of this planet, and deserve a life of dignity and compassion.</p>
                 </div>
             </div>
+        </div>
+        <!-- <div class="main__wrapper color-first">
             <section class="petsInZoo">
                 <h3 class="main__title">pets in Zoo</h3>
                 <div class="carousel carousel__petsInZoo">
@@ -310,80 +313,80 @@
                     <span class="btn__title">choose your favorite</span>
                 </button>
             </section>
-            <section class="payAndFeed">
-                <h3 class="main__title">Pay and feed</h3>
-                <p class="payAndFeed__about main-text">The opportunity to easily and naturally (but as often as possible) donate to the needs of animals that you like.</p>
-                <div class="payAndFeed__map">
-                    <div class="payAndFeed__circle">
-                        <div class="payAndFeed__circle-img payAndFeed__circle-card" ></div>
-                        <div class="payAndFeed__circle-title">you pay with a VISA card</div>
-                    </div>
-                    <div class="payAndFeed__arrow "></div>
-                    <div class="payAndFeed__circle">
-                        <div class="payAndFeed__circle-img payAndFeed__circle-zoo"></div>
-                        <div class="payAndFeed__circle-title">payment goes to the Zoo</div>
-                    </div>
-                    <div class="payAndFeed__arrow"></div>
-                    <div class="payAndFeed__circle">
-                        <div class="payAndFeed__circle-img payAndFeed__circle-panda"></div>
-                        <div class="payAndFeed__circle-title">panda gets the bamboo</div>
-                    </div>
+        </div> -->
+        
+        <!-- <section class="payAndFeed">
+            <h3 class="main__title">Pay and feed</h3>
+            <p class="payAndFeed__about main-text">The opportunity to easily and naturally (but as often as possible) donate to the needs of animals that you like.</p>
+            <div class="payAndFeed__map">
+                <div class="payAndFeed__circle">
+                    <div class="payAndFeed__circle-img payAndFeed__circle-card" ></div>
+                    <div class="payAndFeed__circle-title">you pay with a VISA card</div>
                 </div>
-                <button class="btn btn__main" type="button">
-                    <span class="btn__title">donate</span>
-                </button>
-            </section>
-            <section class="testimonials">
-                <h3 class="main__title">testimonials</h3>
-                <div class="carousel carousel__testimonials">
-                    <ul class="carousel__list">
-                        <li class="carousel__item carousel__item-testimonials">
-                            <img class="carousel__item-icon icon__user1" src="" alt="user">
-                            <div class="carousel__item-user">Tanya Sidorova</div>
-                            <p class="carousel__item-user-revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
-                        </li>
-                        <li class="carousel__item carousel__item-testimonials">
-                            <img class="carousel__item-icon icon__user2" src="" alt="user">
-                            <div class="carousel__item-user">Vlad Kim</div>
-                            <p class="carousel__item-user-revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
-                        </li>
-                    </ul>
-                    <div class="carousel__arrow carousel__arrow-left"></div>
-                    <div class="carousel__arrow carousel__arrow-right"></div>
-                    <div class="carousel__counter carousel__counter-howItWorks">
-                        <span id="current-testimonials">02</span>
-                        /
-                        <span id="total-testimonials">08</span>
-                    </div>
-                    <input type="range" name="range" id="" min="1" max="8" value="2">
+                <div class="payAndFeed__arrow "></div>
+                <div class="payAndFeed__circle">
+                    <div class="payAndFeed__circle-img payAndFeed__circle-zoo"></div>
+                    <div class="payAndFeed__circle-title">payment goes to the Zoo</div>
                 </div>
-                <button class="btn btn__main" type="button">
-                    <span class="btn__title">leave feedback</span>
-                </button>
-    
-            </section>
-            <section class="map">
-                <h3 class="main__title">map</h3>
-                <div class="map__world">
-                    <div class="map__label">
-                        <img class="map__label-mag" src="" alt="animal">
-                    </div>
-                    <div class="map__label">
-                        <img class="map__label-mag" src="" alt="animal">
-                    </div>
-                    <div class="map__label">
-                        <img class="map__label-mag" src="" alt="animal">
-                    </div>
-                    <div class="map__label">
-                        <img class="map__label-mag" src="" alt="animal">
-                    </div>
+                <div class="payAndFeed__arrow"></div>
+                <div class="payAndFeed__circle">
+                    <div class="payAndFeed__circle-img payAndFeed__circle-panda"></div>
+                    <div class="payAndFeed__circle-title">panda gets the bamboo</div>
                 </div>
-                <button class="btn btn__main" type="button">
-                    <div class="btn__img btn__img-play"></div>
-                    <span class="btn__title btn__title-main">watch online</span>
-                </button>
-            </section> -->
-        </div>
+            </div>
+            <button class="btn btn__main" type="button">
+                <span class="btn__title">donate</span>
+            </button>
+        </section>
+        <section class="testimonials">
+            <h3 class="main__title">testimonials</h3>
+            <div class="carousel carousel__testimonials">
+                <ul class="carousel__list">
+                    <li class="carousel__item carousel__item-testimonials">
+                        <img class="carousel__item-icon icon__user1" src="" alt="user">
+                        <div class="carousel__item-user">Tanya Sidorova</div>
+                        <p class="carousel__item-user-revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                    </li>
+                    <li class="carousel__item carousel__item-testimonials">
+                        <img class="carousel__item-icon icon__user2" src="" alt="user">
+                        <div class="carousel__item-user">Vlad Kim</div>
+                        <p class="carousel__item-user-revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                    </li>
+                </ul>
+                <div class="carousel__arrow carousel__arrow-left"></div>
+                <div class="carousel__arrow carousel__arrow-right"></div>
+                <div class="carousel__counter carousel__counter-howItWorks">
+                    <span id="current-testimonials">02</span>
+                    /
+                    <span id="total-testimonials">08</span>
+                </div>
+                <input type="range" name="range" id="" min="1" max="8" value="2">
+            </div>
+            <button class="btn btn__main" type="button">
+                <span class="btn__title">leave feedback</span>
+            </button>
+        </section>
+        <section class="map">
+            <h3 class="main__title">map</h3>
+            <div class="map__world">
+                <div class="map__label">
+                    <img class="map__label-mag" src="" alt="animal">
+                </div>
+                <div class="map__label">
+                    <img class="map__label-mag" src="" alt="animal">
+                </div>
+                <div class="map__label">
+                    <img class="map__label-mag" src="" alt="animal">
+                </div>
+                <div class="map__label">
+                    <img class="map__label-mag" src="" alt="animal">
+                </div>
+            </div>
+            <button class="btn btn__main" type="button">
+                <div class="btn__img btn__img-play"></div>
+                <span class="btn__title btn__title-main">watch online</span>
+            </button>
+        </section> -->
     </main>
     <!-- <footer class="footer">
         <div class="footer__menu">
