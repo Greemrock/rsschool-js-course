@@ -11,6 +11,9 @@ html{
 	--color-text: #333;
 	--color-text-range: #333;
 	--color-text-total: #BDBDBD;
+	--color-title-small: #4F4F4F;
+	--width1200: 1200px;
+	--width790: 790px;
 }
 
 body{
@@ -189,10 +192,16 @@ html.transition *:after {
 		position: relative;
 		padding: 0;
 	}
-	
+	&-smallTitle{
+		font-weight: 900;
+		font-size: 20px;
+		margin: 15px 0;
+		text-align: center;
+		color: var(--color-title-small);
+	}
 	&-text{
 		font-size: 14px;
-		color: #4F4F4F;
+		color: var(--color-title-small);
 	}
 }
 
@@ -214,7 +223,7 @@ html.transition *:after {
 }
 
 .mainPage{
-	width: 1200px;
+	width: var(--width1200);
 	&__title{
 		width: 793px;
 		font-size: 89px;
@@ -549,17 +558,10 @@ html.transition *:after {
 // howItWorks <===========
 
 .howItWorks{
-	width: 790px;
+	width: var(--width790);
 	&__title{
 		margin: 0 0 30px 0;
 	}
-}
-
-.box-title{
-	font-weight: 900;
-	font-size: 20px;
-	margin: 15px 0;
-	text-align: center;
 }
 
 .slider{			
@@ -675,9 +677,108 @@ html.transition *:after {
 }
 
 .petsInZoo{
-	width: 1200px;
+	width: var(--width1200);
 	&__title{
 		text-align: center;
 	}
 }
 
+.payAndFeed{
+	width: var(--width1200);
+	&__title{
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	&__about{
+		text-align: center;
+		margin-bottom: 92px;;
+	}
+	&__map{
+		margin-bottom: 60px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	&__circle{
+		display: block;
+		height: 239px;
+		width: 239px;
+		border: #4BD8B5 solid 3px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__arrow{
+		margin: 0 63px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		&-box{
+			position: relative;
+			width: 107px;
+			height: 2px;
+			background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #4BD8B5), color-stop(1, #49D6DF));
+			left:0;
+			display: block;
+			&::after {
+				content: '';
+				position: absolute;
+				width: 10px;
+				height: 2px;
+				top: -3px;
+				right: -2px;
+				background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #4BD8B5), color-stop(1, #49D6DF));
+				transform: rotate(45deg);
+				border-radius: 2px;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				width: 10px;
+				height: 2px;
+				top: 3px;
+				right: -2px;
+				background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #4BD8B5), color-stop(1, #49D6DF));
+				transform: rotate(-45deg);
+				border-radius: 2px;
+			}
+		}
+	}
+	&__img{
+		// position: relative;
+		background-repeat: no-repeat;
+		&-card{
+			background-image: url(/assets/images/payAndFeed/card.svg);
+			width: 70px;
+			height: 52.9px;
+			width: 65px;
+			
+			top: 67px;
+			left: 87px;
+		}
+		&-zoo{
+			background-image: url(/assets/images/payAndFeed/zoo.svg);
+			width: 70px;
+			height: 52.9px;
+			width: 65px;
+			top: 67px;
+			left: 87px;
+		}
+		&-panda{
+			background-image: url(/assets/images/payAndFeed/panda.svg);
+			width: 70px;
+			height: 52.9px;
+			width: 65px;
+			top: 67px;
+			left: 87px;
+		}
+	}
+	&__name{
+		width: 135px;
+		margin: 18px 0 0 0;
+	}
+}
