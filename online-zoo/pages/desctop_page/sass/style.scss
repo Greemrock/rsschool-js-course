@@ -12,6 +12,7 @@ html{
 	--color-text-range: #333;
 	--color-text-total: #BDBDBD;
 	--color-title-small: #4F4F4F;
+	--bg-window: #FEFEFE;
 	--width1200: 1200px;
 	--width790: 790px;
 }
@@ -832,5 +833,97 @@ html.transition *:after {
 		display: flex;
 		align-items: center;
 		flex-direction: column;	
+	}
+}
+
+.map{
+	&__title{
+		text-align: center;
+	}
+	&__world{
+		margin-top: 61px;
+		margin-bottom: 27px;
+	}
+	&__animal{
+		background-image: url(/assets/images/map/label.svg);
+		height: 94px;
+		width: 67px;
+	}
+	
+	&__wrapper{
+		list-style-type: none;
+		width: 1px;
+		height: 1px;
+	}
+}
+
+.label{
+	&__img{
+		position: relative;
+		top: 14px;
+		left: 12px;
+	}
+	&__position{
+		position: relative;
+		&-eagle{
+			bottom: 428px;
+			left: 121px;
+		}
+		&-crocodile{
+			bottom: 402px;
+			left: 244px;
+		}
+		&-gorilla{
+			bottom: 316px;
+			left: 571px;
+		}
+		&-panda{
+			bottom: 417px;
+			left: 893px;
+		}
+	}
+	&__window{
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+.window{
+	height: 149px;
+	width: 436px;
+	background: var(--bg-window);
+	box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
+	border-radius: 8px;
+	position: relative;
+	right: 402px;
+  top: 29px;
+	&__img{
+		margin: 40px 20px 0 44px;
+	}
+	&__information{
+		margin-top: 40px;
+	}
+	&__title{
+		font-weight: 900;
+		font-size: 18px;
+		margin-bottom: 4.5px;
+		color: var(--color-text);
+	}
+	&__about{
+		display: flex;
+		flex-direction: column;
+		&-text{
+			margin: 2.5px 0;
+		}
+		&-textregular{
+			font-weight: 400;
+			font-size: 14px;
+			color: var(--color-title-small);
+		}
+		&-textbold{
+			font-weight: 900;
+			font-size: 14px;
+			color: var(--color-title-small);
+		}
 	}
 }
