@@ -250,6 +250,9 @@ html.transition *:after {
 	&-main{
 		display: block;
 	}
+	&-mainPage{
+		margin-bottom: 44px;
+	}
 	&__color{
 		background: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
 		border-radius: 3px;
@@ -329,45 +332,14 @@ html.transition *:after {
 	}
 }
 
-.carousel{
-	&__list{
-		position: relative;
-		top: 15px;
-		display: flex;
-		align-items: center;
-		margin: 0 0;
-		padding-left: 112px;
-	}
-	&__item{
-		list-style-type: none;
-		margin: 0 23px;
-		z-index: 1;
-	}
-	&__string{
-		position: absolute;
-		background-image: url(/assets/images/string.svg);
-		background-repeat: no-repeat;
-		width: 1079px;
-		height: 13px;
-		z-index: 0;
-		bottom: 225px;
-	}
-	&_mainPage{
-		position: absolute;
-		width: 1080px;
-		height: 421px;
-		left: 840px;
-		top: 499px;
-		overflow: hidden;
-	}
-}
-
 .poster{
 	position: relative;
 	width: 140px;
 	height: 203px;
-	border-radius: 6px;
-	&__wrapper{
+	border-radius: 5px;
+	transition: 0.8s;
+	&:hover{
+		transform: scale(1.1);
 	}
 	&-eagle{
 		background-image: url(/assets/images/mainPage/eagle.jpg);
@@ -375,7 +347,7 @@ html.transition *:after {
 		background-repeat: no-repeat;	
 	}
 	&-panda{
-		background-image: url(/assets/images/mainPage/panda.jpg);
+		background-image: url(/assets/images/mainPage/big/panda.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
@@ -384,8 +356,8 @@ html.transition *:after {
 		background-position: center;
 		background-repeat: no-repeat;
 	}
-	&-alligator{
-		background-image: url(/assets/images/mainPage/alligator.jpg);
+	&-crocodile{
+		background-image: url(/assets/images/mainPage/crocodile.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
@@ -395,27 +367,19 @@ html.transition *:after {
 		background-repeat: no-repeat;
 	}
 	&-sloth{
-		background-image: url(/assets/images/sloth.png);
+		background-image: url(/assets/images/mainPage/sloth.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	&-elefant{
-		background-image: url(/assets/images/elefant.jpg);
+		background-image: url(/assets/images/mainPage/elefant.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	&-panther{
-		background-image: url(/assets/images/panther.jpg);
+		background-image: url(/assets/images/mainPage/panther.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
-	}
-	&__about{
-		display: none; // убрать
-		width: 180px;
-		position: absolute;
-		color: #FFFFFF;
-		margin: 0 23px;
-		top: 234px;
 	}
 }
 
@@ -494,53 +458,16 @@ html.transition *:after {
 	}
 }
 
-.carousel__item-active{
-	position: relative;
-	bottom: 14px;
-	.poster__about{
-		display: flex;
-	}
-	.poster, 
-	.poster__wrapper{
-		width: 245px;
-		height: 352px;
-	}
-	.btn{
-		&__poster{
-			display: flex;
-			top: 295px;
-			&-paly{
-				top: 295px;
-			}
-		}
-	}
-	.poster__wrapper:hover{
-		// width: 278px;
-		// height: 399px;
-		filter: drop-shadow(5px 4px 50px rgba(152, 157, 198, 0.25));
-		background: linear-gradient(352.9deg, #000000 4.35%, rgba(0, 0, 0, 0) 58.59%);
-		border-radius: 6px;
-	}
-	// .poster:hover{
-	// 	width: 278px;
-	// 	height: 399px;
-	// }
-}
-
 .counter{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	// width: 245px;
 	&_mainPage{
 		position: relative;
-		top: 21px;
-		right: 97px;
+		bottom: 36px;
+		right: 96px;
 	}
-	// &-petsInZoo{
-	// 	margin-top: 
-	// }
 	&__current{
 		font-weight: 900;
 		font-size: 24px;
@@ -575,7 +502,14 @@ html.transition *:after {
 	}
 }
 
-.slider{			
+.slider{
+	&-mainPage{
+		width: 1063px;
+		overflow: hidden;
+		position: relative;
+		left: 480px;
+		bottom: 140px;
+	}		
 	&__howItWorks{
 		width: 790px;
 		height: 323px;
@@ -605,6 +539,18 @@ html.transition *:after {
 			grid-template-rows: 310px;
 			grid-column-gap: 26px;
 			margin: 49px 0;
+		}
+		&-mainPage{
+			position: relative;
+			width: 1547px;
+			height: 434px;
+			left: 135px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			grid-column-gap: 0;
+			z-index: 1;
 		}
 	}
 	&__item{
@@ -649,6 +595,37 @@ html.transition *:after {
 		align-items: center;
 		flex-direction: column;	
 	}
+	&__string{
+		position: relative;
+		background-image: url(/assets/images/string.svg);
+		background-repeat: no-repeat;
+		width: 1063px;
+		height: 13px;
+		z-index: 0;
+		left: 480px;
+		top: 82px;
+	}
+	
+}
+
+.slider__item-active{
+	height: 352px;
+	width: 245px;
+	position: relative;
+	bottom: 14px;
+	.animal__wrapper{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-end;
+		height: 352px;
+		width: 245px;
+		border-radius: 5px;
+	}
+	.slider__wrapper{
+		background: linear-gradient(348.75deg, #000000 10.15%, rgba(0, 0, 0, 0) 59%);
+		border-radius: 5px;
+	}
 }
 
 .animal{
@@ -656,13 +633,35 @@ html.transition *:after {
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: flex-start;
+	&:hover{
+		.animal__wrapper{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-end;
+			width: 100%;
+			height: 100%;
+		}
+		.slider__wrapper{
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(348.75deg, #000000 10.15%, rgba(0, 0, 0, 0) 59%);
+			border-radius: 5px;
+		}
+	}
 	&__wrapper{
-		margin: 44px 22px;
+		display: none;
+		margin-left: 22px;
 	}
 	&-panda{
 		background-image: url(/assets/images/petsInZoo/img_1.jpg);
 		background-repeat: no-repeat;
 		border-radius: 5px;
+		&__mainPage{
+			background-image: url(/assets/images/mainPage/panda.jpg);
+			background-repeat: no-repeat;
+			border-radius: 5px;
+		}
 	}
 	&-eagle{
 		background-image: url(/assets/images/petsInZoo/img_2.jpg);
