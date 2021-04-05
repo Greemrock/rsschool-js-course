@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1 class="visuallyhidden">zoo online</h1>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__wrapper">
             <a class="logo" href="#">
                 <span class="logo__zoo">zoo</span>
@@ -246,6 +246,28 @@
                         <input class="range" type="range" name="range" id="" min="1" max="8" value="2">
                     </div>
                 </div>
+                <ul class="social social-mainPage">
+                    <li class="social__item">
+                        <a class="social__link" href="https://www.instagram.com/" target="_blank">
+                            <img class="social__img social__inst" src="/assets/icons/social/inst.svg" alt="inst">
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="https://twitter.com/" target="_blank">
+                            <img class="social__img sotial__twitter" src="/assets/icons/social/twit.svg" alt="twitter">
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="https://vk.com/" target="_blank">
+                            <img class="social__img sotial__vk" src="/assets/icons/social/vk.svg" alt="vk">
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link" href="https://youtube.com/" target="_blank">
+                            <img class="social__img sotial__youtube" src="/assets/icons/social/youtube.svg" alt="youtube">
+                        </a>
+                    </li>
+                </ul>
             </section>
         </div>
         <div class="main__wrapper color-first">
@@ -552,7 +574,7 @@
         <div class="footer__wrapper">
             <div class="footer__content">
                 <div class="footer__column">
-                    <a class="logo" href="#">
+                    <a class="logo" href="#header">
                         <span class="logo__zoo">zoo</span>
                         <span class="logo__online">online</span>
                     </a>
@@ -560,8 +582,8 @@
                     <form  class="footer__form contactUs" action="" method="post">
                         <input class="contactUs__inf" type="text" name="name" placeholder="Name" required>
                         <input class="contactUs__inf" type="email" name="email" placeholder="Email" required>
-                        <span class="contactUs__toptext">Please enter your message</span>
-                        <textarea class="contactUs__textarea" name="request"  required></textarea>
+                        <legend class="contactUs__toptext">Please enter your message</legend>
+                        <textarea class="contactUs__textarea" name="request" maxlength="280" required></textarea>
                         <label class="checkbox">
                             <input class="checkbox__input" type="checkbox" name="checkbox" id="">
                             <div class="checkbox__box">
@@ -583,7 +605,7 @@
                         <nav class="navbar">
                             <ul class="navbar__list navbar__footer">
                                 <li class="navbar__item">
-                                    <a class="navbar__item-link" href="#">
+                                    <a class="navbar__item-link" href="#header">
                                         <div class="navbar__item-text">about</div>
                                     </a>
                                 </li>
@@ -613,32 +635,32 @@
                     <div class="footer__contact contact">
                         <h5 class="contact__title">ZOO Online Centre</h5>
                         <div class="contact__wrapper">
-                            <p class="contact__text">132, Address District, Street</p>
+                            <address class="contact__text">132, Address District, Street</address>
                             <p class="contact__text">Open Daily 10:00 am - 5:00 pm</p>
                         </div>
                         <div class="contact__wrapper">
-                            <p class="contact__text">T(702) 163-3433</p>
-                            <p class="contact__text">zoo.online@gmail.com</p>    
+                            <tel class="contact__text">T(702) 163-3433</tel>
+                            <mailto class="contact__text">zoo.online@gmail.com</mailto>    
                         </div>
-                        <ul class="sotial">
-                            <li class="sotial__item">
-                                <a class="sotial__link" href="https://www.instagram.com/" target="_blank">
-                                    <img class="sotial__inst" src="/assets/icons/social/inst.svg" alt="inst">
+                        <ul class="social">
+                            <li class="social__item">
+                                <a class="social__link" href="https://www.instagram.com/" target="_blank">
+                                    <img class="social__img social__inst" src="/assets/icons/social/inst.svg" alt="inst">
                                 </a>
                             </li>
-                            <li class="sotial__item">
-                                <a class="sotial__link" href="https://twitter.com/" target="_blank">
-                                    <img class="sotial__twitter" src="/assets/icons/social/twit.svg" alt="twitter">
+                            <li class="social__item">
+                                <a class="social__link" href="https://twitter.com/" target="_blank">
+                                    <img class="social__img social__twitter" src="/assets/icons/social/twit.svg" alt="twitter">
                                 </a>
                             </li>
-                            <li class="sotial__item">
-                                <a class="sotial__link" href="https://vk.com/" target="_blank">
-                                    <img class="sotial__vk" src="/assets/icons/social/vk.svg" alt="vk">
+                            <li class="social__item">
+                                <a class="social__link" href="https://vk.com/" target="_blank">
+                                    <img class="social__img social__vk" src="/assets/icons/social/vk.svg" alt="vk">
                                 </a>
                             </li>
-                            <li class="sotial__item">
-                                <a class="sotial__link" href="https://youtube.com/" target="_blank">
-                                    <img class="sotial__youtube" src="/assets/icons/social/youtube.svg" alt="youtube">
+                            <li class="social__item">
+                                <a class="social__link" href="https://youtube.com/" target="_blank">
+                                    <img class="social__img social__youtube" src="/assets/icons/social/youtube.svg" alt="youtube">
                                 </a>
                             </li>
                         </ul>

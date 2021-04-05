@@ -1036,8 +1036,8 @@ html.transition *:after {
 		color: var(--footer-form);
 		box-sizing: border-box;
 		border: 1px solid var(--footer-form-solid);
-		border-radius: 3px;
 		padding: 10px;
+		border-radius: 3px;
 		resize: none;
 	}
 	&__toptext{
@@ -1100,16 +1100,31 @@ html.transition *:after {
 	}
 }
 
-.sotial{
+.social{
 	width: 125px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 20px;
-	grid-gap: 15px;
+	grid-gap: 8px;
 	&__item{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		list-style-type: none;
+		box-sizing:content-box;
+		
+
+	}
+	&-mainPage{
+		width: 20px;
+		position: relative;
+		bottom: 310px;
+		right: 208px;
+		grid-template-columns: 20px;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-gap: 8px;
+	}
+	&__img:hover{
+		box-shadow: 0 0 10px #329179; 
 	}
 }
