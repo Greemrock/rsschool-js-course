@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../live_brodcast/broadcast-panda/style_panda.scss"
+    ],
+    "names": [],
+    "file": "style_panda.css"
+}
