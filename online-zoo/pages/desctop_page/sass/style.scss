@@ -264,6 +264,9 @@ html.transition *:after {
 		&-footer{
 			width: 279px;
 		}
+		&:hover{
+			background: linear-gradient(106.89deg, #329179 -14.32%, #3599a0 100.68%);
+		}
 	}
 	&__title{
 		text-align: center;
@@ -1005,6 +1008,13 @@ html.transition *:after {
 			font-size: 20px;
 			font-weight: 900;
 			margin-top: 65px;
+		}
+	}
+	.navbar__item:hover{
+		.navbar__item-link{
+			text-decoration: underline;
+			color: var(--footer-text);
+			font-weight: 900;
 		}
 	}
 }
