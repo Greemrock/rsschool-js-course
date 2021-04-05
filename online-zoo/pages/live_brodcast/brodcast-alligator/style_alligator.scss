@@ -225,7 +225,7 @@ html.transition *:after {
 .bg-mainPage{
 	height: 940px;
 	background-repeat: no-repeat;
-	background-image: url(../assets/images/bg-main.jpg);
+	background-image: url(../../../assets/images/bg-main.jpg);
 	background-position: center;
 	background-size: cover;
 }
@@ -295,18 +295,18 @@ html.transition *:after {
 		}
 	}
 	&__img{
-		background-image: url(../assets/icons/play-big.svg);
+		background-image: url(../../../assets/icons/play-big.svg);
 		background-repeat: no-repeat;
 		width: 32px;
 		height: 32px;
 		&-play{
-			background-image: url(../assets/icons/play-small.svg);
+			background-image: url(../../../assets/icons/play-small.svg);
 			background-repeat: no-repeat;
 			width: 24px;
 			height: 24px;
 		}
 		&-donate{
-			background-image: url(../assets/icons/donate.svg);
+			background-image: url(../../../assets/icons/donate.svg);
 			background-repeat: no-repeat;
 			width: 24px;
 			height: 24px;
@@ -342,42 +342,42 @@ html.transition *:after {
 		transform: scale(1.1);
 	}
 	&-eagle{
-		background-image: url(../assets/images/mainPage/eagle.jpg);
+		background-image: url(../../../assets/images/mainPage/eagle.jpg);
 		background-position: center;
 		background-repeat: no-repeat;	
 	}
 	&-panda{
-		background-image: url(../assets/images/mainPage/big/panda.jpg);
+		background-image: url(../../../assets/images/mainPage/big/panda.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	&-garilla{
-		background-image: url(../assets/images/mainPage/garilla.jpg);
+		background-image: url(../../../assets/images/mainPage/garilla.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	&-crocodile{
-		background-image: url(../assets/images/mainPage/crocodile.jpg);
+		background-image: url(../../../assets/images/mainPage/crocodile.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	&-fox{
-		background-image: url(../assets/images/mainPage/fox.jpg);
+		background-image: url(../../../assets/images/mainPage/fox.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	&-sloth{
-		background-image: url(../assets/images/mainPage/sloth.jpg);
+		background-image: url(../../../assets/images/mainPage/sloth.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	&-elefant{
-		background-image: url(../assets/images/mainPage/elefant.jpg);
+		background-image: url(../../../assets/images/mainPage/elefant.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	&-panther{
-		background-image: url(../assets/images/mainPage/panther.jpg);
+		background-image: url(../../../assets/images/mainPage/panther.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 	}
@@ -590,7 +590,7 @@ html.transition *:after {
 	}
 	&__string{
 		position: relative;
-		background-image: url(../assets/images/string.svg);
+		background-image: url(../../../assets/images/string.svg);
 		background-repeat: no-repeat;
 		width: 1063px;
 		height: 13px;
@@ -647,27 +647,27 @@ html.transition *:after {
 		margin-left: 22px;
 	}
 	&-panda{
-		background-image: url(../assets/images/petsInZoo/img_1.jpg);
+		background-image: url(../../../assets/images/petsInZoo/img_1.jpg);
 		background-repeat: no-repeat;
 		border-radius: 5px;
 		&__mainPage{
-			background-image: url(../assets/images/mainPage/panda.jpg);
+			background-image: url(../../../assets/images/mainPage/panda.jpg);
 			background-repeat: no-repeat;
 			border-radius: 5px;
 		}
 	}
 	&-eagle{
-		background-image: url(../assets/images/petsInZoo/img_2.jpg);
+		background-image: url(../../../assets/images/petsInZoo/img_2.jpg);
 		background-repeat: no-repeat;
 		border-radius: 5px;
 	}
 	&-garilla{
-		background-image: url(../assets/images/petsInZoo/img_3.jpg);
+		background-image: url(../../../assets/images/petsInZoo/img_3.jpg);
 		background-repeat: no-repeat;
 		border-radius: 5px;
 	}
 	&-alligator{
-		background-image: url(../assets/images/petsInZoo/img_4.jpg);
+		background-image: url(../../../assets/images/petsInZoo/img_4.jpg);
 		background-repeat: no-repeat;
 		border-radius: 5px;
 	}
@@ -778,7 +778,7 @@ html.transition *:after {
 	&__img{
 		background-repeat: no-repeat;
 		&-card{
-			background-image: url(../assets/images/payAndFeed/card.svg);
+			background-image: url(../../../assets/images/payAndFeed/card.svg);
 			width: 70px;
 			height: 52.9px;
 			width: 65px;
@@ -787,7 +787,7 @@ html.transition *:after {
 			left: 87px;
 		}
 		&-zoo{
-			background-image: url(../assets/images/payAndFeed/zoo.svg);
+			background-image: url(../../../assets/images/payAndFeed/zoo.svg);
 			width: 70px;
 			height: 52.9px;
 			width: 65px;
@@ -795,7 +795,7 @@ html.transition *:after {
 			left: 87px;
 		}
 		&-panda{
-			background-image: url(../assets/images/payAndFeed/panda.svg);
+			background-image: url(../../../assets/images/payAndFeed/panda.svg);
 			width: 70px;
 			height: 52.9px;
 			width: 65px;
@@ -849,7 +849,7 @@ html.transition *:after {
 		margin-bottom: 27px;
 	}
 	&__animal{
-		background-image: url(../assets/images/map/label.svg);
+		background-image: url(../../../assets/images/map/label.svg);
 		height: 94px;
 		width: 67px;
 	}
@@ -1051,7 +1051,7 @@ html.transition *:after {
 			height: 16px;
 			background-color: var(--bg-black);
 			border: none;
-			background-image: url(../assets/images/footer/send_btn.svg);
+			background-image: url(../../../assets/images/footer/send_btn.svg);
 		}
 	}
 }
