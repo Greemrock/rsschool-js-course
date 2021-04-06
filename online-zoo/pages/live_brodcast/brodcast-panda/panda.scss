@@ -1166,6 +1166,7 @@ html.transition *:after {
 			}
 			& .aside-slider__slide_active {
 				margin-bottom: 35px;
+				margin-top: 24px;
 			}
 		}
 	}
@@ -1177,6 +1178,12 @@ html.transition *:after {
 		height: 108px;
 		background: linear-gradient(to right, #07EEE0, #DF496D);
 		border-radius: 50%;
+		cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #329179;
+		}
 		&_active{
 			transform: scale(1.5);
 			& .aside-slider__img{
@@ -1189,6 +1196,9 @@ html.transition *:after {
 				width: 96%;
 				height: 96%;
 			}
+      &:hover{
+        transform: scale(1.5);
+      }
 		}
 	}
 	&__substrate{
