@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../../live_brodcast/brodcast-gorilla/style_gorilla.scss"
-    ],
-    "names": [],
-    "file": "style_gorilla.css"
-}
