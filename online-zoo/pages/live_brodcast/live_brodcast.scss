@@ -1332,6 +1332,10 @@ html.transition *:after {
 		border-radius: 50%;
 		margin-right: 5px;
 		background-color: #c4c4c4;
+		cursor: pointer;
+		&:hover{
+			opacity: 0.5;
+		}
 		&-active{
 			width: 11px;
 			height: 11px;
