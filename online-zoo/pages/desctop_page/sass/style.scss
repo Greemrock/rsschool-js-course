@@ -1151,11 +1151,14 @@ html.transition *:after {
 		margin-bottom: 35px;
 	}
 	&__wrapper{
+		display: flex;
+		flex-direction: column;
 		margin-bottom: 20px;
 	}
 	&__text{
 		color: var(--footer-text);
 		margin-bottom: 5px;
+		text-decoration: none;
 	}
 }
 
@@ -1171,8 +1174,6 @@ html.transition *:after {
 		justify-content: center;
 		list-style-type: none;
 		box-sizing:content-box;
-		
-
 	}
 	&-mainPage{
 		width: 20px;
