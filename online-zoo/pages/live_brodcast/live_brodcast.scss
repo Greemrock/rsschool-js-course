@@ -115,7 +115,7 @@ body{
 				text-decoration: none;
 			}
 			.navbar__item-text{
-				opacity: 0.8;
+				filter: invert(40%) sepia(83%) saturate(337%) hue-rotate(130deg)
 			}
 		}
 		&-active{
@@ -1154,8 +1154,6 @@ html.transition *:after {
 		justify-content: center;
 		list-style-type: none;
 		box-sizing:content-box;
-		
-
 	}
 	&-mainPage{
 		width: 20px;
@@ -1167,7 +1165,7 @@ html.transition *:after {
 		grid-gap: 8px;
 	}
 	&__img:hover{
-		box-shadow: 0 0 10px #329179; 
+		filter: invert(40%) sepia(83%) saturate(337%) hue-rotate(130deg);
 	}
 }
 
