@@ -19,7 +19,7 @@
       <nav class="navbar">
         <ul class="navbar__list navbar__header">
           <li class="navbar__item">
-            <a class="navbar__item-link" href="">
+            <a class="navbar__item-link" href="../../../index.html">
               <div class="navbar__item-text">about</div>
             </a>
           </li>
@@ -135,7 +135,7 @@
     <div class="footer__wrapper">
       <div class="footer__content">
         <div class="footer__column">
-          <a class="logo" href="#header">
+          <a class="logo" href="../../../index.html">
             <span class="logo__zoo">zoo</span>
             <span class="logo__online">online</span>
           </a>
@@ -143,19 +143,17 @@
           <form  class="footer__form contactUs" action="" method="post">
             <input class="contactUs__inf" type="text" name="name" placeholder="Name" required>
             <input class="contactUs__inf" type="email" name="email" placeholder="Email" required>
-            <legend class="contactUs__toptext">Please enter your message</legend>
-            <textarea class="contactUs__textarea" name="request" maxlength="280" required></textarea>
+            <fieldset class="contactUs__fieldset">
+              <legend class="contactUs__fieldset-toptext">Please enter your message</legend>
+              <textarea class="contactUs__fieldset-textarea" cols="50" name="request" maxlength="280" required></textarea>
+            </fieldset>
+            
             <label class="checkbox">
-              <input class="checkbox__input" type="checkbox" name="checkbox" id="">
-              <div class="checkbox__box">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.5" y="0.5" width="12" height="12" rx="0.5" stroke="#BDBDBD"/>
-                </svg>
-              </div>
-              <label class="checkbox__text">I agree to the processing of Personal Data</label>
+              <input class="checkbox__input" type="checkbox" id="checkbox" required="">
+              <label class="checkbox__label" for="checkbox">I agree to the processing of Personal Data</label>
             </label>
-            <div class="contactUs__send">
-              <input class="contactUs__send-bg" type="submit" name="commit" value="">
+            <div class="contactUs__wrapper-send">
+              <input class="contactUs__send" type="submit" name="commit" value="send">
             </div>
           </form>
         </div>
@@ -164,12 +162,12 @@
             <nav class="navbar">
               <ul class="navbar__list navbar__footer">
                 <li class="navbar__item">
-                  <a class="navbar__item-link" href="#header">
+                  <a class="navbar__item-link" href="../../../index.html">
                     <div class="navbar__item-text">about</div>
                   </a>
                 </li>
                 <li class="navbar__item">
-                  <a class="navbar__item-link" href="../brodcast-panda/panda.html">
+                  <a class="navbar__item-link navbar__item-active" href="../brodcast-panda/panda.html">
                     <div class="navbar__item-text">zoos</div>
                   </a>
                 </li>
