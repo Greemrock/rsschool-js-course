@@ -1087,6 +1087,7 @@ html.transition *:after {
 		text-transform: uppercase;
 		color: #FEFEFE;
 		background: url(../../../assets/images/footer/send_btn.svg) no-repeat 60px 3px;
+		cursor: pointer;
 	}
 	&__wrapper-send{
 		display: flex;

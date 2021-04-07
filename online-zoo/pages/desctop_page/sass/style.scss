@@ -233,6 +233,7 @@ html.transition *:after {
 	background-image: url(../../../assets/images/bg-main.jpg);
 	background-position: center;
 	background-size: cover;
+	overflow: hidden;
 }
 
 .mainPage{
@@ -508,7 +509,6 @@ html.transition *:after {
 .slider{
 	&-mainPage{
 		width: 1063px;
-		overflow: hidden;
 		position: relative;
 		left: 480px;
 		bottom: 140px;
@@ -601,7 +601,7 @@ html.transition *:after {
 		position: relative;
 		background-image: url(../../../assets/images/string.svg);
 		background-repeat: no-repeat;
-		width: 1063px;
+		width: 1530px;
 		height: 13px;
 		z-index: 0;
 		left: 480px;
@@ -1087,6 +1087,7 @@ html.transition *:after {
 		text-transform: uppercase;
 		color: #FEFEFE;
 		background: url(../../../assets/images/footer/send_btn.svg) no-repeat 60px 3px;
+		cursor: pointer;
 	}
 	&__wrapper-send{
 		display: flex;
