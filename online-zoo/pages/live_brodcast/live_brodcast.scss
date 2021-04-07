@@ -1221,7 +1221,6 @@ html.transition *:after {
 		background: linear-gradient(to right, #07EEE0, #DF496D);
 		border-radius: 50%;
 		cursor: pointer;
-    transition: 0.3s;
     &:hover{
       transform: scale(1.05);
       box-shadow: 0 0 12px #329179;
