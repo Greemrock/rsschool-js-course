@@ -12,7 +12,7 @@
   <h1 class="visuallyhidden">zoo online</h1>
   <header class="header" id="header">
     <div class="header__wrapper">
-      <a class="logo" href="../../../index.html">
+      <a class="logo" href="./index.html">
         <span class="logo__zoo">zoo</span>
         <span class="logo__online">online</span>
       </a>
@@ -520,7 +520,7 @@
           <ul class="map__label label">
             <li class="map__wrapper">
               <div class="map__animal label__position label__position-eagle">
-                <a class="label__wrapper" href="../../live_brodcast/brodcast-eagle/eagle.html">
+                <a class="label__wrapper" href="./pages/live_brodcast/brodcast-eagle/eagle.html">
                   <img class="label__img" src="./assets/images/animals/eagle.jpg" alt="eagle">
                 </a>
                 <div class="label__window window window-eagle">
@@ -547,7 +547,7 @@
             </li>
             <li class="map__wrapper">
               <div class="map__animal label__position label__position-crocodile">
-                <a class="label__wrapper" href="../../live_brodcast/brodcast-crocodile/crocodile.html">
+                <a class="label__wrapper" href="./pages/live_brodcast/brodcast-crocodile/crocodile.html">
                   <img class="label__img" src="./assets/images/map/crocodile.png" alt="crocodile">
                 </a>
                 <div class="label__window window window-eagle">
@@ -572,7 +572,7 @@
             </li>
             <li class="map__wrapper">
               <div class="map__animal label__position label__position-gorilla">
-                <a class="label__wrapper" href="../../live_brodcast/brodcast-gorilla/gorilla.html">
+                <a class="label__wrapper" href="./pages/live_brodcast/brodcast-gorilla/gorilla.html">
                   <img class="label__img" src="./assets/images/map/gorilla.png" alt="gorilla">
                 </a>
                 <div class="label__window window window-eagle">
@@ -597,7 +597,7 @@
             </li>
             <li class="map__wrapper">
               <div class="map__animal label__position label__position-panda">
-                <a class="label__wrapper" href="../../live_brodcast/brodcast-panda/panda.html">
+                <a class="label__wrapper" href="./pages/live_brodcast/brodcast-panda/panda.html">
                   <img class="label__img" src="./assets/images/map/panda.png" alt="panda">
                 </a>
                 <div class="label__window window window-eagle">
@@ -643,53 +643,51 @@
           <form  class="footer__form contactUs" action="" method="post">
             <input class="contactUs__inf" type="text" name="name" placeholder="Name" required>
             <input class="contactUs__inf" type="email" name="email" placeholder="Email" required>
-            <legend class="contactUs__toptext">Please enter your message</legend>
-            <textarea class="contactUs__textarea" name="request" maxlength="280" required></textarea>
+            <fieldset class="contactUs__fieldset">
+              <legend class="contactUs__fieldset-toptext">Please enter your message</legend>
+              <textarea class="contactUs__fieldset-textarea" cols="50" name="request" maxlength="280" required></textarea>
+            </fieldset>
+            
             <label class="checkbox">
-              <input class="checkbox__input" type="checkbox" name="checkbox" id="">
-              <div class="checkbox__box">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.5" y="0.5" width="12" height="12" rx="0.5" stroke="#BDBDBD"/>
-                </svg>
-              </div>
-              <label class="checkbox__text">I agree to the processing of Personal Data</label>
+              <input class="checkbox__input" type="checkbox" id="checkbox" required="">
+              <label class="checkbox__label" for="checkbox">I agree to the processing of Personal Data</label>
             </label>
-            <div class="contactUs__send">
-              <input class="contactUs__send-bg" type="submit" name="commit" value="">
+            <div class="contactUs__wrapper-send">
+              <input class="contactUs__send" type="submit" name="commit" value="send">
             </div>
           </form>
         </div>
         <div class="footer__column footer__column_right">
           <div class="footer__column-position">
-              <nav class="navbar">
-                  <ul class="navbar__list navbar__footer">
-                      <li class="navbar__item">
-                          <a class="navbar__item-link" href="#header">
-                              <div class="navbar__item-text">about</div>
-                          </a>
-                      </li>
-                      <li class="navbar__item">
-                          <a class="navbar__item-link" href="./pages/live_brodcast/brodcast-panda/panda.html">
-                              <div class="navbar__item-text">zoos</div>
-                          </a>
-                      </li>
-                      <li class="navbar__item">
-                          <a class="navbar__item-link" href="./pages/desctop_page/map/map.html">
-                              <div class="navbar__item-text">map</div>
-                          </a>
-                      </li>
-                      <li class="navbar__item">
-                          <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp">
-                              <div class="navbar__item-text">design</div>
-                          </a>
-                      </li>
-                  </ul>
-              </nav>
-              <div class="btn">
-                <button class="btn__color btn__color-footer" type="button" name="donate">
-                  <span class="btn__title btn__title-main">donate for volunteers</span>
-                </button>
-              </div>
+            <nav class="navbar">
+              <ul class="navbar__list navbar__footer">
+                <li class="navbar__item">
+                  <a class="navbar__item-link" href="#header">
+                    <div class="navbar__item-text">about</div>
+                  </a>
+                </li>
+                <li class="navbar__item">
+                  <a class="navbar__item-link" href="./pages/live_brodcast/brodcast-panda/panda.html">
+                    <div class="navbar__item-text">zoos</div>
+                  </a>
+                </li>
+                <li class="navbar__item">
+                  <a class="navbar__item-link" href="./pages/desctop_page/map/map.html">
+                    <div class="navbar__item-text">map</div>
+                  </a>
+                </li>
+                <li class="navbar__item">
+                  <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp">
+                    <div class="navbar__item-text">design</div>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="btn">
+              <button class="btn__color btn__color-footer" type="button" name="donate">
+                <span class="btn__title btn__title-main">donate for volunteers</span>
+              </button>
+            </div>
           </div>
           <div class="footer__contact contact">
             <h5 class="contact__title">ZOO Online Centre</h5>
