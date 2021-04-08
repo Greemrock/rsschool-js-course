@@ -1001,10 +1001,11 @@ html.transition *:after {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
-			margin-bottom: 61px;
+			margin-bottom: 58px;
 		}
 		&_right{
 			margin-left: auto;
+			padding-left: 20px;
 		}
 	}
 	&__contact{
@@ -1022,6 +1023,7 @@ html.transition *:after {
 		&-text{
 			color: var(--footer-form-solid);
 			margin-bottom: 5px;
+			font-size: 12px;
 		}
 	}
 	.logo__zoo{
@@ -1058,16 +1060,16 @@ html.transition *:after {
 		border-bottom: 1px solid var(--footer-form-solid);
 	}
 	&__fieldset{
-		height: 115px;
+		height: 122px;
 		border: 1px solid #BDBDBD;
 		border-radius: 3px;
-		margin-bottom: 20px;
+		margin-bottom: 27px;
 		&-textarea{
 			width: 100%;
 			border: none;
 			resize: none;
 			background: none;
-			height: 85px;
+			height: 94px;
 			outline:none;
 			box-sizing: border-box;
 			color: var(--footer-form);
@@ -1094,12 +1096,13 @@ html.transition *:after {
 		color: #FEFEFE;
 		background: url(../../../assets/images/footer/send_btn.svg) no-repeat 60px 3px;
 		cursor: pointer;
+		margin-right: 14px;
 	}
 	&__wrapper-send{
 		display: flex;
 		justify-content: flex-end;
 		&:hover .contactUs__send{
-			filter: invert(40%) sepia(83%) saturate(337%) hue-rotate(130deg)
+			filter: invert(40%) sepia(83%) saturate(337%) hue-rotate(130deg);
 		}
 	}
 }
@@ -1131,7 +1134,6 @@ html.transition *:after {
 		font-weight: normal;
 		font-size: 12px;
 		line-height: 14px;
-		margin-left: 6px;
 		color: var(--footer-form-solid);
 		cursor: pointer;
 		&::before{
@@ -1160,7 +1162,7 @@ html.transition *:after {
 	&__wrapper{
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 	&__text{
 		color: var(--footer-text);
@@ -1170,7 +1172,7 @@ html.transition *:after {
 }
 
 .social{
-	width: 125px;
+	width: 132px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 20px;
@@ -1195,7 +1197,6 @@ html.transition *:after {
 		filter: invert(40%) sepia(83%) saturate(337%) hue-rotate(130deg);
 	}
 }
-
 .sidebar{
 	width: 209px;
 	margin-top: 103px;
