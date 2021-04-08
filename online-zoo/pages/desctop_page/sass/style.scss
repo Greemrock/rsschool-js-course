@@ -477,7 +477,7 @@ html.transition *:after {
 	&_mainPage{
 		position: relative;
 		bottom: 36px;
-		right: 96px;
+		right: 88px;
 	}
 	&__current{
 		font-weight: 900;
@@ -624,9 +624,11 @@ html.transition *:after {
 	bottom: 14px;
 	.animal__wrapper{
 		display: flex;
+		position: relative;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: flex-end;
+		top: 10px;
 		height: 352px;
 		width: 245px;
 		border-radius: 5px;
@@ -743,10 +745,18 @@ html.transition *:after {
 		justify-content: center;
 		align-items: center;
 	}
+	&__wrapper{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+		top: 7px;
+	}
 	&__circle{
 		display: block;
-		height: 239px;
-		width: 239px;
+		height: 245px;
+		width: 245px;
 		border: #4BD8B5 solid 3px;
 		border-radius: 50%;
 		display: flex;
@@ -798,9 +808,6 @@ html.transition *:after {
 			width: 70px;
 			height: 52.9px;
 			width: 65px;
-			
-			top: 67px;
-			left: 87px;
 		}
 		&-zoo{
 			background-image: url(../../../assets/images/payAndFeed/zoo.svg);
@@ -1002,10 +1009,11 @@ html.transition *:after {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
-			margin-bottom: 61px;
+			margin-bottom: 58px;
 		}
 		&_right{
 			margin-left: auto;
+			padding-left: 20px;
 		}
 	}
 	&__contact{
@@ -1023,6 +1031,7 @@ html.transition *:after {
 		&-text{
 			color: var(--footer-form-solid);
 			margin-bottom: 5px;
+			font-size: 12px;
 		}
 	}
 	.logo__zoo{
@@ -1059,16 +1068,16 @@ html.transition *:after {
 		border-bottom: 1px solid var(--footer-form-solid);
 	}
 	&__fieldset{
-		height: 115px;
+		height: 122px;
 		border: 1px solid #BDBDBD;
 		border-radius: 3px;
-		margin-bottom: 20px;
+		margin-bottom: 27px;
 		&-textarea{
 			width: 100%;
 			border: none;
 			resize: none;
 			background: none;
-			height: 85px;
+			height: 94px;
 			outline:none;
 			box-sizing: border-box;
 			color: var(--footer-form);
@@ -1095,6 +1104,7 @@ html.transition *:after {
 		color: #FEFEFE;
 		background: url(../../../assets/images/footer/send_btn.svg) no-repeat 60px 3px;
 		cursor: pointer;
+		margin-right: 14px;
 	}
 	&__wrapper-send{
 		display: flex;
@@ -1132,7 +1142,6 @@ html.transition *:after {
 		font-weight: normal;
 		font-size: 12px;
 		line-height: 14px;
-		margin-left: 6px;
 		color: var(--footer-form-solid);
 		cursor: pointer;
 		&::before{
@@ -1161,7 +1170,7 @@ html.transition *:after {
 	&__wrapper{
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 	&__text{
 		color: var(--footer-text);
@@ -1171,7 +1180,7 @@ html.transition *:after {
 }
 
 .social{
-	width: 125px;
+	width: 132px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 20px;
