@@ -199,7 +199,7 @@ html.transition *:after {
 		justify-content: center;
 	}
 	&-margin{
-		margin: 100px 0;
+		margin: 60px 0 100px 0;
 	}
 	&-title{
 		font-weight: 900;
@@ -398,7 +398,7 @@ html.transition *:after {
 .range {
 	height: 5px;
 	-webkit-appearance: none;
-	margin: 15px 0 32px 0;
+	margin-top: 15px;
 	width: 245px;
 	&:focus {
 		outline: none;
@@ -471,6 +471,9 @@ html.transition *:after {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	margin-top: 10px;
+	position: relative;
+	right: 17px;
 	&_mainPage{
 		position: relative;
 		bottom: 36px;
@@ -860,8 +863,8 @@ html.transition *:after {
 		text-align: center;
 	}
 	&__world{
-		margin-top: 61px;
-		margin-bottom: 27px;
+		margin-top: 81px;
+		margin-bottom: 38px;
 		&_img{
 			filter: var(--map-color);
 		}
@@ -898,8 +901,8 @@ html.transition *:after {
 	&__position{
 		position: relative;
 		&-eagle{
-			bottom: 428px;
-			left: 121px;
+			bottom: 420px;
+			left: 132px;
 		}
 		&-crocodile{
 			bottom: 402px;
@@ -910,8 +913,8 @@ html.transition *:after {
 			left: 571px;
 		}
 		&-panda{
-			bottom: 417px;
-			left: 893px;
+			bottom: 407px;
+			left: 905px;
 		}
 	}
 	&__wrapper{
@@ -1248,12 +1251,12 @@ html.transition *:after {
       box-shadow: 0 0 12px #329179;
 		}
 		&_active{
-			transform: scale(1.5);
+			transform: scale(1.47);
 			margin: 15px;
 			& .aside-slider__img{
 				position: absolute;
-				width: 98%;
-				height: 98%;
+				width: 105%;
+				height: 105%;
 				padding: 10px;
 			}
 			& .aside-slider__substrate{
@@ -1279,9 +1282,7 @@ html.transition *:after {
 	}
 	&__button{
 		position: absolute;
-		top: calc(50% - 10px);
-		width: 30px;
-		height: 30px;
+		top: calc(50% - 17px);
 		cursor: pointer;
 		display: block;
 		& svg path {
@@ -1290,12 +1291,8 @@ html.transition *:after {
 		&:hover svg path {
 			fill: #828282;
 		}
-		& svg{
-			width: 20px;
-			height: 20px;
-		}
 		&_left{
-			left: -50px;
+			left: -43px;
 			&-vertical{
 				top: -35px;
 				left: calc(50% - 15px);
@@ -1303,7 +1300,7 @@ html.transition *:after {
 			}
 		}
 		&_right{
-			right: -60px;
+			right: -44px;
 			&-vertical{
 				right: -60px;
 				top: auto;
@@ -1378,6 +1375,6 @@ html.transition *:after {
 	width: var(--width1200);
 	&__text{
 		width: var(--width790);
-		margin: 20px auto 50px;
+		margin: 24px auto 33px;
 	}
 }
