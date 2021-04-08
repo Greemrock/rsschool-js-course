@@ -202,10 +202,10 @@ html.transition *:after {
 		width: var(--width1200);
 	}
 	&__wrapper{
-		width: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		margin-left: 151px;
 	}
 	&-margin{
 		margin: 100px 0;
@@ -220,12 +220,13 @@ html.transition *:after {
 	&-smallTitle{
 		font-weight: 900;
 		font-size: 20px;
-		margin: 15px 0;
+		margin-bottom: 8px;
 		text-align: center;
 		color: var(--color-title-small);
 	}
 	&-text{
 		font-size: 14px;
+		margin-bottom: 12px;
 		color: var(--color-title-small);
 	}
 }
@@ -282,7 +283,7 @@ html.transition *:after {
 		justify-content: center;
 		align-items: center;
 		padding: 0;
-		width: 245px;
+		width: 194px;
 		height: 55px;
 		&-footer{
 			width: 279px;
@@ -984,7 +985,7 @@ html.transition *:after {
 			margin-bottom: 58px;
 		}
 		&_right{
-			margin-left: 20px;
+			margin-left: 30px;
 		}
 	}
 	&__contact{
@@ -1042,7 +1043,7 @@ html.transition *:after {
 		height: 122px;
 		border: 1px solid #BDBDBD;
 		border-radius: 3px;
-		margin-bottom: 27px;
+		margin-bottom: 8px;
 		&-textarea{
 			width: 100%;
 			border: none;
@@ -1179,8 +1180,7 @@ html.transition *:after {
 
 .sidebar{
 	width: 209px;
-	margin-top: 103px;
-  margin-left: 10px;
+	margin-top: 77px;
 }
 
 .aside-slider{
@@ -1204,10 +1204,10 @@ html.transition *:after {
 				height: 20px;
 			}
 			& .aside-slider__slide {
-				margin-bottom: 14px;
+				margin-bottom: 9px;
 			}
 			& .aside-slider__slide_active {
-				margin-bottom: 35px;
+				margin-bottom: 32px;
 				margin-top: 24px;
 			}
 		}
@@ -1256,9 +1256,7 @@ html.transition *:after {
 	}
 	&__button{
 		position: absolute;
-		top: calc(50% - 10px);
-		width: 30px;
-		height: 30px;
+		top: calc(50% - 17px);
 		cursor: pointer;
 		display: block;
 		& svg path {
@@ -1272,15 +1270,14 @@ html.transition *:after {
 			height: 20px;
 		}
 		&_left{
-			top: -35px;
-			left: calc(50% - 15px);
+			top: -18px;
+			left: calc(50% - 12px);
 			transform: rotate(90deg);
 		}
 		&_right{
-			right: -60px;
 			top: auto;
-			bottom: -10px;
-			left: calc(50% - 15px);
+			bottom: -7px;
+			left: calc(50% - 12px);
 			transform: rotate(90deg);
 		}
 	}
@@ -1305,13 +1302,14 @@ html.transition *:after {
 	&__thumbs{
 		display: flex;
 		flex-direction: row;
-		margin: 0 -9px 0;
+		margin: 0 -13px 0;
 	}
 	&__thumb{
-		margin: -5px 9px;
+		margin: -4px 13px;
 	}
 	&__thumb iframe {
 		border-radius: 5px;
+		height: 92%;
 	}
 	&__main-video{
 		margin-bottom: 30px;
@@ -1321,7 +1319,7 @@ html.transition *:after {
 	}
 	&__dots{
 		display: flex;
-		margin-top: 35px;
+		margin-top: 22px;
 		width: 100%;
 		justify-content: center;
 		align-items: center;
