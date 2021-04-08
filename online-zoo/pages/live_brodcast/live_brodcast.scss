@@ -1113,7 +1113,7 @@ html.transition *:after {
 		line-height: 14px;
 		margin-left: 6px;
 		color: var(--footer-form-solid);
-
+		cursor: pointer;
 		&::before{
 			content: "";
 			margin-right: 6px;

@@ -1100,7 +1100,7 @@ html.transition *:after {
 		display: flex;
 		justify-content: flex-end;
 		&:hover .contactUs__send{
-			filter: invert(40%) sepia(83%) saturate(337%) hue-rotate(130deg)
+			filter: invert(40%) sepia(83%) saturate(337%) hue-rotate(130deg);
 		}
 	}
 }
@@ -1134,7 +1134,7 @@ html.transition *:after {
 		line-height: 14px;
 		margin-left: 6px;
 		color: var(--footer-form-solid);
-
+		cursor: pointer;
 		&::before{
 			content: "";
 			margin-right: 6px;
