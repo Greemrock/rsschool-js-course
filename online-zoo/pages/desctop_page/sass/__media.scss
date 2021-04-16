@@ -222,3 +222,70 @@ html{
     width: calc(326px + (440 - 326) * ((100vw - 1200px) / (1920 - 1200)));
   }
 }
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAP
+
+@media (min-width: 1920px) {
+  .map {
+    width: var(--width1200);
+  }
+
+  .label__position{
+		&-eagle{
+      bottom: 330px;
+      left: 122px;
+		}
+		&-crocodile{
+			bottom: 301px;
+			left: 245px;
+		}
+		&-gorilla{
+			bottom: 214px;
+			left: 572px;
+		}
+		&-panda{
+			bottom: 313px;
+			left: 893px;
+		}
+	}
+
+  .map__animal:hover .window {
+    right: 402px;
+  }
+}
+
+@media (max-width: 1919px) {
+  .map {
+    width: var(--width900);
+    &__world_img{
+      width: 900px;
+      height: 436px;
+    }
+  }
+
+  .label__position{
+		&-eagle{
+      bottom: 287px;
+      left: 84px;
+		}
+		&-crocodile{
+      bottom: 274px;
+      left: 174px;
+		}
+		&-gorilla{
+      bottom: 189px;
+      left: 421px;
+		}
+		&-panda{
+      bottom: 273px;
+      left: 657px;
+		}
+	}
+
+  .map__animal:hover .window {
+    right: -16px;
+  }
+  .map__animal:hover .window-panda {
+    right: 403px;
+  }
+}

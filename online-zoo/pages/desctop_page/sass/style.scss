@@ -833,41 +833,44 @@ html.transition *:after {
 	}
 }
 
-// .block{
-// 	&__wrapper{
-
-// 	}
-// }
-
 .map{
+	// width: var(--width1200);
+	&__text{
+		width: var(--width790);
+		margin: 20px auto 50px;
+	}
 	&__title{
 		text-align: center;
 	}
 	&__world{
-		margin-top: 61px;
-		margin-bottom: 27px;
+		margin-top: 62px;
+		margin-bottom: 31px;
 		&_img{
 			filter: var(--map-color);
 		}
 	}
 	&__animal{
+		overflow: hidden;
+		width: 66px;
+		height: 98px;
 		&:hover{
+			overflow: inherit;
 			.label__window{
 			display: flex;
+			flex-direction: row;
 			}
 			.label__wrapper{
 				background-color: #EB5757;
+				z-index: 0;
 				&::after{
 					border-top: 50px solid #EB5757;
 				}
 			}
 		}
 	}
-	
 	&__wrapper{
 		list-style-type: none;
-		width: 1px;
-		height: 1px;
+		position: relative;
 	}
 }
 
@@ -880,40 +883,26 @@ html.transition *:after {
 		z-index: 2;
 	}
 	&__position{
-		position: relative;
-		&-eagle{
-			bottom: 428px;
-			left: 121px;
-		}
-		&-crocodile{
-			bottom: 402px;
-			left: 244px;
-		}
-		&-gorilla{
-			bottom: 316px;
-			left: 571px;
-		}
-		&-panda{
-			bottom: 417px;
-			left: 893px;
-		}
+		position: absolute;
 	}
 	&__wrapper{
 		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		// display: flex;
+		// justify-content: center;
+		// align-items: center;
 		width: 66px;
 		height: 66px;
 		border-radius: 50%;
 		padding: 12px;
 		background-color: #4bd8b5;
 		cursor: pointer;
-		filter: drop-shadow(2px 4px 15px rgba(6, 12, 70, 0.15));
+		// filter: drop-shadow(2px 4px 15px rgba(6, 12, 70, 0.15));
 		box-sizing: border-box;
+		z-index: 1;
 		&::after {
 			content: '';
-			bottom: -32px;
+			bottom: -31px;
+			left: 3px;
 			position: absolute;
 			border-left: 30px solid transparent;
 			border-right: 30px solid transparent;
@@ -921,8 +910,8 @@ html.transition *:after {
 		}
 	}
 	&__window{
-		display: none;
-		flex-direction: row;
+		display: flex;
+		z-index: 0;
 	}
 }
 
@@ -933,8 +922,9 @@ html.transition *:after {
 	box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
 	border-radius: 8px;
 	position: relative;
-	right: 402px;
+	right: 455px;
   top: 76px;
+	z-index: 2;
 	&__img{
 		margin: 40px 20px 0 44px;
 	}
@@ -1359,12 +1349,4 @@ html.transition *:after {
 .page__wrapper{
 	margin-top: 60px;
 	margin-bottom: 100px;
-}
-
-.map{
-	width: var(--width1200);
-	&__text{
-		width: var(--width790);
-		margin: 20px auto 50px;
-	}
 }
