@@ -478,12 +478,10 @@ html.transition *:after {
 	// 	margin: 30px 0;
 	// }
 	&-petsInZoo{
-		margin-top: 35px;
 		margin-bottom: 30px;
 		display: flex;
 		position: relative;
 		align-items: center;
-		height: 399px;
 	}
 	&-testimonials{
 		position: relative;
@@ -515,9 +513,6 @@ html.transition *:after {
 			grid-column-gap: 0;
 			z-index: 1;
 		}
-		&-petsInZoo{
-			height: 399px;
-		}
 	}
 	&__item{
 		list-style-type: none;
@@ -531,6 +526,11 @@ html.transition *:after {
 		&-howItWorks{
 			// width: 790px;
 			// height: 323px;	
+		}
+		&-petsInZoo {
+			// width: 278px;
+			// height: 399px;
+			// margin-right: 30px;
 		}
 		&-mainPage{
 			// width: 140px;
@@ -689,7 +689,7 @@ html.transition *:after {
 }
 
 .petsInZoo{
-	width: var(--width1200);
+	// width: var(--width1200);
 	&__title{
 		text-align: center;
 	}

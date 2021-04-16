@@ -62,6 +62,22 @@ html{
       height: 213px;
     }
   }
+
+    // PETS IN ZOO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  
+  .petsInZoo {
+    width: var(--width1200);
+  }
+
+  .slider__item-petsInZoo {
+    width: 278px;
+    height: 399px;
+    margin-right: 30px;
+  }
+
+  .slider-petsInZoo {
+    margin-top: 35px;
+  }
 }
 
 @media (max-width: 1919px) {
@@ -124,4 +140,19 @@ html{
     }
   }  
   
+    // PETS IN ZOO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  .petsInZoo {
+    width: var(--width900);
+  }
+
+  .slider__item-petsInZoo {
+    width: 210px;
+    height: 301px;
+    margin-right: 20px;
+  }
+
+  .slider-petsInZoo {
+    margin-top: 32px;
+  }
 }
