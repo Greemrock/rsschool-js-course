@@ -669,10 +669,10 @@ html.transition *:after {
 .whatInspiringUs{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 30px;
+	// grid-column-gap: 30px;
 	&__box{
-		width: 380px;
-		height: 213px;
+		// width: 380px;
+		// height: 213px;
 		&-img{
 			width: 80px;
 			height: 80px;

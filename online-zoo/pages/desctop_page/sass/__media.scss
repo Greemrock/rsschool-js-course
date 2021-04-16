@@ -50,9 +50,18 @@ html{
   }
 
   .slider__howItWorks {
-    margin: 30px;
+    margin: 30px 0;
   }
   
+    // WHAT INSPIRING US >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  .whatInspiringUs {
+    grid-column-gap: 30px;
+    &__box {
+      width: 380px;
+      height: 213px;
+    }
+  }
 }
 
 @media (max-width: 1919px) {
@@ -93,7 +102,7 @@ html{
     // HOW ITS WORK? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   .howItWorks {
-    width: calc(746px + (790 + 746) * ((100vw - 1200px) / (1920 - 1200)));
+    width: 746PX;
   }
 
   .slider__item-howItWorks{
@@ -105,4 +114,14 @@ html{
     margin: 14px 0 30px 0;
   }
 
+    // WHAT INSPIRING US >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  .whatInspiringUs {
+    grid-column-gap: 20px;
+    &__box {
+      width: 286px;
+      height: 215px;
+    }
+  }  
+  
 }
