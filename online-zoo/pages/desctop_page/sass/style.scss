@@ -696,17 +696,17 @@ html.transition *:after {
 }
 
 .payAndFeed{
-	width: var(--width1200);
+	// width: var(--width1200);
 	&__title{
 		text-align: center;
 		margin-bottom: 30px;
 	}
 	&__about{
 		text-align: center;
-		margin-bottom: 92px;;
+		// margin-bottom: 92px;;
 	}
 	&__map{
-		margin-bottom: 60px;
+		// margin-bottom: 60px;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -721,7 +721,6 @@ html.transition *:after {
 		top: 7px;
 	}
 	&__circle{
-		display: block;
 		height: 245px;
 		width: 245px;
 		border: #4BD8B5 solid 3px;
@@ -732,14 +731,14 @@ html.transition *:after {
 		flex-direction: column;
 	}
 	&__arrow{
-		margin: 0 63px;
+		// margin: 0 63px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 		&-box{
 			position: relative;
-			width: 107px;
+			// width: 107px;
 			height: 2px;
 			background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #4BD8B5), color-stop(1, #49D6DF));
 			left:0;

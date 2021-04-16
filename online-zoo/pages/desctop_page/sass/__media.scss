@@ -5,10 +5,8 @@ html{
 --width790: 790px;
 }
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAIN PAGE 
 @media (min-width: 1920px) {
-
-  // MAIN PAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
   .mainPage {
     width: var(--width1200);
     padding-top: 206px;
@@ -37,53 +35,9 @@ html{
     height: 203px;
     margin-right: 46px;
   }
-
-    // HOW ITS WORK? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-  .howItWorks {
-    width: var(--width790);
-  }
-  
-  .slider__item-howItWorks {
-    width: 790px;
-    height: 323px;	
-  }
-
-  .slider__howItWorks {
-    margin: 30px 0;
-  }
-  
-    // WHAT INSPIRING US >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-  .whatInspiringUs {
-    grid-column-gap: 30px;
-    &__box {
-      width: 380px;
-      height: 213px;
-    }
-  }
-
-    // PETS IN ZOO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  
-  .petsInZoo {
-    width: var(--width1200);
-  }
-
-  .slider__item-petsInZoo {
-    width: 278px;
-    height: 399px;
-    margin-right: 30px;
-  }
-
-  .slider-petsInZoo {
-    margin-top: 35px;
-  }
 }
 
 @media (max-width: 1919px) {
-
-    // MAIN PAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
   .mainPage {
     width: var(--width900);
     padding-top: calc(128px + (206 - 128) * ((100vw - 1200px) / (1920 - 1200)));
@@ -114,9 +68,25 @@ html{
     bottom: 14px;
     margin-right: 30px;
   }
+} 
 
-    // HOW ITS WORK? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HOW ITS WORK? 
+@media (min-width: 1920px) {
+  .howItWorks {
+    width: var(--width790);
+  }
+  
+  .slider__item-howItWorks {
+    width: 790px;
+    height: 323px;	
+  }
 
+  .slider__howItWorks {
+    margin: 30px 0;
+  }
+}
+
+@media (max-width: 1919px) {
   .howItWorks {
     width: 746PX;
   }
@@ -129,9 +99,20 @@ html{
   .slider__howItWorks {
     margin: 14px 0 30px 0;
   }
+}
 
-    // WHAT INSPIRING US >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> WHAT INSPIRING US 
+@media (min-width: 1920px) {
+  .whatInspiringUs {
+    grid-column-gap: 30px;
+    &__box {
+      width: 380px;
+      height: 213px;
+    }
+  }
+}
 
+@media (max-width: 1919px) {
   .whatInspiringUs {
     grid-column-gap: 20px;
     &__box {
@@ -139,9 +120,26 @@ html{
       height: 215px;
     }
   }  
-  
-    // PETS IN ZOO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+}
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PETS IN ZOO 
+@media (min-width: 1920px) {
+  .petsInZoo {
+    width: var(--width1200);
+  }
+
+  .slider__item-petsInZoo {
+    width: 278px;
+    height: 399px;
+    margin-right: 30px;
+  }
+
+  .slider-petsInZoo {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 1919px) {
   .petsInZoo {
     width: var(--width900);
   }
@@ -154,5 +152,42 @@ html{
 
   .slider-petsInZoo {
     margin-top: 32px;
+  }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PAY AND FEED 
+@media (min-width: 1920px) {
+  .payAndFeed {
+    width: var(--width1200);
+    &__arrow{
+      margin: 0 63px;
+      &-box {
+        width: 107px;
+      }
+    }
+    &__about {
+      margin-bottom: 92px;
+    }
+    &__map {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media (max-width: 1919px) {
+  .payAndFeed {
+    width: var(--width900);
+    &__arrow{
+      margin: 0 17px;
+      &-box {
+        width: 48px;
+      }
+    }
+    &__about {
+      margin-bottom: calc(50px + (92 - 50) * ((100vw - 1200px) / (1920 - 1200)));
+    }
+    &__map {
+      margin-bottom: calc(51px + (60 - 51) * ((100vw - 1200px) / (1920 - 1200)));
+    }
   }
 }
