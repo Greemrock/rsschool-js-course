@@ -479,6 +479,7 @@ html.transition *:after {
 		display: flex;
 		position: relative;
 		align-items: center;
+		height: 399px;
 	}
 	&-testimonials{
 		position: relative;
@@ -509,6 +510,9 @@ html.transition *:after {
 			align-items: center;
 			grid-column-gap: 0;
 			z-index: 1;
+		}
+		&-petsInZoo{
+			height: 399px;
 		}
 	}
 	&__item{
