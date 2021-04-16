@@ -169,7 +169,7 @@ html{
       margin-bottom: 92px;
     }
     &__map {
-      margin-bottom: 60px;
+      margin-bottom: 63px;
     }
   }
 }
@@ -189,5 +189,36 @@ html{
     &__map {
       margin-bottom: calc(51px + (60 - 51) * ((100vw - 1200px) / (1920 - 1200)));
     }
+  }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> TESTIMONIALS
+@media (min-width: 1920px) {
+  .testimonials{
+    width: var(--width1200);
+  }
+  
+  .slider__item-testimonials {
+    width: 585px;
+    height: 310px;
+  }
+
+  .slider__block {
+    width: 440px;
+  }
+}
+
+@media (max-width: 1919px) {
+  .testimonials{
+    width: var(--width900);
+  }
+
+  .slider__item-testimonials {
+    width: 440px;
+    height: 310px;
+  } 
+
+  .slider__block {
+    width: calc(326px + (440 - 326) * ((100vw - 1200px) / (1920 - 1200)));
   }
 }
