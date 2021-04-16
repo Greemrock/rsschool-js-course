@@ -459,7 +459,7 @@ html.transition *:after {
 }
 
 .howItWorks{
-	width: var(--width790);
+	// width: var(--width790);
 	&__title{
 		margin: 0 0 30px 0;
 	}
@@ -474,9 +474,9 @@ html.transition *:after {
 		// left: 480px;
 		// bottom: 127px;
 	}		
-	&__howItWorks{
-		margin: 30px 0;
-	}
+	// &__howItWorks{
+	// 	margin: 30px 0;
+	// }
 	&-petsInZoo{
 		margin-top: 35px;
 		margin-bottom: 30px;
@@ -493,9 +493,9 @@ html.transition *:after {
 		justify-content: center;
 	}
 	&__list{
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-column-gap: 29px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		&-testimonials{
 			width: 1200px;
 			grid-template-columns: 1fr 1fr;
@@ -529,8 +529,8 @@ html.transition *:after {
 			border-radius: 5px;
 		}
 		&-howItWorks{
-			width: 790px;
-			height: 323px;	
+			// width: 790px;
+			// height: 323px;	
 		}
 		&-mainPage{
 			// width: 140px;
