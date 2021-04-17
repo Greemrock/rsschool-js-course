@@ -621,96 +621,94 @@
   <footer class="footer" id="footer">
     <div class="footer__wrapper">
       <div class="footer__content">
-        <div class="footer__column">
-          <a class="logo" href="./index.html">
-            <span class="logo__zoo">zoo</span>
-            <span class="logo__online">online</span>
-          </a>
-          <p class="footer__form-title">Contact us</p>
-          <form  class="footer__form contactUs" action="" method="post">
-            <input class="contactUs__inf" type="text" name="name" placeholder="Name" required>
-            <input class="contactUs__inf" type="email" name="email" placeholder="Email" required>
-            <fieldset class="contactUs__fieldset">
-              <legend class="contactUs__fieldset-toptext">Please enter your message</legend>
-              <textarea class="contactUs__fieldset-textarea" cols="50" name="request" maxlength="280" required></textarea>
-            </fieldset>
-            <label class="checkbox">
-              <input class="checkbox__input" type="checkbox" id="checkbox" required="">
-              <label class="checkbox__label" for="checkbox">I agree to the processing of Personal Data</label>
-            </label>
-            <div class="contactUs__wrapper-send">
-              <input class="contactUs__send" type="submit" name="commit" value="send">
-            </div>
-          </form>
+        <div class="footer__logo">
+          <div class="footer__logo-wrapper">
+            <a class="logo" href="./index.html">
+              <span class="logo__zoo">zoo</span>
+              <span class="logo__online">online</span>
+            </a>  
+          </div>
         </div>
-        <div class="footer__column footer__column_right">
-          <div class="footer__column-position">
-            <nav class="navbar">
-              <ul class="navbar__list navbar__footer">
-                <li class="navbar__item">
-                  <a class="navbar__item-link" href="#header">
-                    <span class="navbar__item-text">about</span>
-                  </a>
-                </li>
-                <li class="navbar__item">
-                  <a class="navbar__item-link" href="./pages/live_brodcast/brodcast-panda/panda.html">
-                    <span class="navbar__item-text">zoos</span>
-                  </a>
-                </li>
-                <li class="navbar__item">
-                  <a class="navbar__item-link" href="./pages/desctop_page/map/map.html">
-                    <span class="navbar__item-text">map</span>
-                  </a>
-                </li>
-                <li class="navbar__item">
-                  <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp">
-                    <span class="navbar__item-text">design</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <div class="btn">
-              <button class="btn__color btn__color-footer" type="button" name="donate">
-                <span class="btn__title btn__title-main">donate for volunteers</span>
-              </button>
-            </div>
+        <nav class="footer__navbar navbar">
+          <ul class="navbar__list navbar__footer">
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="#header">
+                <span class="navbar__item-text">about</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="./pages/live_brodcast/brodcast-panda/panda.html">
+                <span class="navbar__item-text">zoos</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="./pages/desctop_page/map/map.html">
+                <span class="navbar__item-text">map</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp">
+                <span class="navbar__item-text">design</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <form  class="footer__form contactUs" action="" method="post">
+          <p class="footer__form-title">Contact us</p>
+          <input class="contactUs__inf" type="text" name="name" placeholder="Name" required>
+          <input class="contactUs__inf" type="email" name="email" placeholder="Email" required>
+          <fieldset class="contactUs__fieldset">
+            <legend class="contactUs__fieldset-toptext">Please enter your message</legend>
+            <textarea class="contactUs__fieldset-textarea" cols="50" name="request" maxlength="280" required></textarea>
+          </fieldset>
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" id="checkbox" required="">
+            <label class="checkbox__label" for="checkbox">I agree to the processing of Personal Data</label>
+          </label>
+          <div class="contactUs__wrapper-send">
+            <input class="contactUs__send" type="submit" name="commit" value="send">
           </div>
-          <div class="footer__contact contact">
-            <h5 class="contact__title">ZOO Online Centre</h5>
-            <div class="contact__wrapper">
-              <address class="contact__text">132, Address District, Street</address>
-              <p class="contact__text">Open Daily 10:00 am - 5:00 pm</p>
-            </div>
-            <div class="contact__wrapper">
-              <a class="contact__text"href="tel:T(702) 163-3433">T(702) 163-3433</a>
-              <a class="contact__text" href="mailto:zoo.online@gmail.com">zoo.online@gmail.com</a>    
-            </div>
-            <ul class="social">
-              <li class="social__item">
-                <a class="social__link" href="https://www.instagram.com/" target="_blank">
-                  <img class="social__img social__inst" src="./assets/icons/social/inst.svg" alt="inst">
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="https://twitter.com/" target="_blank">
-                  <img class="social__img social__twitter" src="./assets/icons/social/twit.svg" alt="twitter">
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="https://vk.com/" target="_blank">
-                  <img class="social__img social__vk" src="./assets/icons/social/vk.svg" alt="vk">
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="https://youtube.com/" target="_blank">
-                  <img class="social__img social__youtube" src="./assets/icons/social/youtube.svg" alt="youtube">
-                </a>
-              </li>
-            </ul>
+        </form>
+        <div class="footer__contacts contact">
+          <h5 class="contact__title">ZOO Online Centre</h5>
+          <div class="contact__wrapper">
+            <address class="contact__text">132, Address District, Street</address>
+            <p class="contact__text">Open Daily 10:00 am - 5:00 pm</p>
           </div>
+          <div class="contact__wrapper">
+            <a class="contact__text"href="tel:T(702) 163-3433">T(702) 163-3433</a>
+            <a class="contact__text" href="mailto:zoo.online@gmail.com">zoo.online@gmail.com</a>    
+          </div>
+          <ul class="social">
+            <li class="social__item">
+              <a class="social__link" href="https://www.instagram.com/" target="_blank">
+                <img class="social__img social__inst" src="./assets/icons/social/inst.svg" alt="inst">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://twitter.com/" target="_blank">
+                <img class="social__img social__twitter" src="./assets/icons/social/twit.svg" alt="twitter">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://vk.com/" target="_blank">
+                <img class="social__img social__vk" src="./assets/icons/social/vk.svg" alt="vk">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://youtube.com/" target="_blank">
+                <img class="social__img social__youtube" src="./assets/icons/social/youtube.svg" alt="youtube">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__donate">
+          <button class="btn__color btn__color-footer" type="button" name="donate">
+            <span class="btn__title btn__title-main">donate for volunteers</span>
+          </button>
         </div>
       </div>
-      <div class="footer__solid"></div>
+      <!-- <div class="footer__solid"></div> -->
       <div class="footer__copyright">
         <p class="footer__copyright-text">©Noora Sagnayeva</p>
         <p class="footer__copyright-text">©RSSchool and ©Yem Digital - 2021</p>    
