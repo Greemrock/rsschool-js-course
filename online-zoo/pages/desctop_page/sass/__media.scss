@@ -627,3 +627,64 @@ html{
   }
 
 }
+
+@media (min-width: 1200px) {
+  .footer{
+    &__wrapper {
+      width: 1620px;
+      margin: 100px 150px 72px 150px;
+    }    
+    &__content {
+      flex-direction: row;
+    }
+    &__form {
+      margin-bottom: 58px;
+    }
+    &__copyright {
+      margin-top: 29px;
+    }
+  } 
+
+  .navbar__footer {
+    width: 380px;
+  }
+}
+
+@media (max-width: 1199px) {
+
+  .footer{
+    display: flex;
+    justify-content: center;
+    &__wrapper {
+      width: var(--width600);
+      margin: 94px 0 48px 0;
+    }
+    &__navbar {
+      padding-left: 0;
+      margin: 34px 0 23px 0;
+    }
+    &__content {
+      flex-direction: column;
+    }
+    &__form {
+      margin-bottom: 86px;
+    }
+    &__contacts {
+      padding: 0;
+    }
+    &__copyright {
+      margin-top: 40px;
+    }
+    &__donate {
+      padding: 0px 13px;
+      left: 52%;
+      bottom: 717px;
+    }
+  }
+
+  .navbar__footer {
+    width: 51px;
+    height: 90px;
+    flex-direction: column;
+  }
+}

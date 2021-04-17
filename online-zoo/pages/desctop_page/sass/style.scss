@@ -93,15 +93,11 @@ body{
 	&__header{
 		width: 573px;
 	}
-	&__footer{
-		width: 380px;
-	}
 	&__list{
 		display: flex;
 		justify-content: space-between;
 		padding: 0;
 		margin: 0;
-		height: 16px;
 	}
 	&__item{
 		position: relative;
@@ -912,13 +908,13 @@ html.transition *:after {
 		height: 42px;
 	}
 	&__wrapper{
-		width: 1620px;
-		margin: 100px 150px 72px 150px;
+		// width: 1620px;
+		// margin: 100px 150px 72px 150px;
 	}
 	&__content{
 		position: relative;
 		display: flex;
-		flex-direction: row;
+		// flex-direction: row;
 		width: 100%;
 		padding: 0;
 		flex-wrap: wrap;
@@ -941,7 +937,7 @@ html.transition *:after {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		margin-top: 29px;
+		// margin-top: 29px;
 		&-text{
 			color: var(--footer-form-solid);
 			margin-bottom: 5px;
@@ -962,7 +958,7 @@ html.transition *:after {
 	&__form{
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 58px;
+		// margin-bottom: 58px;
 		&-title{
 			color: var(--footer-text);
 			font-size: 20px;
