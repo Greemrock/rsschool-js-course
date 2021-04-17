@@ -3,6 +3,24 @@ html{
 --width1200: 1200px;
 --width900: 900px;
 --width790: 790px;
+--width600: 600px;
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HEADER
+
+@media (min-width: 640px) {
+  .header__wrapper {
+    margin: 0 150px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header__wrapper {
+    margin: 0 calc(20px + (150 - 20) * ((100vw - 640px) / (1200 - 640)));
+  }
+  .navbar {
+    display: none;
+  }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAIN PAGE 
@@ -10,6 +28,10 @@ html{
   .mainPage {
     width: var(--width1200);
     padding-top: 206px;
+    &__title {
+      width: 793px;
+      font-size: 89px;  
+    }
   }
 
   .bg-mainPage {
@@ -38,6 +60,10 @@ html{
 }
 
 @media (max-width: 1919px) {
+  .mainPage__title {
+		// width: 793px;
+		font-size: 89px;
+  }
   .mainPage {
     width: var(--width900);
     padding-top: calc(128px + (206 - 128) * ((100vw - 1200px) / (1920 - 1200)));
@@ -69,6 +95,58 @@ html{
     margin-right: 30px;
   }
 } 
+
+@media (min-width: 1200px) {
+  .mainPage__title {
+    margin-bottom: 41px;
+  }
+
+  .slider__string {
+    left: -135px;
+    top: 168px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .mainPage {
+    width: var(--width600);
+    padding-top: calc(122px + (128 - 122) * ((100vw - 640px) / (1200 - 640)));
+    &__title {
+      font-size: 64px;
+      margin-bottom: 34px;
+    }
+  }
+
+  .social-mainPage {
+    margin-top: calc(726px + (747 - 726) * ((100vw - 640px) / (1200 - 640)));
+    margin-left: calc(20px + (150 - 20) * ((100vw - 640px) / (1200 - 640)));
+  }
+
+  .slider-mainPage {
+    left: 17%;
+    bottom: calc(-64px + (-17 + 64) * ((100vw - 640px) / (1200 - 640)));
+  }
+
+  .slider__string {
+    left: calc(-69px + (-135 + 69) * ((100vw - 640px) / (1200 - 640)));
+    top: 169px;
+  }
+
+  .counter_mainPage {
+    left: 36%;
+  }
+
+  .bg-mainPage {
+    height: 934px;
+  }
+}
+
+@media (max-width: 639px) {
+  // .mainPage {
+  //   width: var(--width640);
+  //   padding-top: calc(122px + (128 - 122) * ((100vw - 640px) / (1200 - 640)));
+  // }
+}
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HOW ITS WORK? 
 @media (min-width: 1920px) {
