@@ -388,6 +388,39 @@ html{
   }
 }
 
+@media (min-width: 1200px) {
+  .slider-testimonials {
+    margin: 62px 0 48px 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .testimonials {
+    width: var(--width600);
+  }
+
+  .slider-testimonials {
+    margin: 32px 0 34px 0;
+    overflow: hidden;
+  }
+
+  .slider__list-testimonials {
+    width: 640px;
+    height: 340px;
+    position: relative;
+    right: 307px;
+  }
+
+  .slider__item-testimonials {
+    width: 585px;
+    height: 310px;
+  }
+
+  .slider__block {
+    width: 440px;
+  }
+}
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAP
 
 @media (min-width: 1920px) {
