@@ -177,6 +177,7 @@ html{
     margin: 100px 0;
   }
 }
+
 @media (max-width: 1199px) {
   .howItWorks {
     width: var(--width600);
@@ -207,6 +208,20 @@ html{
       height: 215px;
     }
   }  
+}
+
+@media (min-width: 1200px) {
+  .whatInspiringUs {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 1199px) {
+  .whatInspiringUs {
+    grid-template-columns: 1fr;
+    grid-template-rows: 197px 181px 197px;
+    grid-row-gap: 50px;
+  }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PETS IN ZOO 
