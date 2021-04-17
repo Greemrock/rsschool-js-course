@@ -257,6 +257,36 @@ html{
   }
 }
 
+@media (min-width: 1200px) {
+  .slider-petsInZoo {
+    margin-top: 36px;
+    margin-bottom: 30px;
+  }
+
+  .slider__arrow {
+    display: flex;
+  }
+}
+
+@media (max-width: 1199px) {
+  .petsInZoo {
+    width: var(--width600);
+    overflow: hidden;
+  }
+  .slider-petsInZoo {
+    margin-top: 36px;
+    margin-bottom: 35px;
+  }
+
+  .slider__arrow {
+    display: none;
+  }
+  
+  .counter-petsInZoo {
+    margin-bottom: 5px;
+  }
+}
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PAY AND FEED 
 @media (min-width: 1920px) {
   .payAndFeed {
@@ -290,6 +320,39 @@ html{
     }
     &__map {
       margin-bottom: calc(51px + (60 - 51) * ((100vw - 1200px) / (1920 - 1200)));
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .payAndFeed__map {
+    flex-direction: column;
+  }
+
+  .payAndFeed__title {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .payAndFeed {
+    width: var(--width600);
+    &__title {
+      margin-bottom: 19px;
+    }
+    &__map {
+      flex-direction: column;
+      margin-bottom: 51px;
+    }
+    &__about {
+      padding: 0 30px;
+      margin-bottom: calc(46px + (50 - 46) * ((100vw - 640px) / (1200 - 640)));
+    }
+    &__arrow {
+      margin: 49px 0;
+      &-box {
+        transform: rotate(90deg);
+      }
     }
   }
 }
