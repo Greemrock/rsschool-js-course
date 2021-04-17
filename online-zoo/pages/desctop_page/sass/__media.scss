@@ -501,6 +501,51 @@ html{
 	}
 }
 
+@media (min-width: 640px) {
+  .map {
+    margin: 100px 0;
+    &__world {
+      margin-top: 62px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .map {
+    width: var(--width600);
+    margin: 100px 0 80px 0;
+    &__world {
+      margin-top: 51px;
+      &_img {
+        width: 600px;
+        height: 290px;
+      }
+    }
+  }
+  .label {
+    &__position-eagle {
+      bottom: 189px;
+      left: 54px;
+    }
+    &__position-crocodile {
+      bottom: 180px;
+      left: 104px;
+    }
+    &__position-gorilla {
+      bottom: 127px;
+      left: 269px;
+    }
+    &__position-panda {
+      bottom: 184px;
+      left: 428px;
+    }
+  }
+
+  .map__animal:hover .window-gorilla {
+		right: 191px;
+	}
+}
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FOOTER
 
 @media (min-width: 1920px) {

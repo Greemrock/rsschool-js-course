@@ -796,7 +796,6 @@ html.transition *:after {
 		text-align: center;
 	}
 	&__world{
-		margin-top: 62px;
 		margin-bottom: 31px;
 		&_img{
 			filter: var(--map-color);
@@ -814,7 +813,7 @@ html.transition *:after {
 			}
 			.label__wrapper{
 				background-color: #EB5757;
-				z-index: 0;
+				z-index: 2;
 				&::after{
 					border-top: 50px solid #EB5757;
 				}
