@@ -961,7 +961,7 @@ html.transition *:after {
 	}
 	&__wrapper{
 		width: 1620px;
-		margin: 100px 26px 72px 150px;
+		margin: 100px 150px 72px 150px;
 	}
 	&__content{
 		position: relative;
@@ -1023,7 +1023,7 @@ html.transition *:after {
 		margin-bottom: 80px;
 		position: absolute;
 		width: fit-content;
-		bottom: 20px;
+		// bottom: 20px;
 		display: flex;
 		justify-content: center;
 	}
@@ -1141,6 +1141,7 @@ html.transition *:after {
 		margin-bottom: 35px;
 	}
 	&__wrapper{
+		width: 190px;
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 15px;
@@ -1149,6 +1150,7 @@ html.transition *:after {
 		color: var(--footer-text);
 		margin-bottom: 5px;
 		text-decoration: none;
+		font-style: normal;
 	}
 }
 

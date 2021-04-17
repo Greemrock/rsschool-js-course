@@ -307,24 +307,9 @@ html{
 
 @media (min-width: 1920px) {
   .footer {
-    &__logo {
-      flex: 1 0 50%;
-    }
-    &__navbar {
-      flex: 1 0 50%;
-      margin: 20px 0 75px 0;
-      padding-left: 15px;
-      align-self: flex-end;
-    }
-    &__form {
-      flex: 1 0 50%;
-    }
+    justify-content: center;
     &__content {
       width: 1700px;
-    }
-    &__contacts {
-      flex: 1 0 50%;
-      padding: 0 15px;
     }
     &__donate {
       top: 0;
@@ -343,7 +328,47 @@ html{
   }
 }
 
+@media (min-width: 1200px) {
+  .footer {
+    &__logo {
+      flex: 1 0 50%;
+    }
+    &__navbar {
+      flex: 1 0 50%;
+      margin: 20px 0 75px 0;
+      padding-left: 15px;
+      align-self: flex-end;
+    }
+    &__form {
+      flex: 1 0 50%;
+    }
+    &__contacts {
+      flex: 1 0 50%;
+      padding: 0 15px;
+    }
+  }
+
+}
+
 @media (max-width: 1919px) {
+  .footer {
+    &__donate {
+      padding: 0 10px;
+      left: 50%;
+      bottom: 59px;
+      top: auto;
+      right: auto;
+    }  
+    &__contacts {
+      position: relative;
+      bottom: 12px;
+      padding: 0 10px;
+    }
+    &__navbar {
+      padding-left: 10px;
+    }
+  }
+
   .footer__column{
 		&_right{
 			margin-left: calc(76px + (26 - 76) * ((100vw - 1200px) / (1920 - 1200)));;
@@ -354,10 +379,4 @@ html{
     margin-bottom: calc(45px + (58 - 45) * ((100vw - 1200px) / (1920 - 1200)));
   }
 
-  &__donate {
-    left: 50%;
-    bottom: 150px;
-    top: auto;
-    right: auto;
-  }
 }
