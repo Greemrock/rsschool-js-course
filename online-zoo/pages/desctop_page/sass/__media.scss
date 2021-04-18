@@ -682,9 +682,6 @@ html{
   .payAndFeed {
     width: var(--width300);
     margin: 50px 0;
-    &__about {
-      display: none;
-    }
     &__title {
       margin-bottom: 31px;
     }
@@ -692,6 +689,12 @@ html{
 
   .payAndFeed__map {
     margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 320px) {
+  .payAndFeed__about {
+    display: none;
   }
 }
 
@@ -761,6 +764,53 @@ html{
   .slider__block {
     width: 440px;
   }
+}
+
+@media (min-width: 640px) {
+  .testimonials {
+    margin: 100px 0;
+  }
+
+  .slider__block {
+    margin: 47px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials {
+    width: var(--width300);
+    margin: 50px 0;
+  }
+
+  .slider__item-testimonials {
+    width: 300px;
+    height: 363px;
+  }
+
+  .slider__list-testimonials {
+    height: 400px;
+    right: -164px;
+  }
+
+  .slider-testimonials {
+    width: 320px;
+    margin: 18px 0 23px 0;
+    right: 10px;
+  }
+
+  .slider__block {
+    width: 272px;
+    margin: 50px 0;
+  }
+
+  .user__wrapper {
+    margin-bottom: 30px;
+  }
+
+  .user__name {
+    font-size: 16px;
+  }
+
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAP
