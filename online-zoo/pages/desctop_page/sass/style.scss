@@ -791,7 +791,7 @@ html.transition *:after {
 		text-align: center;
 	}
 	&__world{
-		margin-bottom: 31px;
+		// margin-bottom: 31px;
 		&_img{
 			filter: var(--map-color);
 		}
@@ -809,9 +809,9 @@ html.transition *:after {
 			.label__wrapper{
 				background-color: #EB5757;
 				z-index: 2;
-				&::after{
-					border-top: 50px solid #EB5757;
-				}
+				// &::after{
+				// 	border-top: 50px solid #EB5757;
+				// }
 			}
 		}
 	}
@@ -822,35 +822,35 @@ html.transition *:after {
 }
 
 .label{
-	&__img{
-		position: absolute;
-		width: 43px;
-		height: 43px;
-		border-radius: 50%;
-		z-index: 2;
-	}
+	// &__img{
+	// 	position: absolute;
+	// 	width: 43px;
+	// 	height: 43px;
+	// 	border-radius: 50%;
+	// 	z-index: 2;
+	// }
 	&__position{
 		position: absolute;
 	}
 	&__wrapper{
 		position: absolute;
-		width: 66px;
-		height: 66px;
+		// width: 66px;
+		// height: 66px;
 		border-radius: 50%;
 		padding: 12px;
 		background-color: #4bd8b5;
 		cursor: pointer;
 		box-sizing: border-box;
 		z-index: 1;
-		&::after {
-			content: '';
-			bottom: -31px;
-			left: 3px;
-			position: absolute;
-			border-left: 30px solid transparent;
-			border-right: 30px solid transparent;
-			border-top: 50px solid #4bd8b5;
-		}
+		// &::after {
+		// 	content: '';
+		// 	bottom: -31px;
+		// 	left: 3px;
+		// 	position: absolute;
+		// 	border-left: 30px solid transparent;
+		// 	border-right: 30px solid transparent;
+		// 	border-top: 50px solid #4bd8b5;
+		// }
 	}
 	&__window{
 		display: flex;
@@ -859,8 +859,8 @@ html.transition *:after {
 }
 
 .window{
-	height: 149px;
-	width: 436px;
+	// height: 149px;
+	// width: 436px;
 	background: var(--bg-window);
 	box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
 	border-radius: 8px;
@@ -868,32 +868,32 @@ html.transition *:after {
 	right: 455px;
   top: 76px;
 	z-index: 2;
-	&__img{
-		margin: 40px 20px 0 44px;
-	}
-	&__information{
-		margin-top: 40px;
-	}
+	// &__img{
+	// 	margin: 40px 20px 0 44px;
+	// }
+	// &__information{
+	// 	margin-top: 40px;
+	// }
 	&__title{
 		font-weight: 900;
-		font-size: 18px;
-		margin-bottom: 4.5px;
+		// font-size: 18px;
+		// margin-bottom: 4.5px;
 		color: var(--color-text);
 	}
 	&__about{
 		display: flex;
 		flex-direction: column;
-		&-text{
-			margin: 2.5px 0;
-		}
+		// &-text{
+		// 	margin: 2.5px 0;
+		// }
 		&-textregular{
-			font-weight: 400;
-			font-size: 14px;
+			// font-weight: 400;
+			// font-size: 14px;
 			color: var(--color-title-small);
 		}
 		&-textbold{
-			font-weight: 900;
-			font-size: 14px;
+			// font-weight: 900;
+			// font-size: 14px;
 			color: var(--color-title-small);
 		}
 	}

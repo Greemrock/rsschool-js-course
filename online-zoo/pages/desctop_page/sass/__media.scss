@@ -600,6 +600,10 @@ html{
     margin-top: 14px;
     margin-bottom: 23px;
   }
+
+  .slider__item-petsInZoo {
+    margin-right: 16px;
+  }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PAY AND FEED 
@@ -936,6 +940,179 @@ html{
   .map__animal:hover .window-gorilla {
 		right: 191px;
 	}
+}
+
+@media (min-width: 640px) {
+  .label__wrapper {
+    width: 66px;
+    height: 66px;
+  }
+  
+  .label__wrapper::after {
+    content: '';
+    bottom: -31px;
+    left: 3px;
+    position: absolute;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 50px solid #4bd8b5;
+  }  
+
+  .label__img {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .map__animal:hover .label__wrapper::after {
+    border-top: 50px solid #EB5757;
+  }
+
+  .map__world {
+    margin-bottom: 31px;
+  }
+
+  .window {
+    height: 149px;
+    width: 436px;
+    &__img {
+      margin: 40px 20px 0 44px;
+    }
+    &__information {
+      margin-top: 40px;
+    }
+    &__title {
+      font-size: 18px;
+      margin-bottom: 4.5px;
+    }
+    &__about {
+      &-textbold {
+        font-size: 14px;
+        font-weight: 900;
+      }
+      &-textregular{
+        font-weight: 400;
+        font-size: 14px;
+      }
+      &-text {
+        margin: 2.5px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .map {
+    width: var(--width300);
+    margin: 50px 0 60px 0;
+    &__world {
+      margin-top: 30px;
+      margin-bottom: 26px;
+    }
+    &__world_img {
+      width: 300px;
+      height: 146px;
+    }
+    &__animal:hover .label__wrapper::after {
+      border-top: 29px solid #EB5757;
+    }
+    &__animal:hover .window {
+      right: -4px;
+      top: 33px;
+    }
+  }
+
+  .label__wrapper {
+    width: 33px;
+    height: 33px;
+  }
+
+  .label__wrapper::after {
+    content: '';
+    bottom: -16px;
+    left: 0px;
+    position: absolute;
+    border-left: 16px solid transparent;
+    border-right: 17px solid transparent;
+    border-top: 29px solid #4bd8b5;
+  }
+
+  .label__img {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    z-index: 2;
+    right: 6px;
+    bottom: 5px;
+  }
+
+  .label__position-eagle {
+    bottom: 50px;
+    left: 26px;
+  }
+
+  .label__position-crocodile {
+    bottom: 41px;
+    left: 53px;
+  }
+
+  .label__position-gorilla {
+    bottom: 18px;
+    left: 135px;
+  }
+
+  .label__position-panda {
+    bottom: 44px;
+    left: 216px;
+  }
+
+  .window {
+    width: 238px;
+    height: 113px;
+    &__img {
+      margin: 16px 8px 0 15px;
+    }
+    &__img img{
+      width: 40px;
+      height: 40px;
+    }
+    &__information {
+      margin-top: 17px;
+    }
+    &__title {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    &__about {
+      width: 151px;
+      // margin-top: 2px;
+      &-textbold {
+        font-size: 11px;
+        font-weight: 500;
+      }
+      &-textregular{
+        font-size: 11px;
+      }
+      &-text {
+        margin: 2px 0;
+        line-height: 13px;
+      }
+    }
+  }
+
+  .map__animal:hover .window-panda {
+    right: 214px;
+    top: 33px;
+  }
+
+  .map__animal:hover .window-gorilla {
+    right: 104px;
+    top: 26px;
+  }
+
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FOOTER
