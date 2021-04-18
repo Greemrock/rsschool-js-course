@@ -4,6 +4,7 @@ html{
 --width900: 900px;
 --width790: 790px;
 --width600: 600px;
+--width300: 300px;
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HEADER
@@ -309,6 +310,50 @@ html{
 
   .slider__howItWorks {
     margin: 31px 0 30px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 48px;
+  }
+
+  .howItWorks__title {
+    margin: 0 0 30px 0;
+  }
+
+  .counter-blackThumb {
+    margin: 15px 0 32px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .howItWorks {
+    width: var(--width300);
+    margin: 50px 0;
+  }
+  .main-title {
+    font-size: 36px;
+  }
+
+  .howItWorks__title {
+    margin: 0 0 22px 0;
+  }
+
+  .slider__howItWorks {
+    margin: 31px 0 18px 0;
+  }
+
+  .counter-blackThumb {
+    margin: 19px 0 22px 0;
+  }
+
+  .range {
+    margin-top: 14px;;
+  }
+
+  .slider__img {
+    object-position: left;
   }
 }
 

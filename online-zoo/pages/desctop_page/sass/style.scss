@@ -200,7 +200,7 @@ html.transition *:after {
 	}
 	&-title{
 		font-weight: 900;
-		font-size: 48px;
+		// font-size: 48px;
 		position: relative;
 		padding: 0;
 		color: var(--color-text);
@@ -345,7 +345,7 @@ html.transition *:after {
 .range {
 	height: 5px;
 	-webkit-appearance: none;
-	margin: 15px 0 32px 0;
+	// margin: 15px 0 32px 0;
 	width: 245px;
 	&:focus {
 		outline: none;
@@ -452,9 +452,9 @@ html.transition *:after {
 }
 
 .howItWorks{
-	&__title{
-		margin: 0 0 30px 0;
-	}
+	// &__title{
+	// 	margin: 0 0 30px 0;
+	// }
 }
 
 .slider{
@@ -761,7 +761,6 @@ html.transition *:after {
 }
 
 .user{
-	// width: 440px;
 	&__wrapper {
 		width: 69px;
 		height: 69px;
@@ -773,7 +772,6 @@ html.transition *:after {
 		box-sizing: border-box;
 		border-radius: 50%;
 		object-fit: none;
-		// margin-top: 47px;
 	}
 	&__name{
 		margin: 17px 0;
