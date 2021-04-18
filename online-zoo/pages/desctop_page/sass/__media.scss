@@ -147,6 +147,27 @@ html{
   }
 }
 
+@media (min-width: 640px) {
+  .header {
+    height: 94px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header__wrapper {
+    padding: 0 10px;
+  }
+
+  .theme {
+    left: 16%;
+    position: relative;
+  }
+
+  .header {
+    height: 92px;
+  }
+}
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAIN PAGE 
 @media (min-width: 1920px) {
   .mainPage {
