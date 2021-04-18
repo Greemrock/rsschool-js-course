@@ -924,7 +924,7 @@ html.transition *:after {
 		}
 	}
 	&__contacts{
-		margin-bottom: 46px;
+		// margin-bottom: 46px;
 		color: #fefefe;
 	}
 	&__copyright{
@@ -955,7 +955,7 @@ html.transition *:after {
 			color: var(--footer-text);
 			font-size: 20px;
 			font-weight: 900;
-			margin-bottom: 33px;
+			// margin-bottom: 33px;
 		}
 	}
 	&__donate {
@@ -984,7 +984,7 @@ html.transition *:after {
 		height: 122px;
 		border: 1px solid #BDBDBD;
 		border-radius: 3px;
-		margin-bottom: 27px;
+		// margin-bottom: 27px;
 		&-textarea{
 			width: 100%;
 			border: none;
@@ -1017,7 +1017,7 @@ html.transition *:after {
 		color: #FEFEFE;
 		background: url(../../../assets/images/footer/send_btn.svg) no-repeat 60px 3px;
 		cursor: pointer;
-		margin-right: 14px;
+		// margin-right: 14px;
 	}
 	&__wrapper-send{
 		display: flex;

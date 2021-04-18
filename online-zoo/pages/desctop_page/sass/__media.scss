@@ -1088,7 +1088,6 @@ html{
     }
     &__about {
       width: 151px;
-      // margin-top: 2px;
       &-textbold {
         font-size: 11px;
         font-weight: 500;
@@ -1256,5 +1255,64 @@ html{
   
   .footer .navbar__item-text {
     font-size: 16px;
+  }
+}
+
+@media (min-width: 640px) {
+  .contactUs__send {
+    margin-right: 14px;
+  }
+
+  .footer__form-title {
+    margin-bottom: 33px;
+  }
+
+  .contactUs__fieldset {
+    margin-bottom: 27px;
+  }
+
+  .footer__contacts {
+    margin-bottom: 46px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    &__wrapper {
+      width: var(--width300);
+      margin: 50px 0 27px 0;
+    }
+    &__navbar {
+      padding-left: 1px;
+      margin: 44px 0 23px 0;
+    }
+    &__form {
+      margin-bottom: 66px;
+      &-title {
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  .contactUs__send {
+    margin-right: 0;
+  }
+
+  .contactUs__fieldset {
+    margin-bottom: 22px;
+  }
+
+  .footer__donate {
+    padding: 0px 13px;
+    left: 0%;
+    bottom: 0;
+  }
+
+  .footer__contacts {
+    margin-bottom: 167px;
+  }
+
+  .footer__copyright {
+    margin-top: 29px;
   }
 }
