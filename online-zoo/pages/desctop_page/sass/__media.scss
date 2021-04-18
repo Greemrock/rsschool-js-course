@@ -42,7 +42,7 @@ html{
 
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   body.lock {
     overflow: hidden;
   }
@@ -252,7 +252,7 @@ html{
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .mainPage {
     width: var(--width600);
     padding-top: calc(122px + (128 - 122) * ((100vw - 640px) / (1200 - 640)));
@@ -387,7 +387,7 @@ html{
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .howItWorks {
     width: var(--width600);
     margin: 100px 0 68px 0;
@@ -398,7 +398,7 @@ html{
   }
 }
 
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .main-title {
     font-size: 48px;
   }
@@ -486,11 +486,28 @@ html{
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .whatInspiringUs {
     grid-template-columns: 1fr;
     grid-template-rows: 197px 181px 197px;
     grid-row-gap: 50px;
+  }
+}
+
+@media (min-width: 640px) {
+  .whatInspiringUs {
+    margin: 100px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .whatInspiringUs {
+    margin: 50px 0;
+    grid-row-gap: 30px;
+    grid-template-rows: 197px 165px 197px;
+    &__box {
+      width: 300px;
+    }
   }
 }
 
@@ -538,7 +555,7 @@ html{
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .petsInZoo {
     width: var(--width600);
     overflow: hidden;
