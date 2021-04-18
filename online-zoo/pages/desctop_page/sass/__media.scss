@@ -166,6 +166,11 @@ html{
   .header {
     height: 92px;
   }
+
+  .navbar_header.active {
+    top: 92px;
+    padding-top: 50px;
+  }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAIN PAGE 
