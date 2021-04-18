@@ -182,7 +182,7 @@ html{
   }
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1920px) {
   .mainPage__title {
 		// width: 793px;
 		font-size: 89px;
@@ -230,7 +230,7 @@ html{
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .mainPage {
     width: var(--width600);
     padding-top: calc(122px + (128 - 122) * ((100vw - 640px) / (1200 - 640)));
@@ -280,7 +280,7 @@ html{
   }
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1920px) {
   .howItWorks {
     width: 746px;
   }
@@ -301,7 +301,7 @@ html{
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .howItWorks {
     width: var(--width600);
     margin: 100px 0 68px 0;
@@ -323,7 +323,7 @@ html{
   }
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1920px) {
   .whatInspiringUs {
     grid-column-gap: 20px;
     &__box {
@@ -339,7 +339,7 @@ html{
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .whatInspiringUs {
     grid-template-columns: 1fr;
     grid-template-rows: 197px 181px 197px;
@@ -364,7 +364,7 @@ html{
   }
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1920px) {
   .petsInZoo {
     width: var(--width900);
   }
@@ -391,7 +391,7 @@ html{
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .petsInZoo {
     width: var(--width600);
     overflow: hidden;
@@ -429,7 +429,7 @@ html{
   }
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1920px) {
   .payAndFeed {
     width: var(--width900);
     &__arrow{
@@ -457,7 +457,7 @@ html{
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .payAndFeed {
     width: var(--width600);
     &__title {
@@ -496,7 +496,7 @@ html{
   }
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1920px) {
   .testimonials{
     width: var(--width900);
   }
@@ -507,7 +507,7 @@ html{
   } 
 
   .slider__block {
-    width: calc(326px + (440 - 326) * ((100vw - 1200px) / (1920 - 1200)));
+    width: 326px;
   }
 }
 
@@ -521,7 +521,7 @@ html{
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .testimonials {
     width: var(--width600);
   }
@@ -585,7 +585,7 @@ html{
 	}
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1920px) {
   .map {
     width: var(--width900);
     &__world_img{
@@ -637,7 +637,7 @@ html{
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .map {
     width: var(--width600);
     margin: 100px 0 80px 0;
@@ -720,7 +720,7 @@ html{
 
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 1920px) {
   .footer {
     &__donate {
       padding: 0 10px;
@@ -773,7 +773,7 @@ html{
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
 
   .footer{
     display: flex;
