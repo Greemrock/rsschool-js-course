@@ -145,6 +145,10 @@ html{
     left: 32%;
     position: relative;
   }
+
+  .range__main-size {
+    width: 245px;
+  }
 }
 
 @media (min-width: 640px) {
@@ -198,7 +202,7 @@ html{
   }
 
   .counter_mainPage {
-    bottom: -85px;
+    bottom: -53px;
     left: 186px;
   }
 
@@ -207,9 +211,13 @@ html{
     height: 203px;
     margin-right: 46px;
   }
+
+  .range__main-size {
+    margin-top: 15px;
+  }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .mainPage__title {
 		// width: 793px;
 		font-size: 89px;
@@ -255,6 +263,10 @@ html{
     left: -135px;
     top: 168px;
   }
+
+  .range {
+    width: 245px;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -296,12 +308,11 @@ html{
     height: 352px;
     width: 245px;
   }
-  // .range {
-  //   width: 245px;
-  //   &::-webkit-slider-thumb {
-  //     width: 30px;
-  //   }
-  // }
+  .range {
+    &::-webkit-slider-thumb {
+      width: 30px;
+    }
+  }
 }
 
 @media (max-width: 640px) {
@@ -353,6 +364,11 @@ html{
   .range::-webkit-slider-thumb {
     width: 17px;
   }
+
+  .range__main-size {
+		width: 140px;
+    margin-top: 3px;
+	}
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HOW ITS WORK? 
@@ -383,6 +399,10 @@ html{
 
   .slider__howItWorks {
     margin: 14px 0 30px 0;
+  }
+
+  .range-black {
+    width: 245px;
   }
 }
 
@@ -546,6 +566,10 @@ html{
 
   .slider-petsInZoo {
     margin-top: 32px;
+  }
+
+  .range-black {
+    width: 245px;
   }
 }
 
@@ -735,6 +759,10 @@ html{
 
   .slider__block {
     width: 326px;
+  }
+
+  .range-black {
+    width: 245px;
   }
 }
 
