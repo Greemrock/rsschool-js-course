@@ -286,6 +286,74 @@ html{
   }
 }
 
+@media (min-width: 640px) {
+  .slider__item-active {
+    height: 352px;
+    width: 245px;
+  }
+  .range {
+    width: 245px;
+    &::-webkit-slider-thumb {
+      width: 30px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .bg-mainPage {
+    height: 669px;
+  }
+  
+  .social-mainPage {
+    display: none;;
+  }
+
+  .mainPage {
+    width: var(--width300);
+    padding-top: calc(92px + (122 - 92) * ((100vw - 320px) / (640 - 320)));
+  }
+
+  .mainPage__title {
+    font-size: 48px;
+    margin-bottom: 18px;
+  }
+
+  .slider-mainPage {
+    left: 5%;
+    bottom: -47px;
+  }
+
+  .slider__string {
+    left: -22px;
+    top: 80px;
+  }
+
+  .slider__item-mainPage {
+    width: 113px;
+    height: 164px;
+    bottom: 14px;
+    margin-right: 9px;
+  }
+
+  .slider__item-active {
+    width: 140px;
+    height: 202px;
+  }
+
+  .counter_mainPage {
+    left: 23%;
+    bottom: -37px;
+  }
+
+  .range {
+    width: 140px;
+    margin-top: 3px;
+    &::-webkit-slider-thumb {
+      width: 17px;
+    }
+  }
+}
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HOW ITS WORK? 
 @media (min-width: 1920px) {
   .howItWorks {
@@ -369,9 +437,9 @@ html{
     margin: 19px 0 22px 0;
   }
 
-  .range {
-    margin-top: 14px;;
-  }
+  // .range {
+  //   margin-top: 14px;;
+  // }
 
   .slider__img {
     object-position: left;
