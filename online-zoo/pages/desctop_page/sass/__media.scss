@@ -9,12 +9,6 @@ html{
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HEADER
 
-@media (min-width: 640px) {
-  .header__wrapper {
-    padding: 0 150px;
-  }
-}
-
 @media (min-width: 1200px) {
   .navbar_header {
     display: flex;
@@ -155,6 +149,10 @@ html{
   .header {
     height: 94px;
   }
+
+  .header__wrapper {
+    padding: 0 150px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -238,7 +236,7 @@ html{
 
   .counter_mainPage {
     left: 24%;
-    bottom: -91px;
+    bottom: -59px;
   }
 
   .slider-mainPage {
@@ -251,6 +249,10 @@ html{
     height: 261px;
     bottom: 14px;
     margin-right: 30px;
+  }
+
+  .range__main-size {
+    margin-top: 15px;
   }
 } 
 
@@ -389,6 +391,10 @@ html{
   .range-bigThumb {
     margin-top: 15px;
   }
+
+  .range-bigThumb::-webkit-slider-thumb{
+		width: 62px;
+	}
 }
 
 @media (max-width: 1919px) {
@@ -408,6 +414,14 @@ html{
   .range-black {
     width: 245px;
   }
+
+  .range-bigThumb {
+    margin-top: 15px;
+  }
+
+  .range-bigThumb::-webkit-slider-thumb {
+		width: 80px;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -443,10 +457,6 @@ html{
   .slider__img {
     object-position: center;
   }
-
-  .range-bigThumb::-webkit-slider-thumb{
-		width: 62px;
-	}
 }
 
 @media (max-width: 640px) {
@@ -554,6 +564,7 @@ html{
 
   .slider-petsInZoo {
     margin-top: 35px;
+    margin-bottom: 30px;;
   }
 
   .counter-petsInZoo {
@@ -578,19 +589,23 @@ html{
 
   .slider-petsInZoo {
     margin-top: 32px;
+    margin-bottom: 30px;
   }
 
   .range-black {
     width: 245px;
   }
+
+  .counter-petsInZoo {
+    margin-bottom: 33px;
+  }
+
+  .range-petsInZoo {
+    margin-top: 15px;
+  }
 }
 
 @media (min-width: 1200px) {
-  .slider-petsInZoo {
-    margin-top: 36px;
-    margin-bottom: 30px;
-  }
-
   .slider__arrow {
     display: flex;
   }
@@ -694,7 +709,7 @@ html{
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .payAndFeed {
     width: var(--width600);
     &__title {
@@ -788,6 +803,18 @@ html{
   .range-black {
     width: 245px;
   }
+
+  .user__name {
+    font-size: 20px;
+  }
+
+  .range-testimonials {
+    margin-top: 15px;
+  }
+
+  .counter-testimonials {
+    margin-bottom: 33px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -800,7 +827,7 @@ html{
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .testimonials {
     width: var(--width600);
   }
@@ -914,6 +941,7 @@ html{
 @media (max-width: 1919px) {
   .map {
     width: var(--width900);
+    margin: 99px 0;
     &__world_img{
       width: 900px;
       height: 436px;
@@ -956,14 +984,13 @@ html{
 
 @media (min-width: 640px) {
   .map {
-    margin: 100px 0;
     &__world {
       margin-top: 62px;
     }
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .map {
     width: var(--width600);
     margin: 100px 0 80px 0;
@@ -1271,7 +1298,7 @@ html{
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
 
   .footer{
     display: flex;
