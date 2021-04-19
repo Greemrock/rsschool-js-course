@@ -385,9 +385,13 @@ html{
   .slider__howItWorks {
     margin: 30px 0;
   }
+
+  .range-bigThumb {
+    margin-top: 15px;
+  }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .howItWorks {
     width: 746px;
   }
@@ -495,7 +499,7 @@ html{
   }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .whatInspiringUs {
     grid-column-gap: 20px;
     &__box {
@@ -551,9 +555,17 @@ html{
   .slider-petsInZoo {
     margin-top: 35px;
   }
+
+  .counter-petsInZoo {
+    margin-bottom: 33px;
+  }
+
+  .range-petsInZoo {
+    margin-top: 15px;
+  }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .petsInZoo {
     width: var(--width900);
   }
@@ -649,12 +661,12 @@ html{
       margin-bottom: 92px;
     }
     &__map {
-      margin-bottom: 63px;
+      margin-bottom: 60px;
     }
   }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .payAndFeed {
     width: var(--width900);
     &__arrow{
@@ -745,9 +757,21 @@ html{
   .slider__block {
     width: 440px;
   }
+
+  .range-testimonials {
+    margin-top: 15px;
+  }
+
+  .counter-testimonials {
+    margin-bottom: 33px;
+  }
+
+  .user__name {
+    font-size: 20px;
+  }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .testimonials{
     width: var(--width900);
   }
@@ -887,7 +911,7 @@ html{
 	}
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .map {
     width: var(--width900);
     &__world_img{
@@ -1194,7 +1218,7 @@ html{
 
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   .footer {
     &__donate {
       padding: 0 10px;
