@@ -36,6 +36,7 @@ html[data-theme='dark'] {
 	--bg-review: #3c3c3c;
 	--map-color: invert(91%) sepia(1%) saturate(1051%) hue-rotate(1deg) brightness(98%) contrast(92%);
 }
+
 body{
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
@@ -45,12 +46,11 @@ body{
 
 .header{
 	width: 100%;
-	// height: 94px;
 	display: flex;
 	justify-content: center;
 	background: var(--bg-first);
 	&__wrapper{ 
-		width: 100%;
+		// width: 100%;
 		display: flex;
 		justify-content: space-between;
 		z-index: 3;
@@ -175,7 +175,6 @@ body{
 			width: 45px;
 		}
 	}
-	
 }
 
 html.transition,
@@ -204,7 +203,6 @@ html.transition *:after {
 	}
 	&-title{
 		font-weight: 900;
-		// font-size: 48px;
 		position: relative;
 		padding: 0;
 		color: var(--color-text);
