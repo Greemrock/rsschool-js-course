@@ -149,13 +149,9 @@ html{
   .header {
     height: 94px;
   }
-
-  .header__wrapper {
-    padding: 0 150px;
-  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .header__wrapper {
     padding: 0 10px;
   }
@@ -317,7 +313,7 @@ html{
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .bg-mainPage {
     height: 669px;
   }
@@ -459,7 +455,7 @@ html{
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .howItWorks {
     width: var(--width300);
     margin: 50px 0;
@@ -539,7 +535,7 @@ html{
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .whatInspiringUs {
     margin: 50px 0;
     grid-row-gap: 30px;
@@ -626,7 +622,7 @@ html{
   }
   
   .counter-petsInZoo {
-    margin-bottom: 5px;
+    margin-bottom: 37px;
   }
 }
 
@@ -636,7 +632,7 @@ html{
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .petsInZoo {
     width: var(--width300);
     margin: 100px 0 50px 0;
@@ -659,6 +655,12 @@ html{
 
   .slider__item-petsInZoo {
     margin-right: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .counter-petsInZoo {
+    margin-bottom: 5px;
   }
 }
 
@@ -738,7 +740,7 @@ html{
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .payAndFeed {
     width: var(--width300);
     margin: 50px 0;
@@ -864,7 +866,7 @@ html{
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .testimonials {
     width: var(--width300);
     margin: 50px 0;
@@ -901,11 +903,22 @@ html{
 
 }
 
+@media (max-width: 320px) {
+  .counter-testimonials {
+    margin-bottom: 21px;
+  }
+
+  .range-testimonials::-webkit-slider-thumb {
+    width: 30px;
+  }
+}
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAP
 
 @media (min-width: 1920px) {
   .map {
     width: var(--width1200);
+    margin: 100px 0;
   }
 
   .label__position{
@@ -1087,7 +1100,7 @@ html{
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .map {
     width: var(--width300);
     margin: 50px 0 60px 0;
@@ -1210,6 +1223,9 @@ html{
       top: 0;
       right: 0;
     }
+    &__copyright {
+      margin-top: 33px;
+    }
   }
 
   .footer__column{
@@ -1221,6 +1237,8 @@ html{
   .footer__column-position {
     margin-bottom: 58px;
   }
+
+
 }
 
 @media (min-width: 1200px) {
@@ -1262,6 +1280,9 @@ html{
     &__navbar {
       padding-left: 10px;
     }
+    &__copyright {
+      margin-top: 29px;
+    }
   }
 
   .footer__column{
@@ -1288,9 +1309,6 @@ html{
     &__form {
       margin-bottom: 58px;
     }
-    &__copyright {
-      margin-top: 29px;
-    }
   } 
 
   .navbar__footer {
@@ -1315,18 +1333,18 @@ html{
       flex-direction: column;
     }
     &__form {
-      margin-bottom: 86px;
+      margin-bottom: 89px;
     }
     &__contacts {
       padding: 0;
     }
     &__copyright {
-      margin-top: 40px;
+      margin-top: 29px;
     }
     &__donate {
       padding: 0px 13px;
       left: 52%;
-      bottom: 717px;
+      bottom: 728px;
     }
   }
 
@@ -1340,6 +1358,10 @@ html{
   .footer .navbar__item-text {
     font-size: 16px;
   }
+
+  .footer__copyright {
+    margin-top: 29px;
+  }
 }
 
 @media (min-width: 640px) {
@@ -1348,19 +1370,19 @@ html{
   }
 
   .footer__form-title {
-    margin-bottom: 33px;
+    margin-bottom: 35px;
   }
 
   .contactUs__fieldset {
-    margin-bottom: 27px;
+    margin-bottom: 22px;
   }
 
   .footer__contacts {
-    margin-bottom: 46px;
+    margin-bottom: 57px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .footer {
     &__wrapper {
       width: var(--width300);
