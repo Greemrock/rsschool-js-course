@@ -196,7 +196,6 @@ html.transition *:after {
 	}
 	&-title{
 		font-weight: 900;
-		font-size: 48px;
 		position: relative;
 		padding: 0;
 		color: var(--color-text);
@@ -209,7 +208,7 @@ html.transition *:after {
 		color: var(--color-title-small);
 	}
 	&-text{
-		font-size: 14px;
+		// font-size: 14px;
 		color: var(--color-title-small);
 	}
 }
@@ -1175,7 +1174,7 @@ html.transition *:after {
 		display: flex;
 		align-items: center;
 		position: relative;
-		padding: 30px 0;
+		// padding: 30px 0;
 		&_vertical{
 			flex-direction: column;
 			margin: 0;
@@ -1196,8 +1195,8 @@ html.transition *:after {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 108px;
-		height: 108px;
+		// width: 108px;
+		// height: 108px;
 		background: linear-gradient(to right, #07EEE0, #DF496D);
 		border-radius: 50%;
 		cursor: pointer;
@@ -1210,14 +1209,14 @@ html.transition *:after {
 			// margin: 15px;
 			& .aside-slider__img{
 				position: absolute;
-				width: 105%;
-				height: 105%;
+				// width: 105%;
+				// height: 105%;
 				padding: 10px;
 			}
-			& .aside-slider__substrate{
-				width: 96%;
-				height: 96%;
-			}
+			// & .aside-slider__substrate{
+			// 	width: 96%;
+			// 	height: 96%;
+			// }
       &:hover{
         transform: scale(1.5);
       }
