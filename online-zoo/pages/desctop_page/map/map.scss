@@ -257,6 +257,13 @@ html.transition *:after {
 	&-mainPage{
 		margin-bottom: 44px;
 	}
+	&-footer {
+		font-weight: 500;
+	}
+	&-main {
+		font-weight: 900;
+		padding-left: 6px;
+	}
 	&__color{
 		background: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
 		border-radius: 3px;
@@ -270,7 +277,7 @@ html.transition *:after {
 		height: 55px;
 		text-decoration: none;
 		&-footer{
-			width: 279px;
+			width: 275px;
 		}
 		&:hover{
 			background: linear-gradient(106.89deg, #329179 -14.32%, #3599a0 100.68%);
@@ -283,8 +290,6 @@ html.transition *:after {
 		display: table;
 		&-main{
 			font-size: 18px;
-			font-weight: 900;
-			padding-left: 6px;
 		}
 		&-play{
 			font-size: 12px;
@@ -852,9 +857,6 @@ html.transition *:after {
 }
 
 .map{
-	// &__text{
-	// 	width: var(--width790);
-	// }
 	&__title{
 		text-align: center;
 	}
@@ -886,6 +888,9 @@ html.transition *:after {
 }
 
 .label{
+	&__img {
+		object-fit: cover;
+	}
 	&__position{
 		position: absolute;
 	}
@@ -1202,7 +1207,7 @@ html.transition *:after {
 		}
 		&_active{
 			transform: scale(1.47);
-			margin: 15px;
+			// margin: 15px;
 			& .aside-slider__img{
 				position: absolute;
 				width: 105%;
