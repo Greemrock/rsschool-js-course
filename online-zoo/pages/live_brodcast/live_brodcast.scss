@@ -9,10 +9,9 @@
 
 html{
 	--bg-first: #fff;
-	--bg-second: #fff;
+	--bg-second: #fefefe;
 	--bg-window: #FEFEFE;
 	--color-text: #333;
-	--shadow: inset 0 3px 15px 0 #dedede;
 	--color-text-range: #333;
 	--color-text-total: #BDBDBD;
 	--color-title-small: #4F4F4F;
@@ -28,7 +27,6 @@ html[data-theme='dark'] {
 	--bg-second: #4F4F4F;
 	--color-title-small: #F2F2F2;
 	--color-text: #FEFEFE;
-	--shadow: none;
 	--bg-window: #333333;
 }
 
@@ -181,7 +179,6 @@ html.transition *:after {
 
 .main{
 	width: 100%;
-	box-shadow: var(--shadow);
 	&__wrapper{
 		position: relative;
 		display: flex;

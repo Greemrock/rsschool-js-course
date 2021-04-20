@@ -19,6 +19,7 @@ html{
   .header__wrapper {
     width: 100%;
     padding: 0 150px;
+    z-index: 5;
   }
 }
 
@@ -60,19 +61,17 @@ html{
   }
 
   .navbar_header {
-    top: -500%;
+    top: -150vw;
     position: relative;
     left: 0;
-    top: -100%;
     display: block;
-    background-color: var(--bg-first);;
+    background-color: var(--bg-second);;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 150vw;
     z-index: 2;
     box-shadow: inset 0 3px 17px 0px var(--box-shadow);
     transition: all 0.3s ease 0s;
-    // overflow: auto;
     &.active {
       top: 94px;
       padding-top: 50px;
@@ -161,11 +160,31 @@ html{
 
 @media (min-width: 640px) {
   .header {
+    position: relative;
     height: 94px;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    position: fixed;
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
+  }
+
+  .main {
+    position: relative;
+    top: 94px;
   }
 }
 
 @media (max-width: 639px) {
+  .main {
+    top: 92px;
+  }
+
   .header__wrapper {
     padding: 0 10px;
   }
@@ -506,7 +525,7 @@ html{
   }
 
   .map__animal:hover .label__wrapper::after {
-    border-top: 50px solid #EB5757;
+    border-top: 47px solid #EB5757;
   }
 }
 
@@ -578,6 +597,10 @@ html{
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
     border-top: 50px solid #4bd8b5;
+  }
+
+  .map__animal:hover .label__wrapper::after {
+    border-top: 50px solid #EB5757;
   }
 }
 
@@ -875,7 +898,7 @@ html{
       margin-top: 29px;
     }
     &__donate {
-      padding: 0px 13px;
+      padding: 0px 10px;
       left: 52%;
       bottom: 728px;
     }
