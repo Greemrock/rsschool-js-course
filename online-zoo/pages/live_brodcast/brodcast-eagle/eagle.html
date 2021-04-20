@@ -16,29 +16,29 @@
         <span class="logo__zoo">zoo</span>
         <span class="logo__online">online</span>
       </a>
-      <nav class="navbar">
-        <ul class="navbar__list navbar__header">
-          <li class="navbar__item">
+      <nav class="navbar navbar_header">
+        <ul class="navbar__list navbar__list_header">
+          <li class="navbar__item navbar__item-margin">
             <a class="navbar__item-link" href="../../../index.html">
               <span class="navbar__item-text">about</span>
             </a>
           </li>
-          <li class="navbar__item navbar__item-active">
+          <li class="navbar__item navbar__item-margin navbar__item-active">
             <a class="navbar__item-link" href="#header">
               <span class="navbar__item-text">zoos</span>
             </a>
           </li>
-          <li class="navbar__item">
+          <li class="navbar__item navbar__item-margin">
             <a class="navbar__item-link" href="../../desctop_page/map/map.html">
               <span class="navbar__item-text">map</span>
             </a>
           </li>
-          <li class="navbar__item">
+          <li class="navbar__item navbar__item-margin">
             <a class="navbar__item-link" href="#footer">
               <span class="navbar__item-text">contact us</span>
             </a>
           </li>
-          <li class="navbar__item">
+          <li class="navbar__item navbar__item-margin">
             <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp" target="_blank">
               <span class="navbar__item-text">design</span>
             </a>
@@ -49,48 +49,51 @@
         <input class="theme__toggle" type="checkbox" id="switch" name="theme" />
         <label class="theme__label" for="switch"></label>
       </div>
+      <div class="header__burger">
+        <span></span>
+      </div>
     </div>
   </header>
   <main class="main color-second">
-    <aside class="sidebar">
-      <div class="aside-slider aside-slider_vertical">
-        <div class="aside-slider__wrapper aside-slider__wrapper_vertical"> 
-          <a class="aside-slider__slide" href="./../brodcast-panda/panda.html">
-            <div class="aside-slider__substrate"></div>
-            <img class="aside-slider__img" src="../../../assets/images/brodcast/panda.png" alt="Panda" title="Panda">
-          </a>
-          <a class="aside-slider__slide aside-slider__slide_active" href="./../brodcast-eagle/eagle.html">
-            <div class="aside-slider__substrate"></div>
-            <img class="aside-slider__img" src="../../../assets/images/brodcast/eagle.png" alt="Eagle" title="Eagle">
-          </a>
-          <a class="aside-slider__slide" href="./../brodcast-crocodile/crocodile.html">
-            <div class="aside-slider__substrate"></div>
-            <img class="aside-slider__img" src="../../../assets/images/brodcast/crocodile.png" alt="Crocodile" title="Crocodile">
-          </a>
-          <a class="aside-slider__slide" href="./../brodcast-gorilla/gorilla.html">
-            <div class="aside-slider__substrate"></div>
-            <img class="aside-slider__img" src="../../../assets/images/brodcast/gorilla.png" alt="Gorilla" title="Gorilla">
-          </a>
-        </div>
-        <div class="aside-slider__button aside-slider__button_left">
-          <svg width="18" height="30" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.666298 16.1706L14.0167 29.5207C14.3255 29.8298 14.7376 30 15.1772 30C15.6167 30 16.0289 29.8298 16.3376 29.5207L17.3208 28.5378C17.9605 27.8973 17.9605 26.8564 17.3208 26.2169L6.11016 15.0062L17.3332 3.78314C17.642 3.47412 17.8125 3.06217 17.8125 2.6229C17.8125 2.18315 17.642 1.7712 17.3332 1.46194L16.3501 0.479263C16.0411 0.17024 15.6291 0 15.1896 0C14.7501 0 14.3379 0.17024 14.0291 0.479263L0.666298 13.8416C0.356789 14.1516 0.18679 14.5655 0.187767 15.0055C0.18679 15.4472 0.356789 15.8608 0.666298 16.1706Z" fill="#333333"></path>
-          </svg>
-        </div>
-        <div class="aside-slider__button aside-slider__button_right">
-          <svg width="18" height="30" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.3337 13.8294L3.98332 0.479264C3.67454 0.170243 3.26235 0 2.82284 0C2.38334 0 1.97114 0.170243 1.66237 0.479264L0.679203 1.46218C0.0394526 2.10267 0.0394526 3.14363 0.679203 3.78314L11.8898 14.9938L0.666764 26.2169C0.357986 26.5259 0.1875 26.9378 0.1875 27.3771C0.1875 27.8168 0.357986 28.2288 0.666764 28.5381L1.64993 29.5207C1.95895 29.8298 2.3709 30 2.81041 30C3.24991 30 3.66211 29.8298 3.97088 29.5207L17.3337 16.1584C17.6432 15.8484 17.8132 15.4345 17.8122 14.9945C17.8132 14.5528 17.6432 14.1392 17.3337 13.8294Z" fill="#333333"></path>
-          </svg>
-        </div>
-      </div>
-    </aside>
     <div class="main__wrapper"> 
+      <aside class="sidebar">
+        <div class="aside-slider aside-slider_vertical">
+          <div class="aside-slider__wrapper aside-slider__wrapper_vertical"> 
+            <a class="aside-slider__slide" href="./../brodcast-panda/panda.html">
+              <div class="aside-slider__substrate"></div>
+              <img class="aside-slider__img" src="../../../assets/images/brodcast/panda.png" alt="Panda" title="Panda">
+            </a>
+            <a class="aside-slider__slide aside-slider__slide_active" href="./../brodcast-eagle/eagle.html">
+              <div class="aside-slider__substrate"></div>
+              <img class="aside-slider__img" src="../../../assets/images/brodcast/eagle.png" alt="Eagle" title="Eagle">
+            </a>
+            <a class="aside-slider__slide" href="./../brodcast-crocodile/crocodile.html">
+              <div class="aside-slider__substrate"></div>
+              <img class="aside-slider__img" src="../../../assets/images/brodcast/crocodile.png" alt="Crocodile" title="Crocodile">
+            </a>
+            <a class="aside-slider__slide" href="./../brodcast-gorilla/gorilla.html">
+              <div class="aside-slider__substrate"></div>
+              <img class="aside-slider__img" src="../../../assets/images/brodcast/gorilla.png" alt="Gorilla" title="Gorilla">
+            </a>
+          </div>
+          <div class="aside-slider__button aside-slider__button_left">
+            <svg width="18" height="30" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.666298 16.1706L14.0167 29.5207C14.3255 29.8298 14.7376 30 15.1772 30C15.6167 30 16.0289 29.8298 16.3376 29.5207L17.3208 28.5378C17.9605 27.8973 17.9605 26.8564 17.3208 26.2169L6.11016 15.0062L17.3332 3.78314C17.642 3.47412 17.8125 3.06217 17.8125 2.6229C17.8125 2.18315 17.642 1.7712 17.3332 1.46194L16.3501 0.479263C16.0411 0.17024 15.6291 0 15.1896 0C14.7501 0 14.3379 0.17024 14.0291 0.479263L0.666298 13.8416C0.356789 14.1516 0.18679 14.5655 0.187767 15.0055C0.18679 15.4472 0.356789 15.8608 0.666298 16.1706Z" fill="#333333"></path>
+            </svg>
+          </div>
+          <div class="aside-slider__button aside-slider__button_right">
+            <svg width="18" height="30" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.3337 13.8294L3.98332 0.479264C3.67454 0.170243 3.26235 0 2.82284 0C2.38334 0 1.97114 0.170243 1.66237 0.479264L0.679203 1.46218C0.0394526 2.10267 0.0394526 3.14363 0.679203 3.78314L11.8898 14.9938L0.666764 26.2169C0.357986 26.5259 0.1875 26.9378 0.1875 27.3771C0.1875 27.8168 0.357986 28.2288 0.666764 28.5381L1.64993 29.5207C1.95895 29.8298 2.3709 30 2.81041 30C3.24991 30 3.66211 29.8298 3.97088 29.5207L17.3337 16.1584C17.6432 15.8484 17.8132 15.4345 17.8122 14.9945C17.8132 14.5528 17.6432 14.1392 17.3337 13.8294Z" fill="#333333"></path>
+            </svg>
+          </div>
+        </div>
+      </aside>
       <div class="main__page page__wrapper">
         <h2 class="main-title">West End Bald Eagle Cam</h2>
         <div class="zoo">
           <div class="zoo__videos"> 
             <div class="zoo__main-video">
-              <iframe width="100%" height="442px" src="https://www.youtube-nocookie.com/embed/RmmAzrAkKqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/RmmAzrAkKqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>
             <div class="zoo__thumbs"> 
               <div class="zoo__thumb">
@@ -134,96 +137,93 @@
   <footer class="footer" id="footer">
     <div class="footer__wrapper">
       <div class="footer__content">
-        <div class="footer__column">
-          <a class="logo" href="../../../index.html">
-            <span class="logo__zoo">zoo</span>
-            <span class="logo__online">online</span>
-          </a>
+        <div class="footer__logo">
+          <div class="footer__logo-wrapper">
+            <a class="logo" href="#header">
+              <span class="logo__zoo">zoo</span>
+              <span class="logo__online">online</span>
+            </a>  
+          </div>
+        </div>
+        <nav class="footer__navbar navbar">
+          <ul class="navbar__list navbar__footer">
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="../../../index.html">
+                <span class="navbar__item-text">about</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="#header">
+                <span class="navbar__item-text">zoos</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="../../desctop_page/map/map.html">
+                <span class="navbar__item-text">map</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp">
+                <span class="navbar__item-text">design</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <form  class="footer__form contactUs" action="" method="post">
           <p class="footer__form-title">Contact us</p>
-          <form  class="footer__form contactUs" action="" method="post">
-            <input class="contactUs__inf" type="text" name="name" placeholder="Name" required>
-            <input class="contactUs__inf" type="email" name="email" placeholder="Email" required>
-            <fieldset class="contactUs__fieldset">
-              <legend class="contactUs__fieldset-toptext">Please enter your message</legend>
-              <textarea class="contactUs__fieldset-textarea" cols="50" name="request" maxlength="280" required></textarea>
-            </fieldset>
-            <label class="checkbox">
-              <input class="checkbox__input" type="checkbox" id="checkbox" required="">
-              <label class="checkbox__label" for="checkbox">I agree to the processing of Personal Data</label>
-            </label>
-            <div class="contactUs__wrapper-send">
-              <input class="contactUs__send" type="submit" name="commit" value="send">
-            </div>
-          </form>
-        </div>
-        <div class="footer__column footer__column_right">
-          <div class="footer__column-position">
-            <nav class="navbar">
-              <ul class="navbar__list navbar__footer">
-                <li class="navbar__item">
-                  <a class="navbar__item-link" href="../../../index.html">
-                    <span class="navbar__item-text">about</span>
-                  </a>
-                </li>
-                <li class="navbar__item">
-                  <a class="navbar__item-link" href="#header">
-                    <span class="navbar__item-text">zoos</span>
-                  </a>
-                </li>
-                <li class="navbar__item">
-                  <a class="navbar__item-link" href="../../desctop_page/map/map.html">
-                    <span class="navbar__item-text">map</span>
-                  </a>
-                </li>
-                <li class="navbar__item">
-                  <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp" target="_blank">
-                    <span class="navbar__item-text">design</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <div class="btn">
-              <button class="btn__color btn__color-footer" type="button" name="donate">
-                <span class="btn__title btn__title-main">donate for volunteers</span>
-              </button>
-            </div>
+          <input class="contactUs__inf" type="text" name="name" placeholder="Name" required>
+          <input class="contactUs__inf" type="email" name="email" placeholder="Email" required>
+          <fieldset class="contactUs__fieldset">
+            <legend class="contactUs__fieldset-toptext">Please enter your message</legend>
+            <textarea class="contactUs__fieldset-textarea" cols="50" name="request" maxlength="280" required></textarea>
+          </fieldset>
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" id="checkbox" required="">
+            <label class="checkbox__label" for="checkbox">I agree to the processing of Personal Data</label>
+          </label>
+          <div class="contactUs__wrapper-send">
+            <input class="contactUs__send" type="submit" name="commit" value="send">
           </div>
-          <div class="footer__contact contact">
-            <h5 class="contact__title">ZOO Online Centre</h5>
-            <div class="contact__wrapper">
-              <address class="contact__text">132, Address District, Street</address>
-              <p class="contact__text">Open Daily 10:00 am - 5:00 pm</p>
-            </div>
-            <div class="contact__wrapper">
-              <a class="contact__text"href="tel:T(702) 163-3433">T(702) 163-3433</a>
-              <a class="contact__text" href="mailto:zoo.online@gmail.com">zoo.online@gmail.com</a>    
-            </div>
-            <ul class="social">
-              <li class="social__item">
-                <a class="social__link" href="https://www.instagram.com/" target="_blank">
-                  <img class="social__img social__inst" src="../../../assets/icons/social/inst.svg" alt="inst">
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="https://twitter.com/" target="_blank">
-                  <img class="social__img social__twitter" src="../../../assets/icons/social/twit.svg" alt="twitter">
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="https://vk.com/" target="_blank">
-                  <img class="social__img social__vk" src="../../../assets/icons/social/vk.svg" alt="vk">
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="https://youtube.com/" target="_blank">
-                  <img class="social__img social__youtube" src="../../../assets/icons/social/youtube.svg" alt="youtube">
-                </a>
-              </li>
-            </ul>
+        </form>
+        <div class="footer__contacts contact">
+          <h5 class="contact__title">ZOO Online Centre</h5>
+          <div class="contact__wrapper">
+            <address class="contact__text">132, Address District, Street</address>
+            <p class="contact__text">Open Daily 10:00 am - 5:00 pm</p>
           </div>
+          <div class="contact__wrapper">
+            <a class="contact__text"href="tel:T(702) 163-3433">T(702) 163-3433</a>
+            <a class="contact__text" href="mailto:zoo.online@gmail.com">zoo.online@gmail.com</a>    
+          </div>
+          <ul class="social">
+            <li class="social__item">
+              <a class="social__link" href="https://www.instagram.com/" target="_blank">
+                <img class="social__img social__inst" src="../../../assets/icons/social/inst.svg" alt="inst">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://twitter.com/" target="_blank">
+                <img class="social__img social__twitter" src="../../../assets/icons/social/twit.svg" alt="twitter">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://vk.com/" target="_blank">
+                <img class="social__img social__vk" src="../../../assets/icons/social/vk.svg" alt="vk">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://youtube.com/" target="_blank">
+                <img class="social__img social__youtube" src="../../../assets/icons/social/youtube.svg" alt="youtube">
+              </a>
+            </li>
+          </ul>
         </div>
+        <div class="footer__donate">
+          <button class="btn__color btn__color-footer" type="button" name="donate">
+            <span class="btn__title btn__title-main">donate for volunteers</span>
+          </button>
+        </div>      
       </div>
-      <div class="footer__solid"></div>
       <div class="footer__copyright">
         <p class="footer__copyright-text">©Noora Sagnayeva</p>
         <p class="footer__copyright-text">©RSSchool and ©Yem Digital - 2021</p>    
