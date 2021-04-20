@@ -272,8 +272,8 @@ html.transition *:after {
 		justify-content: center;
 		align-items: center;
 		padding: 0;
-		width: 194px;
-		height: 55px;
+		// width: 194px;
+		// height: 55px;
 		&-footer{
 			width: 279px;
 		}
@@ -1295,7 +1295,7 @@ html.transition *:after {
 	}
 	&__thumbs{
 		display: grid;
-		grid-template-rows: 1fr;
+		grid-template-rows: 61%;
 		grid-template-columns: 1fr 1fr 1fr;
 		// margin: 0 -13px 0;
 	}
@@ -1306,9 +1306,9 @@ html.transition *:after {
 	// 	border-radius: 5px;
 	// 	height: 92%;
 	// }
-	&__main-video{
-		margin-bottom: 30px;
-	}
+	// &__main-video{
+	// 	margin-bottom: 30px;
+	// }
 	&__main-video iframe {
 		border-radius: 5px;
 	}
@@ -1339,6 +1339,5 @@ html.transition *:after {
 
 .page__wrapper{
 	margin-top: 60px;
-	margin-bottom: 100px;
 }
 
