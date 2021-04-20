@@ -203,7 +203,6 @@ html.transition *:after {
 		font-weight: 900;
 		font-size: 48px;
 		position: relative;
-		padding: 0;
 		color: var(--color-text);
 	}
 	&-smallTitle{
@@ -1279,8 +1278,8 @@ html.transition *:after {
 
 .zoo{
 	display: flex;
-	flex-direction: row;
-	margin-top: 42px;
+	// flex-direction: row;
+	// margin-top: 42px;
 	// &__videos{
 	// 	flex: 0 0 66%;
 	// }
@@ -1295,7 +1294,7 @@ html.transition *:after {
 	}
 	&__thumbs{
 		display: grid;
-		grid-template-rows: 61%;
+		// grid-template-rows: 61%;
 		grid-template-columns: 1fr 1fr 1fr;
 		// margin: 0 -13px 0;
 	}
