@@ -61,14 +61,14 @@ html{
   }
 
   .navbar_header {
-    top: -150vw;
+    top: -180vw;
     position: relative;
     left: 0;
     display: block;
     background-color: var(--bg-second);;
     position: absolute;
-    width: 100vw;
-    height: 150vw;
+    width: 100%;
+    height: 180vw;
     z-index: 2;
     box-shadow: inset 0 3px 17px 0px var(--box-shadow);
     transition: all 0.3s ease 0s;
