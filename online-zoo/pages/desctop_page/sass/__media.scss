@@ -175,6 +175,7 @@ html{
 
   .main {
     position: relative;
+    padding-top: 94px;
   }
 }
 
@@ -195,6 +196,12 @@ html{
   .navbar_header.active {
     top: 92px;
     padding-top: 50px;
+  }
+}
+
+@media (max-width: 320px) {
+	.main {
+		padding-top: 92px;
   }
 }
 
