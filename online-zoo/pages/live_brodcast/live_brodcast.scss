@@ -9,10 +9,10 @@
 
 html{
 	--bg-first: #fff;
-	--bg-second: #F2F2F2;
+	--bg-second: #fff;
 	--bg-window: #FEFEFE;
 	--color-text: #333;
-	--shadow: 0 3px 15px 1px #dedede;
+	--shadow: inset 0 3px 15px 0 #dedede;
 	--color-text-range: #333;
 	--color-text-total: #BDBDBD;
 	--color-title-small: #4F4F4F;
@@ -48,7 +48,6 @@ body{
 		width: 1620px;
 		display: flex;
 		justify-content: space-between;
-		box-shadow: var(--shadow);
 	}
 }
 
@@ -182,7 +181,7 @@ html.transition *:after {
 
 .main{
 	width: 100%;
-	// box-shadow: var(--shadow);
+	box-shadow: var(--shadow);
 	&__wrapper{
 		position: relative;
 		display: flex;
