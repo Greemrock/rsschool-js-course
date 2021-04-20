@@ -203,11 +203,22 @@ html{
 		&__slide {
 			width: 108px;
 			height: 108px;
+			&:hover {
+				transform: scale(1.05);
+			}
 			&_active {
 				transform: scale(1.5);
+				&:hover {
+					transform: scale(1.55);
+				}
 				& .aside-slider__img {
 					width: 105%;
 					height: 105%;
+					padding: 10px;
+				}
+				& .aside-slider__substrate {
+					width: 92%;
+					height: 92%;
 				}
 			}
 		}
@@ -236,13 +247,13 @@ html{
 		}
 		&__thumbs {
 			grid-gap: 26px;
+			grid-template-rows: 141px;
 		}
 		&__thumb iframe {
 			border-radius: 5px;
-			height: 141px;
 		}
 		&__dots {
-			margin-top: 26px;
+			margin-top: 29px;
 		}
 		&__description {
 			margin-left: 25px;
@@ -254,7 +265,8 @@ html{
 	}
 
 	.main-text {
-		margin-bottom: 12px;
+		line-height: 16px;
+		margin-bottom: 11px;
 	}
 
 	.btn__color {
@@ -266,7 +278,7 @@ html{
 @media (max-width: 1919px) {
 	.page__wrapper {
 		margin-left: 49px;
-		margin-bottom: 69px;
+		margin-bottom: 100px;
 	}
 
 	.sidebar {
@@ -278,14 +290,25 @@ html{
 		&__slide {
 			width: 96px;
 			height: 96px;
+			&:hover {
+				transform: scale(1.05);
+			}
 			&_active {
 				transform: scale(1.25);
+				&:hover {
+					transform: scale(1.30);
+				}
 				&:hover {
 					transform: scale(1.46);
 				}
 				& .aside-slider__img {
 					width: 108%;
 					height: 108%;
+					padding: 10px;
+				}
+				& .aside-slider__substrate {
+					width: 92%;
+					height: 92%;
 				}
 			}
 		}
@@ -314,14 +337,15 @@ html{
 		}
 		&__thumbs {
 			grid-gap: 18px;
+			grid-template-rows: 94px;
 		}
 		&__thumb iframe {
 			border-radius: 5px;
 		}
 		&__dots {
 			position: relative;
-			top: -31px;
-			right: 8px;
+			margin-top: 29px;
+			right: 11px;
 		}
 		&__description {
 			margin-left: 16px;
@@ -333,6 +357,7 @@ html{
 	}
 
 	.main-text {
+		line-height: 16px;
 		margin-bottom: 15px;
 	}
 
@@ -346,9 +371,6 @@ html{
   .zoo {
 		margin-top: 42px;
 		flex-direction: row;
-		&__thumbs {
-			grid-template-rows: 61%;
-		}
 	}
 
 }
@@ -375,15 +397,14 @@ html{
 		}
 		&__thumbs {
 			grid-gap: 16px;
-			grid-template-rows: 58%;
+			grid-template-rows: 89px;
 		}
 		&__dots {
 			position: relative;
-			top: -35px;
 			right: -3px;
 		}
 		&__description {
-			margin-top: 16px;
+			margin-top: 52px;
 			margin-left: 0px;
 			width: 95%;
 			&-wrapper {
@@ -402,9 +423,18 @@ html{
 			width: 70px;
 			height: 70px;
 			&_active {
+				transform: scale(1.29);
+				&:hover {
+					transform: scale(1.34);
+				}
 				& .aside-slider__img {
-					width: 120%;
-					height: 120%;
+					width: 100%;
+					height: 100%;
+					padding: 4px;
+				}
+				& .aside-slider__substrate {
+					width: 94%;
+					height: 94%;
 				}
 			}
 		}
@@ -418,6 +448,125 @@ html{
 
 	.main-text {
 		margin-bottom: 12px;
+	}
+}
+
+@media (min-width: 640px) {
+	.page__wrapper {
+		margin-top: 60px;
+	}
+
+	.main-title {
+		font-size: 48px;
+	}
+
+	.zoo__thumbs {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.main-smallTitle {
+		font-size: 20px;
+	}
+	.main-text {
+		font-size: 14px;
+	}
+
+	// .aside-slider__slide_active:hover {
+	// 	transform: scale(1.46);
+	// }
+}
+
+@media (max-width: 639px) {
+	.page__wrapper {
+		margin: 35px 0 60px 24px;
+	}
+
+	.main-title {
+		font-size: 24px;
+		padding-left: 13px;
+	}
+
+	.main-smallTitle {
+		font-size: 14px;
+	}
+
+	.main-text {
+		font-size: 12px;
+		margin-bottom: 16px;
+		line-height: 14px;
+	}
+
+	.sidebar {
+		width: 337px;
+		margin-left: 5px;
+		margin-top: 52px;
+	}
+
+	.aside-slider {
+		&__slide {
+			width: 40px;
+			height: 40px;
+			&_active {
+				transform: scale(1.65);
+				&:hover {
+					transform: scale(1.7);
+				}
+				& .aside-slider__img {
+					width: 100%;
+					height: 100%;
+					padding: 3px;
+				}
+				& .aside-slider__substrate {
+					width: 92%;
+					height: 92%;
+				}
+			}
+		}
+		&__wrapper {
+			&_vertical .aside-slider__slide.aside-slider__slide_active {
+				margin-top: 15px;
+				margin-bottom: 17px;
+			}
+			&_vertical .aside-slider__slide {
+				margin-bottom: 5px;
+			}
+		}
+		&__button_right {
+			bottom: -16px;
+		}
+	}
+
+	.zoo {
+		margin-top: 21px;
+		&__videos {
+			width: 91%;
+		}
+		&__main-video {
+			margin-bottom: 10px;
+			height: 116px;
+		}
+		&__thumbs {
+			grid-gap: 9px;
+			grid-template-rows: 56px;
+			grid-template-columns: 1fr 1fr;
+		}
+		&__dots {
+			position: relative;
+			margin-top: 20px;
+			top: 0;
+			right: -2px;
+		}
+		&__description {
+			width: 93%;
+			margin-top: 31px;
+			&-wrapper {
+				margin-bottom: 17px;
+			}
+		}
+	}
+
+	.hiden {
+		display: none;
 	}
 }
 
