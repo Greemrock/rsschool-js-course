@@ -424,6 +424,10 @@ html{
     border-right: 30px solid transparent;
     border-top: 50px solid #4bd8b5;
   }
+
+  .map__animal:hover .label__wrapper::after {
+    border-top: 50px solid #EB5757;
+  }
 }
 
 @media (max-width: 1919px) {
@@ -499,6 +503,10 @@ html{
     border-left: 26px solid transparent;
     border-right: 27px solid transparent;
     border-top: 47px solid #4bd8b5;
+  }
+
+  .map__animal:hover .label__wrapper::after {
+    border-top: 50px solid #EB5757;
   }
 }
 
@@ -580,10 +588,6 @@ html{
 
   .main-text {
     font-size: 14px;
-  }
-
-  .map__animal:hover .label__wrapper::after {
-    border-top: 50px solid #EB5757;
   }
 
   .window {
