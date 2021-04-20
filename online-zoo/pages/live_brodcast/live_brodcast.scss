@@ -181,16 +181,19 @@ html.transition *:after {
 }
 
 .main{
-	display: -webkit-box;
+	// display: flex;
+	// justify-content: center;
 	width: 100%;
 	box-shadow: var(--shadow);
-	&__page{
-		width: var(--width1200);
-	}
+	// &__page{
+		
+	// }
 	&__wrapper{
+		position: relative;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		// width: var(--width1200);
 		// margin-left: 151px;
 	}
 	&-margin{
@@ -206,7 +209,7 @@ html.transition *:after {
 	&-smallTitle{
 		font-weight: 900;
 		font-size: 20px;
-		margin-bottom: 8px;
+		margin-bottom: 7px;
 		text-align: center;
 		color: var(--color-title-small);
 	}
@@ -1170,16 +1173,16 @@ html.transition *:after {
 	}
 }
 
-// .sidebar{
-// 	width: 209px;
-// 	margin-top: 77px;
-// }
+.sidebar {
+	position: relative;
+}
 
 .aside-slider{
 	&_vertical{
 		margin: 0;
 		position: sticky;
 		top: 35px;
+		margin-bottom: 20px;
 	}
 	&__wrapper{
 		display: flex;
@@ -1187,7 +1190,6 @@ html.transition *:after {
 		align-items: center;
 		position: relative;
 		overflow: hidden;
-		// padding: 27px 0;
 		&_vertical{
 			flex-direction: column;
 			margin: 0;
@@ -1205,6 +1207,7 @@ html.transition *:after {
 		}
 	}
 	&__slide{
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -1277,7 +1280,7 @@ html.transition *:after {
 .zoo{
 	display: flex;
 	flex-direction: row;
-	margin-top: 40px;
+	margin-top: 42px;
 	// &__videos{
 	// 	flex: 0 0 66%;
 	// }
@@ -1286,13 +1289,14 @@ html.transition *:after {
 		&-title{
 			text-align: start;
 		}
-		&-wrapper{
-			margin-bottom: 35px;
-		}
+		// &-wrapper{
+		// 	margin-bottom: 35px;
+		// }
 	}
 	&__thumbs{
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		// margin: 0 -13px 0;
 	}
 	// &__thumb{
@@ -1310,7 +1314,7 @@ html.transition *:after {
 	}
 	&__dots{
 		display: flex;
-		margin-top: 22px;
+		// margin-top: 22px;
 		width: 100%;
 		justify-content: center;
 		align-items: center;
