@@ -243,17 +243,13 @@ html{
 }
 
 @media (max-width: 1919px) {
-  .map__text {
-    margin: 20px auto 16px;
-  }
-
   .aside-slider {
     position: relative;
-    margin: 0px 60px;
+    margin: 0px 52px;
   }
 
   .aside-slider__slide {
-    margin: 15px 14px;
+    margin: 15px 15px;
   }
 
   .aside-slider__button_right {
@@ -272,7 +268,7 @@ html{
   }
 
   .counter {
-    margin-top: 4px;
+    margin-top: 0;
     right: 0;
   }
 
@@ -358,11 +354,6 @@ html{
     padding: 27px 0;
   }
 
-  .counter {
-    margin-top: 3px;
-    left: 12px;
-  }
-
   .aside-slider__button_right {
     right: -16px;
   }
@@ -373,6 +364,13 @@ html{
 
   .aside-slider__button {
     top: calc(50% - 12px);
+  }
+}
+
+@media (width: 320px) {
+  .counter {
+    margin-top: 3px;
+    left: 12px;
   }
 }
 
@@ -464,7 +462,8 @@ html{
       height: 388px;
     }
     &__text{
-      width: 100%;  
+      padding: 0 5px;
+      margin: 22px 0 14px 0;;
     }
   }
 
@@ -544,7 +543,12 @@ html{
     }
     &__text {
       margin: 22px auto 14px;
+      padding: 0;
     }
+  }
+
+  .counter {
+    margin-top: 4px;
   }
 
   .label {
