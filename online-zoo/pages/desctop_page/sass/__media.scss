@@ -243,11 +243,24 @@ html{
   .range__main-size {
     margin-top: 15px;
   }
+
+  .animal__about {
+    padding-right: 14px;
+    margin-bottom: 14px;
+  }
+  
+  .animal_main-page .btn__img-size {
+    width: 12px;
+    height: 12px;
+  }
+
+  .animal_main-page .btn__title {
+    font-size: 8px;
+  } 
 }
 
 @media (max-width: 1919px) {
   .mainPage__title {
-		// width: 793px;
 		font-size: 89px;
   }
   .mainPage {
@@ -284,6 +297,20 @@ html{
   .range__main-size {
     margin-top: 15px;
   }
+
+  .animal__about {
+    padding-right: 13px;
+    margin-bottom: 14px;
+  }
+
+  .animal_main-page .btn__img-size {
+    width: 20px;
+    height: 20px;
+  }
+
+  .animal_main-page .btn__title {
+    font-size: 10px;
+  } 
 } 
 
 @media (min-width: 1200px) {
@@ -345,6 +372,22 @@ html{
       width: 30px;
     }
   }
+
+  .animal_main-page {
+    padding: 32px 23px;
+  }
+
+  .slider__item {
+    font-size: 10px;
+  }
+
+  .slider__item-active, .aminal {
+    font-size: 14px;
+  }
+
+  .slider__item-active .btn__title, .slider__item.slider__item-petsInZoo .btn__title {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 639px) {
@@ -401,6 +444,38 @@ html{
 		width: 140px;
     margin-top: 3px;
 	}
+
+  .animal_main-page {
+    padding: 9px 7px;
+  }
+
+  .slider__item {
+    font-size: 10px;
+  }
+
+  .slider__item-active {
+    font-size: 12px;
+  }
+
+  .slider__item-mainPage .btn {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 5px;
+  }
+
+  .slider__item-mainPage .btn__poster-play {
+    margin-bottom: 6px;
+  }
+
+  .animal__about {
+    line-height: 14px;
+    padding-right: 0;
+    margin-bottom: 6px;
+  }
+
+  .slider__item-active .btn__title {
+    font-size: 10px;
+  }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HOW ITS WORK? 
@@ -604,6 +679,10 @@ html{
   .range-petsInZoo {
     margin-top: 15px;
   }
+
+  .animal__padding {
+    padding: 40px 23px;
+  }
 }
 
 @media (max-width: 1919px) {
@@ -632,6 +711,10 @@ html{
 
   .range-petsInZoo {
     margin-top: 15px;
+  }
+
+  .animal__padding {
+    padding: 32px 8px;
   }
 }
 
@@ -666,6 +749,11 @@ html{
   }
 }
 
+@media (max-width: 640px) {
+  .animal__padding {
+    padding: 32px 9px;
+  }
+}
 @media (max-width: 639px) {
   .petsInZoo {
     width: var(--width300);
@@ -689,6 +777,20 @@ html{
 
   .slider__item-petsInZoo {
     margin-right: 16px;
+  }
+
+  .animal__padding {
+    padding: 30px 11px;
+  }
+
+  .slider__item.slider__item-petsInZoo .btn__title {
+    font-size: 12px;
+  }
+
+  .slider-petsInZoo .animal__about {
+    line-height: 15px;
+    padding-right: 3px;
+    margin-bottom: 14px;
   }
 }
 

@@ -285,7 +285,7 @@ html.transition *:after {
 		&-main{
 			font-size: 18px;
 			font-weight: 900;
-			padding-left: 6px;
+			// padding-left: 6px;
 		}
 	}
 	&__img{
@@ -293,8 +293,8 @@ html.transition *:after {
 		margin-right: 3px;
 		&-size {
 			display: block;
-			width: 15px;
-			height: 15px;
+			width: 30px;
+			height: 30px;
 		}
 		&-play{
 			background-image: url(../../../assets/icons/play.svg);
@@ -481,15 +481,8 @@ html.transition *:after {
 		list-style-type: none;
 		cursor: pointer;
 		overflow: hidden;
-		font-size: 10px;
 		&-active,
 		&.slider__item-petsInZoo {
-			font-size: 14px;
-
-			.btn__title {
-				font-size: 12px;
-			}
-
 			.btn__img-size {
 				width: 24px;
 				height: 24px;
@@ -531,9 +524,9 @@ html.transition *:after {
 		&-mainPage{
 			border-radius: 5px;
 			transition: all 0.3s;
-			&:hover{
-				transform: scale(1.1);
-			}
+			// &:hover{
+			// 	transform: scale(1.1);
+			// }
 		}
 	}
 	&__img{
@@ -591,12 +584,11 @@ html.transition *:after {
   flex-direction: column;
   justify-content: flex-end;
   opacity: 0;
-  padding: 10px 10px;
   cursor: pointer;
   border-radius: 5px;
 	transition: all 0.3s;
   z-index: 10;
-	padding: 32px 23px;
+	// padding: 32px 23px;
 	// &__wrapper{
 	// 	margin-left: 22px;
 	// }
@@ -626,10 +618,8 @@ html.transition *:after {
 		border-radius: 5px;
 	}
 	&__about{
-		margin-bottom: 14px;
 		&-text{
 			color: #FFFFFF;
-			// font-size: 14px;
 		}
 	}
 }
