@@ -230,7 +230,7 @@ html.transition *:after {
 
 .bg-mainPage{
 	background-repeat: no-repeat;
-	background-image: url(../../../assets/images/bg-main.jpg);
+	background-image: url(../../../assets/images/main-page/bg-main.jpg);
 	background-position: center;
 	background-size: cover;
 	overflow: hidden;
@@ -566,7 +566,7 @@ html.transition *:after {
 	}
 	&__string{
 		position: absolute;
-		background-image: url(../../../assets/images/string.svg);
+		background-image: url(../../../assets/images/main-page/string.svg);
 		background-repeat: no-repeat;
 		width: 1530px;
 		height: 13px;
@@ -588,35 +588,6 @@ html.transition *:after {
   border-radius: 5px;
 	transition: all 0.3s;
   z-index: 10;
-	// padding: 32px 23px;
-	// &__wrapper{
-	// 	margin-left: 22px;
-	// }
-	&-panda{
-		background-image: url(../../../assets/images/petsInZoo/img_1.jpg);
-		background-repeat: no-repeat;
-		border-radius: 5px;
-		&__mainPage{
-			background-image: url(../../../assets/images/mainPage/panda.jpg);
-			background-repeat: no-repeat;
-			border-radius: 5px;
-		}
-	}
-	&-eagle{
-		background-image: url(../../../assets/images/petsInZoo/img_2.jpg);
-		background-repeat: no-repeat;
-		border-radius: 5px;
-	}
-	&-garilla{
-		background-image: url(../../../assets/images/petsInZoo/img_3.jpg);
-		background-repeat: no-repeat;
-		border-radius: 5px;
-	}
-	&-alligator{
-		background-image: url(../../../assets/images/petsInZoo/img_4.jpg);
-		background-repeat: no-repeat;
-		border-radius: 5px;
-	}
 	&__about{
 		&-text{
 			color: #FFFFFF;
