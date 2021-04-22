@@ -468,6 +468,13 @@ html.transition *:after {
 			z-index: 1;
 		}
 	}
+	&__slide {
+		position: relative;
+		display: flex;
+		list-style-type: none;
+		cursor: pointer;
+		overflow: hidden;
+	}
 	&__item{
 		position: relative;
 		display: flex;
@@ -475,9 +482,9 @@ html.transition *:after {
 		cursor: pointer;
 		overflow: hidden;
 		font-size: 10px;
-		&-active {
+		&-active,
+		&.slider__item-petsInZoo {
 			font-size: 14px;
-			top: -14px;
 
 			.btn__title {
 				font-size: 12px;
@@ -487,6 +494,9 @@ html.transition *:after {
 				width: 24px;
 				height: 24px;
 			}
+		}
+		&-active {
+			top: -14px;
 		}
 		&::after {
 			content: "";
@@ -507,6 +517,9 @@ html.transition *:after {
 		&:hover .animal {
 			top: 0;
 			opacity: 1;
+		}
+		&-petsInZoo {
+			font-size: 14px;
 		}
 		&-testimonials{
 			display: flex;
