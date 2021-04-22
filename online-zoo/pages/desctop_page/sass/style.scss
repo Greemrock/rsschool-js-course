@@ -229,7 +229,6 @@ html.transition *:after {
 }
 
 .bg-mainPage{
-	// height: 940px;
 	background-repeat: no-repeat;
 	background-image: url(../../../assets/images/bg-main.jpg);
 	background-position: center;
@@ -242,7 +241,6 @@ html.transition *:after {
 		word-wrap: normal;
 		font-weight: 900;
 		color: #fefefe;
-		// margin-bottom: 41px;
 	}
 }
 
@@ -343,12 +341,6 @@ html.transition *:after {
 .range {
 	height: 5px;
 	-webkit-appearance: none;
-	// margin: 15px 0 32px 0;
-	// width: 245px;
-	// &__mini-size {
-	// 	width: 140px;
-  //   margin-top: 3px;
-	// }
 	&:focus {
 		outline: none;
 	}
@@ -361,7 +353,6 @@ html.transition *:after {
 	}
 	&::-webkit-slider-thumb {
 		height: 10px;
-		// width: 30px;
 		background: #FFFFFF;
 		cursor: pointer;
 		-webkit-appearance: none;
@@ -410,9 +401,6 @@ html.transition *:after {
 	&-black::-webkit-slider-thumb {
 		background: var(--color-text);
 	}
-	// &-bigThumb::-webkit-slider-thumb{
-	// 	width: 62px;
-	// }
 }
 
 .counter{
@@ -423,8 +411,6 @@ html.transition *:after {
 	&_mainPage{
 		width: 245px;
 		position: absolute;
-		// bottom: 36px;
-		// left: 321px;
 	}
 	&__current{
 		font-weight: 900;
@@ -512,7 +498,6 @@ html.transition *:after {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		// object-position: center;
 	}
 	&__animal{
 		width: 278px;
@@ -539,7 +524,6 @@ html.transition *:after {
 		}
 	}
 	&__block{
-		// margin: 47px 0;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
@@ -552,7 +536,6 @@ html.transition *:after {
 		height: 13px;
 		z-index: 0;
 	}
-	
 }
 
 .mask{
@@ -566,16 +549,10 @@ html.transition *:after {
 	z-index: 5;
 	&_active{
 		opacity: 1;	
-		// & .animal{
-		// 	bottom: 140px;
-		// 	transition: all 0.4s;		
-		// }
 	}
 }
 
 .slider__item-active{
-	// height: 352px;
-	// width: 245px;
 	position: relative;
 	bottom: 14px;
 }
@@ -590,7 +567,6 @@ html.transition *:after {
 		transition: all 0.4s;	
 	}
 	&__wrapper{
-		// display: none;
 		margin-left: 22px;
 	}
 	&-panda{
@@ -647,7 +623,6 @@ html.transition *:after {
 }
 
 .petsInZoo{
-	// width: var(--width1200);
 	&__title{
 		text-align: center;
 	}
@@ -750,10 +725,8 @@ html.transition *:after {
 }
 
 .testimonials{
-	// width: var(--width1200);
 	&__title{
 		text-align: center;
-		// margin-bottom: 12px;
 	}
 }
 
@@ -788,7 +761,6 @@ html.transition *:after {
 		text-align: center;
 	}
 	&__world{
-		// margin-bottom: 31px;
 		&_img{
 			filter: var(--map-color);
 		}
@@ -806,9 +778,6 @@ html.transition *:after {
 			.label__wrapper{
 				background-color: #EB5757;
 				z-index: 2;
-				// &::after{
-				// 	border-top: 50px solid #EB5757;
-				// }
 			}
 		}
 	}
@@ -886,7 +855,6 @@ html.transition *:after {
 		}
 	}
 	&__contacts{
-		// margin-bottom: 46px;
 		color: #fefefe;
 	}
 	&__copyright{
@@ -917,7 +885,6 @@ html.transition *:after {
 			color: var(--footer-text);
 			font-size: 20px;
 			font-weight: 900;
-			// margin-bottom: 33px;
 		}
 	}
 	&__donate {
@@ -946,7 +913,6 @@ html.transition *:after {
 		height: 122px;
 		border: 1px solid #BDBDBD;
 		border-radius: 3px;
-		// margin-bottom: 27px;
 		&-textarea{
 			width: 100%;
 			border: none;
@@ -979,7 +945,6 @@ html.transition *:after {
 		color: #FEFEFE;
 		background: url(../../../assets/images/footer/send_btn.svg) no-repeat 60px 3px;
 		cursor: pointer;
-		// margin-right: 14px;
 	}
 	&__wrapper-send{
 		display: flex;
