@@ -31,15 +31,12 @@ function handleUpdate() {
 }
 
 function filter(name, value) {
-  console.log(`IMG.width`, IMG.width)
-  let canvas = document.querySelector('canvas');
-  console.log(`canvas`, canvas)
   if (name == 'blur') blur = value;
   if (name == 'invert') invert = value;
   if (name == 'sepia') sepia = value;
   if (name == 'saturate') saturate = value;
   if (name == 'hue') hue = value;
-  styleForCanvas = `blur(${blur}px) invert(${invert}%) sepia(${sepia}%) saturate(${saturate}%) hue-rotate(${hue}deg)`
+  styleForCanvas = `blur(${blur}px) invert(${invert}%) sepia(${sepia}%) saturate(${saturate}%) hue-rotate(${hue}deg)`;
   return styleForCanvas;
 }
 
@@ -108,14 +105,15 @@ function loadPicture() {
 
 function savePicture() {
   const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext("2d");
   const img = new Image();
   img.setAttribute('crossOrigin', 'anonymous'); 
   img.src = IMG.src;
   img.onload = function() {
+    const index = ratio(img, canvas);
     canvas.width = img.width;
     canvas.height = img.height;
-    const ctx = canvas.getContext("2d");
-    ctx.filter = styleForCanvas;
+    ctx.filter = `blur(${blur * index}px) invert(${invert}%) sepia(${sepia}%) saturate(${saturate}%) hue-rotate(${hue}deg)`;
     ctx.drawImage(img, 0, 0);
     let link = document.createElement('a');
     link.download = 'download.png';
@@ -123,6 +121,14 @@ function savePicture() {
     link.click();
     link.delete;
   };
+}
+
+function ratio(img, canvas) {
+  if (img.width < img.height) {
+    return img.width / canvas.width
+  } else {
+    return img.height / canvas.height;
+  }
 }
 
 FULLSCREEN.addEventListener('click', toggleFullScreen);
