@@ -59,6 +59,7 @@ function reset() {
     sepia = 0;
     saturate = 100;
     hue = 0;
+    styleForCanvas = ""
 }
 
 function viewSrcImage(src) {  
@@ -104,6 +105,7 @@ function loadPicture() {
         IMG.src = reader.result;
     }
     reader.readAsDataURL(file);
+    FILEINPUT.value = "";
 }
 
 function savePicture() {
