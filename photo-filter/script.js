@@ -1,6 +1,4 @@
 const FULLSCREEN = document.querySelector(".openfullscreen");
-const INPUTS = document.querySelectorAll(".filters input");
-const OUTPUTS = document.querySelectorAll(".filters output");
 const LABELS = document.querySelectorAll(".filters label");
 const IMG = document.querySelector(".editor img");
 const FILTERS = document.querySelector(".filters");
