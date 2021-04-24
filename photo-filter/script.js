@@ -28,6 +28,9 @@ function drawImage(src, config = "none") {
   IMG.onload = function () {
     ratio = IMG.width / IMG.height;
     if (IMG.height > 1200) {
+      if (100 * ratio > 100) {
+        ratio = 1;
+      }
       canvas.style.width = `${100 * ratio}%`;
       canvas.style.margin = "0 auto";
     }
@@ -70,8 +73,10 @@ function nextPicture() {
   const IMAGES = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
   const index = i % IMAGES.length;
   const imageSrc = `${BASE}/${pictureDependOnTheTime()}/${IMAGES[index]}`;
-  canvas.style.width = "";
-  canvas.style = "";
+  canvas.width = '';
+  canvas.height = '';
+  canvas.removeAttribute("style");
+
   drawImage(imageSrc, ctx.filter);
   i++;
   
