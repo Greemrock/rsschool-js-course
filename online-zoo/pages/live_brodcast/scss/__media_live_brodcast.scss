@@ -211,12 +211,13 @@ html{
 
 @media (min-width: 1920px) {
 	.page__wrapper {
+		width: 82%;
 		margin-left: 151px;
 		margin-bottom: 100px;
 	}
 
 	.sidebar {
-		width: 310px;
+		width: 11%;
 		margin-top: 77px;
 	}
 
@@ -298,12 +299,13 @@ html{
 
 @media (max-width: 1919px) {
 	.page__wrapper {
-		margin-left: 49px;
+		width: 82%;
+		margin-left: 64px;
 		margin-bottom: 100px;
 	}
 
 	.sidebar {
-		width: 349px;
+		width: 10%;
 		margin-top: 77px;
 	}
 
@@ -354,7 +356,7 @@ html{
 			height: 297px;
 		}
 		&__videos {
-			flex: 0 0 53%;
+			flex: 0 0 54%;
 		}
 		&__thumbs {
 			grid-gap: 18px;
@@ -398,8 +400,14 @@ html{
 
 @media (max-width: 1199px) {
 	.page__wrapper {
-		margin-left: 18px;
+		width: 85%;
+		margin-left: 19px;
 		margin-bottom: 80px;
+	}
+
+	.sidebar {
+		width: 17%;
+		margin-top: 77px;
 	}
 
 	.main-title {
@@ -407,11 +415,9 @@ html{
 	}
 
 	.zoo {
+		width: 96%;
 		margin-top: 36px;
 		flex-direction: column;
-		&__videos {
-			width: 96%;
-		}
 		&__main-video {
 			margin-bottom: 15px;
 			height: 280px;
@@ -432,11 +438,6 @@ html{
 				margin-bottom: 28px;
 			}
 		}
-	}
-
-	.sidebar {
-		width: 275px;
-		margin-top: 77px;
 	}
 
 	.aside-slider {
@@ -472,7 +473,7 @@ html{
 	}
 }
 
-@media (min-width: 640px) {
+@media (min-width: 571px) {
 	.page__wrapper {
 		margin-top: 60px;
 	}
@@ -491,15 +492,17 @@ html{
 	.main-text {
 		font-size: 14px;
 	}
-
-	// .aside-slider__slide_active:hover {
-	// 	transform: scale(1.46);
-	// }
 }
 
-@media (max-width: 639px) {
+@media (max-width: 570px) {
 	.page__wrapper {
-		margin: 35px 0 60px 24px;
+		width: 77%;
+		margin: 35px 0 60px 19px;
+	}
+
+	.sidebar {
+		width: 26%;
+		margin-top: 52px;
 	}
 
 	.main-title {
@@ -515,12 +518,6 @@ html{
 		font-size: 12px;
 		margin-bottom: 16px;
 		line-height: 14px;
-	}
-
-	.sidebar {
-		width: 337px;
-		margin-left: 5px;
-		margin-top: 52px;
 	}
 
 	.aside-slider {
@@ -558,10 +555,8 @@ html{
 	}
 
 	.zoo {
+		width: 91%;
 		margin-top: 21px;
-		&__videos {
-			width: 91%;
-		}
 		&__main-video {
 			margin-bottom: 10px;
 			height: 116px;
@@ -578,7 +573,7 @@ html{
 			right: -2px;
 		}
 		&__description {
-			width: 93%;
+			width: 100%;
 			margin-top: 31px;
 			&-wrapper {
 				margin-bottom: 17px;
