@@ -300,22 +300,10 @@ html.transition *:after {
 		}
 	}
 	&__img{
-		background-image: url(../../../assets/icons/play-big.svg);
+		background-image: url(../../../assets/icons/play.svg);
 		background-repeat: no-repeat;
 		width: 32px;
 		height: 32px;
-		&-play{
-			background-image: url(../../../assets/icons/play-small.svg);
-			background-repeat: no-repeat;
-			width: 24px;
-			height: 24px;
-		}
-		&-donate{
-			background-image: url(../../../assets/icons/donate.svg);
-			background-repeat: no-repeat;
-			width: 24px;
-			height: 24px;
-		}
 	}
 	&__poster{
 		display: flex;
