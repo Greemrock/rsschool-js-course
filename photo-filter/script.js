@@ -24,16 +24,13 @@ function drawImage(src, config = "none") {
   IMG.src = src;
   IMG.setAttribute("crossOrigin", "anonymous");
   IMG.onload = function () {
-    ratio = IMG.width / IMG.height;
-    if (IMG.height > 1200) {
-      if (100 * ratio > 100) {
-        ratio = 1;
-      }
-      canvas.style.width = `${100 * ratio}%`;
-      canvas.style.margin = "0 auto";
-    }
     canvas.width = IMG.width;
     canvas.height = IMG.height;
+
+    if (IMG.height > 1200) {
+      canvas.style.height = "520px";
+      canvas.style.margin = "0 auto";
+    }
 
     ctx.filter = config;
     ctx.drawImage(IMG, 0, 0);
@@ -71,29 +68,26 @@ function nextPicture() {
   const IMAGES = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
   const index = i % IMAGES.length;
   const imageSrc = `${BASE}/${pictureDependOnTheTime()}/${IMAGES[index]}`;
-  canvas.width = '';
-  canvas.height = '';
   canvas.removeAttribute("style");
 
   drawImage(imageSrc, ctx.filter);
   i++;
-  
 }
 
 function pictureDependOnTheTime() {
   const timesOfDay = ['morning', 'day', 'evening', 'night'];
-  let now = new Date();
+  let now = new Date().getHours();
 
-  if (now.getHours() >= 6 && now.getHours() < 12) {
+  if (now >= 6 && now < 12) {
     return timesOfDay[0];
   }
-  if (now.getHours() >= 12 && now.getHours() < 18) {
+  if (now >= 12 && now < 18) {
     return timesOfDay[1];
   }
-  if (now.getHours() >= 18 && now.getHours() < 24) {
+  if (now >= 18 && now < 24) {
     return timesOfDay[2];
   }
-  if (now.getHours() >= 0 && now.getHours() < 6) {
+  if (now >= 0 && now < 6) {
     return timesOfDay[3];
   }
 }
@@ -114,14 +108,6 @@ function savePicture() {
   link.href = canvas.toDataURL('image/png');
   link.click();
   link.delete;
-}
-
-function ratio(img, canvas) {
-  if (img.width < img.height) {
-    return img.width / canvas.width
-  } else {
-    return img.height / canvas.height;
-  }
 }
 
 FULLSCREEN.addEventListener('click', toggleFullScreen);
