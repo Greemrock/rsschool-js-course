@@ -1,0 +1,36 @@
+.step-prew {
+  transform: translateX(186px);
+}
+
+.step-zero {
+  transform: translateX(0);
+}
+
+.step-one {
+  transform: translateX(-186px);
+}
+
+.step-two {
+  transform: translateX(calc(-186px * 2));
+}
+
+.step-three {
+  transform: translateX(calc(-186px * 3));
+}
+
+.step-foure {
+  transform: translateX(calc(-186px * 4));
+}
+
+.step-five {
+  transform: translateX(calc(-186px * 5));
+}
+
+.step-six {
+  transform: translateX(calc(-186px * 6));
+}
+
+.hide {
+  opacity: 0;
+  display: none;
+}
