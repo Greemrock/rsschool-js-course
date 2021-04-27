@@ -2,7 +2,9 @@ let checkbox = document.querySelector('.theme__toggle');
 let burger = document.querySelector('.header__burger');
 let navbar = document.querySelector('.navbar');
 
-checkbox.addEventListener('change', function() {
+// cange color theme
+
+function changeTheme() {
   if(this.checked) {
     trans()
     document.documentElement.setAttribute('data-theme', 'dark')
@@ -10,7 +12,7 @@ checkbox.addEventListener('change', function() {
     trans()
     document.documentElement.setAttribute('data-theme', 'light')
   }
-})
+}
 
 let trans = () => {
   document.documentElement.classList.add('transition');
@@ -19,9 +21,12 @@ let trans = () => {
   }, 1000)
 }
 
+// open burger menu
+
 burger.addEventListener('click', (event) => {
   burger.classList.toggle('active');
   navbar.classList.toggle('active');
   document.body.classList.toggle('lock');
-
 })
+
+checkbox.addEventListener('change', changeTheme)
