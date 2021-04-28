@@ -1,32 +1,36 @@
-.step-prew {
+.slider__list-mainPage {
+  transition: all 0.2s;
+}
+
+.step-1 {
   transform: translateX(186px);
 }
 
-.step-zero {
+.step-2 {
   transform: translateX(0);
 }
 
-.step-one {
+.step-3 {
   transform: translateX(-186px);
 }
 
-.step-two {
+.step-4 {
   transform: translateX(calc(-186px * 2));
 }
 
-.step-three {
+.step-5 {
   transform: translateX(calc(-186px * 3));
 }
 
-.step-foure {
+.step-6 {
   transform: translateX(calc(-186px * 4));
 }
 
-.step-five {
+.step-7 {
   transform: translateX(calc(-186px * 5));
 }
 
-.step-six {
+.step-8 {
   transform: translateX(calc(-186px * 6));
 }
 

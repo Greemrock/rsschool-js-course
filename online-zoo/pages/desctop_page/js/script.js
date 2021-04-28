@@ -33,94 +33,58 @@ checkbox.addEventListener('change', changeTheme)
 
 // slider in main-page
 
-const carousel = document.querySelectorAll('.slider__item-mainPage');
+const slides = document.querySelectorAll('.slider__item-mainPage');
+const carousel = document.querySelector('.slider__list-mainPage');
+const range = document.querySelector('.range__main-size');
+const counter = document.querySelector('#current-mainPage');
 
-carousel.forEach((slide) => {
-  slide.addEventListener('click', () => {
-    hideSlide(carousel, slide.dataset.number);
+const nextSlide = (elem, slideNumber) => {
 
-    //first slide
-    if (slide.dataset.number == -1) {
-      carousel.forEach((e) => {
-        e.classList.add('step-prew');
-        e.classList.remove('step-zero', 'step-one', 'step-two', 'step-three', 'step-foure', 'step-five', 'step-six', 'slider__item-active', 'hide');
-      })
-      slide.classList.add('slider__item-active');
-    }
+  //next slide
 
-    //second slide
-    if (slide.dataset.number == 0) {
-      carousel.forEach((e) => {
-        e.classList.add('step-zero');
-        e.classList.remove('step-prew', 'step-one', 'step-two', 'step-three', 'step-foure', 'step-five', 'step-six', 'slider__item-active', 'hide');
-      })
-      slide.classList.add('slider__item-active');
-    }
+  carousel.classList.remove('step-1', 'step-2', 'step-3', 'step-4', 'step-5', 'step-6', 'step-7', 'step-8');
+  carousel.classList.add(`step-${slideNumber}`);
 
-    //third slide
-    if (slide.dataset.number == 1) {
-      carousel.forEach((e) => {
-        e.classList.add('step-one');
-        e.classList.remove('step-prew', 'step-zero', 'step-two', 'step-three', 'step-foure', 'step-five', 'step-six', 'slider__item-active');
-      })
-      slide.classList.add('slider__item-active');
-      carousel[1].classList.remove('hide');
-    }
+  //active slide
 
-    //fourth slide
-    if (slide.dataset.number == 2) {
-      carousel.forEach((e) => {
-        e.classList.add('step-two');
-        e.classList.remove('step-prew', 'step-zero', 'step-one', 'step-three', 'step-foure', 'step-five', 'step-six', 'slider__item-active');
-      })
-      slide.classList.add('slider__item-active');
-      carousel[2].classList.remove('hide');
-    }
+  slides.forEach((e) => e.classList.remove('slider__item-active'));
+  if (elem) {
+    elem.target.classList.add('slider__item-active');
+  } else {
+    slides.forEach((e) => {
+      if (e.dataset.number == slideNumber) {
+        e.classList.add('slider__item-active');
+      }
+    })
+  }
 
-    //fifth slide
-    if (slide.dataset.number == 3) {
-      carousel.forEach((e) => {
-        e.classList.add('step-three');
-        e.classList.remove('step-prew', 'step-zero', 'step-one', 'step-two', 'step-foure', 'step-five', 'step-six', 'slider__item-active');
-      })
-      slide.classList.add('slider__item-active');
-      carousel[3].classList.remove('hide');
-    }
+  //unhide slide
 
-    //sixth slide
-    if (slide.dataset.number == 4) {
-      carousel.forEach((e) => {
-        e.classList.add('step-foure');
-        e.classList.remove('step-prew', 'step-zero', 'step-one', 'step-two', 'step-three', 'step-five', 'step-six', 'slider__item-active');
-      })
-      slide.classList.add('slider__item-active');
-      carousel[4].classList.remove('hide');
-    }
+  for (let i = 0; i < slideNumber; i++) {
+    slides[i].classList.remove('hide');
+  }
 
-    //seventh slide
-    if (slide.dataset.number == 5) {
-      carousel.forEach((e) => {
-        e.classList.add('step-five');
-        e.classList.remove('step-prew', 'step-zero', 'step-one', 'step-two', 'step-three', 'step-foure', 'step-six', 'slider__item-active');
-      }) 
-      slide.classList.add('slider__item-active');
-      carousel[5].classList.remove('hide');
-    }
+  //hide slide
 
-    //eighth slide
-    if (slide.dataset.number == 6) {
-      carousel.forEach((e) => {
-        e.classList.add('step-six');
-        e.classList.remove('step-prew', 'step-zero', 'step-one', 'step-two', 'step-three', 'step-foure', 'step-five', 'slider__item-active');
-      })
-      slide.classList.add('slider__item-active');
-    }
-  })
-
-})
-
-const hideSlide = (nodeList, amount) => {
-  for (let i = 0; i < amount; i++) {
-    nodeList[i].classList.add('hide');
+  for (let i = 0; i < slideNumber - 2; i++) {
+    slides[i].classList.add('hide');
   }
 }
+
+const rangeValue = function(){
+  const newValue = range.value;
+  counter.innerHTML = `0${newValue}`;
+  nextSlide(null, newValue);
+}
+
+carousel.addEventListener('click', (slide) => {
+  if (slide.target.classList.contains('animal')) {
+    return;
+  }
+  if (slide.target.dataset.number) {
+    const slideNumber = slide.target.dataset.number;
+    nextSlide(slide, slideNumber);
+  }
+})
+
+range.addEventListener("input", rangeValue);
