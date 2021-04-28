@@ -31,7 +31,7 @@ burger.addEventListener('click', (event) => {
 
 checkbox.addEventListener('change', changeTheme)
 
-// slider in main-page
+// carousel in main-page
 
 const slides = document.querySelectorAll('.slider__item-mainPage');
 const carousel = document.querySelector('.slider__list-mainPage');
@@ -71,7 +71,7 @@ const nextSlide = (elem, slideNumber) => {
   }
 }
 
-const rangeValue = function(){
+const rangeValue = function(range, counter){
   const newValue = range.value;
   counter.innerHTML = `0${newValue}`;
   nextSlide(null, newValue);
@@ -87,4 +87,27 @@ carousel.addEventListener('click', (slide) => {
   }
 })
 
-range.addEventListener("input", rangeValue);
+range.addEventListener("input", () => {
+  rangeValue(range, counter);
+});
+
+// carousel how it worsk
+
+const carouselHow = document.querySelector('.slider__carousel');
+const rangeHow = document.querySelector('#range-howItWorks');
+const counterHow = document.querySelector('#current-howItWorks');
+
+const rangeValueHow = function(range, counter){
+  const newValue = range.value;
+  counter.innerHTML = `0${newValue}`;
+  nextSlideHow(newValue);
+}
+
+const nextSlideHow = (counter) => {
+  const step = 746;
+  carouselHow.style.cssText = `transform: translateX(-${step * (counter - 1)}px);`
+} 
+
+rangeHow.addEventListener("input", () => {
+  rangeValueHow(rangeHow, counterHow);
+});

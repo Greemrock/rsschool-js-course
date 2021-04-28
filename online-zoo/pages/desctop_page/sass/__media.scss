@@ -486,7 +486,7 @@ html{
   
   .slider__item-howItWorks {
     width: 790px;
-    height: 323px;	
+    object-fit: cover;
   }
 
   .slider__howItWorks {
@@ -495,6 +495,20 @@ html{
 
   .range-bigThumb {
     margin-top: 15px;
+  }
+
+  .slider__carousel {
+    height: 323px;	
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .slider__wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    border-radius: 5px;
   }
 
   .range-bigThumb::-webkit-slider-thumb{
@@ -507,9 +521,24 @@ html{
     width: 746px;
   }
 
+  .slider__carousel {
+    height: 323px;	
+    display: flex;
+    justify-content: flex-start;
+    transition: all 0.3s;
+  }
+
+  .slider__wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    border-radius: 5px;
+  }
+
   .slider__item-howItWorks{
     width: 746px;
-    height: 323px;
+    object-fit: cover;
   }
 
   .slider__howItWorks {
