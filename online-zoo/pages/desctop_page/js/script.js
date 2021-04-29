@@ -97,17 +97,62 @@ const carouselHow = document.querySelector('.slider__carousel');
 const rangeHow = document.querySelector('#range-howItWorks');
 const counterHow = document.querySelector('#current-howItWorks');
 
-const rangeValueHow = function(range, counter){
-  const newValue = range.value;
-  counter.innerHTML = `0${newValue}`;
+const rangeValueHow = () => {
+  const newValue = rangeHow.value;
+  counterHow.innerHTML = `0${newValue}`;
   nextSlideHow(newValue);
 }
 
 const nextSlideHow = (counter) => {
-  const step = 746;
-  carouselHow.style.cssText = `transform: translateX(-${step * (counter - 1)}px);`
+  const width = carouselHow.offsetWidth;
+  carouselHow.style.cssText = `transform: translateX(-${width * (counter - 1)}px);`
 } 
 
-rangeHow.addEventListener("input", () => {
-  rangeValueHow(rangeHow, counterHow);
-});
+rangeHow.addEventListener("input", rangeValueHow);
+
+// carousel Pets in ZOO
+
+const windowCarouselPets = document.getElementById('slider-pets');
+const btnNextSlidePets = document.getElementById('next-pets');
+const btnPrevBtnSlidePets = document.getElementById('prev-pets');
+const rangePets = document.getElementById('range-pets');
+const counterPets = document.getElementById('current-pets');
+const margin = 29;
+const widthPets = windowCarouselPets.offsetWidth + margin;
+let counterSlidePets = 0;
+const maxSlidePets = 7;
+
+const nextGroupSlidesPets = () => {
+  counterSlidePets += 1;
+  if (counterSlidePets > maxSlidePets) {
+    counterSlidePets = 0;
+  }
+  windowCarouselPets.scrollTo((widthPets) * counterSlidePets, 0);
+  addValueInRange();
+}
+
+const prevGroupSlidesPets = () => {
+  counterSlidePets -= 1;
+  if (counterSlidePets < 0) {
+    counterSlidePets = maxSlidePets;
+  }
+  windowCarouselPets.scrollTo((widthPets) * counterSlidePets, 0);
+  addValueInRange();
+}
+
+const addValueInRange = () => {
+  counterPets.innerHTML = `0${counterSlidePets + 1}`;
+  rangePets.value = counterSlidePets + 1;
+}
+
+const rangeValuePets = () => {
+  let newValue = rangePets.value;
+  let index = newValue - 1;
+
+  counterPets.innerHTML = `0${newValue}`;
+  windowCarouselPets.scrollTo((widthPets) * index, 0);
+}
+
+btnNextSlidePets.addEventListener('click', nextGroupSlidesPets);
+btnPrevBtnSlidePets.addEventListener('click', prevGroupSlidesPets);
+rangePets.addEventListener("input", rangeValuePets);

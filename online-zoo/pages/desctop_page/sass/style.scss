@@ -408,6 +408,12 @@ html.transition *:after {
 		width: 245px;
 		position: absolute;
 	}
+	&-petsInZoo .counter__numbers{
+		color: var(--color-text);
+	}
+	&-testimonials .counter__numbers{
+		color: var(--color-text);
+	}
 	&__current{
 		font-weight: 900;
 		font-size: 24px;
@@ -456,17 +462,19 @@ html.transition *:after {
 		display: flex;
 		align-items: center;
 		flex-direction: row;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 	&__list{
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		&-testimonials{
-			width: 1200px;
-			grid-template-columns: 1fr 1fr;
+			// width: 1200px;
+			display: grid;
+			grid-template-columns: auto auto;
 			grid-template-rows: 310px;
-			grid-column-gap: 26px;
+			grid-auto-flow: column;
+			padding: 20px 0;
 		}
 		&-mainPage{
 			height: 352px;
@@ -528,6 +536,7 @@ html.transition *:after {
 			box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.1);
 			border-radius: 5px;
 			background-color: var(--bg-review);
+			margin: 0px 10px;
 		}
 		&-mainPage{
 			border-radius: 5px;

@@ -501,6 +501,7 @@ html{
     height: 323px;	
     display: flex;
     justify-content: flex-start;
+    transition: all 0.3s;
   }
 
   .slider__wrapper {
@@ -693,7 +694,7 @@ html{
   .slider__item-petsInZoo {
     width: 278px;
     height: 399px;
-    margin-right: 30px;
+    margin-right: 29px;
   }
 
   .slider-petsInZoo {
@@ -783,6 +784,7 @@ html{
     padding: 32px 9px;
   }
 }
+
 @media (max-width: 639px) {
   .petsInZoo {
     width: var(--width300);
@@ -932,7 +934,7 @@ html{
   }
   
   .slider__item-testimonials {
-    width: 585px;
+    width: 580px;
     height: 310px;
   }
 

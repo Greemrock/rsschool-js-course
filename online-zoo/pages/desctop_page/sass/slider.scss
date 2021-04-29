@@ -38,3 +38,15 @@
   opacity: 0;
   display: none;
 }
+
+#slider-pets {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+#slider-testimonials {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
