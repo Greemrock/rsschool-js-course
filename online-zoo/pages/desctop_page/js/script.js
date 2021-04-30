@@ -1,8 +1,6 @@
-let checkbox = document.querySelector('.theme__toggle');
-let burger = document.querySelector('.header__burger');
-let navbar = document.querySelector('.navbar');
-
 // cange color theme
+
+let checkbox = document.querySelector('.theme__toggle');
 
 function changeTheme() {
   if(this.checked) {
@@ -21,15 +19,22 @@ let trans = () => {
   }, 1000)
 }
 
+checkbox.addEventListener('change', changeTheme)
+
 // open burger menu
 
-burger.addEventListener('click', (event) => {
+let navbar = document.querySelector('.navbar');
+let burger = document.querySelector('.header__burger');
+
+
+
+const toggleBurgerMenu = () => {
   burger.classList.toggle('active');
   navbar.classList.toggle('active');
   document.body.classList.toggle('lock');
-})
+}
 
-checkbox.addEventListener('change', changeTheme)
+burger.addEventListener('click', toggleBurgerMenu)
 
 // carousel in main-page
 
@@ -41,12 +46,10 @@ const counter = document.querySelector('#current-mainPage');
 const nextSlide = (elem, slideNumber) => {
 
   //next slide
-
   carousel.classList.remove('step-1', 'step-2', 'step-3', 'step-4', 'step-5', 'step-6', 'step-7', 'step-8');
   carousel.classList.add(`step-${slideNumber}`);
 
   //active slide
-
   slides.forEach((e) => e.classList.remove('slider__item-active'));
   if (elem) {
     elem.target.classList.add('slider__item-active');
@@ -59,13 +62,11 @@ const nextSlide = (elem, slideNumber) => {
   }
 
   //unhide slide
-
   for (let i = 0; i < slideNumber; i++) {
     slides[i].classList.remove('hide');
   }
 
   //hide slide
-
   for (let i = 0; i < slideNumber - 2; i++) {
     slides[i].classList.add('hide');
   }
@@ -93,22 +94,41 @@ range.addEventListener("input", () => {
 
 // carousel how it worsk
 
-const carouselHow = document.querySelector('.slider__carousel');
-const rangeHow = document.querySelector('#range-howItWorks');
-const counterHow = document.querySelector('#current-howItWorks');
+const windowCarouseHow = document.getElementById('slider-how');
+const slideContentHow = document.querySelector('.slider__list-how');
+const rangeHow = document.getElementById('range-how');
+const counterHow = document.getElementById('current-how');
+let widthStepHow = windowCarouseHow.offsetWidth;
+let widthContentHow = slideContentHow.scrollWidth;
+let indexHow = 1;
 
 const rangeValueHow = () => {
   const newValue = rangeHow.value;
+  let index = newValue - 1;
   counterHow.innerHTML = `0${newValue}`;
-  nextSlideHow(newValue);
+  windowCarouseHow.scrollTo((widthStepHow) * index, 0);
 }
 
-const nextSlideHow = (counter) => {
-  const width = carouselHow.offsetWidth;
-  carouselHow.style.cssText = `transform: translateX(-${width * (counter - 1)}px);`
-} 
+let autoSlideInterval = setInterval(() => {
+  if (widthContentHow - widthStepHow >= windowCarouseHow.scrollLeft + widthStepHow) {
+    windowCarouseHow.scrollBy(widthStepHow, 0);
+    indexHow++;
+    counterHow.innerHTML = `0${indexHow}`;
+    rangeHow.value = indexHow;
+  }
+  if (widthContentHow - widthStepHow < windowCarouseHow.scrollLeft + widthStepHow) {
+    windowCarouseHow.scrollBy(-widthContentHow, 0);
+    indexHow = 1;
+    counterHow.innerHTML = `0${indexHow}`;
+    rangeHow.value = indexHow;
+  }
+}, 3000);
 
 rangeHow.addEventListener("input", rangeValueHow);
+
+window.addEventListener('resize', () => {
+  widthHow = windowCarouseHow.offsetWidth;
+});
 
 // carousel Pets in ZOO
 
@@ -173,6 +193,7 @@ const nextGroupSlidesTestimonials = () => {
   if (indexSlideTestimonials > maxSlideTestimonials) {
     indexSlideTestimonials = 0;
   }
+  console.log(`widthTestimonials`, widthTestimonials)
   windowCarouselTestimonials.scrollTo((widthTestimonials) * indexSlideTestimonials, 0);
   addValueInRangeTestimonials();
 }
@@ -182,6 +203,8 @@ const prevGroupSlides_Testimonials = () => {
   if (indexSlideTestimonials < 0) {
     indexSlideTestimonials = maxSlideTestimonials;
   }
+  console.log(`widthTestimonials`, widthTestimonials)
+
   windowCarouselTestimonials.scrollTo((widthTestimonials) * indexSlideTestimonials, 0);
   addValueInRangeTestimonials();
 }
