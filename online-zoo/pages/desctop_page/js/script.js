@@ -156,3 +156,49 @@ const rangeValuePets = () => {
 btnNextSlidePets.addEventListener('click', nextGroupSlidesPets);
 btnPrevBtnSlidePets.addEventListener('click', prevGroupSlidesPets);
 rangePets.addEventListener("input", rangeValuePets);
+
+//carousel Testimonials
+
+const windowCarouselTestimonials = document.getElementById('slider-testimonials');
+const btnNextSlideTestimonials = document.getElementById('next-testimonials');
+const btnPrevBtnSlideTestimonials = document.getElementById('prev-testimonials');
+const rangeTestimonials = document.getElementById('range-testimonials');
+const counterTestimonials = document.getElementById('current-testimonials');
+const widthTestimonials = windowCarouselTestimonials.offsetWidth;
+let indexSlideTestimonials = 0;
+const maxSlideTestimonials = 7;
+
+const nextGroupSlidesTestimonials = () => {
+  indexSlideTestimonials += 1;
+  if (indexSlideTestimonials > maxSlideTestimonials) {
+    indexSlideTestimonials = 0;
+  }
+  windowCarouselTestimonials.scrollTo((widthTestimonials) * indexSlideTestimonials, 0);
+  addValueInRangeTestimonials();
+}
+
+const prevGroupSlides_Testimonials = () => {
+  indexSlideTestimonials -= 1;
+  if (indexSlideTestimonials < 0) {
+    indexSlideTestimonials = maxSlideTestimonials;
+  }
+  windowCarouselTestimonials.scrollTo((widthTestimonials) * indexSlideTestimonials, 0);
+  addValueInRangeTestimonials();
+}
+
+const addValueInRangeTestimonials = () => {
+  counterTestimonials.innerHTML = `0${indexSlideTestimonials + 1}`;
+  rangeTestimonials.value = indexSlideTestimonials + 1;
+}
+
+const rangeValueTestimonials = () => {
+  let newValue = rangeTestimonials.value;
+  let index = newValue - 1;
+
+  counterTestimonials.innerHTML = `0${newValue}`;
+  windowCarouselTestimonials.scrollTo((widthTestimonials) * index, 0);
+}
+
+btnNextSlideTestimonials.addEventListener('click', nextGroupSlidesTestimonials);
+btnPrevBtnSlideTestimonials.addEventListener('click', prevGroupSlides_Testimonials);
+rangeTestimonials.addEventListener("input", rangeValueTestimonials);
