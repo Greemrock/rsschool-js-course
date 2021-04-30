@@ -127,7 +127,7 @@ let autoSlideInterval = setInterval(() => {
 rangeHow.addEventListener("input", rangeValueHow);
 
 window.addEventListener('resize', () => {
-  widthHow = windowCarouseHow.offsetWidth;
+  widthStepHow = windowCarouseHow.offsetWidth;
 });
 
 // carousel Pets in ZOO
@@ -137,45 +137,50 @@ const btnNextSlidePets = document.getElementById('next-pets');
 const btnPrevBtnSlidePets = document.getElementById('prev-pets');
 const rangePets = document.getElementById('range-pets');
 const counterPets = document.getElementById('current-pets');
-const margin = 29;
-const widthPets = windowCarouselPets.offsetWidth + margin;
-let counterSlidePets = 0;
+const margin = 20;
+let widthStepPets = windowCarouselPets.offsetWidth + margin;
+let indexSlidePets = 0;
 const maxSlidePets = 7;
 
 const nextGroupSlidesPets = () => {
-  counterSlidePets += 1;
-  if (counterSlidePets > maxSlidePets) {
-    counterSlidePets = 0;
+  console.log(`widthStepPets`, widthStepPets)
+  indexSlidePets += 1;
+  if (indexSlidePets > maxSlidePets) {
+    indexSlidePets = 0;
   }
-  windowCarouselPets.scrollTo((widthPets) * counterSlidePets, 0);
+  windowCarouselPets.scrollTo((widthStepPets) * indexSlidePets, 0);
   addValueInRange();
 }
 
 const prevGroupSlidesPets = () => {
-  counterSlidePets -= 1;
-  if (counterSlidePets < 0) {
-    counterSlidePets = maxSlidePets;
+  indexSlidePets -= 1;
+  if (indexSlidePets < 0) {
+    indexSlidePets = maxSlidePets;
   }
-  windowCarouselPets.scrollTo((widthPets) * counterSlidePets, 0);
+  windowCarouselPets.scrollTo((widthStepPets) * indexSlidePets, 0);
   addValueInRange();
 }
 
 const addValueInRange = () => {
-  counterPets.innerHTML = `0${counterSlidePets + 1}`;
-  rangePets.value = counterSlidePets + 1;
+  counterPets.innerHTML = `0${indexSlidePets + 1}`;
+  rangePets.value = indexSlidePets + 1;
 }
 
 const rangeValuePets = () => {
   let newValue = rangePets.value;
   let index = newValue - 1;
-
+  
+  indexSlidePets = index;
   counterPets.innerHTML = `0${newValue}`;
-  windowCarouselPets.scrollTo((widthPets) * index, 0);
+  windowCarouselPets.scrollTo((widthStepPets) * index, 0);
 }
 
 btnNextSlidePets.addEventListener('click', nextGroupSlidesPets);
 btnPrevBtnSlidePets.addEventListener('click', prevGroupSlidesPets);
 rangePets.addEventListener("input", rangeValuePets);
+window.addEventListener('resize', () => {
+  widthStepPets = windowCarouselPets.offsetWidth;
+});
 
 //carousel Testimonials
 
@@ -184,7 +189,7 @@ const btnNextSlideTestimonials = document.getElementById('next-testimonials');
 const btnPrevBtnSlideTestimonials = document.getElementById('prev-testimonials');
 const rangeTestimonials = document.getElementById('range-testimonials');
 const counterTestimonials = document.getElementById('current-testimonials');
-const widthTestimonials = windowCarouselTestimonials.offsetWidth;
+let widthStepTestimonials = windowCarouselTestimonials.offsetWidth;
 let indexSlideTestimonials = 0;
 const maxSlideTestimonials = 7;
 
@@ -193,8 +198,7 @@ const nextGroupSlidesTestimonials = () => {
   if (indexSlideTestimonials > maxSlideTestimonials) {
     indexSlideTestimonials = 0;
   }
-  console.log(`widthTestimonials`, widthTestimonials)
-  windowCarouselTestimonials.scrollTo((widthTestimonials) * indexSlideTestimonials, 0);
+  windowCarouselTestimonials.scrollTo((widthStepTestimonials) * indexSlideTestimonials, 0);
   addValueInRangeTestimonials();
 }
 
@@ -203,9 +207,7 @@ const prevGroupSlides_Testimonials = () => {
   if (indexSlideTestimonials < 0) {
     indexSlideTestimonials = maxSlideTestimonials;
   }
-  console.log(`widthTestimonials`, widthTestimonials)
-
-  windowCarouselTestimonials.scrollTo((widthTestimonials) * indexSlideTestimonials, 0);
+  windowCarouselTestimonials.scrollTo((widthStepTestimonials) * indexSlideTestimonials, 0);
   addValueInRangeTestimonials();
 }
 
@@ -218,10 +220,14 @@ const rangeValueTestimonials = () => {
   let newValue = rangeTestimonials.value;
   let index = newValue - 1;
 
+  indexSlideTestimonials = index;
   counterTestimonials.innerHTML = `0${newValue}`;
-  windowCarouselTestimonials.scrollTo((widthTestimonials) * index, 0);
+  windowCarouselTestimonials.scrollTo((widthStepTestimonials) * index, 0);
 }
 
 btnNextSlideTestimonials.addEventListener('click', nextGroupSlidesTestimonials);
 btnPrevBtnSlideTestimonials.addEventListener('click', prevGroupSlides_Testimonials);
 rangeTestimonials.addEventListener("input", rangeValueTestimonials);
+window.addEventListener('resize', () => {
+  widthStepTestimonials = windowCarouselTestimonials.offsetWidth;
+});

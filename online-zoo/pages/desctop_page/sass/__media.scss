@@ -679,10 +679,17 @@ html{
     width: var(--width1200);
   }
 
+  .slider__list-petsInZoo {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+    grid-gap: 29px;
+  }
+
   .slider__item-petsInZoo {
     width: 278px;
     height: 399px;
-    margin-right: 29px;
   }
 
   .slider-petsInZoo {
@@ -708,10 +715,17 @@ html{
     width: var(--width900);
   }
 
+  .slider__list-petsInZoo {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+  }
+
   .slider__item-petsInZoo {
     width: 210px;
     height: 301px;
-    margin-right: 20px;
   }
 
   .slider-petsInZoo {

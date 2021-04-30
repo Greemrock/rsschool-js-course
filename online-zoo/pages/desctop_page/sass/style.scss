@@ -465,11 +465,9 @@ html.transition *:after {
 		justify-content: flex-start;
 	}
 	&__list{
-		display: flex;
 		justify-content: center;
 		align-items: center;
 		&-testimonials{
-			// width: 1200px;
 			display: grid;
 			grid-template-columns: auto auto;
 			grid-template-rows: 310px;
