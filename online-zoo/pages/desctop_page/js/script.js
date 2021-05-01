@@ -144,6 +144,7 @@ let indexSlidePets = 0;
 const maxSlidePets = 7;
 
 const nextGroupSlidesPets = () => {
+  console.log(`widthStepPets`, widthStepPets)
   indexSlidePets += 1;
   if (indexSlidePets > maxSlidePets) {
     indexSlidePets = 0;
@@ -179,7 +180,7 @@ btnNextSlidePets.addEventListener('click', nextGroupSlidesPets);
 btnPrevBtnSlidePets.addEventListener('click', prevGroupSlidesPets);
 rangePets.addEventListener("input", rangeValuePets);
 window.addEventListener('resize', () => {
-  widthStepPets = windowCarouselPets.offsetWidth;
+  widthStepPets = windowCarouselPets.offsetWidth + margin;
 });
 
 //carousel Testimonials
