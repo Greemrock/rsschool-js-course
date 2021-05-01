@@ -137,13 +137,13 @@ const btnNextSlidePets = document.getElementById('next-pets');
 const btnPrevBtnSlidePets = document.getElementById('prev-pets');
 const rangePets = document.getElementById('range-pets');
 const counterPets = document.getElementById('current-pets');
+const slidePets = document.querySelector('.slider__item-petsInZoo');
 const margin = 20;
 let widthStepPets = windowCarouselPets.offsetWidth + margin;
 let indexSlidePets = 0;
 const maxSlidePets = 7;
 
 const nextGroupSlidesPets = () => {
-  console.log(`widthStepPets`, widthStepPets)
   indexSlidePets += 1;
   if (indexSlidePets > maxSlidePets) {
     indexSlidePets = 0;

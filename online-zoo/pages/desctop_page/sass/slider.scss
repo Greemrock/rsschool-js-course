@@ -58,3 +58,12 @@
   scroll-behavior: smooth;
   border-radius: 5px;
 }
+
+.slider__item-petsInZoo:hover.slider__item::after {
+  opacity: 1;
+}
+
+.slider__item-petsInZoo:hover .animal {
+  opacity: 1; 
+  top: 0;
+}
