@@ -789,6 +789,7 @@ html.transition *:after {
 	&__container {
 		height: 202px;
 		display: flex;
+		align-items: center;
 		position: relative;
 		overflow: hidden;
 		scroll-behavior: smooth;
@@ -796,7 +797,8 @@ html.transition *:after {
 	&__wrapper{
 		display: flex;
 		align-items: center;
-		position: relative;
+		position: absolute;
+		justify-content: space-around;
 		&_vertical{
 			flex-direction: column;
 			margin: 0;
@@ -822,20 +824,11 @@ html.transition *:after {
 		cursor: pointer;
 		transition: all 0.3s;
     &:hover{
-			// transform: scale(1.03);
-      // box-shadow: 0 0 12px #329179;
+      box-shadow: 0 0 12px 2px var(--color-text);
 		}
 		&_active{
 			width: 157px;
 			height: 157px;
-			// transform: scale(1.47);
-			// & .aside-slider__img{
-			// 	position: absolute;
-			// 	padding: 10px;
-			// }
-      &:hover{
-        // transform: scale(1.5);
-      }
 		}
 	}
 	&__substrate{

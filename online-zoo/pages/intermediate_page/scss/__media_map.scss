@@ -213,11 +213,8 @@ html{
     &__container {
       justify-content: center;
     }
-    &__slide {
-      margin: 15px;
-      &_active {
-        margin: 17px 13px;
-      }
+    &__wrapper{
+      width: 1105px;
     }
     &__button {
       position: absolute;
@@ -238,6 +235,7 @@ html{
     right: 17px;
   }
 }
+
 @media (max-width: 1919px) {
   .aside-slider {
     position: relative;
@@ -245,34 +243,26 @@ html{
     &__container {
       justify-content: flex-start;
     }
-  }
-
-  .aside-slider__slide {
-    margin: 15px 15px;
-  }
-
-  .aside-slider__button_right {
-    right: -30px;
-  }
-
-  .aside-slider__button_left {
-    left: -30px;
-  }
-
-  .aside-slider__button {
-    position: absolute;
-    top: calc(50% - 15px);
-    cursor: pointer;
-    display: block;
+    &__wrapper{
+      width: 1150px;
+    }
+    &__button {
+      position: absolute;
+      top: calc(50% - 15px);
+      cursor: pointer;
+      display: block;
+      &_right {
+        right: -30px;
+      }
+      &_left {
+        left: -30px;
+      }
+    }
   }
 
   .counter {
     margin-top: 0;
     right: 0;
-  }
-
-  .aside-slider__slide_active {
-    margin: 17px;
   }
 }
 
