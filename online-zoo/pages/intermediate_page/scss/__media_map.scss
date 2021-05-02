@@ -210,42 +210,41 @@ html{
 @media (min-width: 1920px) {
   .aside-slider {
     position: relative;
-    margin: 0px 50px;
-  }
-
-  .aside-slider__slide {
-    margin: 15px;
-  }
-
-  .aside-slider__button_right {
-    right: -44px;
-  }
-
-  .aside-slider__button_left {
-    left: -43px;
-  }
-
-  .aside-slider__button {
-    position: absolute;
-    top: calc(50% - 17px);
-    cursor: pointer;
-    display: block;
+    &__container {
+      justify-content: center;
+    }
+    &__slide {
+      margin: 15px;
+      &_active {
+        margin: 17px 13px;
+      }
+    }
+    &__button {
+      position: absolute;
+      top: calc(50% - 17px);
+      cursor: pointer;
+      display: block;
+      &_right {
+        right: 0;
+      }
+      &_left {
+        left: 0;
+      }
+    }
   }
 
   .counter {
     margin-top: 8px;
     right: 17px;
   }
-
-  .aside-slider__slide_active {
-    margin: 17px 13px;
-  }
 }
-
 @media (max-width: 1919px) {
   .aside-slider {
     position: relative;
-    margin: 0px 52px;
+    margin: 0px 30px;
+    &__container {
+      justify-content: flex-start;
+    }
   }
 
   .aside-slider__slide {
@@ -253,11 +252,11 @@ html{
   }
 
   .aside-slider__button_right {
-    right: -47px;
+    right: -30px;
   }
 
   .aside-slider__button_left {
-    left: -47px;
+    left: -30px;
   }
 
   .aside-slider__button {
@@ -319,13 +318,9 @@ html{
 
   .aside-slider__slide_active .aside-slider__img {
     position: absolute;
-    width: 105%;
-    height: 105%;
+    width: 155px;
+    height: 155px;
     padding: 10px;
-  }
-
-  .aside-slider__wrapper {
-    padding: 30px 0;
   }
 }
 
@@ -447,6 +442,15 @@ html{
   .map__animal:hover .label__wrapper::after {
     border-top: 50px solid #EB5757;
   }
+
+  .active-label {
+    .label__wrapper {
+      background-color: #EB5757;
+    }
+    .label__wrapper::after {
+      border-top: 50px solid #EB5757;
+    }
+  }
 }
 
 @media (max-width: 1919px) {
@@ -527,6 +531,15 @@ html{
 
   .map__animal:hover .label__wrapper::after {
     border-top: 47px solid #EB5757;
+  }
+
+  .active-label {
+    .label__wrapper {
+      background-color: #EB5757;
+    }
+    .label__wrapper::after {
+      border-top: 46px solid #EB5757;
+    }
   }
 }
 
@@ -620,7 +633,7 @@ html{
   }
 
   .window {
-    height: 149px;
+    height: 192px;
     width: 436px;
     &__img {
       margin: 40px 20px 0 44px;

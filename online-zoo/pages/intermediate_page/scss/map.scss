@@ -510,6 +510,51 @@ html.transition *:after {
 			color: var(--color-title-small);
 		}
 	}
+	&__btn-watch {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 6px 9px;
+		width: 115px;
+		height: 29px;
+		border-radius: 3px;
+		border: 1px solid #4BD8B5;
+		background: none;
+		text-decoration: none;
+		cursor: pointer;
+		margin-top: 15px;
+		& svg {
+			width: 16px;
+			height: 16px;
+			path {
+				fill: #4BD8B5;
+			}
+			& circle {
+				stroke: #4BD8B5;
+			}
+		}
+		& span {
+			color: #4BD8B5;
+			font-weight: 900;
+			font-size: 13px;
+			line-height: 15px;
+		}
+		&:hover {
+			background: linear-gradient(106.89deg, #329179 -14.32%, #3599a0 100.68%);
+			border-color: #fff;
+			& span {
+				color: #fff;
+			}
+			& svg {
+				path {
+					fill: #fff;
+				}
+				& circle {
+					stroke: #fff;
+				}
+			}
+		}
+	}
 }
 
 .footer{
@@ -742,9 +787,11 @@ html.transition *:after {
 		top: 35px;
 	}
 	&__container {
+		height: 202px;
 		display: flex;
 		position: relative;
 		overflow: hidden;
+		scroll-behavior: smooth;
 	}
 	&__wrapper{
 		display: flex;
@@ -775,17 +822,19 @@ html.transition *:after {
 		cursor: pointer;
 		transition: all 0.3s;
     &:hover{
-			transform: scale(1.03);
-      box-shadow: 0 0 12px #329179;
+			// transform: scale(1.03);
+      // box-shadow: 0 0 12px #329179;
 		}
 		&_active{
-			transform: scale(1.47);
-			& .aside-slider__img{
-				position: absolute;
-				padding: 10px;
-			}
+			width: 157px;
+			height: 157px;
+			// transform: scale(1.47);
+			// & .aside-slider__img{
+			// 	position: absolute;
+			// 	padding: 10px;
+			// }
       &:hover{
-        transform: scale(1.5);
+        // transform: scale(1.5);
       }
 		}
 	}
@@ -796,8 +845,8 @@ html.transition *:after {
 		background-color: var(--bg-second);
 	}
 	&__img{
-		width: 101%;
-		height: 101%;
+		width: 100%;
+		height: 100%;
 		object-fit: cover;
 		border-radius: 50%;
 	}
@@ -805,6 +854,8 @@ html.transition *:after {
 		position: absolute;
 		cursor: pointer;
 		display: block;
+		border: none;
+		background: none;
 		& svg path {
 			fill: var(--color-text);
 		}
