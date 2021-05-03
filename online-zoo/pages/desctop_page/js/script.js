@@ -1,25 +1,27 @@
+"use strict";
+
 // cange color theme
 
 let checkbox = document.querySelector('.theme__toggle');
 
 function changeTheme() {
   if(this.checked) {
-    trans()
-    document.documentElement.setAttribute('data-theme', 'dark')
+    trans();
+    document.documentElement.setAttribute('data-theme', 'dark');
   } else {
-    trans()
-    document.documentElement.setAttribute('data-theme', 'light')
+    trans();
+    document.documentElement.setAttribute('data-theme', 'light');
   }
 }
 
 let trans = () => {
   document.documentElement.classList.add('transition');
   window.setTimeout(() => {
-    document.documentElement.classList.remove('transition')
-  }, 1000)
-}
+    document.documentElement.classList.remove('transition');
+  }, 1000);
+};
 
-checkbox.addEventListener('change', changeTheme)
+checkbox.addEventListener('change', changeTheme);
 
 // open burger menu
 
@@ -32,9 +34,9 @@ const toggleBurgerMenu = () => {
   burger.classList.toggle('active');
   navbar.classList.toggle('active');
   document.body.classList.toggle('lock');
-}
+};
 
-burger.addEventListener('click', toggleBurgerMenu)
+burger.addEventListener('click', toggleBurgerMenu);
 
 // carousel in main-page
 
@@ -58,7 +60,7 @@ const nextSlide = (elem, slideNumber) => {
       if (e.dataset.number == slideNumber) {
         e.classList.add('slider__item-active');
       }
-    })
+    });
   }
 
   //unhide slide
@@ -70,13 +72,13 @@ const nextSlide = (elem, slideNumber) => {
   for (let i = 0; i < slideNumber - 2; i++) {
     slides[i].classList.add('hide');
   }
-}
+};
 
 const rangeValue = function(range, counter){
   const newValue = range.value;
   counter.innerHTML = `0${newValue}`;
   nextSlide(null, newValue);
-}
+};
 
 carousel.addEventListener('click', (slide) => {
   if (slide.target.classList.contains('animal')) {
@@ -86,7 +88,7 @@ carousel.addEventListener('click', (slide) => {
     const slideNumber = slide.target.dataset.number;
     nextSlide(slide, slideNumber);
   }
-})
+});
 
 range.addEventListener("input", () => {
   rangeValue(range, counter);
@@ -107,7 +109,7 @@ const rangeValueHow = () => {
   let index = newValue - 1;
   counterHow.innerHTML = `0${newValue}`;
   windowCarouseHow.scrollTo((widthStepHow) * index, 0);
-}
+};
 
 let autoSlideInterval = setInterval(() => {
   if (widthContentHow - widthStepHow >= windowCarouseHow.scrollLeft + widthStepHow) {
@@ -144,14 +146,14 @@ let indexSlidePets = 0;
 const maxSlidePets = 7;
 
 const nextGroupSlidesPets = () => {
-  console.log(`widthStepPets`, widthStepPets)
+  console.log(`widthStepPets`, widthStepPets);
   indexSlidePets += 1;
   if (indexSlidePets > maxSlidePets) {
     indexSlidePets = 0;
   }
   windowCarouselPets.scrollTo((widthStepPets) * indexSlidePets, 0);
   addValueInRange();
-}
+};
 
 const prevGroupSlidesPets = () => {
   indexSlidePets -= 1;
@@ -160,12 +162,12 @@ const prevGroupSlidesPets = () => {
   }
   windowCarouselPets.scrollTo((widthStepPets) * indexSlidePets, 0);
   addValueInRange();
-}
+};
 
 const addValueInRange = () => {
   counterPets.innerHTML = `0${indexSlidePets + 1}`;
   rangePets.value = indexSlidePets + 1;
-}
+};
 
 const rangeValuePets = () => {
   let newValue = rangePets.value;
@@ -174,7 +176,7 @@ const rangeValuePets = () => {
   indexSlidePets = index;
   counterPets.innerHTML = `0${newValue}`;
   windowCarouselPets.scrollTo((widthStepPets) * index, 0);
-}
+};
 
 btnNextSlidePets.addEventListener('click', nextGroupSlidesPets);
 btnPrevBtnSlidePets.addEventListener('click', prevGroupSlidesPets);
@@ -201,21 +203,21 @@ const nextGroupSlidesTestimonials = () => {
   }
   windowCarouselTestimonials.scrollTo((widthStepTestimonials) * indexSlideTestimonials, 0);
   addValueInRangeTestimonials();
-}
+};
 
-const prevGroupSlides_Testimonials = () => {
+const prevGroupSlidesTestimonials = () => {
   indexSlideTestimonials -= 1;
   if (indexSlideTestimonials < 0) {
     indexSlideTestimonials = maxSlideTestimonials;
   }
   windowCarouselTestimonials.scrollTo((widthStepTestimonials) * indexSlideTestimonials, 0);
   addValueInRangeTestimonials();
-}
+};
 
 const addValueInRangeTestimonials = () => {
   counterTestimonials.innerHTML = `0${indexSlideTestimonials + 1}`;
   rangeTestimonials.value = indexSlideTestimonials + 1;
-}
+};
 
 const rangeValueTestimonials = () => {
   let newValue = rangeTestimonials.value;
@@ -224,10 +226,10 @@ const rangeValueTestimonials = () => {
   indexSlideTestimonials = index;
   counterTestimonials.innerHTML = `0${newValue}`;
   windowCarouselTestimonials.scrollTo((widthStepTestimonials) * index, 0);
-}
+};
 
 btnNextSlideTestimonials.addEventListener('click', nextGroupSlidesTestimonials);
-btnPrevBtnSlideTestimonials.addEventListener('click', prevGroupSlides_Testimonials);
+btnPrevBtnSlideTestimonials.addEventListener('click', prevGroupSlidesTestimonials);
 rangeTestimonials.addEventListener("input", rangeValueTestimonials);
 window.addEventListener('resize', () => {
   widthStepTestimonials = windowCarouselTestimonials.offsetWidth;
