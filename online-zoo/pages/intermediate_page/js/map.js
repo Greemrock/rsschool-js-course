@@ -1,25 +1,26 @@
+"use strict";
 // cange color theme
 
 let checkbox = document.querySelector('.theme__toggle');
 
 function changeTheme() {
   if(this.checked) {
-    trans()
-    document.documentElement.setAttribute('data-theme', 'dark')
+    trans();
+    document.documentElement.setAttribute('data-theme', 'dark');
   } else {
-    trans()
-    document.documentElement.setAttribute('data-theme', 'light')
+    trans();
+    document.documentElement.setAttribute('data-theme', 'light');
   }
 }
 
 let trans = () => {
   document.documentElement.classList.add('transition');
   window.setTimeout(() => {
-    document.documentElement.classList.remove('transition')
-  }, 1000)
-}
+    document.documentElement.classList.remove('transition');
+  }, 1000);
+};
 
-checkbox.addEventListener('change', changeTheme)
+checkbox.addEventListener('change', changeTheme);
 
 // open burger menu
 
@@ -30,9 +31,9 @@ const toggleBurgerMenu = () => {
   burger.classList.toggle('active');
   navbar.classList.toggle('active');
   document.body.classList.toggle('lock');
-}
+};
 
-burger.addEventListener('click', toggleBurgerMenu)
+burger.addEventListener('click', toggleBurgerMenu);
 
 // carousel pets
 
@@ -45,6 +46,7 @@ const btnPrevSlide = document.querySelector('.aside-slider__button_left');
 const mapLabels = document.querySelectorAll('.map__wrapper');
 const range = document.getElementById('range');
 const counter = document.getElementById('current');
+const btnWatchOnline = document.getElementById('btn-watch');
 let margin = 18;
 let widthStep = activeSlide.offsetWidth - margin;
 let widthContent = contentCarousel.scrollWidth;
@@ -58,7 +60,7 @@ allSlides.forEach((slide) => {
     index = slide.dataset.number;
     getRange();
     addClassActiveLabel();
-  })
+  });
 });
 
 mapLabels.forEach(label => {
@@ -68,32 +70,32 @@ mapLabels.forEach(label => {
       getRange();
       addClassActive(allSlides, index, 'aside-slider__slide_active');
       windowCarousel.scrollTo(-widthContent, 0);
-  })
-})
+  });
+});
 
 const nextActiveSlide = () => {
   index++;
   if (index >= allSlides.length) {
     index = 0;
     windowCarousel.scrollTo(-widthContent, 0);
-  };
+  }
   scrollContentCarousel();
   addClassActive(allSlides, index, 'aside-slider__slide_active');
   getRange();
   addClassActiveLabel();
-}
+};
 
 const prevActiveSlide = () => {
   index--;
   if (index < 0) {
-    index = allSlides.length - 1
+    index = allSlides.length - 1;
     windowCarousel.scrollTo(widthContent, 0);
   } 
   scrollContentCarousel();
   addClassActive(allSlides, index, 'aside-slider__slide_active');
   getRange();
   addClassActiveLabel();
-}
+};
 
 const rangeValue = () => {
   let newValue = range.value;
@@ -107,32 +109,34 @@ const rangeValue = () => {
   scrollContentCarousel();
   addClassActive(allSlides, valueRange, 'aside-slider__slide_active');
   addClassActiveLabel();
-}
+};
 
 const getRange = () => {
   let valueRange = +index + 1;
   range.value = valueRange;
   counter.innerHTML = `0${valueRange}`;
-}
+};
 
 const scrollContentCarousel = () => {
   if (index > 3 && widthContent - widthStep >= widthWindowScrollLeft + widthStep) {
     windowCarousel.scrollTo(widthStep * (index - 4), 0);
-  };
-}
+  }
+};
 
 const addClassActive = (NodeList, indexItem, addClass) => {
   NodeList.forEach((slide) => slide.classList.remove(addClass));
   NodeList.item(indexItem).classList.add(addClass);
-}
+};
 
 const addClassActiveLabel = () => {
   if (index >= mapLabels.length) {
     mapLabels.forEach((slide) => slide.classList.remove('active-label'));
     return;
-  } else addClassActive(mapLabels, index, 'active-label');
-}
+  } else {
+    addClassActive(mapLabels, index, 'active-label');
+  }
+};
 
 btnNextSlide.addEventListener('click', nextActiveSlide);
 btnPrevSlide.addEventListener('click', prevActiveSlide);
-range.addEventListener('input', rangeValue)
+range.addEventListener('input', rangeValue);
