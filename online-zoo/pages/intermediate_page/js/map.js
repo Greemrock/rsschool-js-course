@@ -144,7 +144,7 @@ const changeLinkBtn = () => {
     numberAnimal = 1;
   }
   btnWatchOnline.href = `../../live_brodcast/html/brodcast-${animal[numberAnimal]}/${animal[numberAnimal]}.html`;
-}
+};
 
 btnWatchOnline.addEventListener('click', changeLinkBtn);
 btnNextSlide.addEventListener('click', nextActiveSlide);

@@ -564,7 +564,6 @@ html{
 		&__thumbs {
 			grid-gap: 9px;
 			grid-template-rows: 56px;
-			grid-template-columns: 1fr 1fr;
 		}
 		&__dots {
 			position: relative;
@@ -581,9 +580,9 @@ html{
 		}
 	}
 
-	.hiden {
-		display: none;
-	}
+	// .hiden {
+	// 	display: none;
+	// }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MAIN PAGE

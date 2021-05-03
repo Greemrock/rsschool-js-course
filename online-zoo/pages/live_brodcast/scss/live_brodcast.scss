@@ -607,6 +607,8 @@ html.transition *:after {
 	}
 	&__thumbs{
 		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-auto-flow: column;
 	}
 	&__main-video iframe {
 		border-radius: 5px;
@@ -641,4 +643,8 @@ html.transition *:after {
 		z-index: 1;
 		cursor: pointer;
 	}
+}
+
+.hidden {
+	display: none;
 }
