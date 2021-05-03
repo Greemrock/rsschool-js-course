@@ -137,6 +137,18 @@ const addClassActiveLabel = () => {
   }
 };
 
+const changeLinkBtn = () => {
+  let numberAnimal = index;
+  const animal = ['gorilla', 'panda', 'eagle', 'crocodile'];
+  if (index >= animal.length) {
+    numberAnimal = 1;
+  }
+  btnWatchOnline.href = `../../live_brodcast/html/brodcast-${animal[numberAnimal]}/${animal[numberAnimal]}.html`;
+
+}
+
+btnWatchOnline.addEventListener('click', changeLinkBtn);
+
 btnNextSlide.addEventListener('click', nextActiveSlide);
 btnPrevSlide.addEventListener('click', prevActiveSlide);
 range.addEventListener('input', rangeValue);
