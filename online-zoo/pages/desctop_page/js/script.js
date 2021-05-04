@@ -63,10 +63,14 @@ const nextSlide = (elem, slideNumber) => {
     });
   }
 
-  //unhide slide
-  for (let i = 0; i < slideNumber; i++) {
-    slides[i].classList.remove('hide');
+  //active range
+  if (elem) {
+    range.value = elem.target.dataset.number;
+    counter.innerHTML = `0${elem.target.dataset.number}`;  
   }
+
+  //unhide slide
+  slides.forEach((slide) => slide.classList.remove('hide'));
 
   //hide slide
   for (let i = 0; i < slideNumber - 2; i++) {
@@ -74,7 +78,7 @@ const nextSlide = (elem, slideNumber) => {
   }
 };
 
-const rangeValue = function(range, counter){
+const rangeValue = () => {
   const newValue = range.value;
   counter.innerHTML = `0${newValue}`;
   nextSlide(null, newValue);
@@ -90,9 +94,7 @@ carousel.addEventListener('click', (slide) => {
   }
 });
 
-range.addEventListener("input", () => {
-  rangeValue(range, counter);
-});
+range.addEventListener("input", rangeValue);
 
 // carousel how it worsk
 
