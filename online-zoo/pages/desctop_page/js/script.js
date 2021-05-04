@@ -1,5 +1,7 @@
 "use strict";
 
+window.alert('Если возникли вопросы по слайдерам пишите в Discord GreemRock#2253');
+
 // cange color theme
 
 let checkbox = document.querySelector('.theme__toggle');
@@ -44,30 +46,43 @@ const slides = document.querySelectorAll('.slider__item-mainPage');
 const carousel = document.querySelector('.slider__list-mainPage');
 const range = document.querySelector('.range__main-size');
 const counter = document.querySelector('#current-mainPage');
+const oneSlide = document.querySelector('.slider__item-mainPage');
+let marginSlide = 46;
+// 30
+let widthStep = oneSlide.offsetWidth + marginSlide;
 
-const nextSlide = (elem, slideNumber) => {
+window.addEventListener('resize', () => {
+  widthStep = oneSlide.offsetWidth + marginSlide;
+  let widthBody = document.body.offsetWidth;
+  if (widthBody < 1920) {
+    marginSlide = 30;
+  } else {
+    marginSlide = 46;
+  }
+});
+
+const nextSlide = (slideNumber) => {
 
   //next slide
-  carousel.classList.remove('step-1', 'step-2', 'step-3', 'step-4', 'step-5', 'step-6', 'step-7', 'step-8');
-  carousel.classList.add(`step-${slideNumber}`);
+  
+  if (slideNumber == 1) {
+    carousel.style.cssText = `transform: translateX(${widthStep}px);`;
+  } else {
+    carousel.style.cssText = `transform: translateX(-${widthStep * (slideNumber - 2)}px);`;
+  }
 
   //active slide
   slides.forEach((e) => e.classList.remove('slider__item-active'));
-  if (elem) {
-    elem.target.classList.add('slider__item-active');
-  } else {
-    slides.forEach((e) => {
-      if (e.dataset.number == slideNumber) {
-        e.classList.add('slider__item-active');
-      }
-    });
-  }
+  slides.forEach((e) => {
+    if (e.dataset.number == slideNumber) {
+      e.classList.add('slider__item-active');
+    }
+  });
 
   //active range
-  if (elem) {
-    range.value = elem.target.dataset.number;
-    counter.innerHTML = `0${elem.target.dataset.number}`;  
-  }
+  range.value = slideNumber;
+  counter.innerHTML = `0${slideNumber}`;  
+
 
   //unhide slide
   slides.forEach((slide) => slide.classList.remove('hide'));
@@ -81,7 +96,7 @@ const nextSlide = (elem, slideNumber) => {
 const rangeValue = () => {
   const newValue = range.value;
   counter.innerHTML = `0${newValue}`;
-  nextSlide(null, newValue);
+  nextSlide(newValue);
 };
 
 carousel.addEventListener('click', (slide) => {
@@ -90,7 +105,7 @@ carousel.addEventListener('click', (slide) => {
   }
   if (slide.target.dataset.number) {
     const slideNumber = slide.target.dataset.number;
-    nextSlide(slide, slideNumber);
+    nextSlide(slideNumber);
   }
 });
 
@@ -129,7 +144,6 @@ let autoSlideInterval = setInterval(() => {
 }, 3000);
 
 rangeHow.addEventListener("input", rangeValueHow);
-
 window.addEventListener('resize', () => {
   widthStepHow = windowCarouseHow.offsetWidth;
 });
