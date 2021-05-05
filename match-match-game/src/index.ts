@@ -1,3 +1,12 @@
+import Header from './components/header';
 import './styles.scss';
 
-console.log('Hello world!');
+const app = window.document.getElementById('app');
+
+if (app === null) {
+  alert('oops! app === null');
+} else {
+  app.innerHTML = `
+  ${Header}
+`;
+}
