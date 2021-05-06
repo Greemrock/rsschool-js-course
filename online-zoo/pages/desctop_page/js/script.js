@@ -47,17 +47,15 @@ const carousel = document.querySelector('.slider__list-mainPage');
 const range = document.querySelector('.range__main-size');
 const counter = document.querySelector('#current-mainPage');
 const oneSlide = document.querySelector('.slider__item-mainPage');
-let marginSlide = 46;
 // 30
-let widthStep = oneSlide.offsetWidth + marginSlide;
+let widthStep = 186;
 
 window.addEventListener('resize', () => {
-  widthStep = oneSlide.offsetWidth + marginSlide;
   let widthBody = document.body.offsetWidth;
   if (widthBody < 1920) {
-    marginSlide = 30;
+    widthStep = 210;
   } else {
-    marginSlide = 46;
+    widthStep = 186;
   }
 });
 
