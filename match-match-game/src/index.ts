@@ -3,10 +3,10 @@ import './styles.scss';
 
 const app = window.document.getElementById('app');
 
-if (app === null) {
-  alert('oops! app === null');
-} else {
+if (app) {
   app.innerHTML = `
-  ${Header}
-`;
+    ${Header}
+  `;
+} else {
+  console.error(`oops! app === ${app}`);
 }
