@@ -430,8 +430,11 @@ html.transition *:after {
 			color: var(--color-text-total);
 		}
 	}
-	&__numbers{
+	&__numbers {
+		font-weight: 900;
+		font-size: 24px;	
 		margin: auto;
+		color: var(--color-text);
 	}
 }
 
