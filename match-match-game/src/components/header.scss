@@ -18,11 +18,15 @@
   }
   &__list {
     display: flex;
-    & li {
+    margin: 0;
+    padding: 0;
+    & .link {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
+      text-decoration: none;
+      color: #ffffffb3;
       width: 96px;
       height: 64px;
       list-style: none;
@@ -75,4 +79,9 @@
   height: 24px;
   background-image: url(./../assets/icon/settings.svg);
   background-repeat: no-repeat;
+}
+
+.active {
+  background-color: #1E88E5;
+  color: #fff;
 }

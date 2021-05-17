@@ -1,14 +1,9 @@
-import About from './components/about';
-import Header from './components/header';
 import './styles.scss';
+import { App } from './app';
 
-const app = window.document.getElementById('app');
+window.onload = () => {
+  const appElement = document.getElementById('app');
 
-if (app) {
-  app.innerHTML = `
-    ${Header}
-    ${About}
-  `;
-} else {
-  console.error(`oops! app === ${app}`);
-}
+  if (!appElement) throw Error(`oops! app == ${appElement}`);
+  new App(appElement).render();
+};
