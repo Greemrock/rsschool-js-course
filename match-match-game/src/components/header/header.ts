@@ -1,4 +1,4 @@
-import { BaseComponent } from './base-component';
+import { BaseComponent } from '../base-component';
 import './header.scss';
 
 export class Header extends BaseComponent {
@@ -26,7 +26,7 @@ export class Header extends BaseComponent {
             </a>
           </div>
         </nav>
-        <button class="header__btn" type="button" id="register">register new player</button>
+        <a class="header__btn" href="#/game" id="register">register new player</a>
         </button>
       </div>
     `;

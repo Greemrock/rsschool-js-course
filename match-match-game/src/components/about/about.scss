@@ -1,14 +1,11 @@
 .main {
-  width: 100%;
-  &__body {
-    width: 80%;
-    height: 800px;
-    max-width: 1000px;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-    margin: 30px auto;
-    padding: 30px;
-  }
+  width: 80%;
+  height: 800px;
+  max-width: 1000px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  margin: 30px auto;
+  padding: 30px;
 }
 
 .title {
@@ -62,6 +59,7 @@
   cursor: pointer;
   border: 1px solid #2196F3;
   border-radius: 4px;
+  padding: 10px;
   margin-top: 20px;
   transition: all 0.3s;
   &:hover {
@@ -78,26 +76,26 @@
 
 .first {
   flex: 0 0 20%;
-  background-image: url(./../assets/icon/first.svg);
+  background-image: url(../../assets/icon/first.svg);
   background-repeat: no-repeat;
 }
 
 .second {
   flex: 0 0 20%;
-  background-image: url(./../assets/icon/second.svg);
+  background-image: url(../../assets/icon/second.svg);
   background-repeat: no-repeat;
 }
 
 .third {
   flex: 0 0 20%;
-  background-image: url(./../assets/icon/third.svg);
+  background-image: url(../../assets/icon/third.svg);
   background-repeat: no-repeat;
 }
 
 .example-img {
   width: 330px;
   height: 240px;
-  background-image: url(./../assets/image/example.png);
+  background-image: url(../../assets/image/example.png);
   background-repeat: no-repeat;
   margin-top: 5px;
 }

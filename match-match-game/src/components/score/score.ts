@@ -1,4 +1,4 @@
-import { BaseComponent } from './base-component';
+import { BaseComponent } from '../base-component';
 import './score.scss';
 
 export class Score extends BaseComponent {
@@ -6,8 +6,7 @@ export class Score extends BaseComponent {
     super('main', ['main']);
 
     this.element.innerHTML = `
-      <div class="main__body">
-        <h2 class="title">SCore</h2>
-      </div>`;
+      <h2 class="title">SCore</h2>
+    `;
   }
 }

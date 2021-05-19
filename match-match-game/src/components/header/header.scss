@@ -49,6 +49,9 @@
     text-transform: uppercase;
     color: #2196F3;
     background: #F2F9FE;
+    text-align: center;
+    padding: 11px;
+    text-decoration: none;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s;
@@ -62,7 +65,7 @@
 .about {
   width: 20px;
   height: 20px;
-  background-image: url(./../assets/icon/about.svg);
+  background-image: url(../../assets/icon/about.svg);
   background-repeat: no-repeat;
   margin: 2px 0;
 }
@@ -70,14 +73,14 @@
 .score {
   width: 24px;
   height: 24px;
-  background-image: url(./../assets/icon/score.svg);
+  background-image: url(../../assets/icon/score.svg);
   background-repeat: no-repeat;
 }
 
 .settings {
   width: 24px;
   height: 24px;
-  background-image: url(./../assets/icon/settings.svg);
+  background-image: url(../../assets/icon/settings.svg);
   background-repeat: no-repeat;
 }
 
