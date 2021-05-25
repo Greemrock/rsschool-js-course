@@ -16,9 +16,9 @@ export class Settings extends BaseComponent {
       <h3>Difficulty</h3>
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
         <option selected>select game type</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option value="8">4x2</option>
+        <option value="12">4x3</option>
+        <option value="15">5x3</option>
       </select>
     `;
   }

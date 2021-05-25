@@ -13,14 +13,12 @@ export class About extends BaseComponent {
             <div class="first"></div>
             <div class="wrapper">
               <span class="how-to-play__text">Register new player in game</span>
-              <a class="btn" href="#/game" id="register">register new player</a>
             </div>
           </div>
           <div class="how-to-play__block">
             <div class="second"></div>
             <div class="wrapper">
               <span class="how-to-play__text">Configure your game settings</span>
-              <a class="btn" href="#/settings" id="settings">game settings</a>
             </div>
           </div>
           <div class="how-to-play__block">

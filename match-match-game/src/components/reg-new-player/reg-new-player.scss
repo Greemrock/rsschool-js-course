@@ -1,0 +1,17 @@
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+input:focus:invalid {
+  border: red;
+  box-shadow: 0 0 0 0.25rem rgb(253 13 13 / 25%);
+}
+
+input:focus:valid {
+  border: #8ad38a;
+  box-shadow: 0 0 0 0.25rem #8ad38a;
+}

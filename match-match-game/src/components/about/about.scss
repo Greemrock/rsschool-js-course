@@ -46,47 +46,26 @@
   align-items: center;
 }
 
-.btn {
-  width: 207px;
-  height: 36px;
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: #2196F3;
-  background: #F2F9FE;
-  cursor: pointer;
-  border: 1px solid #2196F3;
-  border-radius: 4px;
-  padding: 10px;
-  margin-top: 20px;
-  transition: all 0.3s;
-  &:hover {
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
-    opacity: 0.9;
-    background: #2196F3;
-    color: #F2F9FE;
-  }
-}
-
 .wrapper {
   position: relative;
 }
 
 .first {
+  height: 4rem;
   flex: 0 0 20%;
   background-image: url(../../assets/icon/first.svg);
   background-repeat: no-repeat;
 }
 
 .second {
+  height: 4rem;
   flex: 0 0 20%;
   background-image: url(../../assets/icon/second.svg);
   background-repeat: no-repeat;
 }
 
 .third {
+  height: 4rem;
   flex: 0 0 20%;
   background-image: url(../../assets/icon/third.svg);
   background-repeat: no-repeat;

@@ -1,8 +1,8 @@
+import { RegNewPlayer } from './reg-new-player/reg-new-player';
 import { Game } from './game/game';
 import { Score } from './score/score';
 import { Settings } from './settings/settings';
 import { About } from './about/about';
-
 import { ErrorComponent } from './errorComponent';
 
 interface IItems {
@@ -19,6 +19,8 @@ export class Router {
 
   private readonly game: Game = new Game();
 
+  private readonly regNewPlayer: RegNewPlayer = new RegNewPlayer();
+
   private readonly error: ErrorComponent = new ErrorComponent();
 
   routes : Array<IItems> = [
@@ -26,7 +28,13 @@ export class Router {
     { path: '/score', content: this.score.element },
     { path: '/settings', content: this.settings.element },
     { path: '/game', content: this.game.element },
+    { path: '/register', content: this.regNewPlayer.element },
   ];
+
+  // add(path: string, content: Element) {
+  //   this.routes.push({ path, content });
+  //   return this;
+  // };
 
   getContent() {
     let rootName = window.location.hash;
