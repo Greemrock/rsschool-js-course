@@ -39,30 +39,6 @@
   }
 }
 
-.btn {
-  width: 207px;
-  height: 36px;
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: #2196F3;
-  background: #F2F9FE;
-  text-align: center;
-  padding: 11px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s;
-  &:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
-    background: #F2F9FE;
-    color: #1979c9;
-    opacity: 0.8;
-  }
-}
-
 .about {
   width: 20px;
   height: 20px;

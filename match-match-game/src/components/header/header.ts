@@ -1,7 +1,12 @@
 import { BaseComponent } from '../base-component';
+import Btn from '../btn/btn';
 import './header.scss';
 
 export class Header extends BaseComponent {
+  private btn: Btn;
+
+  private btnHeader: HTMLButtonElement;
+
   constructor() {
     super('header', ['header']);
     this.element.innerHTML = `
@@ -24,7 +29,30 @@ export class Header extends BaseComponent {
           </a>
         </div>
       </nav>
-      <a class="btn btn-outline-primary" href="#/register" id="register">register new player</a>
     `;
+    this.btn = new Btn();
+    if (!localStorage.getItem('registerUser')) {
+      this.btnRegistr();
+    } else if (localStorage.getItem('registerUser') === 'true') {
+      this.btnStart();
+    }
+    this.btnHeader = document.querySelector('#btnHeader') as HTMLButtonElement;
+  }
+
+  btnStart() {
+    this.element.appendChild(this.btn.render('start game'));
+  }
+
+  btnRegistr() {
+    this.btn.element.setAttribute('data-bs-toggle', 'modal');
+    this.btn.element.setAttribute('data-bs-target', '#exampleModal');
+    this.element.appendChild(this.btn.render('register new player'));
+  }
+
+  addUrlGame() {
+    console.log('сюда попали');
+    this.btnHeader.addEventListener('click', () => {
+      window.location.hash = '#/game';
+    });
   }
 }

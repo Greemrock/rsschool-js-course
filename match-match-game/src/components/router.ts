@@ -1,4 +1,3 @@
-import { RegNewPlayer } from './reg-new-player/reg-new-player';
 import { Game } from './game/game';
 import { Score } from './score/score';
 import { Settings } from './settings/settings';
@@ -19,8 +18,6 @@ export class Router {
 
   private readonly game: Game = new Game();
 
-  private readonly regNewPlayer: RegNewPlayer = new RegNewPlayer();
-
   private readonly error: ErrorComponent = new ErrorComponent();
 
   routes : Array<IItems> = [
@@ -28,7 +25,6 @@ export class Router {
     { path: '/score', content: this.score.element },
     { path: '/settings', content: this.settings.element },
     { path: '/game', content: this.game.element },
-    { path: '/register', content: this.regNewPlayer.element },
   ];
 
   // add(path: string, content: Element) {
