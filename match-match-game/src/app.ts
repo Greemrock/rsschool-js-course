@@ -1,8 +1,11 @@
+import { Timer } from './components/timer/timer';
 import { RegNewPlayer } from './components/reg-new-player/reg-new-player';
 import { Game } from './components/game/game';
 import { ImageCategoryModel } from './components/madels/image-category-model';
 import { Header } from './components/header/header';
 import { Router } from './components/router';
+
+let timer = 'unactivate';
 
 export class App {
   private readonly header: Header;
@@ -10,6 +13,8 @@ export class App {
   private readonly router: Router;
 
   private readonly game: Game;
+
+  private readonly timer: Timer = new Timer();
 
   private readonly regNewPlayer: RegNewPlayer;
 
@@ -24,14 +29,32 @@ export class App {
     this.rootElement.appendChild(this.regNewPlayer.element);
   }
 
-  render() {
+  async render() {
     window.onpopstate = () => {
       document.querySelectorAll('.main').forEach((i) => i.remove());
       if (window.location.hash === '#/game') {
-        this.startGame();
         this.rootElement.appendChild(this.game.element);
+        this.startGame();
+        const btnStart = document.querySelector('#btnStart');
+        btnStart?.remove();
+        const btnPause = document.querySelector('.header') as HTMLButtonElement;
+        btnPause.appendChild(new Header().btnPause());
+        if (timer === 'unactivate') {
+          timer = 'activate';
+          this.timer.start();
+          this.timer.pause('#pause');
+          this.timer.reset('.header__list');
+        }
       } else {
         this.rootElement.appendChild(this.router.getContent());
+        const btnPause = document.querySelector('#pause');
+        btnPause?.remove();
+        if (localStorage.getItem('registerUser')) {
+          this.header.btnStart();
+        } else {
+          this.header.btnRegistr();
+        }
+        timer = 'unactivate';
       }
     };
   }

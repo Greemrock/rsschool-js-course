@@ -3,6 +3,7 @@ import { Card } from '../card/card';
 import { BaseComponent } from '../base-component';
 import './game.scss';
 import { delay } from '../shared/delay';
+import { Timer } from '../timer/timer';
 
 export const FLIP_DELAY = 1000;
 
@@ -13,10 +14,14 @@ export class Game extends BaseComponent {
 
   private isAnimation = false;
 
+  // private timer: Timer;
+
   constructor() {
     super('main', ['main', 'game']);
     this.cardsField = new CardsField();
     this.element.appendChild(this.cardsField.element);
+    // this.timer = new Timer();
+    // this.timer.pause('#pause');
   }
 
   newGame(images: string[]) {
@@ -29,7 +34,6 @@ export class Game extends BaseComponent {
     cards.forEach((card) => {
       card.element.addEventListener('click', () => this.cardHandler(card));
     });
-
     this.cardsField.addCards(cards);
   }
 

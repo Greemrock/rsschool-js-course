@@ -1,19 +1,25 @@
 import { Card } from '../card/card';
 import { BaseComponent } from '../base-component';
 import './cards-field.scss';
+import { Timer } from '../timer/timer';
 
-const SHOW_TIME = 3;
+const SHOW_TIME = 5;
 
 export class CardsField extends BaseComponent {
   private cards: Card[] = [];
 
+  private readonly timer: Timer;
+
   constructor() {
     super('div', ['cards-field']);
+    this.timer = new Timer();
+    this.element.appendChild(this.timer.element);
   }
 
   clear() {
     this.cards = [];
     this.element.innerHTML = '';
+    this.element.appendChild(this.timer.element);
   }
 
   addCards(cards: Card[]) {

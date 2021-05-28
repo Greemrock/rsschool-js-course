@@ -77,7 +77,7 @@ export class RegNewPlayer extends BaseComponent {
       localStorage.setItem('registerUser', 'true');
 
       const modalBg = document.querySelector('.modal-backdrop') as HTMLElement;
-      const btn = document.querySelector('#btnHeader') as HTMLButtonElement;
+      const btn = document.querySelector('#btnReg') as HTMLButtonElement;
       document.body.style.cssText = '';
       modalBg.remove();
       modalBg.classList.toggle('show');
@@ -87,7 +87,7 @@ export class RegNewPlayer extends BaseComponent {
       btn.innerHTML = 'start game';
       btn.removeAttribute('data-bs-toggle');
       btn.removeAttribute('data-bs-target');
-
+      btn.setAttribute('id', 'btnStart');
       new Header().addUrlGame();
     });
   }

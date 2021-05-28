@@ -1,4 +1,4 @@
-import { Game } from './game/game';
+// import { Game } from './game/game';
 import { Score } from './score/score';
 import { Settings } from './settings/settings';
 import { About } from './about/about';
@@ -16,7 +16,7 @@ export class Router {
 
   private readonly score: Score = new Score();
 
-  private readonly game: Game = new Game();
+  // private readonly game: Game = new Game();
 
   private readonly error: ErrorComponent = new ErrorComponent();
 
@@ -24,13 +24,8 @@ export class Router {
     { path: '/', content: this.about.element },
     { path: '/score', content: this.score.element },
     { path: '/settings', content: this.settings.element },
-    { path: '/game', content: this.game.element },
+    // { path: '/game', content: this.game.element },
   ];
-
-  // add(path: string, content: Element) {
-  //   this.routes.push({ path, content });
-  //   return this;
-  // };
 
   getContent() {
     let rootName = window.location.hash;

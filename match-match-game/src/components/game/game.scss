@@ -1,17 +1,20 @@
-.main {
-  width: 80%;
-  height: 800px;
-  max-width: 1000px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
-  margin: 30px auto;
-  padding: 30px;
-}
+// .main {
+//   width: 80%;
+//   height: 800px;
+//   max-width: 1000px;
+//   background: rgba(0, 0, 0, 0.05);
+//   border-radius: 5px;
+//   margin: 30px auto;
+//   padding: 30px;
+// }
 
 .game {
-  min-width: 700px;
+  min-width: 712px;
+  max-width: 1200px !important;
   display: flex;
+  position: relative;
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+  // padding: 60px 25px 25px 25px !important;
 }

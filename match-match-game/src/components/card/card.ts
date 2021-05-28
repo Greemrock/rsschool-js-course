@@ -1,3 +1,4 @@
+import { Timer } from '../timer/timer';
 import { BaseComponent } from '../base-component';
 import './card.scss';
 
@@ -5,6 +6,8 @@ const FLIP_CLASS = 'flipped';
 const FLIP_DELAY = 1500;
 
 export class Card extends BaseComponent {
+  private timer: Timer;
+
   isFlipped = false;
 
   constructor(readonly imageFront: string) {
@@ -15,6 +18,7 @@ export class Card extends BaseComponent {
         <div class="card__back"></div>
       </div>
     `;
+    this.timer = new Timer();
   }
 
   flipToBack() {
@@ -23,7 +27,10 @@ export class Card extends BaseComponent {
   }
 
   flipToFront() {
+    console.log('flip');
     this.isFlipped = false;
+    // this.startTimer();
+
     return this.flip();
   }
 
@@ -38,6 +45,7 @@ export class Card extends BaseComponent {
 
   match() {
     this.element.classList.add('match');
+    console.log('mutch');
   }
 
   noMatch() {
@@ -48,4 +56,17 @@ export class Card extends BaseComponent {
     this.element.classList.add('no-match');
     setTimeout(addClass, FLIP_DELAY);
   }
+
+  // startTimer() {
+  //   console.log('Зашло?');
+  //   console.log(document.querySelectorAll('.card'));
+  //   const cards = document.querySelectorAll('.card');
+  //   cards.forEach((card) => {
+  //     console.log('создало обработчик');
+  //     card.addEventListener('click', () => {
+  //       // this.timer.start();
+  //       console.log('click card');
+  //     });
+  //   });
+  // }
 }

@@ -1,5 +1,5 @@
 import { BaseComponent } from '../base-component';
-import Btn from '../btn/btn';
+import { Btn } from '../btn/btn';
 import './header.scss';
 
 export class Header extends BaseComponent {
@@ -36,23 +36,30 @@ export class Header extends BaseComponent {
     } else if (localStorage.getItem('registerUser') === 'true') {
       this.btnStart();
     }
-    this.btnHeader = document.querySelector('#btnHeader') as HTMLButtonElement;
+    this.btnHeader = document.querySelector('#btnStart') as HTMLButtonElement;
   }
 
   btnStart() {
-    this.element.appendChild(this.btn.render('start game'));
+    this.element.appendChild(this.btn.render('start game', 'btnStart'));
   }
 
   btnRegistr() {
     this.btn.element.setAttribute('data-bs-toggle', 'modal');
     this.btn.element.setAttribute('data-bs-target', '#exampleModal');
-    this.element.appendChild(this.btn.render('register new player'));
+    this.element.appendChild(this.btn.render('register new player', 'btnReg'));
+  }
+
+  btnPause() {
+    return this.element.appendChild(this.btn.render('pause game', 'pause'));
   }
 
   addUrlGame() {
-    console.log('сюда попали');
-    this.btnHeader.addEventListener('click', () => {
+    const hash = () => {
       window.location.hash = '#/game';
+    };
+    this.btnHeader.addEventListener('click', () => {
+      hash();
+      this.btnHeader.removeEventListener('click', hash);
     });
   }
 }
