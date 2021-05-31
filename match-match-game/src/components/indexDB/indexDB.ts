@@ -1,10 +1,5 @@
+import { IRecord } from '../interfaces/IRecord';
 import { ObjectStore } from './objectStore';
-
-interface IRecord {
-  firstName: string;
-  lastName: string;
-  gitHubAdress: string;
-}
 
 export class IndexDB {
   private db: IDBDatabase | undefined;
@@ -31,7 +26,6 @@ export class IndexDB {
   }
 
   addRecord(storeName: string, record: IRecord) {
-    console.log('this.db', this.db);
     if (!this.db) throw Error(`error - db = ${this.db}`);
     const transaction = this.db.transaction([storeName], 'readwrite');
     const store = transaction.objectStore(storeName);

@@ -1,3 +1,5 @@
+import { Score } from '../score/score';
+import { Modal } from '../modal/modal';
 import { CardsField } from '../cards-field/cards-field';
 import { Card } from '../card/card';
 import { BaseComponent } from '../base-component';
@@ -6,6 +8,7 @@ import { delay } from '../shared/delay';
 import { Timer } from '../timer/timer';
 
 export const FLIP_DELAY = 1000;
+let timer = 'unactivate';
 
 export class Game extends BaseComponent {
   private readonly cardsField: CardsField;
@@ -14,14 +17,14 @@ export class Game extends BaseComponent {
 
   private isAnimation = false;
 
-  // private timer: Timer;
+  private readonly timer: Timer = new Timer();
+
+  private readonly score: Score = new Score();
 
   constructor() {
     super('main', ['main', 'game']);
     this.cardsField = new CardsField();
     this.element.appendChild(this.cardsField.element);
-    // this.timer = new Timer();
-    // this.timer.pause('#pause');
   }
 
   newGame(images: string[]) {
@@ -57,8 +60,46 @@ export class Game extends BaseComponent {
     } else {
       this.activeCard.match();
       card.match();
+      this.finishGame();
     }
     this.activeCard = undefined;
     this.isAnimation = false;
+  }
+
+  startTimer() {
+    if (timer === 'unactivate') {
+      timer = 'activate';
+      this.timer.start();
+      this.timer.pause('#pause');
+      this.timer.reset('.header__list');
+      console.log('go timer!');
+    } else timer = 'unactivate';
+  }
+
+  finishGame() {
+    const amountCards = localStorage.getItem('cards');
+    const mutchCards = localStorage.getItem('mutchCards');
+    console.log(Number(mutchCards) === Number(amountCards));
+    if (Number(mutchCards) === Number(amountCards)) {
+      this.timer.funcPause();
+      const timeUser = document.getElementById('timer')?.innerHTML as string;
+      console.log(timeUser);
+
+      document.body.appendChild(new Modal(timeUser).element);
+
+      const closeBtn = document.getElementById('closeModal');
+      const bg = document.querySelector('.modal-backdrop');
+      const modal = document.getElementById('modalFinish');
+
+      closeBtn?.addEventListener('click', () => {
+        bg?.remove();
+        modal?.remove();
+        this.timer.funcReset();
+        window.location.hash = '#/';
+        localStorage.setItem('mutchCards', '0');
+        timer = 'unactivate';
+        this.score.scoreUser();
+      });
+    }
   }
 }

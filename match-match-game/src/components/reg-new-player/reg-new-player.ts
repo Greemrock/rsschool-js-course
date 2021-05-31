@@ -1,10 +1,13 @@
+import { IRecord } from '../interfaces/IRecord';
 import { Header } from '../header/header';
 import { IndexDB } from '../indexDB/indexDB';
 import { BaseComponent } from '../base-component';
 import './reg-new-player.scss';
 
 export class RegNewPlayer extends BaseComponent {
-  private readonly indexDB: IndexDB;
+  private readonly indexDB: IndexDB = new IndexDB();
+
+  dataUser = {};
 
   constructor() {
     super();
@@ -20,16 +23,15 @@ export class RegNewPlayer extends BaseComponent {
               <form name="form" id="reg_form">
                 <div class="mb-3">
                   <label class="form-label">First Name</label>
-                  <input type="text" name="firstName" class="form-control" id="firstName" pattern=".{3,}" title="min 3 words" required>
+                  <input type="text" name="firstName" class="form-control" id="firstName" pattern=".{3,}" required>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Last Name</label>
-                  <input type="text" name="lastName" class="form-control" id="lastName" pattern=".{3,}" title="min 3 words" required>
+                  <input type="text" name="lastName" class="form-control" id="lastName" pattern=".{3,}" required>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">GitHub adress</label>
-                  <input type="text" name="gitHubAdress" class="form-control" id="gitHubAdress" pattern="https://github.com/.+" title="github adress" required>
-                  <div id="gitHelp" class="form-text">https://github.com/***</div>
+                  <label class="form-label">Gmail adress</label>
+                  <input type="email" name="email" class="form-control" id="email" title="email adress" required>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Add user" data-dismiss="modal" id="submitBtn">
                 <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Close">
@@ -39,9 +41,7 @@ export class RegNewPlayer extends BaseComponent {
         </div>
       </div>
     `;
-    this.indexDB = new IndexDB();
-    this.indexDB.createDB('store', 1);
-    setTimeout(() => this.sendValueFormUser(), 1000);
+    // setTimeout(() => this.sendValueFormUser(), 1000);
     if (localStorage.getItem('registerUser') === 'true') {
       new Header().addUrlGame();
     }
@@ -51,28 +51,32 @@ export class RegNewPlayer extends BaseComponent {
     const form = document.querySelector('#reg_form');
     const firstNameInput = document.querySelector('#firstName') as HTMLInputElement;
     const lastNameInput = document.querySelector('#lastName') as HTMLInputElement;
-    const gitHubAdressInput = document.querySelector('#gitHubAdress') as HTMLInputElement;
+    const emailAdressInput = document.querySelector('#email') as HTMLInputElement;
     const modal = document.querySelector('.modal') as HTMLElement;
+
+    this.indexDB.createDB('store', 1);
 
     form!.addEventListener('submit', (event) => {
       event.preventDefault();
       if (!firstNameInput) throw Error(`firstNameInput: ${firstNameInput} error!`);
       if (!lastNameInput) throw Error(`lastNameInput: ${lastNameInput} error!`);
-      if (!gitHubAdressInput) throw Error(`gitHubAdressInput: ${gitHubAdressInput} error!`);
+      if (!emailAdressInput) throw Error(`gitHubAdressInput: ${emailAdressInput} error!`);
 
       const firstNameValue = firstNameInput.value;
       const lastNameValue = lastNameInput.value;
-      const gitHubAdressValue = gitHubAdressInput.value;
-      const formValue = {
+      const emailValue = emailAdressInput.value;
+      const formValue: IRecord = {
         firstName: firstNameValue,
         lastName: lastNameValue,
-        gitHubAdress: gitHubAdressValue,
+        email: emailValue,
         score: 0,
       };
+      this.dataUser = formValue;
+      console.log(this.indexDB);
 
       firstNameInput.value = '';
       lastNameInput.value = '';
-      gitHubAdressInput.value = '';
+      emailAdressInput.value = '';
       this.indexDB.addRecord('users', formValue);
       localStorage.setItem('registerUser', 'true');
 
@@ -90,5 +94,9 @@ export class RegNewPlayer extends BaseComponent {
       btn.setAttribute('id', 'btnStart');
       new Header().addUrlGame();
     });
+  }
+
+  setValueDB(dataUser: IRecord) {
+    this.indexDB.addRecord('users', dataUser);
   }
 }
