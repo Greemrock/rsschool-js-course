@@ -7,7 +7,7 @@ import './reg-new-player.scss';
 export class RegNewPlayer extends BaseComponent {
   private readonly indexDB: IndexDB = new IndexDB();
 
-  dataUser = {};
+  dataUser = {} as IRecord;
 
   constructor() {
     super();
@@ -23,11 +23,11 @@ export class RegNewPlayer extends BaseComponent {
               <form name="form" id="reg_form">
                 <div class="mb-3">
                   <label class="form-label">First Name</label>
-                  <input type="text" name="firstName" class="form-control" id="firstName" pattern="[a-z]{1,15}" required>
+                  <input type="text" name="firstName" class="form-control" id="firstName" pattern="[a-z,A-Z,а-я,А-Я]{1,15}" required>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Last Name</label>
-                  <input type="text" name="lastName" class="form-control" id="lastName" pattern="[a-z]{1,15}" required>
+                  <input type="text" name="lastName" class="form-control" id="lastName" pattern="[a-z,A-Z,а-я,А-Я]{1,15}" required>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Gmail adress</label>
@@ -41,7 +41,6 @@ export class RegNewPlayer extends BaseComponent {
         </div>
       </div>
     `;
-    // setTimeout(() => this.sendValueFormUser(), 1000);
     if (localStorage.getItem('registerUser') === 'true') {
       new Header().addUrlGame();
     }
@@ -70,6 +69,7 @@ export class RegNewPlayer extends BaseComponent {
         lastName: lastNameValue,
         email: emailValue,
         score: 0,
+        created: new Date().getTime(),
       };
       this.dataUser = formValue;
       console.log(this.indexDB);

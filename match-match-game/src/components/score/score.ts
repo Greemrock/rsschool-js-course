@@ -16,14 +16,19 @@ export class Score extends BaseComponent {
     `;
   }
 
-  scoreUser() {
+  scoreUser(min: number, sec: number) {
     const mutchCards = localStorage.getItem('mutchCards');
     const noMutchCards = localStorage.getItem('noMutchCards');
-    const secUser = this.timer.minFinish * 60 + this.timer.secFinish;
+    let secUser: number;
+    if (min > 0) {
+      secUser = min * 60 + sec;
+    } else {
+      secUser = sec;
+    }
     const score = (Number(mutchCards) - Number(noMutchCards)) * 100 - secUser * 10;
-    const dataUser = this.regNewPlayer.dataUser as IRecord;
-    dataUser.score = score;
-    console.log(dataUser);
-    // this.regNewPlayer.setValueDB(dataUser);
+    console.log(`(${Number(mutchCards)} - ${Number(noMutchCards)}) * 100 - ${secUser} * 10`, score);
+    // const dataUser = this.regNewPlayer.dataUser;
+    // dataUser.score = score;
+    console.log(this.regNewPlayer.dataUser);
   }
 }

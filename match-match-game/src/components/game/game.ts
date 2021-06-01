@@ -37,6 +37,7 @@ export class Game extends BaseComponent {
       card.element.addEventListener('click', () => this.cardHandler(card));
     });
     this.cardsField.addCards(cards);
+    localStorage.setItem('mutchCards', '0');
   }
 
   private async cardHandler(card: Card) {
@@ -92,8 +93,8 @@ export class Game extends BaseComponent {
         modal?.remove();
         this.timer.funcReset();
         window.location.hash = '#/';
-        localStorage.setItem('mutchCards', '0');
-        this.score.scoreUser();
+        // localStorage.setItem('mutchCards', '0');
+        this.score.scoreUser(this.timer.minFinish, this.timer.secFinish);
       });
     }
   }

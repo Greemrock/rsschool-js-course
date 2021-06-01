@@ -3,4 +3,5 @@ export interface IRecord {
   lastName: string;
   email: string;
   score: number;
+  created: number;
 }
