@@ -12,29 +12,75 @@ export class RegNewPlayer extends BaseComponent {
   constructor() {
     super();
     this.element.innerHTML = `
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Register new player</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
               <form name="form" id="reg_form">
                 <div class="mb-3">
                   <label class="form-label">First Name</label>
-                  <input type="text" name="firstName" class="form-control" id="firstName" pattern="[a-z,A-Z,а-я,А-Я]{1,15}" required>
+                  <input
+                    type="text"
+                    name="firstName"
+                    class="form-control"
+                    id="firstName"
+                    pattern="[a-z,A-Z,а-я,А-Я]{1,15}"
+                    required
+                  >
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Last Name</label>
-                  <input type="text" name="lastName" class="form-control" id="lastName" pattern="[a-z,A-Z,а-я,А-Я]{1,15}" required>
+                  <input
+                    type="text"
+                    name="lastName"
+                    class="form-control"
+                    id="lastName"
+                    pattern="[a-z,A-Z,а-я,А-Я]{1,15}"
+                    required
+                  >
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Gmail adress</label>
-                  <input type="email" name="email" class="form-control" id="email" title="email adress" required>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="email"
+                    title="email
+                    adress"
+                    required
+                  >
                 </div>
-                <input type="submit" class="btn btn-primary" value="Add user" data-dismiss="modal" id="submitBtn">
-                <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Close">
+                <input
+                  type="submit"
+                  class="btn
+                  btn-primary"
+                  value="Add user"
+                  data-dismiss="modal"
+                  id="submitBtn"
+                >
+                <input
+                  type="button"
+                  class="btn
+                  btn-secondary"
+                  data-bs-dismiss="modal"
+                  value="Close"
+                >
               </form>
             </div>
           </div>

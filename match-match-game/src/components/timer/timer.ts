@@ -1,5 +1,4 @@
 import { BaseComponent } from '../base-component';
-import { delay } from '../shared/delay';
 import './timer.scss';
 
 export class Timer extends BaseComponent {

@@ -13,7 +13,12 @@ export class Modal extends BaseComponent {
             Congratulations! You successfully found all matches on ${this.time} minutes.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeModal">ok</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              id="closeModal"
+            >ok</button>
           </div>
         </div>
       </div>

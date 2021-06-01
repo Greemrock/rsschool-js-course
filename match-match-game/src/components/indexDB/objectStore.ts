@@ -6,6 +6,6 @@ export class ObjectStore {
   }
 
   createStores(db: IDBDatabase, key?: string) {
-    const users = db.createObjectStore(this.nameObjectStore, { keyPath: key, autoIncrement: true });
+    db.createObjectStore(this.nameObjectStore, { keyPath: key, autoIncrement: true });
   }
 }

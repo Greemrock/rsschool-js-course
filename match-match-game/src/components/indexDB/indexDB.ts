@@ -20,7 +20,7 @@ export class IndexDB {
     request.onupgradeneeded = (event) => {
       const thisDB = (<IDBOpenDBRequest>event.target).result;
       const objectStores: ObjectStore = new ObjectStore('users');
-      objectStores.createStores(thisDB);
+      objectStores.createStores(thisDB, 'id');
       console.log(`IndexedDB service: creating ${dbName} completed.`);
     };
   }
@@ -29,7 +29,6 @@ export class IndexDB {
     if (!this.db) throw Error(`error - db = ${this.db}`);
     const transaction = this.db.transaction([storeName], 'readwrite');
     const store = transaction.objectStore(storeName);
-    console.log('rere');
     const request: IDBRequest = store.add(record);
     request.onsuccess = () => {
       console.log('IndexedDB service: add object in store');
@@ -37,5 +36,19 @@ export class IndexDB {
     request.onerror = () => {
       console.log('IndexedDB service: error addRecordAsync');
     };
+  }
+
+  getAllRecords(storeName: string) {
+    if (!this.db) throw Error(`error - db = ${this.db}`);
+    const tx = this.db.transaction([storeName], 'readonly');
+    const store = tx.objectStore(storeName);
+    const request: IDBRequest = store.getAll();
+    request.onsuccess = () => {
+      console.log('IndexedDB service: add object in store');
+    };
+    request.onerror = () => {
+      console.log('IndexedDB service: error addRecordAsync');
+    };
+    return request;
   }
 }

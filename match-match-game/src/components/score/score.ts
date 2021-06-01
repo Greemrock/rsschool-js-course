@@ -1,12 +1,8 @@
-import { IRecord } from '../interfaces/IRecord';
-import { Timer } from '../timer/timer';
 import { BaseComponent } from '../base-component';
 import { RegNewPlayer } from '../reg-new-player/reg-new-player';
 import './score.scss';
 
 export class Score extends BaseComponent {
-  private timer: Timer = new Timer();
-
   private regNewPlayer: RegNewPlayer = new RegNewPlayer();
 
   constructor() {
