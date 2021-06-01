@@ -10,9 +10,9 @@ export class Settings extends BaseComponent {
     this.element.innerHTML = `
       <form name="formOptions">
         <h3>Game cards</h3>
-        <select id="card" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
-          <option value="1">One</option>
-          <option value="2">Two</option>
+        <select id="categories" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+          <option value="0">Pack 1</option>
+          <option value="1">Pack 2</option>
         </select>
         <h3>Difficulty</h3>
         <select id="difficulty" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
@@ -25,6 +25,7 @@ export class Settings extends BaseComponent {
       </form>
     `;
     localStorage.setItem('difficulty', '8');
+    localStorage.setItem('categories', '0');
     localStorage.setItem('cards', '4');
   }
 }

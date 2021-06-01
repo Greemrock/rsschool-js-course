@@ -23,11 +23,11 @@ export class RegNewPlayer extends BaseComponent {
               <form name="form" id="reg_form">
                 <div class="mb-3">
                   <label class="form-label">First Name</label>
-                  <input type="text" name="firstName" class="form-control" id="firstName" pattern=".{3,}" required>
+                  <input type="text" name="firstName" class="form-control" id="firstName" pattern="[a-z]{1,15}" required>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Last Name</label>
-                  <input type="text" name="lastName" class="form-control" id="lastName" pattern=".{3,}" required>
+                  <input type="text" name="lastName" class="form-control" id="lastName" pattern="[a-z]{1,15}" required>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Gmail adress</label>

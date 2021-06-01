@@ -8,7 +8,6 @@ import { delay } from '../shared/delay';
 import { Timer } from '../timer/timer';
 
 export const FLIP_DELAY = 1000;
-let timer = 'unactivate';
 
 export class Game extends BaseComponent {
   private readonly cardsField: CardsField;
@@ -67,13 +66,10 @@ export class Game extends BaseComponent {
   }
 
   startTimer() {
-    if (timer === 'unactivate') {
-      timer = 'activate';
-      this.timer.start();
-      this.timer.pause('#pause');
-      this.timer.reset('.header__list');
-      console.log('go timer!');
-    } else timer = 'unactivate';
+    this.timer.start();
+    this.timer.pause('#pause');
+    this.timer.reset('.header__list');
+    console.log('go timer!');
   }
 
   finishGame() {
@@ -97,7 +93,6 @@ export class Game extends BaseComponent {
         this.timer.funcReset();
         window.location.hash = '#/';
         localStorage.setItem('mutchCards', '0');
-        timer = 'unactivate';
         this.score.scoreUser();
       });
     }

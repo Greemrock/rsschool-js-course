@@ -4,6 +4,7 @@ import { Game } from './components/game/game';
 import { ImageCategoryModel } from './components/madels/image-category-model';
 import { Header } from './components/header/header';
 import { Router } from './components/router';
+import { selectPack } from './components/settings/selectPack';
 
 export class App {
   private readonly header: Header;
@@ -40,6 +41,7 @@ export class App {
       } else if (window.location.hash === '#/settings') {
         this.rootElement.appendChild(this.router.getContent());
         selectValue('difficulty');
+        selectPack('categories');
         const btnPause = document.querySelector('#pause');
         btnPause?.remove();
         if (localStorage.getItem('registerUser')) {
@@ -63,7 +65,8 @@ export class App {
   async startGame() {
     const res = await fetch('./images.json');
     const categories: ImageCategoryModel[] = await res.json();
-    const cat = categories[0];
+    const numCat = localStorage.getItem('categories');
+    const cat = categories[Number(numCat)];
     const images = cat.images.map((name) => `${cat.category}/${name}`);
     const amountImages = localStorage.getItem('difficulty');
     images.splice(0, Number(amountImages));

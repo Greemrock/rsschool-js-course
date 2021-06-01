@@ -1,6 +1,6 @@
 [
   {
-    "category": "front-side",
+    "category": "pack_1",
     "images": [
       "001-lion.png",
       "002-snake.png",
@@ -12,6 +12,21 @@
       "008-giraffe.png",
       "009-squid.png",
       "010-crab.png"
+    ]
+  },
+  {
+    "category": "pack_2",
+    "images": [
+      "antelope.png",
+      "bat.png",
+      "cat.png",
+      "hedgehog.png",
+      "leopard.png",
+      "rabbit.png",
+      "reindeer.png",
+      "shark.png",
+      "unicorn.png",
+      "walrus.png"
     ]
   }
 ]
