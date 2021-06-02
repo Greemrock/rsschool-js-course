@@ -124,6 +124,7 @@ export class RegNewPlayer extends BaseComponent {
       lastNameInput.value = '';
       emailAdressInput.value = '';
       this.indexDB.addRecord('users', formValue);
+      this.indexDB.lastUser('users');
       localStorage.setItem('registerUser', 'true');
 
       const modalBg = document.querySelector('.modal-backdrop') as HTMLElement;
@@ -142,7 +143,11 @@ export class RegNewPlayer extends BaseComponent {
     });
   }
 
-  setValueDB(dataUser: IRecord) {
-    this.indexDB.addRecord('users', dataUser);
+  changeValueDB() {
+    this.indexDB.putRecord('users');
+  }
+
+  keyUser() {
+    console.log(this.indexDB.keyUser);
   }
 }

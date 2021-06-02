@@ -4,6 +4,8 @@ import { ObjectStore } from './objectStore';
 export class IndexDB {
   private db: IDBDatabase | undefined;
 
+  keyUser = 0;
+
   createDB(dbName: string, version: number) {
     const request: IDBOpenDBRequest = indexedDB.open(dbName, version);
 
@@ -38,17 +40,42 @@ export class IndexDB {
     };
   }
 
-  getAllRecords(storeName: string) {
+  lastUser(storeName: string) {
     if (!this.db) throw Error(`error - db = ${this.db}`);
-    const tx = this.db.transaction([storeName], 'readonly');
+    const tx = this.db.transaction([storeName]);
     const store = tx.objectStore(storeName);
-    const request: IDBRequest = store.getAll();
+    store.openCursor().onsuccess = (event) => {
+      const cursor = event.target as IDBRequest;
+      const cursoreResult: IDBCursorWithValue = cursor.result;
+      if (cursoreResult) {
+        this.keyUser = cursoreResult.key as number;
+        console.log('cursor', cursoreResult);
+        console.log('cursoreResult.key:', this.keyUser);
+        cursoreResult.continue();
+      } else {
+        console.log('lastUser >>>> ', this.keyUser);
+      }
+    };
+  }
+
+  putRecord(storeName: string) {
+    if (!this.db) throw Error(`error - db = ${this.db}`);
+    const transaction = this.db.transaction([storeName], 'readwrite');
+    const store = transaction.objectStore(storeName);
+    const val = {
+      firstName: 'Андрей',
+      lastName: 'Посохов',
+      email: 'Greemrock911@gmail.com',
+      score: 3000,
+      created: 1622584500006,
+      id: 15,
+    };
+    const request: IDBRequest = store.put(val, [15]);
     request.onsuccess = () => {
-      console.log('IndexedDB service: add object in store');
+      console.log(request);
     };
     request.onerror = () => {
-      console.log('IndexedDB service: error addRecordAsync');
+      console.log('IndexedDB service: error getRecord');
     };
-    return request;
   }
 }

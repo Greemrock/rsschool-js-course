@@ -21,10 +21,12 @@ export class Score extends BaseComponent {
     } else {
       secUser = sec;
     }
-    const score = (Number(mutchCards) - Number(noMutchCards)) * 100 - secUser * 10;
-    console.log(`(${Number(mutchCards)} - ${Number(noMutchCards)}) * 100 - ${secUser} * 10`, score);
-    // const dataUser = this.regNewPlayer.dataUser;
-    // dataUser.score = score;
+    const scor = (Number(mutchCards) - Number(noMutchCards)) * 100 - secUser * 10;
+    console.log(`(${Number(mutchCards)} - ${Number(noMutchCards)}) * 100 - ${secUser} * 10`, scor);
+    // const dataUser = {
+    //   score: scor,
+    // };
     console.log(this.regNewPlayer.dataUser);
+    return scor;
   }
 }

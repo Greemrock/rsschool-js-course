@@ -1,3 +1,4 @@
+import { RegNewPlayer } from '../reg-new-player/reg-new-player';
 import { Score } from '../score/score';
 import { Modal } from '../modal/modal';
 import { CardsField } from '../cards-field/cards-field';
@@ -11,6 +12,8 @@ export const FLIP_DELAY = 1000;
 
 export class Game extends BaseComponent {
   private readonly cardsField: CardsField;
+
+  private readonly regNewPlayer: RegNewPlayer = new RegNewPlayer();
 
   private activeCard?: Card;
 
@@ -92,9 +95,13 @@ export class Game extends BaseComponent {
         bg?.remove();
         modal?.remove();
         this.timer.funcReset();
+        const score = this.score.scoreUser(this.timer.minFinish, this.timer.secFinish);
+        const key = this.regNewPlayer.keyUser();
+        console.log('score', score);
+        console.log('key', key);
+        // console.log('key', key);
+        this.regNewPlayer.changeValueDB();
         window.location.hash = '#/';
-        // localStorage.setItem('mutchCards', '0');
-        this.score.scoreUser(this.timer.minFinish, this.timer.secFinish);
       });
     }
   }
