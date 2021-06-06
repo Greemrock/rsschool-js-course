@@ -1,3 +1,8 @@
+import { App } from './components/app/app';
 import './styles.scss';
 
-console.log('Hello world');
+const root = document.querySelector('#root');
+
+if (!root ) throw new Error(`root =  ${typeof root}`);
+
+new App(root).render();

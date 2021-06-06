@@ -21,6 +21,9 @@ module.exports = ({ development }) => ({
   entry: {
     main: './src/index.ts',
   },
+  experiments: {
+    topLevelAwait: true
+  },
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
