@@ -1,7 +1,7 @@
 import { Winners } from './renderWinners';
 import { Garage } from './renderGarage';
 
-export class renderHtml {
+export class RenderHtml {
   private readonly nodeElement: Element;
 
   private readonly garage: Garage;
@@ -14,7 +14,7 @@ export class renderHtml {
     this.winners = new Winners();
   }
 
-  render() {
+  render(): void {
     this.nodeElement.innerHTML = `
       <div class="menu">
         <button class="button garage-menu-btn" id="garage-menu" type="button">To garage</button>

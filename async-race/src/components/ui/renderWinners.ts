@@ -5,7 +5,7 @@ export class Winners {
     this.nodeElement = document.createElement('div');
   }
 
-  render() {
+  render(): string {
     return this.nodeElement.innerHTML = `
       <h1>Winners ({store.winnersCount})</h1>
       <h2>Page #{store.winnersPage}</h2>

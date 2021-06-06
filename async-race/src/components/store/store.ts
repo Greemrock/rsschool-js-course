@@ -1,9 +1,4 @@
-import { Api } from './../api/api';
-
-type JSONResponse = {
-  items: object[],
-  count: string | null
-}
+import { Api } from '../api/api';
 
 const api = new Api();
 const { items: cars, count: carsCount } = await api.getCars(1);
@@ -19,4 +14,4 @@ export default {
   view: 'garage',
   sortBy: null,
   sortOrder: null,
-}
+};

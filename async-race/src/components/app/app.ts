@@ -1,15 +1,15 @@
-import { renderHtml } from '../ui/renderHtml';
+import { RenderHtml } from '../ui/renderHtml';
 import { Component } from './app.api';
 
-export class App implements Component{
-  private html: renderHtml;
+export class App implements Component {
+  private html: RenderHtml;
 
   constructor(private readonly root: Element) {
     this.root = root;
-    this.html = new renderHtml(this.root);
+    this.html = new RenderHtml(this.root);
   }
 
-  render() {
+  render(): void {
     this.html.render();
   }
 }

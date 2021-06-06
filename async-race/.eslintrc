@@ -17,6 +17,9 @@
   ],
   "ignorePatterns": ["*.config.js", "node_modules/", "dist/"],
   "rules": {
+    "no-return-assign": 0,
+    "no-new": 0,
+    "linebreak-style": 0,
     "no-plusplus": "off",
     "no-console": "warn",
     "max-len": ["warn", { "code": 120 }],
@@ -26,6 +29,9 @@
     "@typescript-eslint/indent": ["warn", 2, {
       "SwitchCase": 1
     }],
+    "import/no-extraneous-dependencies": [
+      "error", {"devDependencies": true}
+    ],
     "import/prefer-default-export": "off",
     "no-param-reassign": ["error", {
       "props": false

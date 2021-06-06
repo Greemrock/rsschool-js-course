@@ -3,6 +3,6 @@ import './styles.scss';
 
 const root = document.querySelector('#root');
 
-if (!root ) throw new Error(`root =  ${typeof root}`);
+if (!root) throw new Error(`root = ${typeof root}`);
 
 new App(root).render();

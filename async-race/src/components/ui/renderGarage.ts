@@ -11,7 +11,7 @@ export class Garage {
     this.renderCar = new Car();
   }
 
-  render() {
+  render(): string {
     return this.nodeElement.innerHTML = `
       <h1>Garage (${store.carsCount})</h1>
       <h2>Page #${store.carsPage}</h2>
