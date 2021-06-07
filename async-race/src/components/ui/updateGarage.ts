@@ -5,7 +5,7 @@ import { Garage } from './renderGarage';
 export class UpdateGarage {
   private readonly renderGarage: Garage = new Garage();
 
-  async render() {
+  async render(): Promise<void> {
     document.querySelectorAll('.item').forEach((item) => item.remove());
     const { items: cars, count: carsCount } = await new Api().getCars(1);
     store.cars = cars;

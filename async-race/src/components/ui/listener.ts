@@ -1,3 +1,4 @@
+import { getId } from './getId';
 import { UpdateGarage } from './updateGarage';
 import { Garage } from './renderGarage';
 import { Api } from '../api/api';
@@ -11,9 +12,10 @@ export class Listener {
 
   private readonly updateGarage: UpdateGarage = new UpdateGarage();
 
-  start() {
+  start(): void {
     this.createCar();
-    this.remove();
+    this.removeCar();
+    this.selectCar();
   }
 
   createCar(): void {
@@ -28,7 +30,6 @@ export class Listener {
           name: inputName.value,
           color: inputColor.value,
         };
-        console.log('create car: ', car);
         await this.api.createCar(car);
         await this.updateGarage.render();
         inputName.value = '';
@@ -38,16 +39,32 @@ export class Listener {
     });
   }
 
-  remove() {
+  removeCar(): void {
     const removeBtn = document.querySelectorAll('.remove-btn');
     removeBtn.forEach((btn) => {
       btn.addEventListener('click', async (event: Event) => {
-        const target = event.target as HTMLButtonElement;
-        const id = +target.id.split('remove-car-')[1];
-        console.log(id);
+        const id = getId('remove-car-', event);
         await this.api.deleteCar(id);
         await this.updateGarage.render();
-        this.remove();
+        this.removeCar();
+      });
+    });
+  }
+
+  selectCar(): void {
+    const selectBtn = document.querySelectorAll('.select-btn');
+    selectBtn.forEach((btn) => {
+      btn.addEventListener('click', async (event: Event) => {
+        const selectedCar = await this.api.getCar(getId('select-car-', event));
+        const updateName = document.getElementById('update-name') as HTMLInputElement;
+        const updateColor = document.getElementById('update-color') as HTMLInputElement;
+        const updateSubmit = document.getElementById('update-submit') as HTMLInputElement;
+        updateName.value = selectedCar.name;
+        updateColor.value = selectedCar.color;
+        updateName.disabled = false;
+        updateColor.disabled = false;
+        updateSubmit.disabled = false;
+        this.selectCar();
       });
     });
   }

@@ -4,3 +4,9 @@ export interface ICar {
   color: string,
   isEngineStarted: string
 }
+
+export interface IGetCar {
+  id: number,
+  name: string,
+  color: string
+}
