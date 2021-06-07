@@ -20,4 +20,14 @@ export class Api {
       count: countCars,
     };
   }
+
+  async createCar(body: any) {
+    (await fetch(this.garage, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })).json();
+  }
 }
