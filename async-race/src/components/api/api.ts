@@ -40,4 +40,14 @@ export class Api {
   async getCar(id: number) {
     return (await fetch(`${this.path.garage}/${id}`)).json();
   }
+
+  async updateCar(id: number, body: any): Promise<void> {
+    (await fetch(`${this.path.garage}/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })).json();
+  }
 }

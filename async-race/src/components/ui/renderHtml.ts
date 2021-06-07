@@ -24,12 +24,12 @@ export class RenderHtml {
         <div>
           <form class="form" id="create" name="create">
             <input calss="input" id="create-name" name="name" type="text">
-            <input class="color" id="create-color" name="color" type="color" value="#fff">
+            <input class="color" id="create-color" name="color" type="color" value="#ffffff">
             <button class="button" type="submit">Create</button>
           </form>
           <form class="form" id="update">
             <input calss="input" id="update-name" name="name" type="text" disabled>
-            <input class="color" id="update-color" name="color" type="color" value="#fff" disabled>
+            <input class="color" id="update-color" name="color" type="color" value="#ffffff" disabled>
             <button class="button" type="submit" id="update-submit">Update</button>
           </form>
         </div>
