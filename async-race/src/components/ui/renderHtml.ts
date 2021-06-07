@@ -22,7 +22,7 @@ export class RenderHtml {
       </div>
       <div id="garage-view">
         <div>
-          <form class="form" id="create">
+          <form class="form" id="create" name="create">
             <input calss="input" id="create-name" name="name" type="text">
             <input class="color" id="create-color" name="color" type="color" value="#fff">
             <button class="button" type="submit">Create</button>

@@ -30,4 +30,10 @@ export class Api {
       },
     })).json();
   }
+
+  async deleteCar(id: number) {
+    (await fetch(`${this.garage}/${id}`, {
+      method: 'DELETE',
+    })).json();
+  }
 }
