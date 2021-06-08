@@ -1,14 +1,11 @@
 import { getId } from './getId';
 import { UpdateGarage } from './updateGarage';
-import { Garage } from './renderGarage';
 import { Api } from '../api/api';
 
 export class Listener {
   private form = document.forms;
 
   private readonly api: Api = new Api();
-
-  private readonly renderGarage: Garage = new Garage();
 
   private readonly updateGarage: UpdateGarage = new UpdateGarage();
 
@@ -36,8 +33,9 @@ export class Listener {
         await this.api.createCar(car);
         await this.updateGarage.render();
         inputName.value = '';
-        const item = event.target as HTMLInputElement;
-        item.disabled = true;
+        this.removeCar();
+        this.selectCar();
+        this.updateCar();
       }
     });
   }
@@ -50,6 +48,8 @@ export class Listener {
         await this.api.deleteCar(id);
         await this.updateGarage.render();
         this.removeCar();
+        this.selectCar();
+        this.updateCar();
       });
     });
   }
@@ -68,7 +68,6 @@ export class Listener {
         updateName.disabled = false;
         updateColor.disabled = false;
         updateSubmit.disabled = false;
-        this.selectCar();
       });
     });
   }
@@ -98,6 +97,9 @@ export class Listener {
         updateColor.value = '#ffffff';
         updateColor.disabled = true;
         updateSubmit.disabled = true;
+        this.removeCar();
+        this.selectCar();
+        this.updateCar();
       }
     });
   }
