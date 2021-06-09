@@ -2,14 +2,15 @@ import { Api } from '../api/api';
 
 const api = new Api();
 const { items: cars, count: carsCount } = await api.getCars(1);
+const { items: winners, count: winnersCount } = await api.getWinners(1);
 
 export default {
   carsPage: 1,
   cars,
   carsCount,
   winnersPage: 1,
-  // winners,
-  // winnersCount,
+  winners,
+  winnersCount,
   animation: {},
   view: 'garage',
   sortBy: null,

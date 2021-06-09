@@ -1,7 +1,6 @@
 import { RenderHtml } from '../ui/renderHtml';
-import { Component } from './app.api';
 
-export class App implements Component {
+export class App {
   private html: RenderHtml;
 
   constructor(private readonly root: Element) {

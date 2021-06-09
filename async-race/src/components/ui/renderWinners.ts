@@ -1,3 +1,7 @@
+import { IWinners } from '../shared/interfaces';
+import { CarImage } from './renderCarImage';
+import store from '../store/store';
+
 export class Winners {
   private readonly nodeElement: Element;
 
@@ -7,8 +11,8 @@ export class Winners {
 
   render(): string {
     return this.nodeElement.innerHTML = `
-      <h1>Winners ({store.winnersCount})</h1>
-      <h2>Page #{store.winnersPage}</h2>
+      <h1>Winners (${store.winnersCount})</h1>
+      <h2>Page #${store.winnersPage}</h2>
       <table class="table" cellspacing="0" border="0" cellpadding="0">
         <thead>
           <th>Number</th>
@@ -18,9 +22,15 @@ export class Winners {
           <th class="table-btn table-time">Best time, sec</th>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-          </tr>
+          ${store.winners.map((winner: any, index): string => `
+            <tr>
+              <td>${index + 1}</td>
+              <td>${new CarImage().render(winner.car.color)}</td>
+              <td>${winner.car.name}</td>
+              <td>${winner.wins}</td>
+              <td>${winner.time}</td>
+            </tr>
+          `)}
         </tbody>
       </table>
     `;

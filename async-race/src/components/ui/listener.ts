@@ -1,9 +1,11 @@
-import { getId } from './getId';
+import { getId } from '../shared/getId';
 import { UpdateGarage } from './updateGarage';
 import { Api } from '../api/api';
 
 export class Listener {
   private form = document.forms;
+
+  private root = document.getElementById('root') as HTMLElement;
 
   private readonly api: Api = new Api();
 
@@ -16,6 +18,8 @@ export class Listener {
     this.removeCar();
     this.selectCar();
     this.updateCar();
+    this.winnersBtn();
+    this.garageBtn();
   }
 
   createCar(): void {
@@ -101,6 +105,27 @@ export class Listener {
         this.selectCar();
         this.updateCar();
       }
+    });
+  }
+
+  garageBtn() {
+    const garageBtn = this.root.querySelector('.garage-menu-btn') as HTMLElement;
+    const garageView = document.getElementById('garage-view') as HTMLElement;
+    const winnersView = document.getElementById('winners-view') as HTMLElement;
+    garageBtn?.addEventListener('click', () => {
+      garageView.style.display = 'block';
+      winnersView.style.display = 'none';
+    });
+  }
+
+  winnersBtn() {
+    const winnersBtn = this.root.querySelector('.winners-menu-btn') as HTMLElement;
+    const garageView = document.getElementById('garage-view') as HTMLElement;
+    const winnersView = document.getElementById('winners-view') as HTMLElement;
+    winnersBtn?.addEventListener('click', () => {
+      winnersView.style.display = 'block';
+      garageView.style.display = 'none';
+      this.api.getWinners(1);
     });
   }
 }
