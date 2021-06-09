@@ -1,4 +1,4 @@
-import { Winners } from './renderWinners';
+import { RenderWinners } from './renderWinners';
 import { Garage } from './renderGarage';
 
 export class RenderHtml {
@@ -6,12 +6,12 @@ export class RenderHtml {
 
   private readonly garage: Garage;
 
-  private readonly winners: Winners;
+  private readonly renderWinners: RenderWinners;
 
   constructor(nodeElement: Element) {
     this.nodeElement = nodeElement;
     this.garage = new Garage();
-    this.winners = new Winners();
+    this.renderWinners = new RenderWinners();
   }
 
   render(): void {
@@ -46,7 +46,7 @@ export class RenderHtml {
         </div>
       </div>
       <div id="winners-view" style="display: none">
-        ${this.winners.render()}
+        ${this.renderWinners.render()}
       </div>
       <div class="pagination">
         <button class="button primary prev-btn" disabled id="prew">prew</button>

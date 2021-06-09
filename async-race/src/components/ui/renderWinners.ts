@@ -2,7 +2,7 @@ import { IWinners } from '../shared/interfaces';
 import { CarImage } from './renderCarImage';
 import store from '../store/store';
 
-export class Winners {
+export class RenderWinners {
   private readonly nodeElement: Element;
 
   constructor() {

@@ -1,3 +1,5 @@
+import { RenderWinners } from './renderWinners';
+import { UpdateStateWinners } from './updateStateWinners';
 import { getId } from '../shared/getId';
 import { UpdateGarage } from './updateGarage';
 import { Api } from '../api/api';
@@ -10,6 +12,10 @@ export class Listener {
   private readonly api: Api = new Api();
 
   private readonly updateGarage: UpdateGarage = new UpdateGarage();
+
+  private readonly updateStateWinners: UpdateStateWinners = new UpdateStateWinners();
+
+  private readonly renderWinners: RenderWinners = new RenderWinners();
 
   private selectId = 0;
 
@@ -122,10 +128,13 @@ export class Listener {
     const winnersBtn = this.root.querySelector('.winners-menu-btn') as HTMLElement;
     const garageView = document.getElementById('garage-view') as HTMLElement;
     const winnersView = document.getElementById('winners-view') as HTMLElement;
-    winnersBtn?.addEventListener('click', () => {
+    winnersBtn?.addEventListener('click', async () => {
       winnersView.style.display = 'block';
       garageView.style.display = 'none';
       this.api.getWinners(1);
+      await this.updateStateWinners.render();
+      const winnerView = document.getElementById('winners-view') as HTMLElement;
+      winnerView.innerHTML = this.renderWinners.render();
     });
   }
 }
