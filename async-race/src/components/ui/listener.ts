@@ -1,8 +1,9 @@
 import { RenderWinners } from './renderWinners';
 import { UpdateStateWinners } from './updateStateWinners';
 import { getId } from '../shared/getId';
-import { UpdateGarage } from './updateGarage';
+import { UpdateStateGarage } from './updateStateGarage';
 import { Api } from '../api/api';
+import { Garage } from './renderGarage';
 
 export class Listener {
   private form = document.forms;
@@ -11,11 +12,13 @@ export class Listener {
 
   private readonly api: Api = new Api();
 
-  private readonly updateGarage: UpdateGarage = new UpdateGarage();
+  private readonly updateStateGarage: UpdateStateGarage = new UpdateStateGarage();
 
   private readonly updateStateWinners: UpdateStateWinners = new UpdateStateWinners();
 
   private readonly renderWinners: RenderWinners = new RenderWinners();
+
+  private readonly renderGarage: Garage = new Garage();
 
   private selectId = 0;
 
@@ -41,7 +44,9 @@ export class Listener {
           color: inputColor.value,
         };
         await this.api.createCar(car);
-        await this.updateGarage.render();
+        await this.updateStateGarage.render();
+        const garage = document.getElementById('garage') as HTMLElement;
+        garage.innerHTML = await this.renderGarage.render();
         inputName.value = '';
         this.removeCar();
         this.selectCar();
@@ -56,7 +61,9 @@ export class Listener {
       btn.addEventListener('click', async (event: Event) => {
         const id = getId('remove-car-', event);
         await this.api.deleteCar(id);
-        await this.updateGarage.render();
+        await this.updateStateGarage.render();
+        const garage = document.getElementById('garage') as HTMLElement;
+        garage.innerHTML = await this.renderGarage.render();
         this.removeCar();
         this.selectCar();
         this.updateCar();
@@ -95,7 +102,9 @@ export class Listener {
           color: inputColor.value,
         };
         await this.api.updateCar(this.selectId, car);
-        await this.updateGarage.render();
+        await this.updateStateGarage.render();
+        const garage = document.getElementById('garage') as HTMLElement;
+        garage.innerHTML = await this.renderGarage.render();
         inputName.value = '';
         const item = event.target as HTMLInputElement;
         item.disabled = true;
@@ -134,7 +143,7 @@ export class Listener {
       this.api.getWinners(1);
       await this.updateStateWinners.render();
       const winnerView = document.getElementById('winners-view') as HTMLElement;
-      winnerView.innerHTML = this.renderWinners.render();
+      winnerView.innerHTML = await this.renderWinners.render();
     });
   }
 }
