@@ -1,3 +1,4 @@
+import { RaceControl } from './receControl';
 import { RenderWinners } from './renderWinners';
 import { UpdateStateWinners } from './updateStateWinners';
 import { getId } from '../shared/getId';
@@ -20,6 +21,8 @@ export class Listener {
 
   private readonly renderGarage: Garage = new Garage();
 
+  private readonly raceControl: RaceControl = new RaceControl();
+
   private selectId = 0;
 
   start(): void {
@@ -29,6 +32,7 @@ export class Listener {
     this.updateCar();
     this.winnersBtn();
     this.garageBtn();
+    this.generatorCarsBtn();
   }
 
   createCar(): void {
@@ -144,6 +148,22 @@ export class Listener {
       await this.updateStateWinners.render();
       const winnerView = document.getElementById('winners-view') as HTMLElement;
       winnerView.innerHTML = await this.renderWinners.render();
+    });
+  }
+
+  generatorCarsBtn() {
+    const generate = document.getElementById('generate') as HTMLButtonElement;
+    generate.addEventListener('click', async (event: Event) => {
+      const target = event.target as HTMLButtonElement;
+      target.disabled = true;
+      const cars = this.raceControl.generateRandomCars();
+      await Promise.all(cars.map(async (car) => {
+        await this.api.createCar(car);
+      }));
+      await this.updateStateGarage.render();
+      const garage = document.getElementById('garage') as HTMLElement;
+      garage.innerHTML = await this.renderGarage.render();
+      target.disabled = false;
     });
   }
 }
