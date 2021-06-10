@@ -1,5 +1,6 @@
 import { Car } from './renderCar';
 import store from '../store/store';
+import './renderGarage.scss';
 
 export class Garage {
   private readonly nodeElement: Element;
@@ -13,11 +14,11 @@ export class Garage {
 
   render(): string {
     return this.nodeElement.innerHTML = `
-      <h1>Garage (${store.carsCount})</h1>
+      <h1>Garage /${store.carsCount} cars /</h1>
       <h2>Page #${store.carsPage}</h2>
       <ul class="garage">
         ${store.cars.map((car) => `
-          <li calss="item">${this.renderCar.render(car)}</li>
+          <li>${this.renderCar.render(car)}</li>
           `).join('')}
       </ul>
     `;

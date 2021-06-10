@@ -1,0 +1,57 @@
+.control-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.general {
+  width: 102px;
+}
+
+.control-car {
+  width: 72px;
+}
+
+.road {
+  position: relative;
+  border-top: 3px solid #808080;
+  border-bottom: 3px solid #808080;
+  width: 100%;
+  padding: 15px 0;
+  &::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    border-top: 3px dashed #808080;
+    z-index: -1;
+  }
+}
+
+.control-panel {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.remove-btn,
+.select-btn,
+.start-engine-btn,
+.stop-engine-btn {
+  width: 100%;
+}
+
+.finish-line {
+  position: absolute;
+  height: 100%;
+  border-right: 3px double #ff6060;
+  top: 0;
+  right: 150px;
+}
+
+.car-name {
+  position: absolute;
+  top: 0;
+}

@@ -1,0 +1,10 @@
+.table {
+  color: #dddddd;
+}
+
+.car-winner {
+  position: relative;
+  & svg {
+    transform: scale(0.7);
+  }
+}

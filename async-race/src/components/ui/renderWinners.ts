@@ -1,6 +1,6 @@
-import { IWinners } from '../shared/interfaces';
 import { CarImage } from './renderCarImage';
 import store from '../store/store';
+import './renderWinners.scss';
 
 export class RenderWinners {
   private readonly nodeElement: Element;
@@ -11,7 +11,7 @@ export class RenderWinners {
 
   render(): string {
     return this.nodeElement.innerHTML = `
-      <h1>Winners (${store.winnersCount})</h1>
+      <h1>Winners /${store.winnersCount} /</h1>
       <h2>Page #${store.winnersPage}</h2>
       <table class="table" cellspacing="0" border="0" cellpadding="0">
         <thead>
@@ -25,7 +25,7 @@ export class RenderWinners {
           ${store.winners.map((winner: any, index): string => `
             <tr>
               <td>${index + 1}</td>
-              <td>${new CarImage().render(winner.car.color)}</td>
+              <td class="car-winner">${new CarImage().render(winner.car.color)}</td>
               <td>${winner.car.name}</td>
               <td>${winner.wins}</td>
               <td>${winner.time}</td>
