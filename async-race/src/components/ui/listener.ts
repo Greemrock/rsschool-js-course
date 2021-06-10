@@ -5,6 +5,7 @@ import { getId } from '../shared/getId';
 import { UpdateStateGarage } from './updateStateGarage';
 import { Api } from '../api/api';
 import { Garage } from './renderGarage';
+import store from '../store/store';
 
 export class Listener {
   private form = document.forms;
@@ -26,16 +27,23 @@ export class Listener {
   private selectId = 0;
 
   start(): void {
-    this.createCar();
-    this.removeCar();
-    this.selectCar();
-    this.updateCar();
+    this.createCarBtn();
+    this.removeCarBtn();
+    this.selectCarBtn();
+    this.updateCarBtn();
     this.winnersBtn();
     this.garageBtn();
     this.generatorCarsBtn();
+    this.prewBtn();
+    this.nextBtn();
   }
 
-  createCar(): void {
+  updateListenerGarage() {
+    this.removeCarBtn();
+    this.selectCarBtn();
+  }
+
+  createCarBtn(): void {
     const createForm = document.getElementById('create');
     createForm?.addEventListener('submit', async (event: Event) => {
       event.preventDefault();
@@ -52,14 +60,12 @@ export class Listener {
         const garage = document.getElementById('garage') as HTMLElement;
         garage.innerHTML = await this.renderGarage.render();
         inputName.value = '';
-        this.removeCar();
-        this.selectCar();
-        this.updateCar();
+        this.updateListenerGarage();
       }
     });
   }
 
-  removeCar(): void {
+  removeCarBtn(): void {
     const removeBtn = document.querySelectorAll('.remove-btn');
     removeBtn.forEach((btn) => {
       btn.addEventListener('click', async (event: Event) => {
@@ -68,14 +74,12 @@ export class Listener {
         await this.updateStateGarage.render();
         const garage = document.getElementById('garage') as HTMLElement;
         garage.innerHTML = await this.renderGarage.render();
-        this.removeCar();
-        this.selectCar();
-        this.updateCar();
+        this.updateListenerGarage();
       });
     });
   }
 
-  selectCar(): void {
+  selectCarBtn(): void {
     const selectBtn = document.querySelectorAll('.select-btn');
     selectBtn.forEach((btn) => {
       btn.addEventListener('click', async (event: Event) => {
@@ -93,7 +97,7 @@ export class Listener {
     });
   }
 
-  updateCar(): void {
+  updateCarBtn(): void {
     const updateForm = document.getElementById('update');
     updateForm?.addEventListener('submit', async (event: Event) => {
       event.preventDefault();
@@ -120,9 +124,7 @@ export class Listener {
         updateColor.value = '#ffffff';
         updateColor.disabled = true;
         updateSubmit.disabled = true;
-        this.removeCar();
-        this.selectCar();
-        this.updateCar();
+        this.updateListenerGarage();
       }
     });
   }
@@ -134,6 +136,7 @@ export class Listener {
     garageBtn?.addEventListener('click', () => {
       garageView.style.display = 'block';
       winnersView.style.display = 'none';
+      store.view = 'garage';
     });
   }
 
@@ -148,6 +151,7 @@ export class Listener {
       await this.updateStateWinners.render();
       const winnerView = document.getElementById('winners-view') as HTMLElement;
       winnerView.innerHTML = await this.renderWinners.render();
+      store.view = 'winners';
     });
   }
 
@@ -164,6 +168,65 @@ export class Listener {
       const garage = document.getElementById('garage') as HTMLElement;
       garage.innerHTML = await this.renderGarage.render();
       target.disabled = false;
+      this.updateListenerGarage();
+    });
+  }
+
+  nextBtn() {
+    const nextBtn = document.getElementById('next') as HTMLButtonElement;
+    nextBtn.addEventListener('click', async () => {
+      switch (store.view) {
+        case 'garage': {
+          store.carsPage++;
+          await this.updateStateGarage.render();
+          const garage = document.getElementById('garage') as HTMLElement;
+          garage.innerHTML = await this.renderGarage.render();
+          this.updateListenerGarage();
+          break;
+        }
+        case 'winners': {
+          console.log(store.winnersPage);
+          store.winnersPage += 1;
+          console.log(store.winnersPage);
+          await this.updateStateWinners.render();
+          const winnerView = document.getElementById('winners-view') as HTMLElement;
+          winnerView.innerHTML = await this.renderWinners.render();
+          break;
+        }
+        default: {
+          new Error(`store.view = ${store.view}`);
+        }
+      }
+    });
+  }
+
+  prewBtn() {
+    const nextBtn = document.getElementById('prew') as HTMLButtonElement;
+    nextBtn.addEventListener('click', async () => {
+      switch (store.view) {
+        case 'garage': {
+          const page = store.carsPage;
+          if (page < 1) store.carsPage = 1;
+          else store.carsPage -= 1;
+          await this.updateStateGarage.render();
+          const garage = document.getElementById('garage') as HTMLElement;
+          garage.innerHTML = await this.renderGarage.render();
+          this.updateListenerGarage();
+          break;
+        }
+        case 'winners': {
+          const page = store.winnersPage;
+          if (page < 1) store.winnersPage = 1;
+          else store.winnersPage -= 1;
+          await this.updateStateWinners.render();
+          const winnerView = document.getElementById('winners-view') as HTMLElement;
+          winnerView.innerHTML = await this.renderWinners.render();
+          break;
+        }
+        default: {
+          new Error(`store.view = ${store.view}`);
+        }
+      }
     });
   }
 }

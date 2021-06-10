@@ -18,8 +18,8 @@ export class RenderHtml {
   render(): void {
     this.nodeElement.innerHTML = `
       <div class="menu mb-4">
-        <button class="btn garage-menu-btn btn-outline-light btn-lg" id="garage-menu" type="button">To garage</button>
-        <button class="btn winners-menu-btn btn-outline-light btn-lg" id="winners-menu" type="button">To winners</button>
+        <button class="btn garage-menu-btn btn-outline-light" id="garage-menu" type="button">To garage</button>
+        <button class="btn winners-menu-btn btn-outline-light" id="winners-menu" type="button">To winners</button>
       </div>
       <div id="garage-view">
         <div class="mb-4">

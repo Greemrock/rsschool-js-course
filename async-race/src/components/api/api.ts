@@ -14,13 +14,13 @@ export class Api {
     winnres: `${this.base}/winners`,
   };
 
-  async getCars(page: number, limit = 7): Promise<{ items: ICar[], count: string | null }> {
+  async getCars(page: number, limit = 7): Promise<{ items: ICar[], count: string }> {
     const response = await fetch(`${this.path.garage}?_page=${page}&_limit=${limit}`);
     const data: ICar[] = await response.json();
     const countCars: string | null = await response.headers.get('X-Total-Count');
     return {
       items: data,
-      count: countCars,
+      count: countCars as string,
     };
   }
 
