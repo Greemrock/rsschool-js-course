@@ -1,12 +1,11 @@
-export interface ICar {
+export interface IGetCar {
   id: number,
   name: string,
   color: string,
-  isEngineStarted: string
+  isEngineStarted?: string
 }
 
-export interface IGetCar {
-  id: number,
+export interface ICar {
   name: string,
   color: string
 }
@@ -26,6 +25,25 @@ export interface IWinners {
   id: number,
   wins: number,
   time: number
-  car: ICar
+  car: IGetCar
 }
 
+export interface IStartAnimation {
+  id: number
+}
+
+export interface IStartEngine {
+  velocity: number,
+  distance: number
+}
+
+export interface ICreateWinner {
+  id: number,
+  wins: number,
+  time: number
+}
+
+export interface IUpdateWinner {
+  wins: number,
+  time: number
+}

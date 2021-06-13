@@ -36,7 +36,7 @@ export class RenderHtml {
         </div>
         <div class="race-controls mb-4">
           <button class="btn race-btn btn-outline-danger" id="race">Race</button>
-          <button class="btn reset-btn btn-outline-warning" id="reset">Reset</button>
+          <button class="btn reset-btn btn-outline-warning" id="reset" disabled>Reset</button>
           <button class="btn generate-btn btn-outline-success" id="generate">Generate car</button>
         </div>
         <div id="garage">

@@ -1,4 +1,4 @@
-export class RaceControl {
+export class RandomGenerateCar {
   private readonly models = ['Tesla', 'Opel', 'Honda', 'Mercedes-Benz', 'Ford', 'Skoda', 'Nisan', 'Hyundai', 'Kia',
     'Audi', 'Aston Martin', 'BMW', 'Moskvich', 'Geely', 'Toyota', 'Cadilac', 'Mitsubishi', 'Lada', 'Chevrolet'];
 

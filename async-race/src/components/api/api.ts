@@ -1,6 +1,11 @@
 import {
-  ICar,
+  IGetCar,
+  ICreateWinner,
+  IUpdateWinner,
   IWinner,
+  // IGetCar,
+  // IStartAnimation,
+  ICar,
 } from '../shared/interfaces';
 
 export class Api {
@@ -14,9 +19,9 @@ export class Api {
     winnres: `${this.base}/winners`,
   };
 
-  async getCars(page: number, limit = 7): Promise<{ items: ICar[], count: string }> {
+  async getCars(page: number, limit = 7): Promise<{ items: IGetCar[], count: string }> {
     const response = await fetch(`${this.path.garage}?_page=${page}&_limit=${limit}`);
-    const data: ICar[] = await response.json();
+    const data: IGetCar[] = await response.json();
     const countCars: string | null = await response.headers.get('X-Total-Count');
     return {
       items: data,
@@ -24,7 +29,7 @@ export class Api {
     };
   }
 
-  async createCar(body: any): Promise<void> {
+  async createCar(body: ICar): Promise<void> {
     (await fetch(this.path.garage, {
       method: 'POST',
       body: JSON.stringify(body),
@@ -38,14 +43,14 @@ export class Api {
     (await fetch(`${this.path.garage}/${id}`, {
       method: 'DELETE',
     })).json();
-    this.deleteWinner(id);
+    this.delWinner(id);
   }
 
   async getCar(id: number) {
     return (await fetch(`${this.path.garage}/${id}`)).json();
   }
 
-  async updateCar(id: number, body: any): Promise<void> {
+  async updateCar(id: number, body: ICar): Promise<void> {
     (await fetch(`${this.path.garage}/${id}`, {
       method: 'PUT',
       body: JSON.stringify(body),
@@ -66,7 +71,7 @@ export class Api {
     };
   }
 
-  async createWinner(body: any): Promise<void> {
+  async createWinner(body: ICreateWinner): Promise<void> {
     (await fetch(this.path.winnres, {
       method: 'POST',
       body: JSON.stringify(body),
@@ -80,13 +85,13 @@ export class Api {
     return (await fetch(`${this.path.winnres}/${id}`)).json();
   }
 
-  async deleteWinner(id: number): Promise<void> {
+  async delWinner(id: number): Promise<void> {
     (await fetch(`${this.path.winnres}/${id}`, {
       method: 'DELETE',
     })).json();
   }
 
-  async updateWinner(id: number, body: any): Promise<void> {
+  async putWinner(id: number, body: IUpdateWinner): Promise<void> {
     (await fetch(`${this.path.winnres}/${id}`, {
       method: 'PUT',
       body: JSON.stringify(body),
@@ -95,4 +100,22 @@ export class Api {
       },
     })).json();
   }
+
+  async startEngine(id: number) {
+    return (await fetch(`${this.path.engine}?id=${id}&status=started`)).json();
+  }
+
+  async stopEngine(id: number) {
+    return (await fetch(`${this.path.engine}?id=${id}&status=stopped`)).json();
+  }
+
+  async drive(id: number) {
+    const response = await fetch(`${this.path.engine}?id=${id}&status=drive`).catch();
+    return response.status !== 200 ? { success: false } : { ...(await response.json()) };
+  }
+
+  // raceAll(promises: Promise<number>, ids: IStartAnimation) {
+  //   cosnt { success, id, time } = await Promise.race(promises);
+
+  // }
 }

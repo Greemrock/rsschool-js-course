@@ -1,4 +1,5 @@
-import { RaceControl } from './receControl';
+import { MoveCar } from './moveCar';
+import { RandomGenerateCar } from './randomGenerateCar';
 import { RenderWinners } from './renderWinners';
 import { UpdateStateWinners } from './updateStateWinners';
 import { getId } from '../shared/getId';
@@ -22,7 +23,9 @@ export class Listener {
 
   private readonly renderGarage: Garage = new Garage();
 
-  private readonly raceControl: RaceControl = new RaceControl();
+  private readonly randomGenerateCar: RandomGenerateCar = new RandomGenerateCar();
+
+  private readonly moveCar: MoveCar = new MoveCar();
 
   private selectId = 0;
 
@@ -36,11 +39,16 @@ export class Listener {
     this.generatorCarsBtn();
     this.prewBtn();
     this.nextBtn();
+    this.startEngineBtn();
+    this.stopEngineBtn();
+    this.resetBtn();
   }
 
   updateListenerGarage() {
     this.removeCarBtn();
     this.selectCarBtn();
+    this.startEngineBtn();
+    this.stopEngineBtn();
   }
 
   createCarBtn(): void {
@@ -160,7 +168,7 @@ export class Listener {
     generate.addEventListener('click', async (event: Event) => {
       const target = event.target as HTMLButtonElement;
       target.disabled = true;
-      const cars = this.raceControl.generateRandomCars();
+      const cars = this.randomGenerateCar.generateRandomCars();
       await Promise.all(cars.map(async (car) => {
         await this.api.createCar(car);
       }));
@@ -229,4 +237,48 @@ export class Listener {
       }
     });
   }
+
+  startEngineBtn() {
+    const startEngineBtn = document.querySelectorAll('.start-engine-btn');
+    startEngineBtn.forEach((btn) => {
+      btn.addEventListener('click', async (event: Event) => {
+        const target = event.target as HTMLButtonElement;
+        const id = target.id.split('start-engine-car-')[1];
+        this.moveCar.startDriving(+id);
+      });
+    });
+  }
+
+  stopEngineBtn() {
+    const stopEngineBtn = document.querySelectorAll('.stop-engine-btn');
+    stopEngineBtn.forEach((btn) => {
+      btn.addEventListener('click', async (event: Event) => {
+        const target = event.target as HTMLButtonElement;
+        const id = target.id.split('stop-engine-car-')[1];
+        this.moveCar.stopDriving(+id);
+      });
+    });
+  }
+
+  resetBtn() {
+    const resetBtn = document.getElementById('reset') as HTMLButtonElement;
+    resetBtn.addEventListener('click', async (event: Event) => {
+      const target = event.target as HTMLButtonElement;
+      target.disabled = true;
+      store.cars.map(({ id }) => this.moveCar.stopDriving(id));
+      const message = document.getElementById('message');
+      message?.classList.toggle('visible', false);
+      const race = document.getElementById('race') as HTMLButtonElement;
+      race.disabled = false;
+    });
+  }
+
+  // raceBtn() {
+  //   const riceBtn = document.getElementById('race') as HTMLButtonElement;
+  //   riceBtn.addEventListener('click', async (event: Event) => {
+  //     const target = event.target as HTMLButtonElement;
+  //     target.disabled = true;
+  //     const winner = await race
+  //   });
+  // }
 }

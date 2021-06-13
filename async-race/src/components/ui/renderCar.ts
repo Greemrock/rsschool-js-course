@@ -1,4 +1,4 @@
-import { ICar } from '../shared/interfaces';
+import { IGetCar } from '../shared/interfaces';
 import { CarImage } from './renderCarImage';
 import './renderCar.scss';
 
@@ -17,7 +17,7 @@ export class Car {
     name,
     color,
     isEngineStarted,
-  }: ICar): string {
+  }: IGetCar): string {
     const engineStart = isEngineStarted ? 'disabled' : '';
     return this.nodeElement.innerHTML = `
       <div class="control-btns">
@@ -27,16 +27,14 @@ export class Car {
         </div>
         <div class="control-panel control-car">
           <button class="btn start-engine-btn btn-outline-danger" id="start-engine-car-${id}" ${engineStart}>Go</button>
-          <button class="btn stop-engine-btn btn-outline-warning" id="stop-engine-car-${id}" ${engineStart}>Stop</button>
+          <button class="btn stop-engine-btn btn-outline-warning" disabled id="stop-engine-car-${id}" ${engineStart}>Stop</button>
         </div>
       </div>
       <div class="road">
         <span class="car-name">${name}</span>
-        <div class="launch-pad">
           <div class="car" id="car-${id}">
-            ${this.renderCarImage.render(color)}
+          ${this.renderCarImage.render(color)}
           </div>
-        </div>
         <div class="finish-line" id="finish-line-${id}"></div>
       </div>
     `;

@@ -1,3 +1,4 @@
+import { IStartAnimation } from '../shared/interfaces';
 import { Api } from '../api/api';
 
 const api = new Api();
@@ -11,7 +12,7 @@ export default {
   winnersPage: 1,
   winners,
   winnersCount,
-  animation: {},
+  animation: [] as IStartAnimation[],
   view: 'garage',
   sortBy: null,
   sortOrder: null,
