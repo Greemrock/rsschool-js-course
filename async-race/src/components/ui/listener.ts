@@ -1,4 +1,4 @@
-import { IGetCar } from '../shared/interfaces';
+import { openCreateCarMenu } from './openCreateCarMenu';
 import { MoveCar } from '../api/moveCar';
 import { RandomGenerateCar } from './randomGenerateCar';
 import { RenderWinners } from './renderWinners';
@@ -44,6 +44,7 @@ export class Listener {
     this.stopEngineBtn();
     this.resetBtn();
     this.raceBtn();
+    openCreateCarMenu();
   }
 
   updateListenerGarage() {
@@ -103,6 +104,8 @@ export class Listener {
         updateName.disabled = false;
         updateColor.disabled = false;
         updateSubmit.disabled = false;
+        const form = document.getElementById('create') as HTMLFormElement;
+        form.classList.toggle('hide');
       });
     });
   }
@@ -288,4 +291,9 @@ export class Listener {
       resetBtn.disabled = false;
     });
   }
+
+  // createCarBtnMenu() {
+  //   const btn = document.getElementById('create-car-menu') as HTMLButtonElement;
+  //   btn.classList.toggle('hide', true);
+  // }
 }

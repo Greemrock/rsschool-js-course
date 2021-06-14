@@ -1,11 +1,14 @@
 .header {
   width: 100%;
   display: flex;
+  border-top: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
 }
 
 .logo {
   position: absolute;
-  width: 100%;
+  width: 90%;
   top: 5px;
   display: flex;
   align-items: center;
@@ -35,6 +38,12 @@
   & .color {
     min-width: 44px;
   }
+}
+
+.form-create {
+  position: absolute;
+  background: #000;
+  z-index: 1;
 }
 
 .btn {
@@ -132,4 +141,8 @@
 .rss:hover .rss-year {
   right: -5px;
   letter-spacing: 0;
+}
+
+.hide {
+  display: none;
 }
