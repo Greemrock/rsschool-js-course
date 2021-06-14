@@ -1,3 +1,4 @@
+import { RenderLogo } from './renderLogo';
 import { RenderWinners } from './renderWinners';
 import { Garage } from './renderGarage';
 import './renderHtml.scss';
@@ -9,17 +10,26 @@ export class RenderHtml {
 
   private readonly renderWinners: RenderWinners;
 
+  private readonly renderLogo: RenderLogo;
+
   constructor(nodeElement: Element) {
     this.nodeElement = nodeElement;
     this.garage = new Garage();
     this.renderWinners = new RenderWinners();
+    this.renderLogo = new RenderLogo();
   }
 
   render(): void {
     this.nodeElement.innerHTML = `
-      <div class="menu mb-4">
-        <button class="btn garage-menu-btn btn-outline-light" id="garage-menu" type="button">To garage</button>
-        <button class="btn winners-menu-btn btn-outline-light" id="winners-menu" type="button">To winners</button>
+      <div class="header mb-3">
+        <div class="menu">
+          <button class="btn garage-menu-btn btn-outline-light" id="garage-menu" type="button">To garage</button>
+          <button class="btn winners-menu-btn btn-outline-light" id="winners-menu" type="button">To winners</button>
+        </div>
+        <div class="logo">
+          ${this.renderLogo.render()}
+          <h1>AsyncRace</h1>
+        </div>
       </div>
       <div class="garage-view" id="garage-view">
         <div class="mb-3">
