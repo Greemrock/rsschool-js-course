@@ -8,15 +8,15 @@ export class UpdateStateWinners {
     const { items, count } = await this.api.getWinners(store.winnersPage);
     store.winners = items;
     store.winnersCount = count;
-
+    const winCount = store.winnersCount as string;
     const next = document.getElementById('next') as HTMLButtonElement;
     const prew = document.getElementById('prew') as HTMLButtonElement;
 
-    if (store.winnersPage * 10 < +store.winnersPage) {
+    if (store.winnersPage * 10 < +winCount) {
       next.disabled = false;
     } else next.disabled = true;
 
-    if (store.carsPage > 1) {
+    if (store.winnersPage > 1) {
       prew.disabled = false;
     } else prew.disabled = true;
   }

@@ -14,8 +14,8 @@ export class Garage {
 
   render(): string {
     return this.nodeElement.innerHTML = `
-      <h1>Garage /${store.carsCount} cars /</h1>
-      <h2>Page #${store.carsPage}</h2>
+      <h2>Garage /${store.carsCount} cars /</h2>
+      <h3>Page #${store.carsPage}</h3>
       <ul class="garage">
         ${store.cars.map((car) => `
           <li>${this.renderCar.render(car)}</li>

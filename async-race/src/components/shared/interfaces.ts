@@ -47,3 +47,16 @@ export interface IUpdateWinner {
   wins: number,
   time: number
 }
+
+export interface IRiceAllPromise {
+  success: string,
+  id: number,
+  time: number
+}
+
+export interface IScoreWinner {
+  name: string,
+  color: string,
+  id: number,
+  time: number
+}

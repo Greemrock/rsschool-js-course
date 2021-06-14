@@ -21,8 +21,8 @@ export class RenderHtml {
         <button class="btn garage-menu-btn btn-outline-light" id="garage-menu" type="button">To garage</button>
         <button class="btn winners-menu-btn btn-outline-light" id="winners-menu" type="button">To winners</button>
       </div>
-      <div id="garage-view">
-        <div class="mb-4">
+      <div class="garage-view" id="garage-view">
+        <div class="mb-3">
           <form class="form" id="create" name="create">
             <input class="form-control input" id="create-name" type="text" name="name">
             <input class="color form-control form-control-color" id="create-color" type="color" name="color" value="#ffffff" title="Choose your color">
@@ -34,7 +34,7 @@ export class RenderHtml {
             <input class="btn btn-outline-light" type="submit" id="update-submit" value="Update" disabled>
           </form>
         </div>
-        <div class="race-controls mb-4">
+        <div class="race-controls mb-3">
           <button class="btn race-btn btn-outline-danger" id="race">Race</button>
           <button class="btn reset-btn btn-outline-warning" id="reset" disabled>Reset</button>
           <button class="btn generate-btn btn-outline-success" id="generate">Generate car</button>
@@ -42,8 +42,8 @@ export class RenderHtml {
         <div id="garage">
           ${this.garage.render()}
         </div>
-        <div>
-          <p class="message" id="message"></p>
+        <div class="message-block">
+          <p class="message" id="message">You won  :)</p>
         </div>
       </div>
       <div id="winners-view" style="display: none">

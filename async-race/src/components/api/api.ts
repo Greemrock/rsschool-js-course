@@ -3,9 +3,8 @@ import {
   ICreateWinner,
   IUpdateWinner,
   IWinner,
-  // IGetCar,
-  // IStartAnimation,
   ICar,
+  IRiceAllPromise,
 } from '../shared/interfaces';
 
 export class Api {
@@ -101,6 +100,27 @@ export class Api {
     })).json();
   }
 
+  async getWinnerStatus(id: number) {
+    return (await fetch(`${this.path.winnres}/${id}`)).status;
+  }
+
+  async saveWinner({ id, time }: { id: number, time: number }) {
+    const winnerStatus = await this.getWinnerStatus(id);
+    if (winnerStatus === 404) {
+      await this.createWinner({
+        id,
+        wins: 1,
+        time,
+      });
+    } else {
+      const winner = await this.getWinner(id);
+      await this.putWinner(id, {
+        wins: winner.wins + 1,
+        time: time < winner.time ? time : winner.time,
+      });
+    }
+  }
+
   async startEngine(id: number) {
     return (await fetch(`${this.path.engine}?id=${id}&status=started`)).json();
   }
@@ -113,9 +133,4 @@ export class Api {
     const response = await fetch(`${this.path.engine}?id=${id}&status=drive`).catch();
     return response.status !== 200 ? { success: false } : { ...(await response.json()) };
   }
-
-  // raceAll(promises: Promise<number>, ids: IStartAnimation) {
-  //   cosnt { success, id, time } = await Promise.race(promises);
-
-  // }
 }

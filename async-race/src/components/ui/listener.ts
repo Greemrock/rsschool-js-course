@@ -1,4 +1,5 @@
-import { MoveCar } from './moveCar';
+import { IGetCar } from '../shared/interfaces';
+import { MoveCar } from '../api/moveCar';
 import { RandomGenerateCar } from './randomGenerateCar';
 import { RenderWinners } from './renderWinners';
 import { UpdateStateWinners } from './updateStateWinners';
@@ -42,6 +43,7 @@ export class Listener {
     this.startEngineBtn();
     this.stopEngineBtn();
     this.resetBtn();
+    this.raceBtn();
   }
 
   updateListenerGarage() {
@@ -141,9 +143,10 @@ export class Listener {
     const garageBtn = this.root.querySelector('.garage-menu-btn') as HTMLElement;
     const garageView = document.getElementById('garage-view') as HTMLElement;
     const winnersView = document.getElementById('winners-view') as HTMLElement;
-    garageBtn?.addEventListener('click', () => {
+    garageBtn.addEventListener('click', async () => {
       garageView.style.display = 'block';
       winnersView.style.display = 'none';
+      await this.updateStateGarage.render();
       store.view = 'garage';
     });
   }
@@ -155,8 +158,8 @@ export class Listener {
     winnersBtn?.addEventListener('click', async () => {
       winnersView.style.display = 'block';
       garageView.style.display = 'none';
-      this.api.getWinners(1);
       await this.updateStateWinners.render();
+      this.api.getWinners(store.winnersPage);
       const winnerView = document.getElementById('winners-view') as HTMLElement;
       winnerView.innerHTML = await this.renderWinners.render();
       store.view = 'winners';
@@ -185,7 +188,7 @@ export class Listener {
     nextBtn.addEventListener('click', async () => {
       switch (store.view) {
         case 'garage': {
-          store.carsPage++;
+          store.carsPage += 1;
           await this.updateStateGarage.render();
           const garage = document.getElementById('garage') as HTMLElement;
           garage.innerHTML = await this.renderGarage.render();
@@ -193,9 +196,7 @@ export class Listener {
           break;
         }
         case 'winners': {
-          console.log(store.winnersPage);
           store.winnersPage += 1;
-          console.log(store.winnersPage);
           await this.updateStateWinners.render();
           const winnerView = document.getElementById('winners-view') as HTMLElement;
           winnerView.innerHTML = await this.renderWinners.render();
@@ -273,12 +274,18 @@ export class Listener {
     });
   }
 
-  // raceBtn() {
-  //   const riceBtn = document.getElementById('race') as HTMLButtonElement;
-  //   riceBtn.addEventListener('click', async (event: Event) => {
-  //     const target = event.target as HTMLButtonElement;
-  //     target.disabled = true;
-  //     const winner = await race
-  //   });
-  // }
+  raceBtn() {
+    const riceBtn = document.getElementById('race') as HTMLButtonElement;
+    riceBtn.addEventListener('click', async (event: Event) => {
+      const target = event.target as HTMLButtonElement;
+      target.disabled = true;
+      const { name, id, time } = await this.moveCar.winner();
+      await this.api.saveWinner({ id, time });
+      const message = document.getElementById('message') as HTMLElement;
+      message.innerHTML = `${name} wentfirst ${time}s`;
+      message.classList.toggle('visible', true);
+      const resetBtn = document.getElementById('reset') as HTMLButtonElement;
+      resetBtn.disabled = false;
+    });
+  }
 }
