@@ -7,3 +7,9 @@ li {
   list-style-type: none;
   margin: 10px;
 }
+
+@media (max-width: 600px) {
+  li {
+    flex-wrap: wrap;
+  }
+}

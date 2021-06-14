@@ -26,7 +26,8 @@ export class MoveCar {
 
     const car = document.getElementById(`car-${id}`) as HTMLElement;
     const finishLine = document.getElementById(`finish-line-${id}`) as HTMLElement;
-    const htmlDistance = Math.floor(getDistanceBetweenElement(car, finishLine)) + 100;
+    const plusDistance = 50;
+    const htmlDistance = Math.floor(getDistanceBetweenElement(car, finishLine)) + plusDistance;
 
     store.animation[id] = animation(car, htmlDistance, time);
 

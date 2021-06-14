@@ -49,9 +49,17 @@ export class RenderHtml {
       <div id="winners-view" style="display: none">
         ${this.renderWinners.render()}
       </div>
-      <div class="pagination">
+      <div class="pagination mb-3">
         <button class="btn prev-btn btn-outline-light" disabled id="prew">prew</button>
         <button class="btn next-btn btn-outline-light" disabled id="next">next</button>
+      </div>
+      <div class="footer">
+        <div class="footer-container">
+          <a class="github" href="https://github.com/Greemrock/" target="_blank" rel="noopener noreferrer"></a>
+          <a class="rss" href="https://rs.school/js/" target="_blank" rel="noopener noreferrer">
+            <span class="rss-year">'21</span>
+          </a>
+        </div>
       </div>
     `;
   }
