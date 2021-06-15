@@ -104,8 +104,6 @@ export class Listener {
         updateName.disabled = false;
         updateColor.disabled = false;
         updateSubmit.disabled = false;
-        const form = document.getElementById('create') as HTMLFormElement;
-        form.classList.toggle('hide');
       });
     });
   }
