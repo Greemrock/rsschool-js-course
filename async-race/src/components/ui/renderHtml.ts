@@ -24,7 +24,6 @@ export class RenderHtml {
       <div class="header mb-3">
         <div class="menu mt-2">
           <button class="btn garage-menu-btn btn-outline-light" id="garage-menu" type="button">To garage</button>
-          <button class="btn create-car-btn btn-outline-light" id="create-car-menu" type="button">Create car</button>
           <button class="btn winners-menu-btn btn-outline-light" id="winners-menu" type="button">To winners</button>
         </div>
         <div class="logo">
@@ -33,8 +32,8 @@ export class RenderHtml {
         </div>
       </div>
       <div class="garage-view" id="garage-view">
-        <div class="mb-3">
-          <form class="form form-create hide" id="create" name="create">
+        <div class="forms mb-3">
+          <form class="form form-create" id="create" name="create">
             <input class="form-control input" id="create-name" type="text" name="name">
             <input class="color form-control form-control-color" id="create-color" type="color" name="color" value="#ffffff" title="Choose your color">
             <input class="btn btn-outline-light" type="submit" value="Create">

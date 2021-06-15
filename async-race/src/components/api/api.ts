@@ -4,7 +4,6 @@ import {
   IUpdateWinner,
   IWinner,
   ICar,
-  IRiceAllPromise,
 } from '../shared/interfaces';
 
 export class Api {

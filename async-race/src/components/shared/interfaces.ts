@@ -10,22 +10,10 @@ export interface ICar {
   color: string
 }
 
-export interface IGetWinners {
-  page: number,
-  limit: number
-}
-
 export interface IWinner {
   id: number,
   wins: number,
   time: number
-}
-
-export interface IWinners {
-  id: number,
-  wins: number,
-  time: number
-  car: IGetCar
 }
 
 export interface IStartAnimation {
@@ -45,18 +33,5 @@ export interface ICreateWinner {
 
 export interface IUpdateWinner {
   wins: number,
-  time: number
-}
-
-export interface IRiceAllPromise {
-  success: string,
-  id: number,
-  time: number
-}
-
-export interface IScoreWinner {
-  name: string,
-  color: string,
-  id: number,
   time: number
 }

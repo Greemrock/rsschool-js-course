@@ -1,7 +1,4 @@
-import {
-  IStartEngine,
-  // IScoreWinner,
-} from '../shared/interfaces';
+import { IStartEngine } from '../shared/interfaces';
 import { animation } from '../ui/animation';
 import { getDistanceBetweenElement } from '../shared/getDistanceBetweenElem';
 import { Api } from './api';
@@ -53,24 +50,26 @@ export class MoveCar {
     if (store.animation[id]) window.cancelAnimationFrame(store.animation[id].id);
   }
 
-  // Promise<{ success: boolean, id: number, time: number }>
-
-  async raceAll(promises: any, ids: any): Promise<any> {
+  async raceAll(promises: Promise<{ success: boolean, id: number, time: number }>[], ids: number[])
+  : Promise<{ name?: string, color?: string, id?: number, isEngineStarted?: string, time: number }> {
     const { success, id, time } = await Promise.race(promises);
 
     if (!success) {
       const failedIndex = ids.findIndex((i: number) => i === id) as number;
       const otherPromises = [...promises.slice(0, failedIndex), ...promises.slice(failedIndex + 1, promises.length)];
       const otherIds = [...ids.slice(0, failedIndex), ...ids.slice(failedIndex + 1, ids.length)];
+      console.log(otherIds);
+      if (otherIds === []) console.log({ time: 0 });
       return this.raceAll(otherPromises, otherIds);
     }
-    return { ...store.cars.find((car) => car.id === id), time: +(time / 1000).toFixed(2) };
+    return { ...store.cars.find((car: { name: string, color: string, id: number }) => car.id === id), time: +(time / 1000).toFixed(2) };
   }
 
-  async winner(): Promise<{ name: string, color: string, id: number, time: number }> {
+  async winner(): Promise<{ name?: string, color?: string, id?: number, time: number }> {
     const promises = store.cars.map(({ id }) => this.startDriving(id));
     const carsId = store.cars.map((car) => car.id);
     const winner = await this.raceAll(promises, carsId);
+    console.log(winner);
     return winner;
   }
 }

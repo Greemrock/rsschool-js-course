@@ -1,4 +1,3 @@
-import { openCreateCarMenu } from './openCreateCarMenu';
 import { MoveCar } from '../api/moveCar';
 import { RandomGenerateCar } from './randomGenerateCar';
 import { RenderWinners } from './renderWinners';
@@ -44,7 +43,6 @@ export class Listener {
     this.stopEngineBtn();
     this.resetBtn();
     this.raceBtn();
-    openCreateCarMenu();
   }
 
   updateListenerGarage() {
@@ -281,19 +279,16 @@ export class Listener {
     const riceBtn = document.getElementById('race') as HTMLButtonElement;
     riceBtn.addEventListener('click', async (event: Event) => {
       const target = event.target as HTMLButtonElement;
-      target.disabled = true;
-      const { name, id, time } = await this.moveCar.winner();
-      await this.api.saveWinner({ id, time });
+      const resetBtn = document.getElementById('reset') as HTMLButtonElement;
       const message = document.getElementById('message') as HTMLElement;
+      target.disabled = true;
+      setTimeout(() => resetBtn.disabled = false, 5000);
+      const { name, id, time } = await this.moveCar.winner();
+      if (!id) throw new Error(`${id} not found`);
+      await this.api.saveWinner({ id, time });
       message.innerHTML = `${name} wentfirst ${time}s`;
       message.classList.toggle('visible', true);
-      const resetBtn = document.getElementById('reset') as HTMLButtonElement;
       resetBtn.disabled = false;
     });
   }
-
-  // createCarBtnMenu() {
-  //   const btn = document.getElementById('create-car-menu') as HTMLButtonElement;
-  //   btn.classList.toggle('hide', true);
-  // }
 }

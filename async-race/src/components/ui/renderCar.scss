@@ -60,3 +60,23 @@
 .car {
   width: 100px;
 }
+
+@media (max-width: 950px) {
+  .remove-btn,
+  .select-btn,
+  .start-engine-btn,
+  .stop-engine-btn {
+    width: 90px;
+  }
+  .control-panel {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .general {
+    width: 70%;
+  }
+
+  .control-car {
+    width: 30%;
+  }
+}
