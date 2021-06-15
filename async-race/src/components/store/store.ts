@@ -3,7 +3,7 @@ import { Api } from '../api/api';
 
 const api = new Api();
 const { items: cars, count: carsCount } = await api.getCars(1);
-const { items: winners, count: winnersCount } = await api.getWinners(1);
+const { items: winners, count: winnersCount } = await api.getWinners(1, 10, 'id', 'desc');
 
 export default {
   carsPage: 1,
@@ -14,6 +14,6 @@ export default {
   winnersCount,
   animation: [] as IStartAnimation[],
   view: 'garage',
-  sortBy: null,
-  sortOrder: null,
+  sortBy: 'id',
+  sortOrder: 'desc',
 };

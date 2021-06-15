@@ -11,8 +11,8 @@ export class RenderWinners {
 
   render(): string {
     return this.nodeElement.innerHTML = `
-      <h1>Winners /${store.winnersCount} /</h1>
-      <h2>Page #${store.winnersPage}</h2>
+      <h4>Winners /${store.winnersCount} /</h4>
+      <h5>Page #${store.winnersPage}</h5>
       <table class="table" cellspacing="0" border="0" cellpadding="0">
         <thead>
           <th>Number</th>

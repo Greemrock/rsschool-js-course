@@ -1,3 +1,4 @@
+import { getSortOrder } from '../shared/getSortOrder';
 import {
   IGetCar,
   ICreateWinner,
@@ -58,10 +59,14 @@ export class Api {
     })).json();
   }
 
-  async getWinners(page: number, limit = 10) {
-    const response = await fetch(`${this.path.winnres}?_page=${page}&_limit=${limit}}`);
+  async getWinners(page: number, limit = 10, sort: string, order: string) {
+    const response = await fetch(`${this.path.winnres}?_page=${page}&_limit=${limit}${getSortOrder(sort, order)}`);
     const item = await response.json();
-    const winners = await Promise.all(item.map(async (winner: IWinner) => ({ ...winner, car: await this.getCar(winner.id) })));
+    const winners = await Promise.all(item.map(async (winner: IWinner) => (
+      {
+        ...winner,
+        car: await this.getCar(winner.id),
+      })));
     const countWinners = response.headers.get('X-Total-Count');
     return {
       items: winners,

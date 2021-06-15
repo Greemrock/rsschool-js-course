@@ -43,6 +43,8 @@ export class Listener {
     this.stopEngineBtn();
     this.resetBtn();
     this.raceBtn();
+    this.sortTime();
+    this.sortWins();
   }
 
   updateListenerGarage() {
@@ -160,10 +162,11 @@ export class Listener {
       winnersView.style.display = 'block';
       garageView.style.display = 'none';
       await this.updateStateWinners.render();
-      this.api.getWinners(store.winnersPage);
       const winnerView = document.getElementById('winners-view') as HTMLElement;
       winnerView.innerHTML = await this.renderWinners.render();
       store.view = 'winners';
+      this.sortTime();
+      this.sortWins();
     });
   }
 
@@ -289,6 +292,33 @@ export class Listener {
       message.innerHTML = `${name} wentfirst ${time}s`;
       message.classList.toggle('visible', true);
       resetBtn.disabled = false;
+    });
+  }
+
+  async setSortOrder(sortBy: string) {
+    store.sortOrder = store.sortOrder === 'ASC' ? 'DESC' : 'ASC';
+    store.sortBy = sortBy;
+
+    await this.updateStateWinners.render();
+    const winnerView = document.getElementById('winners-view') as HTMLElement;
+    winnerView.innerHTML = await this.renderWinners.render();
+    this.sortTime();
+    this.sortWins();
+  }
+
+  sortWins() {
+    const wins = document.querySelector('.table-wins') as HTMLElement;
+    wins.addEventListener('click', () => {
+      this.setSortOrder('wins');
+      wins.classList.toggle('click');
+    });
+  }
+
+  sortTime() {
+    const time = document.querySelector('.table-time') as HTMLElement;
+    time.addEventListener('click', () => {
+      this.setSortOrder('time');
+      time.classList.toggle('click');
     });
   }
 }
