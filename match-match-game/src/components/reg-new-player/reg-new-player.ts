@@ -118,7 +118,6 @@ export class RegNewPlayer extends BaseComponent {
         created: new Date().getTime(),
       };
       this.dataUser = formValue;
-      console.log(this.indexDB);
 
       firstNameInput.value = '';
       lastNameInput.value = '';
@@ -145,9 +144,5 @@ export class RegNewPlayer extends BaseComponent {
 
   changeValueDB() {
     this.indexDB.putRecord('users');
-  }
-
-  keyUser() {
-    console.log(this.indexDB.keyUser);
   }
 }

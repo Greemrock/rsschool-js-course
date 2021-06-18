@@ -73,17 +73,14 @@ export class Game extends BaseComponent {
     this.timer.start();
     this.timer.pause('#pause');
     this.timer.reset('.header__list');
-    console.log('go timer!');
   }
 
   finishGame() {
     const amountCards = localStorage.getItem('cards');
     const mutchCards = localStorage.getItem('mutchCards');
-    console.log(Number(mutchCards) === Number(amountCards));
     if (Number(mutchCards) === Number(amountCards)) {
       this.timer.funcPause();
       const timeUser = document.getElementById('timer')?.innerHTML as string;
-      console.log(timeUser);
 
       document.body.appendChild(new Modal(timeUser).element);
 
@@ -95,11 +92,6 @@ export class Game extends BaseComponent {
         bg?.remove();
         modal?.remove();
         this.timer.funcReset();
-        const score = this.score.scoreUser(this.timer.minFinish, this.timer.secFinish);
-        const key = this.regNewPlayer.keyUser();
-        console.log('score', score);
-        console.log('key', key);
-        // console.log('key', key);
         this.regNewPlayer.changeValueDB();
         window.location.hash = '#/';
       });

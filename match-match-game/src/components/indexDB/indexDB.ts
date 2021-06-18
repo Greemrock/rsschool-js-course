@@ -11,11 +11,10 @@ export class IndexDB {
 
     request.onsuccess = (event) => {
       this.db = (<IDBOpenDBRequest>event.target).result;
-      console.log('db successfull');
     };
 
     request.onerror = (e) => {
-      console.log('onerror!');
+      console.error('onerror!');
       console.dir(e);
     };
 
@@ -75,7 +74,7 @@ export class IndexDB {
       console.log(request);
     };
     request.onerror = () => {
-      console.log('IndexedDB service: error getRecord');
+      console.error('IndexedDB service: error getRecord');
     };
   }
 }
