@@ -1,5 +1,3 @@
-import { RegNewPlayer } from '../reg-new-player/reg-new-player';
-import { Score } from '../score/score';
 import { Modal } from '../modal/modal';
 import { CardsField } from '../cards-field/cards-field';
 import { Card } from '../card/card';
@@ -13,15 +11,11 @@ export const FLIP_DELAY = 1000;
 export class Game extends BaseComponent {
   private readonly cardsField: CardsField;
 
-  private readonly regNewPlayer: RegNewPlayer = new RegNewPlayer();
-
   private activeCard?: Card;
 
   private isAnimation = false;
 
   private readonly timer: Timer = new Timer();
-
-  private readonly score: Score = new Score();
 
   constructor() {
     super('main', ['main', 'game']);

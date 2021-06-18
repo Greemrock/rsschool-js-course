@@ -13,11 +13,6 @@ export class IndexDB {
       this.db = (<IDBOpenDBRequest>event.target).result;
     };
 
-    request.onerror = (e) => {
-      console.error('onerror!');
-      console.dir(e);
-    };
-
     request.onupgradeneeded = (event) => {
       const thisDB = (<IDBOpenDBRequest>event.target).result;
       const objectStores: ObjectStore = new ObjectStore('users');

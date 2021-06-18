@@ -18,6 +18,7 @@ export class RegNewPlayer extends BaseComponent {
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
+        data-bs-backdrop="static"
       >
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -40,6 +41,7 @@ export class RegNewPlayer extends BaseComponent {
                     class="form-control"
                     id="firstName"
                     pattern="[a-z,A-Z,а-я,А-Я]{1,15}"
+                    maxlength="15"
                     required
                   >
                 </div>
@@ -51,6 +53,7 @@ export class RegNewPlayer extends BaseComponent {
                     class="form-control"
                     id="lastName"
                     pattern="[a-z,A-Z,а-я,А-Я]{1,15}"
+                    maxlength="15"
                     required
                   >
                 </div>
@@ -103,10 +106,6 @@ export class RegNewPlayer extends BaseComponent {
 
     form!.addEventListener('submit', (event) => {
       event.preventDefault();
-      if (!firstNameInput) throw Error(`firstNameInput: ${firstNameInput} error!`);
-      if (!lastNameInput) throw Error(`lastNameInput: ${lastNameInput} error!`);
-      if (!emailAdressInput) throw Error(`gitHubAdressInput: ${emailAdressInput} error!`);
-
       const firstNameValue = firstNameInput.value;
       const lastNameValue = lastNameInput.value;
       const emailValue = emailAdressInput.value;

@@ -25,6 +25,17 @@ export class App {
     this.rootElement.appendChild(this.router.getContent());
     this.rootElement.appendChild(this.regNewPlayer.element);
     this.regNewPlayer.sendValueFormUser();
+    const modal = document.querySelectorAll('.close-modal');
+    modal.forEach((e) => {
+      e.addEventListener('click', () => {
+        const firstNameInput = document.querySelector('#firstName') as HTMLInputElement;
+        const lastNameInput = document.querySelector('#lastName') as HTMLInputElement;
+        const emailAdressInput = document.querySelector('#email') as HTMLInputElement;
+        firstNameInput.value = '';
+        lastNameInput.value = '';
+        emailAdressInput.value = '';
+      });
+    });
   }
 
   render() {
