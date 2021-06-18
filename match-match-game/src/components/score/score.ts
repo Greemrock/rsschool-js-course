@@ -8,7 +8,7 @@ export class Score extends BaseComponent {
   constructor() {
     super('main', ['main']);
     this.element.innerHTML = `
-      <h2 class="title">SCore</h2>
+      <h2 class="title">Score</h2>
     `;
   }
 
@@ -22,6 +22,7 @@ export class Score extends BaseComponent {
       secUser = sec;
     }
     const scor = (Number(mutchCards) - Number(noMutchCards)) * 100 - secUser * 10;
+    console.log(this.regNewPlayer.dataUser);
     return scor;
   }
 }

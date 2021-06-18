@@ -141,8 +141,4 @@ export class RegNewPlayer extends BaseComponent {
       new Header().addUrlGame();
     });
   }
-
-  changeValueDB() {
-    this.indexDB.putRecord('users');
-  }
 }

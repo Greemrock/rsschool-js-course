@@ -92,7 +92,6 @@ export class Game extends BaseComponent {
         bg?.remove();
         modal?.remove();
         this.timer.funcReset();
-        this.regNewPlayer.changeValueDB();
         window.location.hash = '#/';
       });
     }

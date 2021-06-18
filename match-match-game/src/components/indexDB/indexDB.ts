@@ -56,25 +56,4 @@ export class IndexDB {
       }
     };
   }
-
-  putRecord(storeName: string) {
-    if (!this.db) throw Error(`error - db = ${this.db}`);
-    const transaction = this.db.transaction([storeName], 'readwrite');
-    const store = transaction.objectStore(storeName);
-    const val = {
-      firstName: 'Андрей',
-      lastName: 'Посохов',
-      email: 'Greemrock911@gmail.com',
-      score: 3000,
-      created: 1622584500006,
-      id: 15,
-    };
-    const request: IDBRequest = store.put(val, [15]);
-    request.onsuccess = () => {
-      console.log(request);
-    };
-    request.onerror = () => {
-      console.error('IndexedDB service: error getRecord');
-    };
-  }
 }
