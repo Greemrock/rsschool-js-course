@@ -22,7 +22,6 @@ export class IndexDB {
       const thisDB = (<IDBOpenDBRequest>event.target).result;
       const objectStores: ObjectStore = new ObjectStore('users');
       objectStores.createStores(thisDB, 'id');
-      console.log(`IndexedDB service: creating ${dbName} completed.`);
     };
   }
 
@@ -30,13 +29,7 @@ export class IndexDB {
     if (!this.db) throw Error(`error - db = ${this.db}`);
     const transaction = this.db.transaction([storeName], 'readwrite');
     const store = transaction.objectStore(storeName);
-    const request: IDBRequest = store.add(record);
-    request.onsuccess = () => {
-      console.log('IndexedDB service: add object in store');
-    };
-    request.onerror = () => {
-      console.log('IndexedDB service: error addRecordAsync');
-    };
+    store.add(record);
   }
 
   lastUser(storeName: string) {
@@ -48,11 +41,7 @@ export class IndexDB {
       const cursoreResult: IDBCursorWithValue = cursor.result;
       if (cursoreResult) {
         this.keyUser = cursoreResult.key as number;
-        console.log('cursor', cursoreResult);
-        console.log('cursoreResult.key:', this.keyUser);
         cursoreResult.continue();
-      } else {
-        console.log('lastUser >>>> ', this.keyUser);
       }
     };
   }

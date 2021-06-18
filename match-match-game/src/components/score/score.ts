@@ -1,9 +1,8 @@
 import { BaseComponent } from '../base-component';
-import { RegNewPlayer } from '../reg-new-player/reg-new-player';
 import './score.scss';
 
 export class Score extends BaseComponent {
-  private regNewPlayer: RegNewPlayer = new RegNewPlayer();
+  private secUser = 0;
 
   constructor() {
     super('main', ['main']);
@@ -15,14 +14,12 @@ export class Score extends BaseComponent {
   scoreUser(min: number, sec: number) {
     const mutchCards = localStorage.getItem('mutchCards');
     const noMutchCards = localStorage.getItem('noMutchCards');
-    let secUser: number;
     if (min > 0) {
-      secUser = min * 60 + sec;
+      this.secUser = min * 60 + sec;
     } else {
-      secUser = sec;
+      this.secUser = sec;
     }
-    const scor = (Number(mutchCards) - Number(noMutchCards)) * 100 - secUser * 10;
-    console.log(this.regNewPlayer.dataUser);
+    const scor = (Number(mutchCards) - Number(noMutchCards)) * 100 - this.secUser * 10;
     return scor;
   }
 }
