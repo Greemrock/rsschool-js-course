@@ -37,14 +37,16 @@ export class Card extends BaseComponent {
   }
 
   match() {
+    const secontCard = 1;
     this.element.classList.add('match');
-    const num = Number(localStorage.getItem('mutchCards')) + 1;
+    const num = Number(localStorage.getItem('mutchCards')) + secontCard;
     localStorage.setItem('mutchCards', String(num));
   }
 
   noMatch() {
     const addClass = () => {
-      const num = Number(localStorage.getItem('noMutchCards')) + 1;
+      const secontCard = 1;
+      const num = Number(localStorage.getItem('noMutchCards')) + secontCard;
       localStorage.setItem('noMutchCards', String(num));
       this.element.classList.remove('no-match');
     };

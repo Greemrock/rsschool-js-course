@@ -14,8 +14,9 @@ export class Score extends BaseComponent {
   scoreUser(min: number, sec: number) {
     const mutchCards = localStorage.getItem('mutchCards');
     const noMutchCards = localStorage.getItem('noMutchCards');
+    const minInSec = 60;
     if (min > 0) {
-      this.secUser = min * 60 + sec;
+      this.secUser = min * minInSec + sec;
     } else {
       this.secUser = sec;
     }
