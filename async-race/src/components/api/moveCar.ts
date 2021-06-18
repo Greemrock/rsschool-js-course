@@ -58,7 +58,6 @@ export class MoveCar {
       const failedIndex = ids.findIndex((i: number) => i === id) as number;
       const otherPromises = [...promises.slice(0, failedIndex), ...promises.slice(failedIndex + 1, promises.length)];
       const otherIds = [...ids.slice(0, failedIndex), ...ids.slice(failedIndex + 1, ids.length)];
-      console.log(otherIds);
       if (otherIds === []) console.log({ time: 0 });
       return this.raceAll(otherPromises, otherIds);
     }
@@ -69,7 +68,6 @@ export class MoveCar {
     const promises = store.cars.map(({ id }) => this.startDriving(id));
     const carsId = store.cars.map((car) => car.id);
     const winner = await this.raceAll(promises, carsId);
-    console.log(winner);
     return winner;
   }
 }

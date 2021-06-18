@@ -54,6 +54,11 @@ export class Listener {
     this.stopEngineBtn();
   }
 
+  updateListenerWinner() {
+    this.sortTime();
+    this.sortWins();
+  }
+
   createCarBtn(): void {
     const createForm = document.getElementById('create');
     createForm?.addEventListener('submit', async (event: Event) => {
@@ -202,6 +207,7 @@ export class Listener {
           await this.updateStateWinners.render();
           const winnerView = document.getElementById('winners-view') as HTMLElement;
           winnerView.innerHTML = await this.renderWinners.render();
+          this.updateListenerWinner();
           break;
         }
         default: {
@@ -232,6 +238,7 @@ export class Listener {
           await this.updateStateWinners.render();
           const winnerView = document.getElementById('winners-view') as HTMLElement;
           winnerView.innerHTML = await this.renderWinners.render();
+          this.updateListenerWinner();
           break;
         }
         default: {
