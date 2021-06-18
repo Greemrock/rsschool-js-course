@@ -99,7 +99,7 @@ export class RegNewPlayer extends BaseComponent {
     const emailAdressInput = document.querySelector('#email') as HTMLInputElement;
     const modal = document.querySelector('.modal') as HTMLElement;
 
-    this.indexDB.createDB('store', 1);
+    this.indexDB.createDB('Greemrock', 1);
 
     form!.addEventListener('submit', (event) => {
       event.preventDefault();
