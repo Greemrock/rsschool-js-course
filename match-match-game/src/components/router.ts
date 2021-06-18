@@ -1,4 +1,3 @@
-// import { Game } from './game/game';
 import { Score } from './score/score';
 import { Settings } from './settings/settings';
 import { About } from './about/about';
@@ -16,15 +15,12 @@ export class Router {
 
   private readonly score: Score = new Score();
 
-  // private readonly game: Game = new Game();
-
   private readonly error: ErrorComponent = new ErrorComponent();
 
   routes : Array<IItems> = [
     { path: '/', content: this.about.element },
     { path: '/score', content: this.score.element },
     { path: '/settings', content: this.settings.element },
-    // { path: '/game', content: this.game.element },
   ];
 
   getContent() {

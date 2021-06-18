@@ -2,8 +2,6 @@ import { BaseComponent } from '../base-component';
 import './settings.scss';
 
 export class Settings extends BaseComponent {
-  private dif = '';
-
   constructor() {
     super('main', ['main']);
 

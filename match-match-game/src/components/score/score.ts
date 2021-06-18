@@ -23,9 +23,6 @@ export class Score extends BaseComponent {
     }
     const scor = (Number(mutchCards) - Number(noMutchCards)) * 100 - secUser * 10;
     console.log(`(${Number(mutchCards)} - ${Number(noMutchCards)}) * 100 - ${secUser} * 10`, scor);
-    // const dataUser = {
-    //   score: scor,
-    // };
     console.log(this.regNewPlayer.dataUser);
     return scor;
   }
