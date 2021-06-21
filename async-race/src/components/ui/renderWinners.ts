@@ -10,7 +10,7 @@ export class RenderWinners {
   }
 
   render(): string {
-    return this.nodeElement.innerHTML = `
+    return (this.nodeElement.innerHTML = `
       <h4>Winners /${store.winnersCount} /</h4>
       <h5>Page #${store.winnersPage}</h5>
       <table class="table" cellspacing="0" border="0" cellpadding="0">
@@ -22,17 +22,19 @@ export class RenderWinners {
           <th class="table-btn table-time">Best time, sec</th>
         </thead>
         <tbody>
-          ${store.winners.map((winner: any, index): string => `
-            <tr>
-              <td>${index + 1}</td>
-              <td class="car-winner">${new CarImage().render(winner.car.color)}</td>
-              <td>${winner.car.name}</td>
-              <td>${winner.wins}</td>
-              <td>${winner.time}</td>
-            </tr>
-          `)}
+          ${store.winners.map(
+            (winner: any, index): string => `
+              <tr>
+                <td>${index + 1}</td>
+                <td class="car-winner">${new CarImage().render(winner.car.color)}</td>
+                <td>${winner.car.name}</td>
+                <td>${winner.wins}</td>
+                <td>${winner.time}</td>
+              </tr>
+            `
+          )}
         </tbody>
       </table>
-    `;
+    `);
   }
 }

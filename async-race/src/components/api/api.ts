@@ -1,11 +1,5 @@
 import { getSortOrder } from '../shared/getSortOrder';
-import {
-  IGetCar,
-  ICreateWinner,
-  IUpdateWinner,
-  IWinner,
-  ICar,
-} from '../shared/interfaces';
+import { IGetCar, ICreateWinner, IUpdateWinner, IWinner, ICar } from '../shared/interfaces';
 
 export class Api {
   cars = [];
@@ -18,7 +12,7 @@ export class Api {
     winnres: `${this.base}/winners`,
   };
 
-  async getCars(page: number, limit = 7): Promise<{ items: IGetCar[], count: string }> {
+  async getCars(page: number, limit = 7): Promise<{ items: IGetCar[]; count: string }> {
     const response = await fetch(`${this.path.garage}?_page=${page}&_limit=${limit}`);
     const data: IGetCar[] = await response.json();
     const countCars: string | null = await response.headers.get('X-Total-Count');
@@ -29,19 +23,23 @@ export class Api {
   }
 
   async createCar(body: ICar): Promise<void> {
-    (await fetch(this.path.garage, {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })).json();
+    (
+      await fetch(this.path.garage, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    ).json();
   }
 
   async deleteCar(id: number): Promise<void> {
-    (await fetch(`${this.path.garage}/${id}`, {
-      method: 'DELETE',
-    })).json();
+    (
+      await fetch(`${this.path.garage}/${id}`, {
+        method: 'DELETE',
+      })
+    ).json();
     this.delWinner(id);
   }
 
@@ -50,23 +48,23 @@ export class Api {
   }
 
   async updateCar(id: number, body: ICar): Promise<void> {
-    (await fetch(`${this.path.garage}/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })).json();
+    (
+      await fetch(`${this.path.garage}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    ).json();
   }
 
   async getWinners(page: number, limit = 10, sort: string, order: string) {
     const response = await fetch(`${this.path.winnres}?_page=${page}&_limit=${limit}${getSortOrder(sort, order)}`);
     const item = await response.json();
-    const winners = await Promise.all(item.map(async (winner: IWinner) => (
-      {
-        ...winner,
-        car: await this.getCar(winner.id),
-      })));
+    const winners = await Promise.all(
+      item.map(async (winner: IWinner) => ({ ...winner, car: await this.getCar(winner.id) }))
+    );
     const countWinners = response.headers.get('X-Total-Count');
     return {
       items: winners,
@@ -75,13 +73,15 @@ export class Api {
   }
 
   async createWinner(body: ICreateWinner): Promise<void> {
-    (await fetch(this.path.winnres, {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })).json();
+    (
+      await fetch(this.path.winnres, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    ).json();
   }
 
   async getWinner(id: number) {
@@ -89,33 +89,33 @@ export class Api {
   }
 
   async delWinner(id: number): Promise<void> {
-    (await fetch(`${this.path.winnres}/${id}`, {
-      method: 'DELETE',
-    })).json();
+    (
+      await fetch(`${this.path.winnres}/${id}`, {
+        method: 'DELETE',
+      })
+    ).json();
   }
 
   async putWinner(id: number, body: IUpdateWinner): Promise<void> {
-    (await fetch(`${this.path.winnres}/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })).json();
+    (
+      await fetch(`${this.path.winnres}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+    ).json();
   }
 
   async getWinnerStatus(id: number) {
     return (await fetch(`${this.path.winnres}/${id}`)).status;
   }
 
-  async saveWinner({ id, time }: { id: number, time: number }) {
+  async saveWinner({ id, time }: { id: number; time: number }) {
     const winnerStatus = await this.getWinnerStatus(id);
     if (winnerStatus === 404) {
-      await this.createWinner({
-        id,
-        wins: 1,
-        time,
-      });
+      await this.createWinner({ id, wins: 1, time });
     } else {
       const winner = await this.getWinner(id);
       await this.putWinner(id, {

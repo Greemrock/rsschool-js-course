@@ -179,9 +179,11 @@ export class Listener {
       const target = event.target as HTMLButtonElement;
       target.disabled = true;
       const cars = this.randomGenerateCar.generateRandomCars();
-      await Promise.all(cars.map(async (car) => {
-        await this.api.createCar(car);
-      }));
+      await Promise.all(
+        cars.map(async (car) => {
+          await this.api.createCar(car);
+        })
+      );
       await this.updateStateGarage.render();
       const garage = document.getElementById('garage') as HTMLElement;
       garage.innerHTML = await this.renderGarage.render();
@@ -290,7 +292,7 @@ export class Listener {
       const resetBtn = document.getElementById('reset') as HTMLButtonElement;
       const message = document.getElementById('message') as HTMLElement;
       target.disabled = true;
-      setTimeout(() => resetBtn.disabled = false, 5000);
+      setTimeout(() => (resetBtn.disabled = false), 5000);
       const { name, id, time } = await this.moveCar.winner();
       if (!id) throw new Error(`${id} not found`);
       await this.api.saveWinner({ id, time });

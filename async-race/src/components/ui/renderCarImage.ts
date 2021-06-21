@@ -6,7 +6,7 @@ export class CarImage {
   }
 
   render(color: string): string {
-    return this.nodeElement.innerHTML = `
+    return (this.nodeElement.innerHTML = `
       <svg width="100" height="50" viewBox="0 0 843 596" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0)">
         <path d="M178.083 133.108L178.083 144.419C178.083 149.476 173.983 153.575 168.927 153.575L103.307 153.575C98.249 153.575 94.151 149.475 94.151 144.419L94.151 133.108C94.151 128.051 98.25 123.952 103.307 123.952L168.927 123.952C173.983 123.952 178.083 128.051 178.083 133.108Z" fill="#60585A"/>
@@ -68,6 +68,6 @@ export class CarImage {
         </clipPath>
       </defs>
       </svg>
-    `;
+    `);
   }
 }

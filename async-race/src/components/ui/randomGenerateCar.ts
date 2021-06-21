@@ -24,8 +24,9 @@ export class RandomGenerateCar {
   }
 
   generateRandomCars(count = 100) {
-    return new Array(count)
-    .fill({ name: '', color: '' })
-    .map(() => ({ name: this.getRandomName(), color: this.getRandomColor() }));
+    return new Array(count).fill({ name: '', color: '' }).map(() => ({
+      name: this.getRandomName(),
+      color: this.getRandomColor(),
+    }));
   }
 }

@@ -7,7 +7,7 @@ import store from '../store/store';
 export class MoveCar {
   private readonly api: Api = new Api();
 
-  async startDriving(id: number): Promise<{ success: boolean; id: number; time: number; }> {
+  async startDriving(id: number): Promise<{ success: boolean; id: number; time: number }> {
     const startBtn = document.getElementById(`start-engine-car-${id}`) as HTMLButtonElement;
     const stopBtn = document.getElementById(`stop-engine-car-${id}`) as HTMLButtonElement;
 
@@ -50,8 +50,10 @@ export class MoveCar {
     if (store.animation[id]) window.cancelAnimationFrame(store.animation[id].id);
   }
 
-  async raceAll(promises: Promise<{ success: boolean, id: number, time: number }>[], ids: number[])
-  : Promise<{ name?: string, color?: string, id?: number, isEngineStarted?: string, time: number }> {
+  async raceAll(
+    promises: Promise<{ success: boolean; id: number; time: number }>[],
+    ids: number[]
+  ): Promise<{ name?: string; color?: string; id?: number; isEngineStarted?: string; time: number }> {
     const { success, id, time } = await Promise.race(promises);
 
     if (!success) {
@@ -61,10 +63,13 @@ export class MoveCar {
       if (otherIds === []) console.log({ time: 0 });
       return this.raceAll(otherPromises, otherIds);
     }
-    return { ...store.cars.find((car: { name: string, color: string, id: number }) => car.id === id), time: +(time / 1000).toFixed(2) };
+    return {
+      ...store.cars.find((car: { name: string; color: string; id: number }) => car.id === id),
+      time: +(time / 1000).toFixed(2),
+    };
   }
 
-  async winner(): Promise<{ name?: string, color?: string, id?: number, time: number }> {
+  async winner(): Promise<{ name?: string; color?: string; id?: number; time: number }> {
     const promises = store.cars.map(({ id }) => this.startDriving(id));
     const carsId = store.cars.map((car) => car.id);
     const winner = await this.raceAll(promises, carsId);

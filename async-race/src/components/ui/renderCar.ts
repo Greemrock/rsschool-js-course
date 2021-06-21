@@ -12,14 +12,9 @@ export class Car {
     this.renderCarImage = new CarImage();
   }
 
-  render({
-    id,
-    name,
-    color,
-    isEngineStarted,
-  }: IGetCar): string {
+  render({ id, name, color, isEngineStarted }: IGetCar): string {
     const engineStart = isEngineStarted ? 'disabled' : '';
-    return this.nodeElement.innerHTML = `
+    return (this.nodeElement.innerHTML = `
       <div class="control-btns">
         <div class="control-panel general">
           <button class="btn select-btn btn-outline-success btn-sm" id="select-car-${id}">Select</button>
@@ -37,6 +32,6 @@ export class Car {
           </div>
         <div class="finish-line" id="finish-line-${id}"></div>
       </div>
-    `;
+    `);
   }
 }
