@@ -38,7 +38,10 @@
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "global-require": 0,
-        "linebreak-style": 0
+        "linebreak-style": 0,
+        "import/prefer-default-export": 0,
+        "arrow-body-style": ["error", "always"],
+        "react/prop-types": 0
     },
     "globals": {
         "React": true,
