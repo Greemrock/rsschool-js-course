@@ -35,12 +35,14 @@ export class RenderHtml {
         <div class="forms mb-3">
           <form class="form form-create" id="create" name="create">
             <input class="form-control input" id="create-name" type="text" name="name">
-            <input class="color form-control form-control-color" id="create-color" type="color" name="color" value="#ffffff" title="Choose your color">
+            <input class="color form-control form-control-color" id="create-color"
+              type="color" name="color" value="#ffffff" title="Choose your color">
             <input class="btn btn-outline-light" type="submit" value="Create">
           </form>
           <form class="form form-update" id="update" name="update">
             <input class="form-control input" id="update-name" type="text" name="name" disabled>
-            <input class="color form-control form-control-color" id="update-color" name="color" type="color" value="#ffffff" disabled>
+            <input class="color form-control form-control-color" id="update-color"
+              name="color" type="color" value="#ffffff" disabled>
             <input class="btn btn-outline-light" type="submit" id="update-submit" value="Update" disabled>
           </form>
         </div>

@@ -17,7 +17,9 @@ export class Garage {
       <h4>Garage /${store.carsCount} cars /</h4>
       <h5>Page #${store.carsPage}</h5>
       <ul class="garage">
-        ${store.cars.map((car) => `<li>${this.renderCar.render(car)}</li>`).join('')}
+        ${store.cars
+          .map((car) => `<li>${this.renderCar.render(car)}</li>`)
+          .join('')}
       </ul>
     `);
   }

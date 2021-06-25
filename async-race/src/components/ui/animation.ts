@@ -1,6 +1,10 @@
 import { IStartAnimation } from '../shared/interfaces';
 
-export const animation = (car: HTMLElement, distance: number, animationTime: number) => {
+export const animation = (
+  car: HTMLElement,
+  distance: number,
+  animationTime: number
+): IStartAnimation => {
   let start: DOMHighResTimeStamp | null = null;
   const state = {} as IStartAnimation;
 

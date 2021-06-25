@@ -21,8 +21,10 @@ export class Car {
           <button class="btn remove-btn btn-outline-secondary btn-sm" id="remove-car-${id}">Remove</button>
         </div>
         <div class="control-panel control-car">
-          <button class="btn start-engine-btn btn-outline-danger btn-sm" id="start-engine-car-${id}" ${engineStart}>Go</button>
-          <button class="btn stop-engine-btn btn-outline-warning btn-sm" disabled id="stop-engine-car-${id}" ${engineStart}>Stop</button>
+          <button class="btn start-engine-btn btn-outline-danger btn-sm"
+            id="start-engine-car-${id}" ${engineStart}>Go</button>
+          <button class="btn stop-engine-btn btn-outline-warning btn-sm"
+            disabled id="stop-engine-car-${id}" ${engineStart}>Stop</button>
         </div>
       </div>
       <div class="road">

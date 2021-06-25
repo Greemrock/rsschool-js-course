@@ -5,7 +5,12 @@ export class UpdateStateWinners {
   private readonly api: Api = new Api();
 
   async render(): Promise<void> {
-    const { items, count } = await this.api.getWinners(store.winnersPage, 10, store.sortBy, store.sortOrder);
+    const { items, count } = await this.api.getWinners(
+      store.winnersPage,
+      10,
+      store.sortBy,
+      store.sortOrder
+    );
     store.winners = items;
     store.winnersCount = count;
     const winCount = store.winnersCount as string;

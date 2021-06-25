@@ -1,37 +1,37 @@
 export interface IGetCar {
-  id: number,
-  name: string,
-  color: string,
-  isEngineStarted?: string
+  id: number;
+  name: string;
+  color: string;
+  isEngineStarted?: string;
 }
 
 export interface ICar {
-  name: string,
-  color: string
+  name: string;
+  color: string;
 }
 
 export interface IWinner {
-  id: number,
-  wins: number,
-  time: number
+  id: number;
+  wins: number;
+  time: number;
 }
 
 export interface IStartAnimation {
-  id: number
+  id: number;
 }
 
 export interface IStartEngine {
-  velocity: number,
-  distance: number
+  velocity: number;
+  distance: number;
 }
 
 export interface ICreateWinner {
-  id: number,
-  wins: number,
-  time: number
+  id: number;
+  wins: number;
+  time: number;
 }
 
 export interface IUpdateWinner {
-  wins: number,
-  time: number
+  wins: number;
+  time: number;
 }

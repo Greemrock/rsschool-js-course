@@ -3,7 +3,12 @@ import { Api } from '../api/api';
 
 const api = new Api();
 const { items: cars, count: carsCount } = await api.getCars(1);
-const { items: winners, count: winnersCount } = await api.getWinners(1, 10, 'id', 'desc');
+const { items: winners, count: winnersCount } = await api.getWinners(
+  1,
+  10,
+  'id',
+  'desc'
+);
 
 export default {
   carsPage: 1,

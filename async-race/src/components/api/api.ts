@@ -1,5 +1,11 @@
 import { getSortOrder } from '../shared/getSortOrder';
-import { IGetCar, ICreateWinner, IUpdateWinner, IWinner, ICar } from '../shared/interfaces';
+import {
+  IGetCar,
+  ICreateWinner,
+  IUpdateWinner,
+  IWinner,
+  ICar,
+} from '../shared/interfaces';
 
 export class Api {
   cars = [];
@@ -12,10 +18,17 @@ export class Api {
     winnres: `${this.base}/winners`,
   };
 
-  async getCars(page: number, limit = 7): Promise<{ items: IGetCar[]; count: string }> {
-    const response = await fetch(`${this.path.garage}?_page=${page}&_limit=${limit}`);
+  async getCars(
+    page: number,
+    limit = 7
+  ): Promise<{ items: IGetCar[]; count: string }> {
+    const response = await fetch(
+      `${this.path.garage}?_page=${page}&_limit=${limit}`
+    );
     const data: IGetCar[] = await response.json();
-    const countCars: string | null = await response.headers.get('X-Total-Count');
+    const countCars: string | null = await response.headers.get(
+      'X-Total-Count'
+    );
     return {
       items: data,
       count: countCars as string,
@@ -43,7 +56,7 @@ export class Api {
     this.delWinner(id);
   }
 
-  async getCar(id: number) {
+  async getCar(id: number): Promise<{ name: string; color: string }> {
     return (await fetch(`${this.path.garage}/${id}`)).json();
   }
 
@@ -59,11 +72,27 @@ export class Api {
     ).json();
   }
 
-  async getWinners(page: number, limit = 10, sort: string, order: string) {
-    const response = await fetch(`${this.path.winnres}?_page=${page}&_limit=${limit}${getSortOrder(sort, order)}`);
+  async getWinners(
+    page: number,
+    limit = 10,
+    sort: string,
+    order: string
+  ): Promise<{
+    items: any;
+    count: string | null;
+  }> {
+    const response = await fetch(
+      `${this.path.winnres}?_page=${page}&_limit=${limit}${getSortOrder(
+        sort,
+        order
+      )}`
+    );
     const item = await response.json();
     const winners = await Promise.all(
-      item.map(async (winner: IWinner) => ({ ...winner, car: await this.getCar(winner.id) }))
+      item.map(async (winner: IWinner) => ({
+        ...winner,
+        car: await this.getCar(winner.id),
+      }))
     );
     const countWinners = response.headers.get('X-Total-Count');
     return {
@@ -84,7 +113,7 @@ export class Api {
     ).json();
   }
 
-  async getWinner(id: number) {
+  async getWinner(id: number): Promise<IWinner> {
     return (await fetch(`${this.path.winnres}/${id}`)).json();
   }
 
@@ -108,11 +137,11 @@ export class Api {
     ).json();
   }
 
-  async getWinnerStatus(id: number) {
+  async getWinnerStatus(id: number): Promise<number> {
     return (await fetch(`${this.path.winnres}/${id}`)).status;
   }
 
-  async saveWinner({ id, time }: { id: number; time: number }) {
+  async saveWinner({ id, time }: { id: number; time: number }): Promise<void> {
     const winnerStatus = await this.getWinnerStatus(id);
     if (winnerStatus === 404) {
       await this.createWinner({ id, wins: 1, time });
@@ -125,16 +154,24 @@ export class Api {
     }
   }
 
-  async startEngine(id: number) {
+  async startEngine(
+    id: number
+  ): Promise<{ velocity: number; distance: number }> {
     return (await fetch(`${this.path.engine}?id=${id}&status=started`)).json();
   }
 
-  async stopEngine(id: number) {
+  async stopEngine(
+    id: number
+  ): Promise<{ velocity: number; distance: number }> {
     return (await fetch(`${this.path.engine}?id=${id}&status=stopped`)).json();
   }
 
-  async drive(id: number) {
-    const response = await fetch(`${this.path.engine}?id=${id}&status=drive`).catch();
-    return response.status !== 200 ? { success: false } : { ...(await response.json()) };
+  async drive(id: number): Promise<{ success: boolean }> {
+    const response = await fetch(
+      `${this.path.engine}?id=${id}&status=drive`
+    ).catch();
+    return response.status !== 200
+      ? { success: false }
+      : { ...(await response.json()) };
   }
 }

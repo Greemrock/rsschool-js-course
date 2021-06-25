@@ -15,15 +15,18 @@ export class Listener {
 
   private readonly api: Api = new Api();
 
-  private readonly updateStateGarage: UpdateStateGarage = new UpdateStateGarage();
+  private readonly updateStateGarage: UpdateStateGarage =
+    new UpdateStateGarage();
 
-  private readonly updateStateWinners: UpdateStateWinners = new UpdateStateWinners();
+  private readonly updateStateWinners: UpdateStateWinners =
+    new UpdateStateWinners();
 
   private readonly renderWinners: RenderWinners = new RenderWinners();
 
   private readonly renderGarage: Garage = new Garage();
 
-  private readonly randomGenerateCar: RandomGenerateCar = new RandomGenerateCar();
+  private readonly randomGenerateCar: RandomGenerateCar =
+    new RandomGenerateCar();
 
   private readonly moveCar: MoveCar = new MoveCar();
 
@@ -47,14 +50,14 @@ export class Listener {
     this.sortWins();
   }
 
-  updateListenerGarage() {
+  updateListenerGarage(): void {
     this.removeCarBtn();
     this.selectCarBtn();
     this.startEngineBtn();
     this.stopEngineBtn();
   }
 
-  updateListenerWinner() {
+  updateListenerWinner(): void {
     this.sortTime();
     this.sortWins();
   }
@@ -101,9 +104,15 @@ export class Listener {
       btn.addEventListener('click', async (event: Event) => {
         this.selectId = getId('select-car-', event);
         const selectedCar = await this.api.getCar(this.selectId);
-        const updateName = document.getElementById('update-name') as HTMLInputElement;
-        const updateColor = document.getElementById('update-color') as HTMLInputElement;
-        const updateSubmit = document.getElementById('update-submit') as HTMLInputElement;
+        const updateName = document.getElementById(
+          'update-name'
+        ) as HTMLInputElement;
+        const updateColor = document.getElementById(
+          'update-color'
+        ) as HTMLInputElement;
+        const updateSubmit = document.getElementById(
+          'update-submit'
+        ) as HTMLInputElement;
         updateName.value = selectedCar.name;
         updateColor.value = selectedCar.color;
         updateName.disabled = false;
@@ -132,9 +141,15 @@ export class Listener {
         inputName.value = '';
         const item = event.target as HTMLInputElement;
         item.disabled = true;
-        const updateName = document.getElementById('update-name') as HTMLInputElement;
-        const updateColor = document.getElementById('update-color') as HTMLInputElement;
-        const updateSubmit = document.getElementById('update-submit') as HTMLInputElement;
+        const updateName = document.getElementById(
+          'update-name'
+        ) as HTMLInputElement;
+        const updateColor = document.getElementById(
+          'update-color'
+        ) as HTMLInputElement;
+        const updateSubmit = document.getElementById(
+          'update-submit'
+        ) as HTMLInputElement;
         updateName.value = '';
         updateName.disabled = true;
         updateColor.value = '#ffffff';
@@ -145,8 +160,10 @@ export class Listener {
     });
   }
 
-  garageBtn() {
-    const garageBtn = this.root.querySelector('.garage-menu-btn') as HTMLElement;
+  garageBtn(): void {
+    const garageBtn = this.root.querySelector(
+      '.garage-menu-btn'
+    ) as HTMLElement;
     const garageView = document.getElementById('garage-view') as HTMLElement;
     const winnersView = document.getElementById('winners-view') as HTMLElement;
     garageBtn.addEventListener('click', async () => {
@@ -157,8 +174,10 @@ export class Listener {
     });
   }
 
-  winnersBtn() {
-    const winnersBtn = this.root.querySelector('.winners-menu-btn') as HTMLElement;
+  winnersBtn(): void {
+    const winnersBtn = this.root.querySelector(
+      '.winners-menu-btn'
+    ) as HTMLElement;
     const garageView = document.getElementById('garage-view') as HTMLElement;
     const winnersView = document.getElementById('winners-view') as HTMLElement;
     winnersBtn?.addEventListener('click', async () => {
@@ -173,7 +192,7 @@ export class Listener {
     });
   }
 
-  generatorCarsBtn() {
+  generatorCarsBtn(): void {
     const generate = document.getElementById('generate') as HTMLButtonElement;
     generate.addEventListener('click', async (event: Event) => {
       const target = event.target as HTMLButtonElement;
@@ -192,7 +211,7 @@ export class Listener {
     });
   }
 
-  nextBtn() {
+  nextBtn(): void {
     const nextBtn = document.getElementById('next') as HTMLButtonElement;
     nextBtn.addEventListener('click', async () => {
       switch (store.view) {
@@ -207,7 +226,9 @@ export class Listener {
         case 'winners': {
           store.winnersPage += 1;
           await this.updateStateWinners.render();
-          const winnerView = document.getElementById('winners-view') as HTMLElement;
+          const winnerView = document.getElementById(
+            'winners-view'
+          ) as HTMLElement;
           winnerView.innerHTML = await this.renderWinners.render();
           this.updateListenerWinner();
           break;
@@ -219,7 +240,7 @@ export class Listener {
     });
   }
 
-  prewBtn() {
+  prewBtn(): void {
     const nextBtn = document.getElementById('prew') as HTMLButtonElement;
     nextBtn.addEventListener('click', async () => {
       switch (store.view) {
@@ -238,7 +259,9 @@ export class Listener {
           if (page < 1) store.winnersPage = 1;
           else store.winnersPage -= 1;
           await this.updateStateWinners.render();
-          const winnerView = document.getElementById('winners-view') as HTMLElement;
+          const winnerView = document.getElementById(
+            'winners-view'
+          ) as HTMLElement;
           winnerView.innerHTML = await this.renderWinners.render();
           this.updateListenerWinner();
           break;
@@ -250,7 +273,7 @@ export class Listener {
     });
   }
 
-  startEngineBtn() {
+  startEngineBtn(): void {
     const startEngineBtn = document.querySelectorAll('.start-engine-btn');
     startEngineBtn.forEach((btn) => {
       btn.addEventListener('click', async (event: Event) => {
@@ -261,7 +284,7 @@ export class Listener {
     });
   }
 
-  stopEngineBtn() {
+  stopEngineBtn(): void {
     const stopEngineBtn = document.querySelectorAll('.stop-engine-btn');
     stopEngineBtn.forEach((btn) => {
       btn.addEventListener('click', async (event: Event) => {
@@ -272,7 +295,7 @@ export class Listener {
     });
   }
 
-  resetBtn() {
+  resetBtn(): void {
     const resetBtn = document.getElementById('reset') as HTMLButtonElement;
     resetBtn.addEventListener('click', async (event: Event) => {
       const target = event.target as HTMLButtonElement;
@@ -285,7 +308,7 @@ export class Listener {
     });
   }
 
-  raceBtn() {
+  raceBtn(): void {
     const riceBtn = document.getElementById('race') as HTMLButtonElement;
     riceBtn.addEventListener('click', async (event: Event) => {
       const target = event.target as HTMLButtonElement;
@@ -302,7 +325,7 @@ export class Listener {
     });
   }
 
-  async setSortOrder(sortBy: string) {
+  async setSortOrder(sortBy: string): Promise<void> {
     store.sortOrder = store.sortOrder === 'ASC' ? 'DESC' : 'ASC';
     store.sortBy = sortBy;
 
@@ -313,7 +336,7 @@ export class Listener {
     this.sortWins();
   }
 
-  sortWins() {
+  sortWins(): void {
     const wins = document.querySelector('.table-wins') as HTMLElement;
     wins.addEventListener('click', () => {
       this.setSortOrder('wins');
@@ -321,7 +344,7 @@ export class Listener {
     });
   }
 
-  sortTime() {
+  sortTime(): void {
     const time = document.querySelector('.table-time') as HTMLElement;
     time.addEventListener('click', () => {
       this.setSortOrder('time');

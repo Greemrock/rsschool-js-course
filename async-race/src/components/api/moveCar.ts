@@ -7,9 +7,15 @@ import store from '../store/store';
 export class MoveCar {
   private readonly api: Api = new Api();
 
-  async startDriving(id: number): Promise<{ success: boolean; id: number; time: number }> {
-    const startBtn = document.getElementById(`start-engine-car-${id}`) as HTMLButtonElement;
-    const stopBtn = document.getElementById(`stop-engine-car-${id}`) as HTMLButtonElement;
+  async startDriving(
+    id: number
+  ): Promise<{ success: boolean; id: number; time: number }> {
+    const startBtn = document.getElementById(
+      `start-engine-car-${id}`
+    ) as HTMLButtonElement;
+    const stopBtn = document.getElementById(
+      `stop-engine-car-${id}`
+    ) as HTMLButtonElement;
 
     startBtn.disabled = true;
     startBtn.classList.toggle('enabling', true);
@@ -22,9 +28,12 @@ export class MoveCar {
     stopBtn.disabled = false;
 
     const car = document.getElementById(`car-${id}`) as HTMLElement;
-    const finishLine = document.getElementById(`finish-line-${id}`) as HTMLElement;
+    const finishLine = document.getElementById(
+      `finish-line-${id}`
+    ) as HTMLElement;
     const plusDistance = 50;
-    const htmlDistance = Math.floor(getDistanceBetweenElement(car, finishLine)) + plusDistance;
+    const htmlDistance =
+      Math.floor(getDistanceBetweenElement(car, finishLine)) + plusDistance;
 
     store.animation[id] = animation(car, htmlDistance, time);
 
@@ -36,8 +45,12 @@ export class MoveCar {
   }
 
   async stopDriving(id: number): Promise<void> {
-    const startBtn = document.getElementById(`start-engine-car-${id}`) as HTMLButtonElement;
-    const stopBtn = document.getElementById(`stop-engine-car-${id}`) as HTMLButtonElement;
+    const startBtn = document.getElementById(
+      `start-engine-car-${id}`
+    ) as HTMLButtonElement;
+    const stopBtn = document.getElementById(
+      `stop-engine-car-${id}`
+    ) as HTMLButtonElement;
 
     stopBtn.disabled = true;
     stopBtn.classList.toggle('enabling', true);
@@ -47,29 +60,48 @@ export class MoveCar {
 
     const car = document.getElementById(`car-${id}`) as HTMLElement;
     car.style.transform = 'translateX(0)';
-    if (store.animation[id]) window.cancelAnimationFrame(store.animation[id].id);
+    if (store.animation[id])
+      window.cancelAnimationFrame(store.animation[id].id);
   }
 
   async raceAll(
     promises: Promise<{ success: boolean; id: number; time: number }>[],
     ids: number[]
-  ): Promise<{ name?: string; color?: string; id?: number; isEngineStarted?: string; time: number }> {
+  ): Promise<{
+    name?: string;
+    color?: string;
+    id?: number;
+    isEngineStarted?: string;
+    time: number;
+  }> {
     const { success, id, time } = await Promise.race(promises);
 
     if (!success) {
       const failedIndex = ids.findIndex((i: number) => i === id) as number;
-      const otherPromises = [...promises.slice(0, failedIndex), ...promises.slice(failedIndex + 1, promises.length)];
-      const otherIds = [...ids.slice(0, failedIndex), ...ids.slice(failedIndex + 1, ids.length)];
-      if (otherIds === []) console.log({ time: 0 });
+      const otherPromises = [
+        ...promises.slice(0, failedIndex),
+        ...promises.slice(failedIndex + 1, promises.length),
+      ];
+      const otherIds = [
+        ...ids.slice(0, failedIndex),
+        ...ids.slice(failedIndex + 1, ids.length),
+      ];
       return this.raceAll(otherPromises, otherIds);
     }
     return {
-      ...store.cars.find((car: { name: string; color: string; id: number }) => car.id === id),
+      ...store.cars.find(
+        (car: { name: string; color: string; id: number }) => car.id === id
+      ),
       time: +(time / 1000).toFixed(2),
     };
   }
 
-  async winner(): Promise<{ name?: string; color?: string; id?: number; time: number }> {
+  async winner(): Promise<{
+    name?: string;
+    color?: string;
+    id?: number;
+    time: number;
+  }> {
     const promises = store.cars.map(({ id }) => this.startDriving(id));
     const carsId = store.cars.map((car) => car.id);
     const winner = await this.raceAll(promises, carsId);

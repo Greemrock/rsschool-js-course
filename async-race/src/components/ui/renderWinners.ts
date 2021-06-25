@@ -21,18 +21,19 @@ export class RenderWinners {
           <th class="table-btn table-wins">Wins</th>
           <th class="table-btn table-time">Best time, sec</th>
         </thead>
-        <tbody>
-          ${store.winners.map(
-            (winner: any, index): string => `
-              <tr>
-                <td>${index + 1}</td>
-                <td class="car-winner">${new CarImage().render(winner.car.color)}</td>
-                <td>${winner.car.name}</td>
-                <td>${winner.wins}</td>
-                <td>${winner.time}</td>
-              </tr>
-            `
-          )}
+        <tbody>${store.winners.map(
+          (winner: any, index: number): string => `
+            <tr>
+              <td>${index + 1}</td>
+              <td class="car-winner">${new CarImage().render(
+                winner.car.color
+              )}</td>
+              <td>${winner.car.name}</td>
+              <td>${winner.wins}</td>
+              <td>${winner.time}</td>
+            </tr>
+          `
+        )}
         </tbody>
       </table>
     `);
