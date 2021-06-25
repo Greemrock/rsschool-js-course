@@ -24,12 +24,6 @@
     "no-plusplus": "off",
     "no-console": "warn",
     "max-len": ["warn", { "code": 120 }],
-    "indent": ["warn", 2, {
-      "SwitchCase": 1
-    }],
-    "@typescript-eslint/indent": ["warn", 2, {
-      "SwitchCase": 1
-    }],
     "import/no-extraneous-dependencies": [
       "error", {"devDependencies": true}
     ],
