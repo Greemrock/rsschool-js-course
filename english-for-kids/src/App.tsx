@@ -1,8 +1,12 @@
 import './App.css';
-import { CategoryCards } from './components/ui/main/category-cards';
+import { MainCategories } from './components/Main/MainCategories';
+import { Menu } from './components/Menu/Menu';
 
 export const App = (): JSX.Element => {
   return (
-    <CategoryCards />
+    <>
+      <Menu />
+      <MainCategories />
+    </>
   );
 };

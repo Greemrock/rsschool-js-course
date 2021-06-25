@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import categories from '../../categories';
-import { CategoryCard } from './category-card';
+import categories from '../categories';
+import { CategoryCard } from '../Card/Category_card';
 
 const CardsContainer = styled.div`
   width: 70%;
@@ -15,7 +15,7 @@ const CardsList = styled.div`
   margin-bottom: 50px;
 `;
 
-export const CategoryCards:React.FC = () => {
+export const MainCategories:React.FC = () => {
   return (
     <CardsContainer>
       <CardsList>

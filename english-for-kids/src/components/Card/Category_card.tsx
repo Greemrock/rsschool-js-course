@@ -17,6 +17,13 @@ const Card = styled.div`
   margin-bottom: 28px;
   transition: all 0.8s ease;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  &:hover,
+  &:focus {
+    box-shadow: 0px 0px 28px 10px rgba(0, 0, 0, 0.25);
+    transform: scale(1.1, 1.1);
+    cursor: pointer;
+    transition: all 0.8s ease;
+  }
 `;
 
 const Img = styled.img`
