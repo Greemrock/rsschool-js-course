@@ -6,9 +6,9 @@ export const StyledHamburger =
   `
   position: fixed;
   left: ${({ open }) => {
-    return open ? '29vw' : '3vw';
+    return open ? '29vw' : '2vw';
   }};
-  top: 3vw;
+  top: 2vw;
   width: 2rem;
   height: 2rem;
   padding: 0;
