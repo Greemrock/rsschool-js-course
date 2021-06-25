@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const StyledMenu = styled.nav<{ open: boolean }>`
+export const StyledMenu =
+  styled.nav <
+  { open: boolean } >
+  `
   top: 0;
   left: 0;
   height: 100vh;
@@ -14,7 +17,9 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   padding: 10rem 0;
 
   transition: transform 0.3s ease-in-out;
-  transform: ${({ open }) => { return (open ? 'translateX(0)' : 'translateX(-100%)'); }};
+  transform: ${({ open }) => {
+    return open ? 'translateX(0)' : 'translateX(-100%)';
+  }};
 
   @media (max-width: 600px) {
     width: 100%;

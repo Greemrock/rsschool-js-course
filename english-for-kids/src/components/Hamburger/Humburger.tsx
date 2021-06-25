@@ -8,8 +8,13 @@ export interface HamburgerProps {
 
 export const Hamburger = (props: HamburgerProps): JSX.Element => {
   return (
-    // eslint-disable-next-line react/destructuring-assignment
-    <StyledHamburger open={props.open} onClick={() => { return props.setOpen(!props.open); }}>
+    <StyledHamburger
+      // eslint-disable-next-line react/destructuring-assignment
+      open={props.open}
+      onClick={() => {
+        return props.setOpen(!props.open);
+      }}
+    >
       <div />
       <div />
       <div />

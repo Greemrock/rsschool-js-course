@@ -15,7 +15,7 @@ const CardsList = styled.div`
   margin-bottom: 50px;
 `;
 
-export const MainCategories:React.FC = () => {
+export const MainCategories: React.FC = () => {
   return (
     <CardsContainer>
       <CardsList>

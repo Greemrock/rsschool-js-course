@@ -6,6 +6,7 @@ export const useOnClickOutside = (ref: RefObject<HTMLDivElement>, closeMenu: () 
       if (
         ref.current
         && event.target
+        // eslint-disable-next-line prettier/prettier
         && ref.current.contains(event.target as Node)
       ) {
         return;

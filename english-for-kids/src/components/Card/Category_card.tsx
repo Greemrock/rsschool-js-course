@@ -35,7 +35,7 @@ const Img = styled.img`
   background-clip: content-box;
 `;
 
-const CardName = styled.div`  
+const CardName = styled.div`
   width: 100%;
   text-align: center;
   padding: 15px 0;
@@ -46,11 +46,7 @@ const CardName = styled.div`
 export const CategoryCard: React.FC<CategoryCardProps> = ({ name, image }) => {
   return (
     <Card data-categories={name}>
-      <Img
-        className="card-img"
-        src={image}
-        alt={name}
-      />
+      <Img className="card-img" src={image} alt={name} />
       <CardName className="card-body">
         <h3>{name}</h3>
       </CardName>

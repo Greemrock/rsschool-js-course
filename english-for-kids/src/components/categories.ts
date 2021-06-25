@@ -1,34 +1,27 @@
-import Action1 from '../assets/img/dance.jpg';
-import Action2 from '../assets/img/skip.jpg';
-import Animal1 from '../assets/img/dog.jpg';
-import Animal2 from '../assets/img/cat.jpg';
-import Clothes from '../assets/img/skirt.jpg';
-import Emotions from '../assets/img/angry.jpg';
-
 const categories = [
   {
     name: 'Action (set A)',
-    image: Action1,
+    image: `${process.env.PUBLIC_URL}/assets/img/cry.jpg`,
   },
   {
     name: 'Action (set B)',
-    image: Action2,
+    image: `${process.env.PUBLIC_URL}/assets/img/open.jpg`,
   },
   {
     name: 'Animal (set A)',
-    image: Animal1,
+    image: `${process.env.PUBLIC_URL}/assets/img/cat.jpg`,
   },
   {
-    name: 'Action (set B)',
-    image: Animal2,
+    name: 'Animal (set B)',
+    image: `${process.env.PUBLIC_URL}/assets/img/bird.jpg`,
   },
   {
     name: 'Clothes',
-    image: Clothes,
+    image: `${process.env.PUBLIC_URL}/assets/img/skirt.jpg`,
   },
   {
     name: 'Emotions',
-    image: Emotions,
+    image: `${process.env.PUBLIC_URL}/assets/img/sad.jpg`,
   },
 ];
 

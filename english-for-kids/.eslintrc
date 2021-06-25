@@ -9,7 +9,8 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "airbnb",
-        "eslint-config-airbnb"
+        "eslint-config-airbnb",
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -37,6 +38,7 @@
         "@typescript-eslint/no-var-requires": 0,
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
+        
         "global-require": 0,
         "linebreak-style": 0,
         "import/prefer-default-export": 0,
@@ -48,7 +50,18 @@
             "controlComponents": ["CustomInput"],
             "depth": 3
         }],
-        "@typescript-eslint/no-empty-function": 0
+        "@typescript-eslint/no-empty-function": 0,
+        "prettier/prettier": ["error", {
+            "endOfLine": "auto",
+            "printWidth": 80,
+            "prettier/prettier": "error",
+            "arrow-body-style": "off",
+            "prefer-arrow-callback": "off",
+            "singleQuote": true, 
+            "parser": "flow",
+            "usePrettierrc": false
+        }],
+        "no-console": "warn"
     },
     "globals": {
         "React": true,
