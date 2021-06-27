@@ -1,14 +1,15 @@
-import styled from 'styled-components';
-import { Menu } from '../Menu/Menu';
+import styled from "styled-components";
+import { ICategoriesArr } from "../../App";
+import { Menu } from "../Menu/Menu";
 
 export type CategoriesType = {
-  title: string,
-  id: string,
-  link: string,
+  title: string;
+  id: string;
+  link: string;
 };
 
 export type PropsType = {
-  title: CategoriesType[],
+  title: CategoriesType[];
 };
 
 export const StyledHeader = styled.div`
@@ -25,10 +26,10 @@ export const StyledHeader = styled.div`
   z-index: 3;
 `;
 
-export const Header: React.FC = () => {
+export const Header: React.FC<ICategoriesArr> = ({ title }) => {
   return (
     <StyledHeader>
-      <Menu />
+      <Menu title={title} />
     </StyledHeader>
   );
 };

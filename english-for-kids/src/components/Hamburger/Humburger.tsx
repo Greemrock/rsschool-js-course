@@ -1,4 +1,4 @@
-import { StyledHamburger } from './Humburger.styled';
+import { StyledHamburger } from "./Humburger.styled";
 
 export interface HamburgerProps {
   open: boolean;
@@ -6,13 +6,15 @@ export interface HamburgerProps {
   setOpen: (v: boolean) => void;
 }
 
-export const Hamburger = (props: HamburgerProps): JSX.Element => {
+export const Hamburger: React.FC<HamburgerProps> = ({
+  open,
+  setOpen,
+}): JSX.Element => {
   return (
     <StyledHamburger
-      // eslint-disable-next-line react/destructuring-assignment
-      open={props.open}
+      open={open}
       onClick={() => {
-        return props.setOpen(!props.open);
+        return setOpen(!open);
       }}
     >
       <div />

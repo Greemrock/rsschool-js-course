@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 type ButtonType = {
-  isOn: boolean
+  isOn: boolean;
   // eslint-disable-next-line prettier/prettier
-  handleToggle: () => void
-}
+  handleToggle: () => void;
+};
 
 export const StyledCheckbox = styled.div<{ isOn: boolean }>`
   position: absolute;
@@ -16,13 +16,13 @@ export const StyledCheckbox = styled.div<{ isOn: boolean }>`
     visibility: hidden;
   }
   .react-switch-label:before {
-    content: 'Train';
+    content: "Train";
     position: relative;
     right: 60px;
     z-index: 20;
   }
   .react-switch-label:after {
-    content: 'Play';
+    content: "Play";
     position: relative;
     right: -35px;
     z-index: 20;
@@ -39,13 +39,16 @@ export const StyledCheckbox = styled.div<{ isOn: boolean }>`
     width: 80px;
     height: 40px;
     background: ${({ isOn }) => {
-      return !isOn ? 'linear-gradient(40deg,#00bf82,#0099ae)' : 'linear-gradient(40deg,#ffd86f,#fc6262)' }};
+      return !isOn
+        ? "linear-gradient(40deg,#00bf82,#0099ae)"
+        : "linear-gradient(40deg,#ffd86f,#fc6262)";
+    }};
     border-radius: 80px;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
     z-index: 20;
 
     .react-switch-button {
-      content: '';
+      content: "";
       position: absolute;
       top: 2px;
       left: 2px;
@@ -68,7 +71,6 @@ export const StyledCheckbox = styled.div<{ isOn: boolean }>`
   }
 `;
 
-
 export const Checkbox: React.FC<ButtonType> = (props) => {
   const { isOn, handleToggle } = props;
   return (
@@ -80,12 +82,9 @@ export const Checkbox: React.FC<ButtonType> = (props) => {
         id="react-switch-new"
         type="checkbox"
       />
-      <label
-        className="react-switch-label"
-        htmlFor="react-switch-new"
-      >
+      <label className="react-switch-label" htmlFor="react-switch-new">
         <span className="react-switch-button" />
       </label>
     </StyledCheckbox>
   );
-}
+};

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface CategoryCardProps {
   name: string;
@@ -24,32 +24,30 @@ const Card = styled.div`
     cursor: pointer;
     transition: all 0.8s ease;
   }
+  img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+  }
+  div {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #ffffff;
+    border-radius: 0 0 5px 5px;
+  }
 `;
 
-const Img = styled.img`
-  width: 100%;
-  border-radius: 5px 5px 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-clip: content-box;
-`;
-
-const CardName = styled.div`
-  width: 100%;
-  text-align: center;
-  padding: 15px 0;
-  background-color: #ffffff;
-  border-radius: 0 0 5px 5px;
-`;
-
-export const CategoryCard: React.FC<CategoryCardProps> = ({ name, image }) => {
+export const CardCategory: React.FC<CategoryCardProps> = ({ name, image }) => {
   return (
     <Card data-categories={name}>
-      <Img className="card-img" src={image} alt={name} />
-      <CardName className="card-body">
+      <img className="card-img" src={image} alt={name} />
+      <div className="card-body">
         <h3>{name}</h3>
-      </CardName>
+      </div>
     </Card>
   );
 };

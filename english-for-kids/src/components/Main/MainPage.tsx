@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import categories from '../categories';
-import { CategoryCard } from '../Card/Category_card';
+import styled from "styled-components";
+import { CardCategory } from "../Card/CardCategory";
+import { ICategoriesArr } from "../../App";
 
 const CardsContainer = styled.div`
   width: 70%;
@@ -15,12 +15,12 @@ const CardsList = styled.div`
   margin-bottom: 50px;
 `;
 
-export const MainCategories: React.FC = () => {
+export const MainPage: React.FC<ICategoriesArr> = ({ title }) => {
   return (
     <CardsContainer>
       <CardsList>
-        {categories.map((cat) => {
-          return <CategoryCard name={cat.name} image={cat.image} />;
+        {title.map((t) => {
+          return <CardCategory name={t.title} image={t.image} />;
         })}
       </CardsList>
     </CardsContainer>
