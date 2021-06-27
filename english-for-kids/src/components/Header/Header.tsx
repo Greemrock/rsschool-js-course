@@ -1,16 +1,6 @@
 import styled from "styled-components";
-import { ICategoriesArr } from "../../App";
-import { Menu } from "../Menu/Menu";
-
-export type CategoriesType = {
-  title: string;
-  id: string;
-  link: string;
-};
-
-export type PropsType = {
-  title: CategoriesType[];
-};
+import { Menu } from "./Menu/Menu";
+import { ICategoriesArr } from "../Shared/interface";
 
 export const StyledHeader = styled.div`
   display: flex;

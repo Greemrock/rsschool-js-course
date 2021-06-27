@@ -1,17 +1,15 @@
 import styled from "styled-components";
-
-interface CategoryCardProps {
-  name: string;
-  image: string;
-}
+import { CategoryCardProps } from "../Shared/interface";
+import { CardFront, CardTitle } from "./TrainCard";
 
 const Card = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  width: calc(100% / 3 - 20px);
-  height: fit-content;
+  width: calc(100% / 2 - 20px);
+  height: 260px;
   max-width: 320px;
   border-radius: 5px;
   margin-bottom: 28px;
@@ -24,30 +22,22 @@ const Card = styled.div`
     cursor: pointer;
     transition: all 0.8s ease;
   }
-  img {
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-clip: content-box;
+
+  @media (max-width: 1300px) {
+    height: 200px;
   }
-  div {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    background-color: #ffffff;
-    border-radius: 0 0 5px 5px;
+
+  @media (max-width: 950px) {
+    height: 150px;
   }
 `;
 
 export const CardCategory: React.FC<CategoryCardProps> = ({ name, image }) => {
   return (
     <Card data-categories={name}>
-      <img className="card-img" src={image} alt={name} />
-      <div className="card-body">
-        <h3>{name}</h3>
-      </div>
+      <CardFront style={{ backgroundImage: `url(${image})` }}>
+        <CardTitle>{name}</CardTitle>
+      </CardFront>
     </Card>
   );
 };

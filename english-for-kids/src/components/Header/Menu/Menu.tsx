@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import styled from "styled-components";
-import { ICategoriesArr } from "../../App";
-import { useOnClickOutside } from "../../hooks";
+import { useOnClickOutside } from "../../../hooks";
 import { Hamburger } from "../Hamburger/Humburger";
+import { ICategoriesArr } from "../../Shared/interface";
 
 export const StyledMenu = styled.nav<{ open: boolean }>`
   top: 0;

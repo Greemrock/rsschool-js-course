@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { CardCategory } from "../Card/CardCategory";
-import { ICategoriesArr } from "../../App";
+import { CardCategory } from "./CardCategory";
+import { ICategoriesArr } from "../Shared/interface";
 
 const CardsContainer = styled.div`
   width: 70%;
