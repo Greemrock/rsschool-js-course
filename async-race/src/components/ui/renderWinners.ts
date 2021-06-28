@@ -1,16 +1,16 @@
 import { CarImage } from './renderCarImage';
 import store from '../store/store';
 import './renderWinners.scss';
+import { IWinners } from '../shared/interfaces';
+import { BaseComponent } from '../shared/BaseComponent';
 
-export class RenderWinners {
-  private readonly nodeElement: Element;
-
+export class RenderWinners extends BaseComponent {
   constructor() {
-    this.nodeElement = document.createElement('div');
+    super('div');
   }
 
   render(): string {
-    return (this.nodeElement.innerHTML = `
+    return (this.element.innerHTML = `
       <h4>Winners /${store.winnersCount} /</h4>
       <h5>Page #${store.winnersPage}</h5>
       <table class="table" cellspacing="0" border="0" cellpadding="0">
@@ -22,7 +22,7 @@ export class RenderWinners {
           <th class="table-btn table-time">Best time, sec</th>
         </thead>
         <tbody>${store.winners.map(
-          (winner: any, index: number): string => `
+          (winner: IWinners, index: number): string => `
             <tr>
               <td>${index + 1}</td>
               <td class="car-winner">${new CarImage().render(

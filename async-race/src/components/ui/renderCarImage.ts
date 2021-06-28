@@ -1,12 +1,12 @@
-export class CarImage {
-  private readonly nodeElement: Element;
+import { BaseComponent } from '../shared/BaseComponent';
 
+export class CarImage extends BaseComponent {
   constructor() {
-    this.nodeElement = document.createElement('div');
+    super('div');
   }
 
   render(color: string): string {
-    return (this.nodeElement.innerHTML = `
+    return (this.element.innerHTML = `
       <svg width="100" height="50" viewBox="0 0 843 596" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0)">
         <path d="M178.083 133.108L178.083 144.419C178.083 149.476 173.983 153.575 168.927 153.575L103.307

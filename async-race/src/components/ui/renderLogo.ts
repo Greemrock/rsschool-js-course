@@ -1,12 +1,12 @@
-export class RenderLogo {
-  private readonly nodeElement: Element;
+import { BaseComponent } from '../shared/BaseComponent';
 
+export class RenderLogo extends BaseComponent {
   constructor() {
-    this.nodeElement = document.createElement('div');
+    super('div');
   }
 
   render(): string {
-    return (this.nodeElement.innerHTML = `
+    return (this.element.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M23.5 7c.276 0 .5.224.5.5v.511c0 .793-.926.989-1.616.989l-1.086-2h2.202zm-1.441 3.506c.639
         1.186.946 2.252.946 3.666 0 1.37-.397 2.533-1.005 3.981v1.847c0 .552-.448 1-1 1h-1.5c-.552

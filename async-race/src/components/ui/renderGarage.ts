@@ -1,19 +1,18 @@
 import { Car } from './renderCar';
 import store from '../store/store';
 import './renderGarage.scss';
+import { BaseComponent } from '../shared/BaseComponent';
 
-export class Garage {
-  private readonly nodeElement: Element;
-
+export class Garage extends BaseComponent {
   private readonly renderCar: Car;
 
   constructor() {
-    this.nodeElement = document.createElement('div');
+    super('div');
     this.renderCar = new Car();
   }
 
   render(): string {
-    return (this.nodeElement.innerHTML = `
+    return (this.element.innerHTML = `
       <h4>Garage /${store.carsCount} cars /</h4>
       <h5>Page #${store.carsPage}</h5>
       <ul class="garage">
