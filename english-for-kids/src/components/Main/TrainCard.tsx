@@ -102,7 +102,7 @@ export const TrainCard: React.FC<CardType> = ({
   audioSrc,
 }) => {
   const [play] = useSound(audioSrc);
-  const [rotate, setRotate] = useState<boolean>(false);
+  const [rotate, setRotate] = useState(false);
   return (
     <CardInner
       onMouseDown={() => {

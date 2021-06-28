@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { useOnClickOutside } from "../../../hooks";
 import { Hamburger } from "../Hamburger/Humburger";
 import { ITitleProps } from "../../Shared/interface";
@@ -25,9 +26,13 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   @media (max-width: 600px) {
     width: 100%;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled.div`
   padding: 0 2rem;
   font-size: 2rem;
   color: #fdf2e9;
@@ -51,28 +56,32 @@ export const Menu: React.FC<ITitleProps> = ({ title }) => {
   });
 
   return (
-    <div ref={node}>
-      <StyledMenu open={open}>
-        <StyledLink
-          onClick={() => {
-            return close();
-          }}
-        >
-          Main page
-        </StyledLink>
+    <>
+      <StyledMenu open={open} ref={node}>
+        <Link to="/main">
+          <StyledLink
+            onClick={() => {
+              return close();
+            }}
+          >
+            Main page
+          </StyledLink>
+        </Link>
         {title.map((t) => {
           return (
-            <StyledLink
-              onClick={() => {
-                return close();
-              }}
-            >
-              {t.title}
-            </StyledLink>
+            <Link to={t.link}>
+              <StyledLink
+                onClick={() => {
+                  return close();
+                }}
+              >
+                {t.title}
+              </StyledLink>
+            </Link>
           );
         })}
       </StyledMenu>
       <Hamburger open={open} setOpen={setOpen} />
-    </div>
+    </>
   );
 };
