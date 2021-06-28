@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Menu } from "./Menu/Menu";
-import { ICategoriesArr } from "../Shared/interface";
+import { ITitleProps } from "../Shared/interface";
 
 export const StyledHeader = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const StyledHeader = styled.div`
   z-index: 3;
 `;
 
-export const Header: React.FC<ICategoriesArr> = ({ title }) => {
+export const Header: React.FC<ITitleProps> = ({ title }) => {
   return (
     <StyledHeader>
       <Menu title={title} />

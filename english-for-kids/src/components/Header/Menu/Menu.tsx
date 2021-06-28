@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import styled from "styled-components";
 import { useOnClickOutside } from "../../../hooks";
 import { Hamburger } from "../Hamburger/Humburger";
-import { ICategoriesArr } from "../../Shared/interface";
+import { ITitleProps } from "../../Shared/interface";
 
 export const StyledMenu = styled.nav<{ open: boolean }>`
   top: 0;
@@ -39,7 +39,7 @@ export const StyledLink = styled.a`
   }
 `;
 
-export const Menu: React.FC<ICategoriesArr> = ({ title }) => {
+export const Menu: React.FC<ITitleProps> = ({ title }) => {
   const [open, setOpen] = useState<boolean>(false);
   const node = useRef<HTMLDivElement>(null);
   const close = () => {

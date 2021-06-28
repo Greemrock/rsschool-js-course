@@ -21,11 +21,17 @@ export interface CardsType {
   cards: CardType[];
 }
 
-export interface ICategoriesArr {
+export interface ITitleProps {
   title: ICategory[];
+}
+
+export interface IMainPageProps {
+  title: ICategory[];
+  cards: ICollectionCards;
 }
 
 export interface CategoryCardProps {
   name: string;
   image: string;
+  link: string;
 }
