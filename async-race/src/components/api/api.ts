@@ -1,3 +1,4 @@
+import { CARS_PER_PAGE, WINNERS_PER_PAGE } from '../shared/Constant';
 import { getSortOrder } from '../shared/getSortOrder';
 import {
   IGetCar,
@@ -5,6 +6,7 @@ import {
   IUpdateWinner,
   IWinner,
   ICar,
+  IWinners,
 } from '../shared/interfaces';
 
 export class Api {
@@ -20,7 +22,7 @@ export class Api {
 
   async getCars(
     page: number,
-    limit = 7
+    limit = CARS_PER_PAGE
   ): Promise<{ items: IGetCar[]; count: string }> {
     const response = await fetch(
       `${this.path.garage}?_page=${page}&_limit=${limit}`
@@ -56,7 +58,7 @@ export class Api {
     this.delWinner(id);
   }
 
-  async getCar(id: number): Promise<{ name: string; color: string }> {
+  async getCar(id: number): Promise<ICar> {
     return (await fetch(`${this.path.garage}/${id}`)).json();
   }
 
@@ -74,11 +76,11 @@ export class Api {
 
   async getWinners(
     page: number,
-    limit = 10,
+    limit = WINNERS_PER_PAGE,
     sort: string,
     order: string
   ): Promise<{
-    items: any;
+    items: IWinners[];
     count: string | null;
   }> {
     const response = await fetch(
@@ -88,7 +90,7 @@ export class Api {
       )}`
     );
     const item = await response.json();
-    const winners = await Promise.all(
+    const winners = await Promise.all<IWinners>(
       item.map(async (winner: IWinner) => ({
         ...winner,
         car: await this.getCar(winner.id),

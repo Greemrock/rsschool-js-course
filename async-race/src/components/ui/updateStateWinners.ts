@@ -1,4 +1,5 @@
 import { Api } from '../api/api';
+import { WINNERS_PER_PAGE } from '../shared/Constant';
 import store from '../store/store';
 
 export class UpdateStateWinners {
@@ -7,7 +8,7 @@ export class UpdateStateWinners {
   async render(): Promise<void> {
     const { items, count } = await this.api.getWinners(
       store.winnersPage,
-      10,
+      WINNERS_PER_PAGE,
       store.sortBy,
       store.sortOrder
     );
@@ -17,12 +18,16 @@ export class UpdateStateWinners {
     const next = document.getElementById('next') as HTMLButtonElement;
     const prew = document.getElementById('prew') as HTMLButtonElement;
 
-    if (store.winnersPage * 10 < +winCount) {
+    if (store.winnersPage * WINNERS_PER_PAGE < +winCount) {
       next.disabled = false;
-    } else next.disabled = true;
+    } else {
+      next.disabled = true;
+    }
 
     if (store.winnersPage > 1) {
       prew.disabled = false;
-    } else prew.disabled = true;
+    } else {
+      prew.disabled = true;
+    }
   }
 }

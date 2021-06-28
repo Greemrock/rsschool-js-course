@@ -16,6 +16,13 @@ export interface IWinner {
   time: number;
 }
 
+export interface IWinners {
+  id: number;
+  wins: number;
+  time: number;
+  car: ICar;
+}
+
 export interface IStartAnimation {
   id: number;
 }

@@ -62,9 +62,10 @@ export class RandomGenerateCar {
   }
 
   getRandomColor(): string {
+    const lenghtColor = 6;
     let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += this.letters[Math.floor(Math.random() * 16)];
+    for (let i = 0; i < lenghtColor; i++) {
+      color += this.letters[Math.floor(Math.random() * this.letters.length)];
     }
     return color;
   }

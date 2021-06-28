@@ -1,4 +1,5 @@
 import { Api } from '../api/api';
+import { CARS_PER_PAGE } from '../shared/Constant';
 import store from '../store/store';
 
 export class UpdateStateGarage {
@@ -12,12 +13,16 @@ export class UpdateStateGarage {
     const next = document.getElementById('next') as HTMLButtonElement;
     const prew = document.getElementById('prew') as HTMLButtonElement;
 
-    if (store.carsPage * 7 < +store.carsCount) {
+    if (store.carsPage * CARS_PER_PAGE < +store.carsCount) {
       next.disabled = false;
-    } else next.disabled = true;
+    } else {
+      next.disabled = true;
+    }
 
     if (store.carsPage > 1) {
       prew.disabled = false;
-    } else prew.disabled = true;
+    } else {
+      prew.disabled = true;
+    }
   }
 }

@@ -13,6 +13,8 @@ export class Listener {
 
   private root = document.getElementById('root') as HTMLElement;
 
+  private message = document.getElementById('message') as HTMLElement;
+
   private readonly api: Api = new Api();
 
   private readonly updateStateGarage: UpdateStateGarage =
@@ -75,13 +77,17 @@ export class Listener {
           color: inputColor.value,
         };
         await this.api.createCar(car);
-        await this.updateStateGarage.render();
-        const garage = document.getElementById('garage') as HTMLElement;
-        garage.innerHTML = await this.renderGarage.render();
+        this.updateRanderGarage();
         inputName.value = '';
         this.updateListenerGarage();
       }
     });
+  }
+
+  async updateRanderGarage(): Promise<void> {
+    await this.updateStateGarage.render();
+    const garage = document.getElementById('garage') as HTMLElement;
+    garage.innerHTML = await this.renderGarage.render();
   }
 
   removeCarBtn(): void {
@@ -90,9 +96,7 @@ export class Listener {
       btn.addEventListener('click', async (event: Event) => {
         const id = getId('remove-car-', event);
         await this.api.deleteCar(id);
-        await this.updateStateGarage.render();
-        const garage = document.getElementById('garage') as HTMLElement;
-        garage.innerHTML = await this.renderGarage.render();
+        this.updateRanderGarage();
         this.updateListenerGarage();
       });
     });
@@ -135,9 +139,7 @@ export class Listener {
           color: inputColor.value,
         };
         await this.api.updateCar(this.selectId, car);
-        await this.updateStateGarage.render();
-        const garage = document.getElementById('garage') as HTMLElement;
-        garage.innerHTML = await this.renderGarage.render();
+        this.updateRanderGarage();
         inputName.value = '';
         const item = event.target as HTMLInputElement;
         item.disabled = true;
@@ -184,8 +186,7 @@ export class Listener {
       winnersView.style.display = 'block';
       garageView.style.display = 'none';
       await this.updateStateWinners.render();
-      const winnerView = document.getElementById('winners-view') as HTMLElement;
-      winnerView.innerHTML = await this.renderWinners.render();
+      winnersView.innerHTML = await this.renderWinners.render();
       store.view = 'winners';
       this.sortTime();
       this.sortWins();
@@ -203,9 +204,7 @@ export class Listener {
           await this.api.createCar(car);
         })
       );
-      await this.updateStateGarage.render();
-      const garage = document.getElementById('garage') as HTMLElement;
-      garage.innerHTML = await this.renderGarage.render();
+      this.updateRanderGarage();
       target.disabled = false;
       this.updateListenerGarage();
     });
@@ -217,9 +216,7 @@ export class Listener {
       switch (store.view) {
         case 'garage': {
           store.carsPage += 1;
-          await this.updateStateGarage.render();
-          const garage = document.getElementById('garage') as HTMLElement;
-          garage.innerHTML = await this.renderGarage.render();
+          this.updateRanderGarage();
           this.updateListenerGarage();
           break;
         }
@@ -241,23 +238,27 @@ export class Listener {
   }
 
   prewBtn(): void {
-    const nextBtn = document.getElementById('prew') as HTMLButtonElement;
-    nextBtn.addEventListener('click', async () => {
+    const prewBtn = document.getElementById('prew') as HTMLButtonElement;
+    prewBtn.addEventListener('click', async () => {
       switch (store.view) {
         case 'garage': {
           const page = store.carsPage;
-          if (page < 1) store.carsPage = 1;
-          else store.carsPage -= 1;
-          await this.updateStateGarage.render();
-          const garage = document.getElementById('garage') as HTMLElement;
-          garage.innerHTML = await this.renderGarage.render();
+          if (page < 1) {
+            store.carsPage = 1;
+          } else {
+            store.carsPage -= 1;
+          }
+          this.updateRanderGarage();
           this.updateListenerGarage();
           break;
         }
         case 'winners': {
           const page = store.winnersPage;
-          if (page < 1) store.winnersPage = 1;
-          else store.winnersPage -= 1;
+          if (page < 1) {
+            store.winnersPage = 1;
+          } else {
+            store.winnersPage -= 1;
+          }
           await this.updateStateWinners.render();
           const winnerView = document.getElementById(
             'winners-view'
@@ -301,8 +302,7 @@ export class Listener {
       const target = event.target as HTMLButtonElement;
       target.disabled = true;
       store.cars.map(({ id }) => this.moveCar.stopDriving(id));
-      const message = document.getElementById('message');
-      message?.classList.toggle('visible', false);
+      this.message.classList.toggle('visible', false);
       const race = document.getElementById('race') as HTMLButtonElement;
       race.disabled = false;
     });
@@ -313,14 +313,13 @@ export class Listener {
     riceBtn.addEventListener('click', async (event: Event) => {
       const target = event.target as HTMLButtonElement;
       const resetBtn = document.getElementById('reset') as HTMLButtonElement;
-      const message = document.getElementById('message') as HTMLElement;
       target.disabled = true;
       setTimeout(() => (resetBtn.disabled = false), 5000);
       const { name, id, time } = await this.moveCar.winner();
       if (!id) throw new Error(`${id} not found`);
       await this.api.saveWinner({ id, time });
-      message.innerHTML = `${name} wentfirst ${time}s`;
-      message.classList.toggle('visible', true);
+      this.message.innerHTML = `${name} wentfirst ${time}s`;
+      this.message.classList.toggle('visible', true);
       resetBtn.disabled = false;
     });
   }

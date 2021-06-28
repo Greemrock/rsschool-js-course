@@ -3,6 +3,7 @@ import { animation } from '../ui/animation';
 import { getDistanceBetweenElement } from '../shared/getDistanceBetweenElem';
 import { Api } from './api';
 import store from '../store/store';
+import { PLUS_DISTANCE } from '../shared/Constant';
 
 export class MoveCar {
   private readonly api: Api = new Api();
@@ -31,9 +32,8 @@ export class MoveCar {
     const finishLine = document.getElementById(
       `finish-line-${id}`
     ) as HTMLElement;
-    const plusDistance = 50;
     const htmlDistance =
-      Math.floor(getDistanceBetweenElement(car, finishLine)) + plusDistance;
+      Math.floor(getDistanceBetweenElement(car, finishLine)) + PLUS_DISTANCE;
 
     store.animation[id] = animation(car, htmlDistance, time);
 

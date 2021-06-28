@@ -1,11 +1,14 @@
 import { IStartAnimation } from '../shared/interfaces';
 import { Api } from '../api/api';
+import { WINNERS_PER_PAGE } from '../shared/Constant';
+
+const page = 1;
 
 const api = new Api();
 const { items: cars, count: carsCount } = await api.getCars(1);
 const { items: winners, count: winnersCount } = await api.getWinners(
-  1,
-  10,
+  page,
+  WINNERS_PER_PAGE,
   'id',
   'desc'
 );
