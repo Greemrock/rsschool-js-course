@@ -93,6 +93,10 @@ export const Rotate = styled.div`
   right: 5px;
   transition: 0.3s;
   filter: grayscale(1);
+
+  @media (max-width: 800px) {
+    transform: rotateX(90deg);
+  }
 `;
 
 export const TrainCard: React.FC<CardType> = ({

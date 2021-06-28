@@ -9,7 +9,7 @@ const Card = styled.li`
   flex-direction: column;
   align-items: center;
   position: relative;
-  width: calc(100% / 3 - 20px);
+  width: calc(100% / 4 - 25px);
   height: 260px;
   max-width: 320px;
   border-radius: 5px;
@@ -24,11 +24,15 @@ const Card = styled.li`
   }
 
   @media (max-width: 1300px) {
-    height: 200px;
+    width: calc(100% / 3 - 25px);
   }
 
-  @media (max-width: 950px) {
-    height: 150px;
+  @media (max-width: 1100px) {
+    width: calc(100% / 2 - 25px);
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
   }
 
   a {

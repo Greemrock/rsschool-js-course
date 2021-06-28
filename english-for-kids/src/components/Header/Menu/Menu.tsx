@@ -13,21 +13,19 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   position: fixed;
   background: linear-gradient(180deg, #0099ae 0%, #00bf82 100%);
   z-index: 1;
-
   display: flex;
   flex-direction: column;
   padding: 10rem 0;
-
   transition: transform 0.3s ease-in-out;
-  transform: ${({ open }) => {
-    return open ? "translateX(0)" : "translateX(-100%)";
-  }};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     width: 100%;
+    text-align: center;
   }
 
   a {
+    margin: 5px;
     text-decoration: none;
   }
 `;
@@ -57,6 +55,7 @@ export const Menu: React.FC<ITitleProps> = ({ title }) => {
 
   return (
     <>
+      <Hamburger open={open} setOpen={setOpen} />
       <StyledMenu open={open} ref={node}>
         <Link to="/main">
           <StyledLink
@@ -81,7 +80,6 @@ export const Menu: React.FC<ITitleProps> = ({ title }) => {
           );
         })}
       </StyledMenu>
-      <Hamburger open={open} setOpen={setOpen} />
     </>
   );
 };

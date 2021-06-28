@@ -5,16 +5,17 @@ import { CategoryCards } from "./CategoryCards";
 import { TrainCards } from "./TrainCards";
 
 const CardsContainer = styled.div`
-  width: 70%;
-  height: 100%;
+  max-width: 1440px;
   margin: 0 auto;
 `;
 
 const CardsList = styled.ul`
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 50px;
+  padding: 0px 80px;
 `;
 
 export const Game: React.FC<IMainPageProps> = ({ title, cards }) => {
