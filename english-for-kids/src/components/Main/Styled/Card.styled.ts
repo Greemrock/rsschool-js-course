@@ -100,3 +100,9 @@ export const Rotate = styled.div`
   transition: 0.3s;
   filter: grayscale(1);
 `;
+
+export const Page = styled.h2`
+  width: 100%;
+  margin-bottom: 20px;
+  color: #646464;
+`;

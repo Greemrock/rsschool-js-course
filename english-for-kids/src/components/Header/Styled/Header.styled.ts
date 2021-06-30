@@ -9,7 +9,7 @@ export const StyledHeader = styled.div`
   min-height: 6rem;
   max-height: 8rem;
   justify-content: space-between;
-  padding: 10px 80px;
+  padding: 10px 80px 0 80px;
   background-color: #fff;
   z-index: 3;
 `;

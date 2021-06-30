@@ -1,10 +1,15 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 import { IMainPageProps } from "../Shared/interface";
 import { CategoryCards } from "./CategoryCard/CategoryCards";
-import { CardsContainer, CardsList } from "./Styled/Game.styled";
+import { GameCards } from "./GameMode/GameCards";
+import { CardsContainer, CardsList } from "./Styled/Main.styled";
 import { TrainCards } from "./TrainMode/TrainCards";
 
-export const Main: React.FC<IMainPageProps> = ({ title, cards }) => {
+export const Main: React.FC<IMainPageProps> = ({
+  title,
+  cards,
+  statusCheckbox,
+}) => {
   return (
     <CardsContainer>
       <CardsList>
@@ -17,11 +22,24 @@ export const Main: React.FC<IMainPageProps> = ({ title, cards }) => {
           />
           {title.map((c) => {
             const cardsForTitle = cards[c.id];
+            if (!statusCheckbox) {
+              return (
+                <Route
+                  key={c.id}
+                  path={`/${c.link}`}
+                  render={() => (
+                    <TrainCards cards={cardsForTitle} title={c.title} />
+                  )}
+                />
+              );
+            }
             return (
               <Route
                 key={c.id}
                 path={`/${c.link}`}
-                render={() => <TrainCards cards={cardsForTitle} />}
+                render={() => (
+                  <GameCards cards={cardsForTitle} title={c.title} />
+                )}
               />
             );
           })}

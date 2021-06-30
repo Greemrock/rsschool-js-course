@@ -19,6 +19,7 @@ export interface ICategory {
 
 export interface ICardsType {
   cards: ICardType[];
+  title: string;
 }
 
 export interface ITitleProps {
@@ -28,6 +29,7 @@ export interface ITitleProps {
 export interface IMainPageProps {
   title: ICategory[];
   cards: ICollectionCards;
+  statusCheckbox: boolean;
 }
 
 export interface CategoryCardProps {
@@ -43,8 +45,8 @@ export interface IHeaderProps {
 }
 
 export interface IButtonType {
-  isOn: boolean;
-  handleToggle: () => void;
+  statusCheckbox: boolean;
+  setStatusCheckbox: () => void;
 }
 
 export interface IHamburgerProps {

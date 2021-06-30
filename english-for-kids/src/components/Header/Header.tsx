@@ -12,8 +12,8 @@ export const Header: React.FC<IHeaderProps> = ({
     <StyledHeader>
       <Menu title={title} />
       <Checkbox
-        isOn={statusCheckbox}
-        handleToggle={() => setStatusCheckbox(!statusCheckbox)}
+        statusCheckbox={statusCheckbox}
+        setStatusCheckbox={() => setStatusCheckbox(!statusCheckbox)}
       />
     </StyledHeader>
   );

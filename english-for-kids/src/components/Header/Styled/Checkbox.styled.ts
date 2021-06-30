@@ -12,7 +12,7 @@ export const SwitchButton = styled.span`
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
 `;
 
-export const SwitchLabel = styled.label<{ isOn: boolean }>`
+export const SwitchLabel = styled.label<{ statusCheckbox: boolean }>`
   display: flex;
   position: absolute;
   right: 0;
@@ -23,8 +23,8 @@ export const SwitchLabel = styled.label<{ isOn: boolean }>`
   width: 95px;
   height: 40px;
   box-shadow: inset 0 2px 7px 0 rgba(0, 0, 0, 0.3);
-  background: ${({ isOn }) =>
-    !isOn
+  background: ${({ statusCheckbox }) =>
+    !statusCheckbox
       ? "linear-gradient(40deg,#00bf82,#0099ae)"
       : "linear-gradient(40deg,#ffd86f,#fc6262)"};
   border-radius: 80px;
@@ -42,7 +42,7 @@ export const SwitchLabel = styled.label<{ isOn: boolean }>`
     content: "Play";
     position: relative;
     right: 15px;
-    opacity: ${({ isOn }) => (!isOn ? "1" : "0")};
+    opacity: ${({ statusCheckbox }) => (!statusCheckbox ? "1" : "0")};
     z-index: 20;
   }
 
@@ -50,7 +50,7 @@ export const SwitchLabel = styled.label<{ isOn: boolean }>`
     content: "Train";
     position: relative;
     right: -10px;
-    opacity: ${({ isOn }) => (!isOn ? "0" : "1")};
+    opacity: ${({ statusCheckbox }) => (!statusCheckbox ? "0" : "1")};
     z-index: 20;
   }
 

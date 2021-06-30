@@ -7,16 +7,16 @@ import {
 } from "../Styled/Checkbox.styled";
 
 export const Checkbox: React.FC<IButtonType> = (props) => {
-  const { isOn, handleToggle } = props;
+  const { statusCheckbox, setStatusCheckbox } = props;
   return (
     <StyledCheckbox>
       <SwitchCheckbox
-        checked={isOn}
-        onChange={handleToggle}
+        checked={statusCheckbox}
+        onChange={setStatusCheckbox}
         id="react-switch-new"
         type="checkbox"
       />
-      <SwitchLabel isOn={isOn} htmlFor="react-switch-new">
+      <SwitchLabel statusCheckbox={statusCheckbox} htmlFor="react-switch-new">
         <SwitchButton />
       </SwitchLabel>
     </StyledCheckbox>

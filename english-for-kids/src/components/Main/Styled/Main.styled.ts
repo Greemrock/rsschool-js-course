@@ -6,6 +6,7 @@ export const CardsContainer = styled.div`
 `;
 
 export const CardsList = styled.ul`
+  position: relative;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
