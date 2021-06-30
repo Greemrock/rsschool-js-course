@@ -1,9 +1,8 @@
-import { StyledHamburger } from "./Humburger.styled";
+import { StyledHamburger } from "../Styled/Humburger.styled";
 
 export interface HamburgerProps {
   open: boolean;
-  // eslint-disable-next-line no-unused-vars
-  setOpen: (v: boolean) => void;
+  setOpen: (open: boolean) => void;
 }
 
 export const Hamburger: React.FC<HamburgerProps> = ({

@@ -1,22 +1,8 @@
 import { Redirect, Route, Switch } from "react-router-dom";
-import styled from "styled-components";
 import { IMainPageProps } from "../Shared/interface";
-import { CategoryCards } from "./CategoryCards";
-import { TrainCards } from "./TrainCards";
-
-const CardsContainer = styled.div`
-  max-width: 1440px;
-  margin: 0 auto;
-`;
-
-const CardsList = styled.ul`
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 50px;
-  padding: 0px 80px;
-`;
+import { CategoryCards } from "./CategoryCard/CategoryCards";
+import { CardsContainer, CardsList } from "./Styled/Game.styled";
+import { TrainCards } from "./TrainCard/TrainCards";
 
 export const Game: React.FC<IMainPageProps> = ({ title, cards }) => {
   return (

@@ -1,10 +1,10 @@
-export type CardType = {
+export interface CardType {
   id?: number;
   word: string;
   translation: string;
   image: string;
   audioSrc: string;
-};
+}
 
 export interface ICollectionCards {
   [x: number]: CardType[];

@@ -1,5 +1,5 @@
 import { CategoryCard } from "./CategoryCard";
-import { ITitleProps } from "../Shared/interface";
+import { ITitleProps } from "../../Shared/interface";
 
 export const CategoryCards: React.FC<ITitleProps> = ({ title }) => {
   return (

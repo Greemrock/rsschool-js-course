@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Game } from "./components/Main/Game";

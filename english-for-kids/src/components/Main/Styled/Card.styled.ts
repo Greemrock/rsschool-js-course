@@ -1,15 +1,12 @@
-import useSound from "use-sound";
 import styled from "styled-components";
-import { useState } from "react";
-import { CardType } from "../Shared/interface";
 
-export const CardInner = styled.li<{ rotate: boolean }>`
+export const Card = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  width: calc(100% / 3 - 20px);
+  width: calc(100% / 4 - 25px);
   height: 260px;
   max-width: 320px;
   border-radius: 5px;
@@ -18,7 +15,6 @@ export const CardInner = styled.li<{ rotate: boolean }>`
   transform-style: preserve-3d;
   list-style-type: none;
   box-shadow: 1px 3px 4px rgb(0 0 0 / 5%);
-  transform: ${({ rotate }) => (rotate ? "rotateY(180deg)" : "rotateY(0)")};
 
   &:hover,
   &:focus {
@@ -28,11 +24,21 @@ export const CardInner = styled.li<{ rotate: boolean }>`
   }
 
   @media (max-width: 1300px) {
-    height: 200px;
+    width: calc(100% / 3 - 25px);
   }
 
-  @media (max-width: 950px) {
-    height: 150px;
+  @media (max-width: 1100px) {
+    width: calc(100% / 2 - 25px);
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  a {
+    color: #000000;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -98,31 +104,3 @@ export const Rotate = styled.div`
     transform: rotateX(90deg);
   }
 `;
-
-export const TrainCard: React.FC<CardType> = ({
-  word,
-  translation,
-  image,
-  audioSrc,
-}) => {
-  const [play] = useSound(audioSrc);
-  const [rotate, setRotate] = useState(false);
-  return (
-    <CardInner
-      onMouseDown={() => {
-        play();
-      }}
-      rotate={rotate}
-      onMouseLeave={() => setRotate(false)}
-    >
-      <CardFront style={{ backgroundImage: `url(${image})` }}>
-        <CardTitle onClick={() => setRotate(!rotate)}>
-          {word} <Rotate />
-        </CardTitle>
-      </CardFront>
-      <CardBack style={{ backgroundImage: `url(${image})` }}>
-        <CardTitle>{translation}</CardTitle>
-      </CardBack>
-    </CardInner>
-  );
-};

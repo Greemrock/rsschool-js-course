@@ -1,5 +1,5 @@
 import { TrainCard } from "./TrainCard";
-import { CardsType } from "../Shared/interface";
+import { CardsType } from "../../Shared/interface";
 
 export const TrainCards: React.FC<CardsType> = ({ cards }) => {
   return (
