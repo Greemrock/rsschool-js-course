@@ -4,7 +4,7 @@ import { CategoryCards } from "./CategoryCard/CategoryCards";
 import { CardsContainer, CardsList } from "./Styled/Game.styled";
 import { TrainCards } from "./TrainCard/TrainCards";
 
-export const Game: React.FC<IMainPageProps> = ({ title, cards }) => {
+export const Main: React.FC<IMainPageProps> = ({ title, cards }) => {
   return (
     <CardsContainer>
       <CardsList>

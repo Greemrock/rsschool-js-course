@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { Game } from "./components/Main/Game";
+import { Main } from "./components/Main/Main";
 import { Header } from "./components/Header/Header";
 import { Checkbox } from "./components/Header/Checkbox/Checkbox";
 import { collectionCards, SECTIONS } from "./components/Shared/collectionCards";
@@ -17,7 +17,7 @@ export const App: React.FC = () => {
           return setValue(!value);
         }}
       />
-      <Game title={SECTIONS} cards={collectionCards[0]} />
+      <Main title={SECTIONS} cards={collectionCards[0]} />
     </BrowserRouter>
   );
 };
