@@ -9,20 +9,20 @@ export const SwitchButton = styled.span`
   border-radius: 45px;
   transition: 0.2s;
   background: #fff;
-  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
 `;
 
 export const SwitchLabel = styled.label<{ isOn: boolean }>`
   display: flex;
   position: absolute;
-  top: 2px;
-  right: 80px;
+  right: 0;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   font-size: 1.5rem;
-  width: 80px;
+  width: 95px;
   height: 40px;
+  box-shadow: inset 0 2px 7px 0 rgba(0, 0, 0, 0.3);
   background: ${({ isOn }) =>
     !isOn
       ? "linear-gradient(40deg,#00bf82,#0099ae)"
@@ -31,30 +31,38 @@ export const SwitchLabel = styled.label<{ isOn: boolean }>`
   transition: background-color 0.2s;
   z-index: 20;
 
+  :after,
+  :before {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
   :after {
     content: "Play";
     position: relative;
-    right: -35px;
+    right: 15px;
+    opacity: ${({ isOn }) => (!isOn ? "1" : "0")};
     z-index: 20;
   }
 
   :before {
     content: "Train";
     position: relative;
-    right: 60px;
+    right: -10px;
+    opacity: ${({ isOn }) => (!isOn ? "0" : "1")};
     z-index: 20;
   }
 
   ${SwitchButton} {
     position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 36px;
-    height: 36px;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
     border-radius: 45px;
     transition: 0.2s;
     background: #fff;
-    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
   }
 
   :active ${SwitchButton} {
@@ -68,14 +76,15 @@ export const SwitchCheckbox = styled.input`
   visibility: hidden;
 
   :checked + ${SwitchLabel} ${SwitchButton} {
-    left: calc(100% - 2px);
+    left: calc(100% - 5px);
     transform: translateX(-100%);
   }
 `;
 
 export const StyledCheckbox = styled.div`
-  position: absolute;
-  top: 2vw;
-  right: 2vw;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
   z-index: 0;
 `;

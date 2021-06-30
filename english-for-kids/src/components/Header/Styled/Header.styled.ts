@@ -5,11 +5,11 @@ export const StyledHeader = styled.div`
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 1440px;
+  max-width: 1440px;
   min-height: 6rem;
   max-height: 8rem;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 80px;
   background-color: #fff;
   z-index: 3;
 `;

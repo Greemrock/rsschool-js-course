@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const StyledHamburger = styled.button<{ open: boolean }>`
-  position: relative;
-  left: ${({ open }) => (open ? "29vw" : "2vw")};
-  top: 2vw;
+  position: ${({ open }) => (open ? "absolute" : "relative")};
+  left: ${({ open }) => (open ? "30vw" : "0")};
+  top: 20px;
   width: 2rem;
   height: 2rem;
   padding: 0;
