@@ -1,3 +1,4 @@
+import { IButtonType } from "../../Shared/interface";
 import {
   StyledCheckbox,
   SwitchButton,
@@ -5,12 +6,7 @@ import {
   SwitchLabel,
 } from "../Styled/Checkbox.styled";
 
-type ButtonType = {
-  isOn: boolean;
-  handleToggle: () => void;
-};
-
-export const Checkbox: React.FC<ButtonType> = (props) => {
+export const Checkbox: React.FC<IButtonType> = (props) => {
   const { isOn, handleToggle } = props;
   return (
     <StyledCheckbox>

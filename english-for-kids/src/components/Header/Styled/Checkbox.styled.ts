@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SwitchButton = styled.span`
-  position: absolute;
+  position: relative;
   top: 2px;
   left: 2px;
   width: 36px;

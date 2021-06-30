@@ -1,11 +1,7 @@
+import { IHamburgerProps } from "../../Shared/interface";
 import { StyledHamburger } from "../Styled/Humburger.styled";
 
-export interface HamburgerProps {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}
-
-export const Hamburger: React.FC<HamburgerProps> = ({
+export const Hamburger: React.FC<IHamburgerProps> = ({
   open,
   setOpen,
 }): JSX.Element => {

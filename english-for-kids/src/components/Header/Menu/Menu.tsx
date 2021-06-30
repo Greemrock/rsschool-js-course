@@ -27,7 +27,7 @@ export const Menu: React.FC<ITitleProps> = ({ title }) => {
         </Link>
         {title.map((t) => {
           return (
-            <Link to={t.link}>
+            <Link to={t.link} key={title.indexOf(t)}>
               <StyledLink
                 onClick={() => {
                   return close();

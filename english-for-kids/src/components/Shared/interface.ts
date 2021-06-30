@@ -1,4 +1,4 @@
-export interface CardType {
+export interface ICardType {
   id?: number;
   word: string;
   translation: string;
@@ -7,7 +7,7 @@ export interface CardType {
 }
 
 export interface ICollectionCards {
-  [x: number]: CardType[];
+  [x: number]: ICardType[];
 }
 
 export interface ICategory {
@@ -17,8 +17,8 @@ export interface ICategory {
   image: string;
 }
 
-export interface CardsType {
-  cards: CardType[];
+export interface ICardsType {
+  cards: ICardType[];
 }
 
 export interface ITitleProps {
@@ -34,4 +34,20 @@ export interface CategoryCardProps {
   name: string;
   image: string;
   link: string;
+}
+
+export interface IHeaderProps {
+  title: ICategory[];
+  statusCheckbox: boolean;
+  setStatusCheckbox: (statusCheckbox: boolean) => void;
+}
+
+export interface IButtonType {
+  isOn: boolean;
+  handleToggle: () => void;
+}
+
+export interface IHamburgerProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
 }

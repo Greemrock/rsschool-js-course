@@ -7,9 +7,9 @@ import {
   CardTitle,
   Rotate,
 } from "../Styled/Card.styled";
-import { CardType } from "../../Shared/interface";
+import { ICardType } from "../../Shared/interface";
 
-export const TrainCard: React.FC<CardType> = ({
+export const TrainCard: React.FC<ICardType> = ({
   word,
   translation,
   image,
