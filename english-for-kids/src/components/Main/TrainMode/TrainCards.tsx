@@ -6,13 +6,13 @@ export const TrainCards: React.FC<ICardsType> = ({ cards, title }) => {
   return (
     <>
       <Page>{title}</Page>
-      {cards.map((c) => (
+      {cards.map((card) => (
         <TrainCard
-          key={cards.indexOf(c)}
-          word={c.word}
-          translation={c.translation}
-          image={c.image}
-          audioSrc={c.audioSrc}
+          key={card.word}
+          word={card.word}
+          translation={card.translation}
+          image={card.image}
+          audioSrc={card.audioSrc}
         />
       ))}
     </>

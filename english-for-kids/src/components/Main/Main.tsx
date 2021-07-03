@@ -2,6 +2,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { IMainPageProps } from "../Shared/interface";
 import { CategoryCards } from "./CategoryCard/CategoryCards";
 import { GameCards } from "./GameMode/GameCards";
+import { randomizer } from "./GameMode/randomizer";
 import { CardsContainer, CardsList } from "./Styled/Main.styled";
 import { TrainCards } from "./TrainMode/TrainCards";
 
@@ -20,25 +21,34 @@ export const Main: React.FC<IMainPageProps> = ({
             path="/main"
             render={() => <CategoryCards title={title} />}
           />
-          {title.map((c) => {
-            const cardsForTitle = cards[c.id];
+          {title.map((card) => {
+            const cardsForTitle = cards[card.id];
+            const randomCards = randomizer(cardsForTitle).slice();
             if (!statusCheckbox) {
               return (
                 <Route
-                  key={c.id}
-                  path={`/${c.link}`}
+                  key={card.id}
+                  path={`/${card.link}`}
                   render={() => (
-                    <TrainCards cards={cardsForTitle} title={c.title} />
+                    <TrainCards
+                      cards={cardsForTitle}
+                      title={card.title}
+                      randomCards={randomCards}
+                    />
                   )}
                 />
               );
             }
             return (
               <Route
-                key={c.id}
-                path={`/${c.link}`}
+                key={card.id}
+                path={`/${card.link}`}
                 render={() => (
-                  <GameCards cards={cardsForTitle} title={c.title} />
+                  <GameCards
+                    cards={cardsForTitle}
+                    title={card.title}
+                    randomCards={randomCards}
+                  />
                 )}
               />
             );

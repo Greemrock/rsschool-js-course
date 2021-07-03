@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useSound from "use-sound";
 import { GameCard } from "./GameCard";
 import { ICardsType } from "../../Shared/interface";
 import { Page } from "../Styled/Card.styled";
@@ -50,9 +51,40 @@ export const PlayContainer = styled.div`
   text-align: center;
 `;
 
-export const GameCards: React.FC<ICardsType> = ({ cards, title }) => {
+export const GameCards: React.FC<ICardsType> = ({
+  cards,
+  title,
+  randomCards,
+}) => {
+  const NUMBER_OF_CARDS = randomCards.length - 1;
   const [play, setPlay] = useState(false);
+  const [countCard, setCountCard] = useState(0);
+  const [match, setMatch] = useState("");
   const inner = play ? "" : "Start";
+  const [playSound] = useSound(randomCards[countCard].audioSrc);
+  const [playError] = useSound(
+    `${process.env.PUBLIC_URL}/assets/audio/error.mp3`
+  );
+
+  useEffect(() => {
+    if (match) {
+      playSound();
+    }
+  }, [playSound]);
+
+  const handleClick = (wordCard: string) => {
+    if (countCard === NUMBER_OF_CARDS) {
+      setCountCard(countCard);
+      setMatch("true");
+      console.log("end game");
+    } else if (wordCard === randomCards[countCard].word) {
+      setCountCard(countCard + 1);
+      setMatch("true");
+    } else if (wordCard !== randomCards[countCard].word) {
+      playError();
+    }
+  };
+
   return (
     <>
       <Page>{title}</Page>
@@ -60,19 +92,28 @@ export const GameCards: React.FC<ICardsType> = ({ cards, title }) => {
         <Star />
       </Rating>
       <PlayContainer>
-        <Button play={play} onClick={() => setPlay(!play)}>
+        <Button
+          play={play}
+          onClick={() => {
+            setPlay(true);
+            playSound();
+          }}
+        >
           {inner}
         </Button>
       </PlayContainer>
-      {cards.map((c) => (
-        <GameCard
-          key={cards.indexOf(c)}
-          word={c.word}
-          translation={c.translation}
-          image={c.image}
-          audioSrc={c.audioSrc}
-        />
-      ))}
+      {cards.map((card) => {
+        return (
+          <GameCard
+            key={card.word}
+            word={card.word}
+            translation={card.translation}
+            image={card.image}
+            audioSrc={card.audioSrc}
+            handleClick={handleClick}
+          />
+        );
+      })}
     </>
   );
 };

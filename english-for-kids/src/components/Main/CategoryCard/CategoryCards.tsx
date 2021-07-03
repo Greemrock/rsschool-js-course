@@ -6,13 +6,13 @@ export const CategoryCards: React.FC<ITitleProps> = ({ title }) => {
   return (
     <>
       <Page>Main page</Page>
-      {title.map((t) => {
+      {title.map((card) => {
         return (
           <CategoryCard
-            key={title.indexOf(t)}
-            name={t.title}
-            image={t.image}
-            link={t.link}
+            key={card.title}
+            name={card.title}
+            image={card.image}
+            link={card.link}
           />
         );
       })}

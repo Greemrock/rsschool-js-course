@@ -6,6 +6,14 @@ export interface ICardType {
   audioSrc: string;
 }
 
+export interface IGameCardProps {
+  word: string;
+  translation: string;
+  image: string;
+  audioSrc: string;
+  handleClick: (word: string) => void;
+}
+
 export interface ICollectionCards {
   [x: number]: ICardType[];
 }
@@ -20,6 +28,7 @@ export interface ICategory {
 export interface ICardsType {
   cards: ICardType[];
   title: string;
+  randomCards: ICardType[];
 }
 
 export interface ITitleProps {

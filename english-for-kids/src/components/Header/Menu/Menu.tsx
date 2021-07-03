@@ -17,24 +17,12 @@ export const Menu: React.FC<ITitleProps> = ({ title }) => {
       <Hamburger open={open} setOpen={setOpen} />
       <StyledMenu open={open} ref={node}>
         <Link to="/main">
-          <StyledLink
-            onClick={() => {
-              return close();
-            }}
-          >
-            Main page
-          </StyledLink>
+          <StyledLink onClick={() => close()}>Main page</StyledLink>
         </Link>
         {title.map((t) => {
           return (
             <Link to={t.link} key={title.indexOf(t)}>
-              <StyledLink
-                onClick={() => {
-                  return close();
-                }}
-              >
-                {t.title}
-              </StyledLink>
+              <StyledLink onClick={() => close()}>{t.title}</StyledLink>
             </Link>
           );
         })}
