@@ -15,15 +15,6 @@ export const Rating = styled.div`
   height: 40px;
 `;
 
-export const Star = styled.div`
-  flex-shrink: 0;
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
-  background-size: 40px 40px;
-  background-image: url(${process.env.PUBLIC_URL}/assets/img/star.svg);
-`;
-
 export const Button = styled.button<{ play: boolean }>`
   box-sizing: border-box;
   padding: 5px;
@@ -51,6 +42,27 @@ export const PlayContainer = styled.div`
   text-align: center;
 `;
 
+export const Star = styled.div`
+  flex-shrink: 0;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+  background-image: url(${process.env.PUBLIC_URL}/assets/img/star.svg);
+`;
+
+export const StarWin = styled.div`
+  flex-shrink: 0;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+  background-image: url(${process.env.PUBLIC_URL}/assets/img/star-win.svg);
+  background-color: #fefefefe;
+`;
+
+let star: boolean[] = [];
+
 export const GameCards: React.FC<ICardsType> = ({
   cards,
   title,
@@ -59,28 +71,37 @@ export const GameCards: React.FC<ICardsType> = ({
   const NUMBER_OF_CARDS = randomCards.length - 1;
   const [play, setPlay] = useState(false);
   const [countCard, setCountCard] = useState(0);
-  const [match, setMatch] = useState("");
+  // const [match, setMatch] = useState(0);
+  const [fail, setFail] = useState(0);
   const inner = play ? "" : "Start";
   const [playSound] = useSound(randomCards[countCard].audioSrc);
   const [playError] = useSound(
     `${process.env.PUBLIC_URL}/assets/audio/error.mp3`
   );
-
+  const [playCorrect] = useSound(
+    `${process.env.PUBLIC_URL}/assets/audio/correct.mp3`
+  );
   useEffect(() => {
-    if (match) {
-      playSound();
+    if (countCard > 0) {
+      setTimeout(() => playSound(), 1000);
     }
   }, [playSound]);
 
   const handleClick = (wordCard: string) => {
     if (countCard === NUMBER_OF_CARDS) {
-      setCountCard(countCard);
-      setMatch("true");
+      // setMatch(match + 1);
+      playCorrect();
+      star.push(true);
+      star = [];
       console.log("end game");
     } else if (wordCard === randomCards[countCard].word) {
+      // setMatch(match + 1);
+      star.push(true);
       setCountCard(countCard + 1);
-      setMatch("true");
+      playCorrect();
     } else if (wordCard !== randomCards[countCard].word) {
+      setFail(fail + 1);
+      star.push(false);
       playError();
     }
   };
@@ -89,7 +110,13 @@ export const GameCards: React.FC<ICardsType> = ({
     <>
       <Page>{title}</Page>
       <Rating>
-        <Star />
+        {star.map((item) =>
+          item ? (
+            <StarWin key={star.indexOf(item)} />
+          ) : (
+            <Star key={star.indexOf(item)} />
+          )
+        )}
       </Rating>
       <PlayContainer>
         <Button

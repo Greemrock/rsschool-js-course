@@ -62,3 +62,8 @@ export interface IHamburgerProps {
   open: boolean;
   setOpen: (open: boolean) => void;
 }
+
+export interface IStarProps {
+  match: number;
+  fail: number;
+}
