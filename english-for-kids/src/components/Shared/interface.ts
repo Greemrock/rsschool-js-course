@@ -64,6 +64,5 @@ export interface IHamburgerProps {
 }
 
 export interface IStarProps {
-  match: number;
-  fail: number;
+  arrStar: boolean[];
 }

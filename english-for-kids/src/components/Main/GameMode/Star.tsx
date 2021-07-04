@@ -20,7 +20,16 @@ export const StarWin = styled.div`
   background-color: #fefefefe;
 `;
 
-export const Star: React.FC<IStarProps> = (match, fail) => {
-  console.log(match, fail);
-  return <StarWin />;
+export const Star: React.FC<IStarProps> = ({ arrStar }) => {
+  return (
+    <>
+      {arrStar.map((item: boolean) =>
+        item ? (
+          <StarWin key={arrStar.indexOf(item)} />
+        ) : (
+          <StarEmpty key={arrStar.indexOf(item)} />
+        )
+      )}
+    </>
+  );
 };

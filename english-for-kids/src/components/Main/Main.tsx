@@ -1,8 +1,8 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 import { IMainPageProps } from "../Shared/interface";
+import { randomizer } from "../Shared/randomizer";
 import { CategoryCards } from "./CategoryCard/CategoryCards";
 import { GameCards } from "./GameMode/GameCards";
-import { randomizer } from "./GameMode/randomizer";
 import { CardsContainer, CardsList } from "./Styled/Main.styled";
 import { TrainCards } from "./TrainMode/TrainCards";
 
