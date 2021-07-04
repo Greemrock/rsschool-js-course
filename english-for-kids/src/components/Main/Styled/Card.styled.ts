@@ -58,7 +58,7 @@ export const CardTitle = styled.h3`
   }
 }`;
 
-export const CardFront = styled.div`
+export const CardFront = styled.div<{ match?: boolean }>`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -68,6 +68,7 @@ export const CardFront = styled.div`
   background-color: rgba(0, 0, 0, 0.2);
   background-size: cover;
   background-position: center;
+  opacity: ${({ match }) => (!match ? "1" : "0.5")};
 `;
 
 export const CardBack = styled.div`

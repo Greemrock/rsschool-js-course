@@ -1,6 +1,16 @@
 import styled from "styled-components";
 import { IStarProps } from "../../Shared/interface";
 
+export const Rating = styled.div`
+  position: absolute;
+  top: 0;
+  right: 80px;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1350px;
+  height: 40px;
+`;
+
 export const StarEmpty = styled.div`
   flex-shrink: 0;
   width: 40px;
@@ -22,7 +32,7 @@ export const StarWin = styled.div`
 
 export const Star: React.FC<IStarProps> = ({ arrStar }) => {
   return (
-    <>
+    <Rating>
       {arrStar.map((item: boolean) =>
         item ? (
           <StarWin key={arrStar.indexOf(item)} />
@@ -30,6 +40,6 @@ export const Star: React.FC<IStarProps> = ({ arrStar }) => {
           <StarEmpty key={arrStar.indexOf(item)} />
         )
       )}
-    </>
+    </Rating>
   );
 };

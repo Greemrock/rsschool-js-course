@@ -5,16 +5,7 @@ import { GameCard } from "./GameCard";
 import { ICardsType } from "../../Shared/interface";
 import { Page } from "../Styled/Card.styled";
 import { Star } from "./Star";
-
-export const Rating = styled.div`
-  position: absolute;
-  top: 0;
-  right: 80px;
-  display: flex;
-  justify-content: flex-end;
-  max-width: 1350px;
-  height: 40px;
-`;
+import { WinnerScoreboard } from "./WinnerScoreboard";
 
 export const Button = styled.button<{ play: boolean }>`
   box-sizing: border-box;
@@ -37,30 +28,12 @@ export const Button = styled.button<{ play: boolean }>`
 `;
 
 export const PlayContainer = styled.div`
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100%;
+  margin-bottom: 10px;
   text-align: center;
 `;
-
-// export const Star = styled.div`
-//   flex-shrink: 0;
-//   width: 40px;
-//   min-width: 40px;
-//   height: 40px;
-//   background-size: 40px 40px;
-//   background-image: url(${process.env.PUBLIC_URL}/assets/img/star.svg);
-// `;
-
-// export const StarWin = styled.div`
-//   flex-shrink: 0;
-//   width: 40px;
-//   min-width: 40px;
-//   height: 40px;
-//   background-size: 40px 40px;
-//   background-image: url(${process.env.PUBLIC_URL}/assets/img/star-win.svg);
-//   background-color: #fefefefe;
-// `;
 
 let star: boolean[] = [];
 
@@ -72,7 +45,8 @@ export const GameCards: React.FC<ICardsType> = ({
   const NUMBER_OF_CARDS = randomCards.length - 1;
   const [play, setPlay] = useState(false);
   const [countCard, setCountCard] = useState(0);
-  const [fail, setFail] = useState(0);
+  const [mistake, setMistake] = useState(0);
+  const [win, setWin] = useState(false);
   const inner = play ? "" : "Start";
   const [playSound] = useSound(randomCards[countCard].audioSrc);
   const [playError] = useSound(
@@ -88,17 +62,17 @@ export const GameCards: React.FC<ICardsType> = ({
   }, [playSound]);
 
   const handleClick = (wordCard: string) => {
-    if (countCard === NUMBER_OF_CARDS) {
-      playCorrect();
-      star.push(true);
-      star = [];
-      console.log("end game");
-    } else if (wordCard === randomCards[countCard].word) {
-      star.push(true);
-      setCountCard(countCard + 1);
+    if (wordCard === randomCards[countCard].word) {
+      if (countCard !== NUMBER_OF_CARDS) {
+        setCountCard(countCard + 1);
+        star.push(true);
+      } else {
+        star = [];
+        setWin(true);
+      }
       playCorrect();
     } else if (wordCard !== randomCards[countCard].word) {
-      setFail(fail + 1);
+      setMistake(mistake + 1);
       star.push(false);
       playError();
     }
@@ -107,15 +81,14 @@ export const GameCards: React.FC<ICardsType> = ({
   return (
     <>
       <Page>{title}</Page>
-      <Rating>
-        <Star arrStar={star} />
-      </Rating>
+      <Star arrStar={star} />
+      <WinnerScoreboard win={win} mistake={mistake} />
       <PlayContainer>
         <Button
           play={play}
           onClick={() => {
             setPlay(true);
-            playSound();
+            setTimeout(() => playSound(), 500);
           }}
         >
           {inner}

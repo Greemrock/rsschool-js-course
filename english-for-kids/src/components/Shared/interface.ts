@@ -66,3 +66,13 @@ export interface IHamburgerProps {
 export interface IStarProps {
   arrStar: boolean[];
 }
+
+export interface IPlayButtonProps {
+  play: boolean;
+  setPlay: (x: boolean) => void;
+}
+
+export interface IWinProps {
+  win: boolean;
+  mistake: number;
+}
