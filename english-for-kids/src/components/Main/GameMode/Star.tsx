@@ -35,9 +35,9 @@ export const Star: React.FC<IStarProps> = ({ arrStar }) => {
     <Rating>
       {arrStar.map((item: boolean) =>
         item ? (
-          <StarWin key={arrStar.indexOf(item)} />
+          <StarWin key={`${arrStar.indexOf(item)}win`} />
         ) : (
-          <StarEmpty key={arrStar.indexOf(item)} />
+          <StarEmpty key={`${arrStar.indexOf(item)}empty`} />
         )
       )}
     </Rating>

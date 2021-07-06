@@ -1,41 +1,13 @@
-import styled from "styled-components";
 import { useEffect, useState } from "react";
 import useSound from "use-sound";
-import { GameCard } from "./GameCard";
+import { GameCard, GameCardActive } from "./GameCard";
 import { ICardsType } from "../../Shared/interface";
-import { Page } from "../Styled/Card.styled";
+import { Button, Page, PlayContainer } from "../Styled/Card.styled";
 import { Star } from "./Star";
 import { WinnerScoreboard } from "./WinnerScoreboard";
 
-export const Button = styled.button<{ play: boolean }>`
-  box-sizing: border-box;
-  padding: 5px;
-  font-size: 24px;
-  width: 100%;
-  max-width: 150px;
-  height: 40px;
-  background: linear-gradient(40deg, #ffd86f, #fc6262);
-  color: #fff;
-  border-radius: 10px;
-  outline: 0 !important;
-  border-width: 1px;
-  transition: 0.3s;
-  cursor: pointer;
-  ${({ play }) =>
-    play
-      ? `width: 40px; font-size: 0; background-image: url(${process.env.PUBLIC_URL}/assets/img/repeat.svg),linear-gradient(40deg, #ffd86f, #fc6262); border-radius: 50%; background-repeat: no-repeat; background-size: 35px 35px, cover; background-position: 40%`
-      : ""};
-`;
-
-export const PlayContainer = styled.div`
-  position: relative;
-  top: 0;
-  width: 100%;
-  margin-bottom: 10px;
-  text-align: center;
-`;
-
 let star: boolean[] = [];
+let matchCards: number[] = [];
 
 export const GameCards: React.FC<ICardsType> = ({
   cards,
@@ -61,23 +33,26 @@ export const GameCards: React.FC<ICardsType> = ({
     }
   }, [playSound]);
 
-  const handleClick = (wordCard: string) => {
+  const handleClick = (wordCard: string, id: number) => {
     if (wordCard === randomCards[countCard].word) {
       if (countCard !== NUMBER_OF_CARDS) {
         setCountCard(countCard + 1);
         star.push(true);
       } else {
         star = [];
+        matchCards = [];
         setWin(true);
       }
+      matchCards.push(id);
       playCorrect();
     } else if (wordCard !== randomCards[countCard].word) {
-      setMistake(mistake + 1);
-      star.push(false);
-      playError();
+      if (matchCards.indexOf(id) === -1) {
+        setMistake(mistake + 1);
+        star.push(false);
+        playError();
+      }
     }
   };
-
   return (
     <>
       <Page>{title}</Page>
@@ -96,14 +71,29 @@ export const GameCards: React.FC<ICardsType> = ({
       </PlayContainer>
       {cards.map((card) => {
         return (
-          <GameCard
-            key={card.word}
-            word={card.word}
-            translation={card.translation}
-            image={card.image}
-            audioSrc={card.audioSrc}
-            handleClick={handleClick}
-          />
+          <>
+            {matchCards.indexOf(cards.indexOf(card)) !== -1 ? (
+              <GameCardActive
+                key={card.word + cards.indexOf(card)}
+                word={card.word}
+                translation={card.translation}
+                image={card.image}
+                audioSrc={card.audioSrc}
+                handleClick={handleClick}
+                id={cards.indexOf(card)}
+              />
+            ) : (
+              <GameCard
+                key={card.word + cards.indexOf(card)}
+                word={card.word}
+                translation={card.translation}
+                image={card.image}
+                audioSrc={card.audioSrc}
+                handleClick={handleClick}
+                id={cards.indexOf(card)}
+              />
+            )}
+          </>
         );
       })}
     </>

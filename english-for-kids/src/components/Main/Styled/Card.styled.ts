@@ -107,3 +107,31 @@ export const Page = styled.h2`
   margin-bottom: 20px;
   color: #646464;
 `;
+
+export const Button = styled.button<{ play: boolean }>`
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 24px;
+  width: 100%;
+  max-width: 150px;
+  height: 40px;
+  background: linear-gradient(40deg, #ffd86f, #fc6262);
+  color: #fff;
+  border-radius: 10px;
+  outline: 0 !important;
+  border-width: 1px;
+  transition: 0.3s;
+  cursor: pointer;
+  ${({ play }) =>
+    play
+      ? `width: 40px; font-size: 0; background-image: url(${process.env.PUBLIC_URL}/assets/img/repeat.svg),linear-gradient(40deg, #ffd86f, #fc6262); border-radius: 50%; background-repeat: no-repeat; background-size: 35px 35px, cover; background-position: 40%`
+      : ""};
+`;
+
+export const PlayContainer = styled.div`
+  position: relative;
+  top: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+`;

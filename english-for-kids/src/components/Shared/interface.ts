@@ -11,7 +11,8 @@ export interface IGameCardProps {
   translation: string;
   image: string;
   audioSrc: string;
-  handleClick: (word: string) => void;
+  handleClick: (word: string, id: number) => void;
+  id: number;
 }
 
 export interface ICollectionCards {
