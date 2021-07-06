@@ -16,7 +16,7 @@ export const Menu: React.FC<ITitleProps> = ({ title }) => {
     <>
       <Hamburger open={open} setOpen={setOpen} />
       <StyledMenu open={open} ref={node}>
-        <Link to="/main">
+        <Link to="/">
           <StyledLink onClick={() => close()}>Main page</StyledLink>
         </Link>
         {title.map((t) => {

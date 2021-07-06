@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { IMainPageProps } from "../Shared/interface";
 import { randomizer } from "../Shared/randomizer";
 import { CategoryCards } from "./CategoryCard/CategoryCards";
@@ -14,11 +14,11 @@ export const Main: React.FC<IMainPageProps> = ({
   return (
     <CardsContainer>
       <CardsList>
-        <Redirect from="/" to="/main" />
+        {/* <Redirect from="/" to="/main" /> */}
         <Switch>
           <Route
             exact
-            path="/main"
+            path="/"
             render={() => <CategoryCards title={title} />}
           />
           {title.map((card) => {

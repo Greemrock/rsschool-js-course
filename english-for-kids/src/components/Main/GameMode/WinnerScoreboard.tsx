@@ -6,7 +6,7 @@ import { Scoreboard } from "../Styled/Win.styled";
 export const WinnerScoreboard: React.FC<IWinProps> = ({ win, mistake }) => {
   const history = useHistory();
   const handleClick = () => {
-    history.push("/main");
+    history.push("/");
   };
   const [playSuccess] = useSound(
     `${process.env.PUBLIC_URL}/assets/audio/success.mp3`,
