@@ -153,3 +153,10 @@ export const PlayContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const Container = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+`;

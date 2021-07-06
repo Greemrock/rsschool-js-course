@@ -2,13 +2,16 @@ import styled from "styled-components";
 import { IStarProps } from "../../Shared/interface";
 
 export const Rating = styled.div`
-  position: absolute;
+  position: relative;
   top: 0;
-  right: 80px;
+  right: 0;
   display: flex;
   justify-content: flex-end;
-  max-width: 1350px;
+  margin-left: 16px;
+  margin-bottom: 10px;
+  width: 400%;
   height: 40px;
+  overflow: hidden;
 `;
 
 export const StarEmpty = styled.div`

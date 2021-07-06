@@ -2,13 +2,10 @@ import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import { GameCard, GameCardActive } from "./GameCard";
 import { ICardsType } from "../../Shared/interface";
-import { Button, Page, PlayContainer } from "../Styled/Card.styled";
+import { Button, Page, PlayContainer, Container } from "../Styled/Card.styled";
 import { Star } from "./Star";
 import { WinnerScoreboard } from "./WinnerScoreboard";
 import { store } from "../../Shared/store";
-
-// let star: boolean[] = [];
-// let matchCards: number[] = [];
 
 export const GameCards: React.FC<ICardsType> = ({
   cards,
@@ -61,8 +58,10 @@ export const GameCards: React.FC<ICardsType> = ({
   };
   return (
     <>
-      <Page>{title}</Page>
-      <Star arrStar={store.star} />
+      <Container>
+        <Page>{title}</Page>
+        <Star arrStar={store.star} />
+      </Container>
       <WinnerScoreboard win={win} mistake={mistake} />
       {cards.map((card) => {
         return (
