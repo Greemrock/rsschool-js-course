@@ -1,7 +1,6 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 import { IMainPageProps } from "../Shared/interface";
 import { randomizer } from "../Shared/randomizer";
-import { store } from "../Shared/store";
 import { CategoryCards } from "./CategoryCard/CategoryCards";
 import { GameCards } from "./GameMode/GameCards";
 import { CardsContainer, CardsList } from "./Styled/Main.styled";
@@ -12,8 +11,6 @@ export const Main: React.FC<IMainPageProps> = ({
   cards,
   statusCheckbox,
 }) => {
-  store.matchCards = [];
-  store.star = [];
   return (
     <CardsContainer>
       <CardsList>

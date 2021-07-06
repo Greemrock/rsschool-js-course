@@ -27,8 +27,8 @@ export const TrainCard: React.FC<ICardType> = ({
       style={{ transform: `${transform}` }}
     >
       <CardFront style={{ backgroundImage: `url(${image})` }}>
-        <CardTitle onClick={() => setRotate(!rotate)}>
-          {word} <Rotate />
+        <CardTitle>
+          {word} <Rotate onClick={() => setRotate(!rotate)} />
         </CardTitle>
       </CardFront>
       <CardBack style={{ backgroundImage: `url(${image})` }}>

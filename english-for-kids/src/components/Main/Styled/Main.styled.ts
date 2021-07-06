@@ -12,5 +12,5 @@ export const CardsList = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 50px;
-  padding: 0px 80px;
+  padding: 0px 90px;
 `;

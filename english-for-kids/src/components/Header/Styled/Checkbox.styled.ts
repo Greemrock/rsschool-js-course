@@ -24,9 +24,7 @@ export const SwitchLabel = styled.label<{ statusCheckbox: boolean }>`
   height: 40px;
   box-shadow: inset 0 2px 7px 0 rgba(0, 0, 0, 0.3);
   background: ${({ statusCheckbox }) =>
-    !statusCheckbox
-      ? "linear-gradient(40deg,#00bf82,#0099ae)"
-      : "linear-gradient(40deg,#ffd86f,#fc6262)"};
+    !statusCheckbox ? "#dcdcdc" : "linear-gradient(40deg,#00bf82,#0099ae)"};
   border-radius: 80px;
   transition: background-color 0.2s;
   z-index: 20;

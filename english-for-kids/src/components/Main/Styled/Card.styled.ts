@@ -42,19 +42,40 @@ export const Card = styled.li`
   }
 `;
 
+export const Rotate = styled.div`
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url(${`${process.env.PUBLIC_URL}/assets/img/rotate.svg`});
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: 2px;
+  right: 5px;
+  transition: all 0.5s ease;
+  opacity: 0.5;
+
+  :hover {
+    transform: rotate(180deg);
+  }
+`;
+
 export const CardTitle = styled.h3`
   position: absolute;
   width: 100%;
   bottom: 0;
   border-radius: 0 0 5px 5px;
   padding: 1rem;
-  background-color: #fff8;
+  background-color: #ffffffad;
   text-transform: capitalize;
   text-align: center;
   transition: all 0.8s ease;
 
   : hover {
     background-color: #ffffffcf;
+    ${Rotate} {
+      opacity: 1;
+    }
   }
 }`;
 
@@ -88,20 +109,6 @@ export const CardBack = styled.div`
   }
 `;
 
-export const Rotate = styled.div`
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-image: url(${`${process.env.PUBLIC_URL}/assets/img/rotate.svg`});
-  background-size: 32px;
-  background-repeat: no-repeat;
-  background-position: center 16px;
-  bottom: 5px;
-  right: 5px;
-  transition: 0.3s;
-  filter: grayscale(1);
-`;
-
 export const Page = styled.h2`
   width: 100%;
   margin-bottom: 20px;
@@ -113,25 +120,36 @@ export const Button = styled.button<{ play: boolean }>`
   padding: 5px;
   font-size: 24px;
   width: 100%;
-  max-width: 150px;
-  height: 40px;
-  background: linear-gradient(40deg, #ffd86f, #fc6262);
+  max-width: 90px;
+  height: 90px;
   color: #fff;
-  border-radius: 10px;
-  outline: 0 !important;
+  border: none;
+  border-radius: 50%;
   border-width: 1px;
-  transition: 0.3s;
   cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   ${({ play }) =>
     play
-      ? `width: 40px; font-size: 0; background-image: url(${process.env.PUBLIC_URL}/assets/img/repeat.svg),linear-gradient(40deg, #ffd86f, #fc6262); border-radius: 50%; background-repeat: no-repeat; background-size: 35px 35px, cover; background-position: 40%`
-      : ""};
+      ? `width: 90px; font-size: 0; background-image: url(${process.env.PUBLIC_URL}/assets/img/repeat.svg),linear-gradient(180deg, #0099ae 0%, #00bf82 100%); background-repeat: no-repeat; background-size: 70px 70px, cover; background-position: 40%`
+      : "background: linear-gradient(180deg, #0099ae 0%, #00bf82 100%);"};
 `;
 
 export const PlayContainer = styled.div`
   position: relative;
-  top: 0;
+  left: 0;
   width: 100%;
-  margin-bottom: 10px;
+  height: 100%;
   text-align: center;
+  z-index: 1;
+  @media (max-width: 1300px) {
+    width: calc(100% / 3 - 25px);
+  }
+
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;

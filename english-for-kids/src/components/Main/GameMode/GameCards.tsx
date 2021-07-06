@@ -34,8 +34,13 @@ export const GameCards: React.FC<ICardsType> = ({
     }
   }, [playSound]);
 
+  if (!play) {
+    store.star = [];
+    store.matchCards = [];
+  }
+
   const handleClick = (wordCard: string, id: number) => {
-    if (wordCard === randomCards[countCard].word) {
+    if (wordCard === randomCards[countCard].word && play) {
       if (countCard !== NUMBER_OF_CARDS) {
         setCountCard(countCard + 1);
         store.star.push(true);
@@ -46,7 +51,7 @@ export const GameCards: React.FC<ICardsType> = ({
       }
       store.matchCards.push(id);
       playCorrect();
-    } else if (wordCard !== randomCards[countCard].word) {
+    } else if (wordCard !== randomCards[countCard].word && play) {
       if (store.matchCards.indexOf(id) === -1) {
         setMistake(mistake + 1);
         store.star.push(false);
@@ -59,17 +64,6 @@ export const GameCards: React.FC<ICardsType> = ({
       <Page>{title}</Page>
       <Star arrStar={store.star} />
       <WinnerScoreboard win={win} mistake={mistake} />
-      <PlayContainer>
-        <Button
-          play={play}
-          onClick={() => {
-            setPlay(true);
-            setTimeout(() => playSound(), 500);
-          }}
-        >
-          {inner}
-        </Button>
-      </PlayContainer>
       {cards.map((card) => {
         return (
           <>
@@ -97,6 +91,17 @@ export const GameCards: React.FC<ICardsType> = ({
           </>
         );
       })}
+      <PlayContainer>
+        <Button
+          play={play}
+          onClick={() => {
+            setPlay(true);
+            setTimeout(() => playSound(), 500);
+          }}
+        >
+          {inner}
+        </Button>
+      </PlayContainer>
     </>
   );
 };
