@@ -5,9 +5,10 @@ import { ICardsType } from "../../Shared/interface";
 import { Button, Page, PlayContainer } from "../Styled/Card.styled";
 import { Star } from "./Star";
 import { WinnerScoreboard } from "./WinnerScoreboard";
+import { store } from "../../Shared/store";
 
-let star: boolean[] = [];
-let matchCards: number[] = [];
+// let star: boolean[] = [];
+// let matchCards: number[] = [];
 
 export const GameCards: React.FC<ICardsType> = ({
   cards,
@@ -37,18 +38,18 @@ export const GameCards: React.FC<ICardsType> = ({
     if (wordCard === randomCards[countCard].word) {
       if (countCard !== NUMBER_OF_CARDS) {
         setCountCard(countCard + 1);
-        star.push(true);
+        store.star.push(true);
       } else {
-        star = [];
-        matchCards = [];
+        store.star = [];
+        store.matchCards = [];
         setWin(true);
       }
-      matchCards.push(id);
+      store.matchCards.push(id);
       playCorrect();
     } else if (wordCard !== randomCards[countCard].word) {
-      if (matchCards.indexOf(id) === -1) {
+      if (store.matchCards.indexOf(id) === -1) {
         setMistake(mistake + 1);
-        star.push(false);
+        store.star.push(false);
         playError();
       }
     }
@@ -56,7 +57,7 @@ export const GameCards: React.FC<ICardsType> = ({
   return (
     <>
       <Page>{title}</Page>
-      <Star arrStar={star} />
+      <Star arrStar={store.star} />
       <WinnerScoreboard win={win} mistake={mistake} />
       <PlayContainer>
         <Button
@@ -72,7 +73,7 @@ export const GameCards: React.FC<ICardsType> = ({
       {cards.map((card) => {
         return (
           <>
-            {matchCards.indexOf(cards.indexOf(card)) !== -1 ? (
+            {store.matchCards.indexOf(cards.indexOf(card)) !== -1 ? (
               <GameCardActive
                 key={card.word + cards.indexOf(card)}
                 word={card.word}
