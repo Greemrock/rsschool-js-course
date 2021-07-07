@@ -31,7 +31,7 @@ export const GameCards: React.FC<ICardsType> = ({
     }
   }, [playSound]);
 
-  if (!play) {
+  if (!store.playMode) {
     store.star = [];
     store.matchCards = [];
   }
@@ -90,17 +90,21 @@ export const GameCards: React.FC<ICardsType> = ({
           </>
         );
       })}
-      <PlayContainer>
-        <Button
-          play={play}
-          onClick={() => {
-            setPlay(true);
-            setTimeout(() => playSound(), 500);
-          }}
-        >
-          {inner}
-        </Button>
-      </PlayContainer>
+      {store.playMode ? (
+        <PlayContainer>
+          <Button
+            play={play}
+            onClick={() => {
+              setPlay(true);
+              setTimeout(() => playSound(), 500);
+            }}
+          >
+            {inner}
+          </Button>
+        </PlayContainer>
+      ) : (
+        ""
+      )}
     </>
   );
 };

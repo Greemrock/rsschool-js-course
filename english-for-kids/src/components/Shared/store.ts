@@ -1,4 +1,5 @@
 export const store = {
   star: [],
   matchCards: [],
-} as { star: boolean[]; matchCards: number[] };
+  playMode: false,
+} as { star: boolean[]; matchCards: number[]; playMode: boolean };

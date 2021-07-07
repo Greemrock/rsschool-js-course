@@ -39,7 +39,6 @@ export interface ITitleProps {
 export interface IMainPageProps {
   title: ICategory[];
   cards: ICollectionCards;
-  statusCheckbox: boolean;
 }
 
 export interface CategoryCardProps {
