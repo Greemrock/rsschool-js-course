@@ -31,7 +31,11 @@ export const GameCard: React.FC<IGameCardProps> = ({
           : { transform: `${transform}` }
       }
     >
-      <CardFront style={{ backgroundImage: `url(${image})` }}>
+      <CardFront
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}${image})`,
+        }}
+      >
         {store.playMode ? (
           ""
         ) : (
@@ -40,7 +44,11 @@ export const GameCard: React.FC<IGameCardProps> = ({
           </CardTitle>
         )}
       </CardFront>
-      <CardBack style={{ backgroundImage: `url(${image})` }}>
+      <CardBack
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}${image})`,
+        }}
+      >
         <CardTitle>{translation}</CardTitle>
       </CardBack>
     </Card>
