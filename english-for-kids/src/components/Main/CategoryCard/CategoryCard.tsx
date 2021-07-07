@@ -6,10 +6,12 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
   name,
   image,
   link,
+  setNumberCategory,
+  index,
 }) => {
   const img = `${process.env.PUBLIC_URL}${image}`;
   return (
-    <Card>
+    <Card onClick={() => setNumberCategory(index)}>
       <Link to={link}>
         <CardFront style={{ backgroundImage: `url(${img})` }}>
           <CardTitle>{name}</CardTitle>

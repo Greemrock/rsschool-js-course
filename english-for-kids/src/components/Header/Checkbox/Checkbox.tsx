@@ -1,4 +1,4 @@
-import { IButtonType } from "../../Shared/interface";
+import { IButtonProps } from "../../Shared/interface";
 import {
   StyledCheckbox,
   SwitchButton,
@@ -6,7 +6,7 @@ import {
   SwitchLabel,
 } from "../Styled/Checkbox.styled";
 
-export const Checkbox: React.FC<IButtonType> = (props) => {
+export const Checkbox: React.FC<IButtonProps> = (props) => {
   const { statusCheckbox, setStatusCheckbox } = props;
   return (
     <StyledCheckbox>

@@ -1,4 +1,4 @@
-import { ICardType, ICategory } from "./interface";
+import { ICardProps, ICategory } from "./interface";
 
 const ActionAId = 0;
 const ActionBId = 1;
@@ -9,7 +9,7 @@ const EmotionsId = 5;
 const BodyPartsId = 6;
 const VegetableId = 7;
 
-export const collectionCards: ICardType[][] = [
+export const collectionCards: ICardProps[][] = [
   [
     {
       word: "cry",
@@ -411,6 +411,41 @@ export const collectionCards: ICardType[][] = [
     },
   ],
 ];
+
+// export const categotyTitle = [
+//   {
+//     link: "action_set_a",
+//     title: "Action (setA)",
+//   },
+//   {
+//     link: "action_set_b",
+//     title: "Action (setB)",
+//   },
+//   {
+//     link: "animal_set_a",
+//     title: "Animal (setA)",
+//   },
+//   {
+//     link: "animal_set_b",
+//     title: "Animal (setB)",
+//   },
+//   {
+//     link: "clothes",
+//     title: "Clothes",
+//   },
+//   {
+//     link: "emotions",
+//     title: "Emotions",
+//   },
+//   {
+//     link: "body_parts",
+//     title: "Body Parts",
+//   },
+//   {
+//     link: "vegetable",
+//     title: "Vegetable",
+//   },
+// ];
 
 const findImg = (idCategory: number): string => {
   return collectionCards[idCategory][0].image;

@@ -1,8 +1,11 @@
 import { CategoryCard } from "./CategoryCard";
-import { ITitleProps } from "../../Shared/interface";
+import { ICategoryCardsProps } from "../../Shared/interface";
 import { Page } from "../Styled/Card.styled";
 
-export const CategoryCards: React.FC<ITitleProps> = ({ title }) => {
+export const CategoryCards: React.FC<ICategoryCardsProps> = ({
+  title,
+  setNumberCategory,
+}) => {
   return (
     <>
       <Page>Main page</Page>
@@ -13,6 +16,8 @@ export const CategoryCards: React.FC<ITitleProps> = ({ title }) => {
             name={card.title}
             image={card.image}
             link={card.link}
+            setNumberCategory={setNumberCategory}
+            index={title.indexOf(card)}
           />
         );
       })}

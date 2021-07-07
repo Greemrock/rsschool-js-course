@@ -7,10 +7,11 @@ export const Header: React.FC<IHeaderProps> = ({
   title,
   statusCheckbox,
   setStatusCheckbox,
+  setNumberCategory,
 }) => {
   return (
     <StyledHeader>
-      <Menu title={title} />
+      <Menu sections={title} setNumberCategory={setNumberCategory} />
       <Checkbox
         statusCheckbox={statusCheckbox}
         setStatusCheckbox={() => setStatusCheckbox(!statusCheckbox)}

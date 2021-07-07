@@ -2,10 +2,10 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useOnClickOutside } from "../../../hooks";
 import { Hamburger } from "../Hamburger/Humburger";
-import { ITitleProps } from "../../Shared/interface";
+import { IMenuProps } from "../../Shared/interface";
 import { StyledLink, StyledMenu } from "../Styled/Menu.styled";
 
-export const Menu: React.FC<ITitleProps> = ({ title }) => {
+export const Menu: React.FC<IMenuProps> = ({ sections, setNumberCategory }) => {
   const [open, setOpen] = useState<boolean>(false);
   const node = useRef<HTMLDivElement>(null);
   const close = () => setOpen(false);
@@ -19,10 +19,14 @@ export const Menu: React.FC<ITitleProps> = ({ title }) => {
         <Link to="/">
           <StyledLink onClick={() => close()}>Main page</StyledLink>
         </Link>
-        {title.map((t) => {
+        {sections.map((title) => {
           return (
-            <Link to={t.link} key={title.indexOf(t)}>
-              <StyledLink onClick={() => close()}>{t.title}</StyledLink>
+            <Link
+              to={title.link}
+              key={title.link}
+              onClick={() => setNumberCategory(sections.indexOf(title))}
+            >
+              <StyledLink onClick={() => close()}>{title.title}</StyledLink>
             </Link>
           );
         })}

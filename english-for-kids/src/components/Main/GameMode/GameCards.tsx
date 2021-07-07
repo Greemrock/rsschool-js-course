@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import { GameCard, GameCardActive } from "./GameCard";
-import { ICardsType } from "../../Shared/interface";
+import { ICardsProps } from "../../Shared/interface";
 import { Button, Page, PlayContainer, Container } from "../Styled/Card.styled";
 import { Star } from "./Star";
 import { WinnerScoreboard } from "./WinnerScoreboard";
 import { store } from "../../Shared/store";
 
-export const GameCards: React.FC<ICardsType> = ({
+export const GameCards: React.FC<ICardsProps> = ({
   cards,
   title,
   randomCards,

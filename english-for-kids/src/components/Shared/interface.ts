@@ -1,4 +1,4 @@
-export interface ICardType {
+export interface ICardProps {
   id?: number;
   word: string;
   translation: string;
@@ -15,10 +15,6 @@ export interface IGameCardProps {
   id: number;
 }
 
-export interface ICollectionCards {
-  [x: number]: ICardType[];
-}
-
 export interface ICategory {
   id: number;
   link: string;
@@ -26,34 +22,38 @@ export interface ICategory {
   image: string;
 }
 
-export interface ICardsType {
-  cards: ICardType[];
+export interface ICardsProps {
+  cards: ICardProps[];
   title: string;
-  randomCards: ICardType[];
+  randomCards: ICardProps[];
 }
 
-export interface ITitleProps {
-  title: ICategory[];
+export interface IMenuProps {
+  sections: ICategory[];
+  setNumberCategory: (number: number) => void;
 }
 
-export interface IMainPageProps {
+export interface ICategoryCardsProps {
   title: ICategory[];
-  cards: ICollectionCards;
+  setNumberCategory: (number: number) => void;
 }
 
 export interface CategoryCardProps {
   name: string;
   image: string;
   link: string;
+  setNumberCategory: (number: number) => void;
+  index: number;
 }
 
 export interface IHeaderProps {
   title: ICategory[];
   statusCheckbox: boolean;
   setStatusCheckbox: (statusCheckbox: boolean) => void;
+  setNumberCategory: (number: number) => void;
 }
 
-export interface IButtonType {
+export interface IButtonProps {
   statusCheckbox: boolean;
   setStatusCheckbox: () => void;
 }
