@@ -15,7 +15,7 @@ export const App: React.FC = () => {
         statusCheckbox={statusCheckbox}
         setStatusCheckbox={setStatusCheckbox}
       />
-      <Main title={SECTIONS} cards={collectionCards[0]} />
+      <Main title={SECTIONS} cards={collectionCards} />
     </BrowserRouter>
   );
 };
