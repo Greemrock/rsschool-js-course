@@ -9,6 +9,7 @@ import {
   CardsList,
 } from "./components/Main/Styled/Main.styled";
 import { CategoryCards } from "./components/Main/CategoryCard/CategoryCards";
+import { Footer } from "./components/Footer/Footer";
 
 export const App: React.FC = () => {
   const [statusCheckbox, setStatusCheckbox] = useState<boolean>(false);
@@ -70,6 +71,7 @@ export const App: React.FC = () => {
           </Switch>
         </CardsList>
       </CardsContainer>
+      <Footer />
     </BrowserRouter>
   );
 };
