@@ -4,6 +4,7 @@ import { useOnClickOutside } from "../../../hooks";
 import { Hamburger } from "../Hamburger/Humburger";
 import { IMenuProps } from "../../Shared/interface";
 import { StyledLink, StyledMenu } from "../Styled/Menu.styled";
+// import { store } from "../../Shared/store";
 
 export const Menu: React.FC<IMenuProps> = ({ sections, setNumberCategory }) => {
   const [open, setOpen] = useState<boolean>(false);
@@ -16,7 +17,19 @@ export const Menu: React.FC<IMenuProps> = ({ sections, setNumberCategory }) => {
     <>
       <Hamburger open={open} setOpen={setOpen} />
       <StyledMenu open={open} ref={node}>
-        <Link to="/">
+        <Link
+          to="/"
+          style={
+            window.location.pathname === `/`
+              ? {
+                  textDecoration: "underline",
+                  textDecorationColor: "#2b5a71",
+                }
+              : {
+                  textDecoration: "none",
+                }
+          }
+        >
           <StyledLink onClick={() => close()}>Main page</StyledLink>
         </Link>
         {sections.map((title) => {
@@ -25,6 +38,16 @@ export const Menu: React.FC<IMenuProps> = ({ sections, setNumberCategory }) => {
               to={title.link}
               key={title.link}
               onClick={() => setNumberCategory(sections.indexOf(title))}
+              style={
+                window.location.pathname === `/${title.link}`
+                  ? {
+                      textDecoration: "underline",
+                      textDecorationColor: "#2b5a71",
+                    }
+                  : {
+                      textDecoration: "none",
+                    }
+              }
             >
               <StyledLink onClick={() => close()}>{title.title}</StyledLink>
             </Link>
