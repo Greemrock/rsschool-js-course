@@ -31,6 +31,7 @@ export interface ICardsProps {
 export interface IMenuProps {
   sections: ICategory[];
   setNumberCategory: (number: number) => void;
+  setModal: (stateModal: boolean) => void;
 }
 
 export interface ICategoryCardsProps {
@@ -51,6 +52,7 @@ export interface IHeaderProps {
   statusCheckbox: boolean;
   setStatusCheckbox: (statusCheckbox: boolean) => void;
   setNumberCategory: (number: number) => void;
+  setModal: (stateModal: boolean) => void;
 }
 
 export interface IButtonProps {

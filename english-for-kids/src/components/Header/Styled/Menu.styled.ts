@@ -10,12 +10,14 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   z-index: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 10rem 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
 
   @media (max-width: 1000px) {
     width: 100%;
+    align-items: center;
     text-align: center;
   }
 
@@ -34,5 +36,23 @@ export const StyledLink = styled.div`
 
   :hover {
     color: #fbe69b;
+  }
+`;
+
+export const LoginBtn = styled.button`
+  width: 248px;
+  height: 60px;
+  font-size: 22px;
+  line-height: 26px;
+  color: #fff;
+  margin: 0 32px;
+  background: none;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+
+  :hover {
+    background: #0cdb92bd;
   }
 `;

@@ -10,18 +10,22 @@ import {
 } from "./components/Main/Styled/Main.styled";
 import { CategoryCards } from "./components/Main/CategoryCard/CategoryCards";
 import { Footer } from "./components/Footer/Footer";
+import { Login } from "./components/Main/Login/Login";
 
 export const App: React.FC = () => {
   const [statusCheckbox, setStatusCheckbox] = useState<boolean>(false);
   store.playMode = statusCheckbox;
   const [numberCategory, setNumberCategory] = useState(0);
+  const [statusModal, setModal] = useState(false);
   return (
     <BrowserRouter>
+      <Login statusModal={statusModal} setModal={setModal} />
       <Header
         title={SECTIONS}
         statusCheckbox={statusCheckbox}
         setStatusCheckbox={setStatusCheckbox}
         setNumberCategory={setNumberCategory}
+        setModal={setModal}
       />
       <CardsContainer>
         <CardsList>
