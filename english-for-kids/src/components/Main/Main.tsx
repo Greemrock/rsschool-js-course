@@ -1,4 +1,5 @@
-import { SECTIONS, collectionCards } from "../Shared/collectionCards";
+import { collectionCards } from "../Shared/collectionCards";
+import { routes } from "../Shared/routes";
 import { randomizer } from "../Shared/randomizer";
 import { GameCards } from "./GameMode/GameCards";
 
@@ -16,7 +17,7 @@ export const Main: React.FC<IMainP> = ({ category }) => {
             {collection === collectionCards[category] ? (
               <GameCards
                 cards={collection}
-                title={SECTIONS[category].title}
+                title={routes[category].name}
                 randomCards={randomCards}
               />
             ) : (

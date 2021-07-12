@@ -15,11 +15,10 @@ export interface IGameCardProps {
   id: number;
 }
 
-export interface ICategory {
-  id: number;
-  link: string;
-  title: string;
-  image: string;
+export interface IRoutes {
+  path: string;
+  name: string;
+  isPrivate?: boolean;
 }
 
 export interface ICardsProps {
@@ -29,13 +28,13 @@ export interface ICardsProps {
 }
 
 export interface IMenuProps {
-  sections: ICategory[];
+  routes: IRoutes[];
   setNumberCategory: (number: number) => void;
   setModal: (stateModal: boolean) => void;
 }
 
 export interface ICategoryCardsProps {
-  title: ICategory[];
+  routes: IRoutes[];
   setNumberCategory: (number: number) => void;
 }
 
@@ -48,7 +47,7 @@ export interface CategoryCardProps {
 }
 
 export interface IHeaderProps {
-  title: ICategory[];
+  routes: IRoutes[];
   statusCheckbox: boolean;
   setStatusCheckbox: (statusCheckbox: boolean) => void;
   setNumberCategory: (number: number) => void;

@@ -4,7 +4,7 @@ import { StyledHeader } from "./Styled/Header.styled";
 import { Checkbox } from "./Checkbox/Checkbox";
 
 export const Header: React.FC<IHeaderProps> = ({
-  title,
+  routes,
   statusCheckbox,
   setStatusCheckbox,
   setNumberCategory,
@@ -13,7 +13,7 @@ export const Header: React.FC<IHeaderProps> = ({
   return (
     <StyledHeader>
       <Menu
-        sections={title}
+        routes={routes}
         setNumberCategory={setNumberCategory}
         setModal={setModal}
       />

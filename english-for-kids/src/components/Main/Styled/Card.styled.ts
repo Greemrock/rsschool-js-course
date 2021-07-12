@@ -130,7 +130,14 @@ export const Button = styled.button<{ play: boolean }>`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   ${({ play }) =>
     play
-      ? `width: 90px; font-size: 0; background-image: url(${process.env.PUBLIC_URL}/assets/img/repeat.svg),linear-gradient(180deg, #0099ae 0%, #00bf82 100%); background-repeat: no-repeat; background-size: 70px 70px, cover; background-position: 40%`
+      ? `
+      width: 90px; font-size: 0; 
+      background-image: url(${process.env.PUBLIC_URL}/assets/img/repeat.svg),
+        linear-gradient(180deg, #0099ae 0%, #00bf82 100%);
+      background-repeat: no-repeat;
+      background-size: 70px 70px, cover;
+      background-position: 40%
+      `
       : "background: linear-gradient(180deg, #0099ae 0%, #00bf82 100%);"};
 `;
 
@@ -140,7 +147,6 @@ export const PlayContainer = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
-  z-index: 1;
   @media (max-width: 1300px) {
     width: calc(100% / 3 - 25px);
   }

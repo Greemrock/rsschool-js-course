@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Main } from "./components/Main/Main";
 import { Header } from "./components/Header/Header";
-import { SECTIONS } from "./components/Shared/collectionCards";
+import { routes } from "./components/Shared/routes";
 import { store } from "./components/Shared/store";
 import {
   CardsContainer,
@@ -21,7 +21,7 @@ export const App: React.FC = () => {
     <BrowserRouter>
       <Login statusModal={statusModal} setModal={setModal} />
       <Header
-        title={SECTIONS}
+        routes={routes}
         statusCheckbox={statusCheckbox}
         setStatusCheckbox={setStatusCheckbox}
         setNumberCategory={setNumberCategory}
@@ -35,7 +35,7 @@ export const App: React.FC = () => {
               path="/"
               render={() => (
                 <CategoryCards
-                  title={SECTIONS}
+                  routes={routes}
                   setNumberCategory={setNumberCategory}
                 />
               )}

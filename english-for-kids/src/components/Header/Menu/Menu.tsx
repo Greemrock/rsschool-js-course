@@ -7,7 +7,7 @@ import { LoginBtn, StyledLink, StyledMenu } from "../Styled/Menu.styled";
 import { fixed } from "../../Main/Login/Login";
 
 export const Menu: React.FC<IMenuProps> = ({
-  sections,
+  routes,
   setNumberCategory,
   setModal,
 }) => {
@@ -41,14 +41,14 @@ export const Menu: React.FC<IMenuProps> = ({
           >
             <StyledLink onClick={() => close()}>Main page</StyledLink>
           </Link>
-          {sections.map((title) => {
+          {routes.map((route) => {
             return (
               <Link
-                to={title.link}
-                key={title.link}
-                onClick={() => setNumberCategory(sections.indexOf(title))}
+                to={route.path}
+                key={route.path}
+                onClick={() => setNumberCategory(routes.indexOf(route))}
                 style={
-                  window.location.pathname === `/${title.link}`
+                  window.location.pathname === route.path
                     ? {
                         textDecoration: "underline",
                         textDecorationColor: "#2b5a71",
@@ -58,7 +58,7 @@ export const Menu: React.FC<IMenuProps> = ({
                       }
                 }
               >
-                <StyledLink onClick={() => close()}>{title.title}</StyledLink>
+                <StyledLink onClick={() => close()}>{route.name}</StyledLink>
               </Link>
             );
           })}
