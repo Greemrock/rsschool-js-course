@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const FooterConteiner = styled.div`
+  width: 100%;
+  position: absolute;
   border-top: 1px solid #000;
   padding: 10px 60px;
   font-weight: 900;

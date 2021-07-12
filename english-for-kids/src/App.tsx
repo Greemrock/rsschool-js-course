@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Main } from "./components/Main/Main";
 import { Header } from "./components/Header/Header";
 import { routes } from "./components/Shared/routes";
@@ -17,8 +17,36 @@ export const App: React.FC = () => {
   store.playMode = statusCheckbox;
   const [numberCategory, setNumberCategory] = useState(0);
   const [statusModal, setModal] = useState(false);
+
+  const renderSwitch = (): JSX.Element => {
+    return (
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <CategoryCards
+              routes={routes}
+              setNumberCategory={setNumberCategory}
+            />
+          )}
+        />
+        {routes.map((route) => {
+          return route.isPrivate ? (
+            <Route path={route.path} component={route.component} />
+          ) : (
+            <Route
+              path={route.path}
+              render={() => <Main category={numberCategory} />}
+            />
+          );
+        })}
+      </Switch>
+    );
+  };
+
   return (
-    <BrowserRouter>
+    <>
       <Login statusModal={statusModal} setModal={setModal} />
       <Header
         routes={routes}
@@ -28,54 +56,9 @@ export const App: React.FC = () => {
         setModal={setModal}
       />
       <CardsContainer>
-        <CardsList>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <CategoryCards
-                  routes={routes}
-                  setNumberCategory={setNumberCategory}
-                />
-              )}
-            />
-            <Route
-              path="/action_set_a"
-              render={() => <Main category={numberCategory} />}
-            />
-            <Route
-              path="/action_set_b"
-              render={() => <Main category={numberCategory} />}
-            />
-            <Route
-              path="/animal_set_a"
-              render={() => <Main category={numberCategory} />}
-            />
-            <Route
-              path="/animal_set_b"
-              render={() => <Main category={numberCategory} />}
-            />
-            <Route
-              path="/clothes"
-              render={() => <Main category={numberCategory} />}
-            />
-            <Route
-              path="/emotions"
-              render={() => <Main category={numberCategory} />}
-            />
-            <Route
-              path="/body_parts"
-              render={() => <Main category={numberCategory} />}
-            />
-            <Route
-              path="/vegetable"
-              render={() => <Main category={numberCategory} />}
-            />
-          </Switch>
-        </CardsList>
+        <CardsList>{renderSwitch()}</CardsList>
       </CardsContainer>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 };

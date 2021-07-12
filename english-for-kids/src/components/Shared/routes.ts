@@ -1,3 +1,5 @@
+import { Categories } from "../../AdminPage/Page/Categories";
+import { Words } from "../../AdminPage/Page/Words";
 import { IRoutes } from "./interface";
 
 export const routes: IRoutes[] = [
@@ -33,9 +35,16 @@ export const routes: IRoutes[] = [
     path: "/vegetable",
     name: "Vegetable",
   },
-  // {
-  //   path: "/category",
-  //   name: "Category",
-  //   isPrivate: true,
-  // },
+  {
+    path: "/Categories",
+    name: "Categories",
+    component: Categories,
+    isPrivate: true,
+  },
+  {
+    path: "/words",
+    name: "Words",
+    component: Words,
+    isPrivate: true,
+  },
 ];

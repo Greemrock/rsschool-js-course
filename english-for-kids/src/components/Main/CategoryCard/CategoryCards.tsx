@@ -13,17 +13,22 @@ export const CategoryCards: React.FC<ICategoryCardsProps> = ({
   return (
     <>
       <Page>Main page</Page>
-      {routes.map((card, index) => {
-        const img = `${process.env.PUBLIC_URL}${findImg(index)}`;
+      {routes.map((route, index) => {
         return (
-          <CategoryCard
-            key={card.name}
-            name={card.name}
-            link={card.path}
-            image={img}
-            setNumberCategory={setNumberCategory}
-            index={index}
-          />
+          <>
+            {route.isPrivate ? (
+              ""
+            ) : (
+              <CategoryCard
+                key={route.name}
+                name={route.name}
+                link={route.path}
+                image={`${process.env.PUBLIC_URL}${findImg(index)}`}
+                setNumberCategory={setNumberCategory}
+                index={index}
+              />
+            )}
+          </>
         );
       })}
     </>

@@ -18,6 +18,7 @@ export interface IGameCardProps {
 export interface IRoutes {
   path: string;
   name: string;
+  component?: React.FC;
   isPrivate?: boolean;
 }
 
