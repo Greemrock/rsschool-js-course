@@ -42,6 +42,7 @@ export const Close = styled.div`
   flex-direction: column;
   justify-content: space-around;
   cursor: pointer;
+  z-index: 1;
 
   :hover {
     div {
@@ -120,6 +121,7 @@ export const FormCardStyled = styled.form<{
   update: boolean;
 }>`
   display: ${({ update }) => (!update ? "none" : "flex")};
+  position: relative;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -128,6 +130,7 @@ export const FormCardStyled = styled.form<{
 
   fieldset {
     border: none;
+    margin: 10px;
   }
 
   legend {
