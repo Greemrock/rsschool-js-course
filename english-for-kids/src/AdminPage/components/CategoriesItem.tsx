@@ -1,17 +1,14 @@
 import {
   ItemStyled,
-  Close,
   NameCategory,
   ButtonContainer,
 } from "../Styled/CategoriesItem.styled";
+import { CloseItem } from "./Cross";
 
 export const CategoriesItem: React.FC = () => {
   return (
     <ItemStyled>
-      <Close>
-        <div />
-        <div />
-      </Close>
+      <CloseItem />
       <NameCategory>Clothes</NameCategory>
       <span>WORDS: 7</span>
       <ButtonContainer>

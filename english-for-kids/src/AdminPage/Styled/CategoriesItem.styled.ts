@@ -11,7 +11,7 @@ export const ItemStyled = styled.li`
   max-width: 360px;
   border: 2px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
-  margin-bottom: 28px;
+  margin-bottom: 40px;
   transition: all 0.8s ease;
   transform-style: preserve-3d;
   list-style-type: none;
@@ -29,12 +29,6 @@ export const ItemStyled = styled.li`
 
   @media (max-width: 600px) {
     width: 100%;
-  }
-
-  a {
-    color: #000000;
-    width: 100%;
-    height: 100%;
   }
 `;
 

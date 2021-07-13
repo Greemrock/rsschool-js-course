@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Add = styled.div`
+export const AddStyled = styled.div`
   position: relative;
   width: 85px;
   height: 85px;
