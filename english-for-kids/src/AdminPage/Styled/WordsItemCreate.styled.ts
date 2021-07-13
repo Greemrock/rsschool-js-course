@@ -21,4 +21,5 @@ export const TitleNewCard = styled.div`
   font-size: 36px;
   line-height: 42px;
   font-weight: bold;
+  text-align: center;
 `;

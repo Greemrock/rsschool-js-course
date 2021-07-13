@@ -69,11 +69,12 @@ export const Close = styled.div`
   }
 `;
 
-export const NameCategory = styled.div`
+export const TitleNameStyled = styled.div`
   font-weight: bold;
   font-size: 22px;
   line-height: 26px;
   margin: 30px;
+  text-align: center;
 `;
 
 export const ButtonContainer = styled.div`
@@ -94,7 +95,7 @@ export const ButtonContainer = styled.div`
     min-width: 85px;
     height: 30px;
     margin: 5px 10px;
-    font-size: 1rem;
+    font-size: 22px;
     line-height: 26px;
     color: #fff;
     background: none;
@@ -102,6 +103,92 @@ export const ButtonContainer = styled.div`
     box-sizing: border-box;
     border-radius: 5px;
     cursor: pointer;
+
+    :hover {
+      background: #0cdb92bd;
+    }
+  }
+`;
+
+export const InformationStyled = styled.div<{ update: boolean }>`
+  display: ${({ update }) => (update ? "none" : "flex")};
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const FormCardStyled = styled.form<{
+  update: boolean;
+}>`
+  display: ${({ update }) => (!update ? "none" : "flex")};
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+
+  fieldset {
+    border: none;
+  }
+
+  legend {
+    font-size: 9px;
+    line-height: 11px;
+    color: #3f51b5;
+    opacity: 1;
+  }
+`;
+
+export const InputStyled = styled.input`
+  height: 35px;
+  padding: 0 10px;
+  font-size: 22px;
+  line-height: 26px;
+  border: none;
+  border-bottom: 1px solid #3f51b5;
+
+  :focus {
+    border-bottom: 1px solid #4fbe79;
+  }
+
+  :focus-visible {
+    outline: none;
+  }
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #4fbe79;
+  padding: 15px;
+
+  @media (max-width: 750px) {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  input {
+    width: 135px;
+    min-width: 85px;
+    height: 30px;
+    margin: 5px 10px;
+    font-size: 22px;
+    line-height: 26px;
+    color: #fff;
+    background: none;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+
+    :first-child {
+      :hover {
+        color: #e53935;
+        border: 2px solid #e53935;
+        background: none;
+      }
+    }
 
     :hover {
       background: #0cdb92bd;
