@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { postLogin } from "../../../AdminPage/api/api";
 
 const Bg = styled.div<{ stateModal: boolean }>`
   display: ${({ stateModal }) => (stateModal ? "flex" : "none")};
@@ -55,7 +57,7 @@ const Form = styled.form`
   text-align: center;
 `;
 
-const Button = styled.button`
+const Button = styled.input`
   width: 248px;
   height: 60px;
   font-size: 22px;
@@ -101,17 +103,40 @@ export const fixed = (status: boolean): void => {
 };
 
 export const Login: React.FC<IPopup> = ({ statusModal, setModal }) => {
+  const [usernameValue, setUsernameValue] = useState("");
+  const [passwordValue, setPasswordValue] = useState("");
+
   const closeModal = () => {
     fixed(false);
     setModal(false);
   };
+  const post = () => {
+    postLogin(usernameValue, passwordValue);
+    console.log(usernameValue, passwordValue);
+  };
+
   return (
     <Bg stateModal={statusModal}>
       <Modal>
-        <Form id="login-form">
+        <Form
+          id="login-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+            post();
+          }}
+        >
           <Label>Login</Label>
-          <input placeholder="Login" required type="text" name="username" />
           <input
+            onChange={(event) => setUsernameValue(event.target.value)}
+            value={usernameValue}
+            placeholder="Login"
+            required
+            type="text"
+            name="username"
+          />
+          <input
+            onChange={(event) => setPasswordValue(event.target.value)}
+            value={passwordValue}
             placeholder="Password"
             required
             type="password"
@@ -119,10 +144,12 @@ export const Login: React.FC<IPopup> = ({ statusModal, setModal }) => {
           />
           <div className="error-message" />
           <Container>
-            <CancelButton type="button" onClick={() => closeModal()}>
-              Cancel
-            </CancelButton>
-            <Button type="submit">Login</Button>
+            <CancelButton
+              type="button"
+              onClick={() => closeModal()}
+              value="Cancel"
+            />
+            <Button type="submit" value="Login" />
           </Container>
         </Form>
       </Modal>

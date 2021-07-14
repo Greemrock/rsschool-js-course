@@ -4,7 +4,7 @@ import { IRoutes } from "./interface";
 
 export const routes: IRoutes[] = [
   {
-    path: "/action_set_a",
+    path: "/Action (setA)",
     name: "Action (setA)",
   },
   {

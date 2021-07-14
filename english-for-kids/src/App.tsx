@@ -33,9 +33,14 @@ export const App: React.FC = () => {
         />
         {routes.map((route) => {
           return route.isPrivate ? (
-            <Route path={route.path} component={route.component} />
+            <Route
+              key={route.name}
+              path={route.path}
+              component={route.component}
+            />
           ) : (
             <Route
+              key={route.name}
               path={route.path}
               render={() => <Main category={numberCategory} />}
             />

@@ -10,13 +10,17 @@ import {
 } from "../Styled/CategoriesItem.styled";
 import { CloseItem } from "./Cross";
 
-export const CategoriesItem: React.FC = () => {
+export const CategoriesItem: React.FC<{ name: string; idCategory: number }> = ({
+  name,
+  idCategory,
+}) => {
   const [update, setUpdate] = useState(false);
+
   return (
     <ItemStyled>
-      <CloseItem />
+      <CloseItem id={idCategory} />
       <InformationStyled update={update}>
-        <TitleNameStyled>Clothes</TitleNameStyled>
+        <TitleNameStyled>{name}</TitleNameStyled>
         <span>WORDS: 7</span>
         <ButtonContainer>
           <button onClick={() => setUpdate(true)} type="button">

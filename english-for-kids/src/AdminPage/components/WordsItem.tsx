@@ -19,7 +19,7 @@ export const WordsItem: React.FC = () => {
 
   return (
     <WordsItemStyled>
-      <CloseItem />
+      <CloseItem id={0} />
       <InformationStyled update={update}>
         <DivWordStyled>
           <b>Word: </b>

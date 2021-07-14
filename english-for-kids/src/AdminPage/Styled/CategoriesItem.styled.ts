@@ -32,7 +32,7 @@ export const ItemStyled = styled.li`
   }
 `;
 
-export const Close = styled.div`
+export const Close = styled.button`
   position: absolute;
   right: 20px;
   top: 20px;
@@ -41,6 +41,8 @@ export const Close = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border: none;
+  background: none;
   cursor: pointer;
   z-index: 1;
 
