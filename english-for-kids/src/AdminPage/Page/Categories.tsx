@@ -9,6 +9,7 @@ interface ICategory {
 }
 export const Categories: React.FC = () => {
   const [items, setItems] = useState<ICategory[]>([]);
+  // const [newCategory, setNewCategory] = useState();
 
   useEffect(() => {
     const categories = getCategories();
@@ -17,6 +18,9 @@ export const Categories: React.FC = () => {
     };
     data();
   }, [items]);
+
+  // const createNewCategory = () => {};
+
   return (
     <>
       {items.map((item) => {

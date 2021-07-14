@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { FormCardStyled } from "./CategoriesItem.styled";
 
-export const AddStyled = styled.div`
+export const AddStyled = styled.div<{ update: boolean }>`
   position: relative;
   width: 85px;
   height: 85px;
-  display: flex;
+  display: ${({ update }) => (update ? "none" : "flex")};
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -38,4 +39,8 @@ export const AddStyled = styled.div`
       transform: rotate(90deg);
     }
   }
+`;
+
+export const FormNewCardStyled = styled(FormCardStyled)`
+  justify-content: flex-start;
 `;

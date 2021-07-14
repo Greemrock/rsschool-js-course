@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { postLogin } from "../../../AdminPage/api/api";
+import { logIn } from "../../../AdminPage/auth/authorization";
 
 const Bg = styled.div<{ stateModal: boolean }>`
   display: ${({ stateModal }) => (stateModal ? "flex" : "none")};
@@ -24,14 +24,15 @@ const Modal = styled.div`
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 3;
 
-  input {
+  input[type="text"],
+  input[type="password"] {
     margin: 30px;
     font-size: 48px;
     line-height: 56px;
     padding: 8px;
     width: 90%;
     height: 100%;
-    max-width: 556px;
+    width: 20rem;
     max-height: 62px;
   }
 `;
@@ -58,7 +59,7 @@ const Form = styled.form`
 `;
 
 const Button = styled.input`
-  width: 248px;
+  min-width: 248px;
   height: 60px;
   font-size: 22px;
   line-height: 26px;
@@ -89,9 +90,16 @@ const Container = styled.div`
   padding: 20px;
 `;
 
+const ErrorStyled = styled.div`
+  font-size: 16px;
+  color: #f60606;
+`;
+
 interface IPopup {
   statusModal: boolean;
   setModal: (statusModal: boolean) => void;
+  login: boolean;
+  setLogIn: (status: boolean) => void;
 }
 
 export const fixed = (status: boolean): void => {
@@ -102,19 +110,33 @@ export const fixed = (status: boolean): void => {
   }
 };
 
-export const Login: React.FC<IPopup> = ({ statusModal, setModal }) => {
+export const Login: React.FC<IPopup> = ({
+  statusModal,
+  setModal,
+  login,
+  setLogIn,
+}) => {
   const [usernameValue, setUsernameValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
+  const [error, setError] = useState("");
 
   const closeModal = () => {
     fixed(false);
     setModal(false);
   };
-  const post = () => {
-    postLogin(usernameValue, passwordValue);
-    console.log(usernameValue, passwordValue);
+  const post = async () => {
+    const message = await logIn(usernameValue, passwordValue);
+    if (message) {
+      setLogIn(true);
+      setError("");
+    } else {
+      setLogIn(false);
+      setError("Incorrect username or password.");
+    }
   };
-
+  if (login) {
+    closeModal();
+  }
   return (
     <Bg stateModal={statusModal}>
       <Modal>
@@ -123,16 +145,17 @@ export const Login: React.FC<IPopup> = ({ statusModal, setModal }) => {
           onSubmit={(event) => {
             event.preventDefault();
             post();
+            setUsernameValue("");
+            setPasswordValue("");
           }}
         >
           <Label>Login</Label>
           <input
             onChange={(event) => setUsernameValue(event.target.value)}
             value={usernameValue}
-            placeholder="Login"
+            placeholder="Username"
             required
             type="text"
-            name="username"
           />
           <input
             onChange={(event) => setPasswordValue(event.target.value)}
@@ -140,9 +163,8 @@ export const Login: React.FC<IPopup> = ({ statusModal, setModal }) => {
             placeholder="Password"
             required
             type="password"
-            name="password"
           />
-          <div className="error-message" />
+          <ErrorStyled>{error}</ErrorStyled>
           <Container>
             <CancelButton
               type="button"

@@ -14,6 +14,16 @@ export const getCategories = async (): Promise<ICategory[]> => {
   return data;
 };
 
+export const createCategory = async (data: string): Promise<void> => {
+  const body = { name: data };
+  await fetch(url(""), {
+    method: "POST",
+    mode: "cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+};
+
 export const deleteCategory = ({ id }: { id: number }): void => {
   fetch(url(`${CATEGORIES}/${id}`), {
     method: "DELETE",

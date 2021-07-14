@@ -1,22 +1,13 @@
-// import { getCategories } from "../../AdminPage/api/api";
-
-// const { items: categories } = async () => {
-//   await getCategories();
-// };
-
 export const store = {
   categories: [],
   star: [],
   matchCards: [],
   playMode: false,
+  login: false,
 } as {
-  // categories: ICategory[];
+  categories: string[];
   star: boolean[];
   matchCards: number[];
   playMode: boolean;
+  login: boolean;
 };
-
-// interface ICategory {
-//   id: number;
-//   name: string;
-// }
