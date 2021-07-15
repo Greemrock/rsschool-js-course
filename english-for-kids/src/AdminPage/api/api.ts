@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 const CATEGORIES = "categories";
 const WORDS = "words";
-const url = (endpoint: string) => `http://localhost:8080/api/${endpoint}`;
+const port = 3000;
+
+const url = (endpoint: string) => `http://localhost:${port}/api/${endpoint}`;
 
 interface ICategory {
   id: number;
@@ -19,7 +21,6 @@ export const createCategory = async (data: string): Promise<void> => {
   const body = { name: data };
   await fetch(url(""), {
     method: "POST",
-    mode: "cors",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
@@ -35,7 +36,6 @@ export const postLogin = async (name: string, pass: string): Promise<void> => {
   const body = { username: name, password: pass };
   await fetch(url(""), {
     method: "POST",
-    mode: "cors",
     body: JSON.stringify(body),
   });
 };
