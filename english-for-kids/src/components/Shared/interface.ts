@@ -1,9 +1,14 @@
 export interface ICardProps {
-  id?: number;
   word: string;
   translation: string;
   image: string;
   audioSrc: string;
+}
+
+export interface ICategory {
+  id: number;
+  name: string;
+  path: string;
 }
 
 export interface IGameCardProps {
@@ -35,7 +40,7 @@ export interface IMenuProps {
 }
 
 export interface ICategoryCardsProps {
-  routes: IRoutes[];
+  routes: ICategory[];
   setNumberCategory: (number: number) => void;
 }
 

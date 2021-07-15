@@ -8,26 +8,22 @@ export const CategoryCards: React.FC<ICategoryCardsProps> = ({
   setNumberCategory,
 }) => {
   const findImg = (idCategory: number): string => {
-    return collectionCards[0][idCategory].image;
+    return collectionCards[idCategory][0].image;
   };
   return (
     <>
       <Page>Main page</Page>
-      {routes.map((route, index) => {
+      {routes.map((route) => {
         return (
           <>
-            {route.isPrivate ? (
-              ""
-            ) : (
-              <CategoryCard
-                key={route.name}
-                name={route.name}
-                link={route.path}
-                image={`${process.env.PUBLIC_URL}${findImg(index)}`}
-                setNumberCategory={setNumberCategory}
-                index={index}
-              />
-            )}
+            <CategoryCard
+              key={route.name}
+              name={route.name}
+              link={route.path}
+              image={`${process.env.PUBLIC_URL}${findImg(route.id)}`}
+              setNumberCategory={setNumberCategory}
+              index={route.id}
+            />
           </>
         );
       })}

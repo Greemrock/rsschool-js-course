@@ -6,6 +6,7 @@ const url = (endpoint: string) => `http://localhost:8080/api/${endpoint}`;
 interface ICategory {
   id: number;
   name: string;
+  path: string;
 }
 
 export const getCategories = async (): Promise<ICategory[]> => {

@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
+import { ICategory } from "../../components/Shared/interface";
 import { getCategories } from "../api/api";
 import { CategoriesItem } from "../components/CategoriesItem";
 import { CategoriesItemCreate } from "../components/CategoriesItemCreate";
 
-interface ICategory {
-  id: number;
-  name: string;
-}
 export const Categories: React.FC = () => {
   const [items, setItems] = useState<ICategory[]>([]);
-  // const [newCategory, setNewCategory] = useState();
-
   useEffect(() => {
     const categories = getCategories();
     const data = async () => {
@@ -18,8 +13,6 @@ export const Categories: React.FC = () => {
     };
     data();
   }, [items]);
-
-  // const createNewCategory = () => {};
 
   return (
     <>

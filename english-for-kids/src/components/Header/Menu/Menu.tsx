@@ -44,29 +44,23 @@ export const Menu: React.FC<IMenuProps> = ({
           {routes.map((route) => {
             return (
               <>
-                {route.isPrivate ? (
-                  ""
-                ) : (
-                  <Link
-                    to={route.path}
-                    key={route.path}
-                    onClick={() => setNumberCategory(routes.indexOf(route))}
-                    style={
-                      window.location.pathname === route.path
-                        ? {
-                            textDecoration: "underline",
-                            textDecorationColor: "#2b5a71",
-                          }
-                        : {
-                            textDecoration: "none",
-                          }
-                    }
-                  >
-                    <StyledLink onClick={() => close()}>
-                      {route.name}
-                    </StyledLink>
-                  </Link>
-                )}
+                <Link
+                  to={route.path}
+                  key={route.path}
+                  onClick={() => setNumberCategory(routes.indexOf(route))}
+                  style={
+                    window.location.pathname === route.path
+                      ? {
+                          textDecoration: "underline",
+                          textDecorationColor: "#2b5a71",
+                        }
+                      : {
+                          textDecoration: "none",
+                        }
+                  }
+                >
+                  <StyledLink onClick={() => close()}>{route.name}</StyledLink>
+                </Link>
               </>
             );
           })}

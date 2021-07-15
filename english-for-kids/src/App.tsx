@@ -12,6 +12,8 @@ import { CategoryCards } from "./components/Main/CategoryCard/CategoryCards";
 import { Footer } from "./components/Footer/Footer";
 import { Login } from "./components/Main/Login/Login";
 import { AdminHeader } from "./AdminPage/AdminHeader/AdminHeader";
+import { getCategories } from "./AdminPage/api/api";
+import { ICategory } from "./components/Shared/interface";
 
 export const App: React.FC = () => {
   const [statusCheckbox, setStatusCheckbox] = useState<boolean>(false);
@@ -19,7 +21,14 @@ export const App: React.FC = () => {
   const [numberCategory, setNumberCategory] = useState(0);
   const [statusModal, setModal] = useState(false);
   const [login, setLogIn] = useState(false);
-
+  const [items, setItems] = useState<ICategory[]>([]);
+  useEffect(() => {
+    const categories = getCategories();
+    const data = async () => {
+      setItems(await categories);
+    };
+    data();
+  }, [items]);
   const renderSwitch = (): JSX.Element => {
     return (
       <Switch>
@@ -28,19 +37,22 @@ export const App: React.FC = () => {
           path="/"
           render={() => (
             <CategoryCards
-              routes={routes}
+              routes={items}
               setNumberCategory={setNumberCategory}
             />
           )}
         />
         {routes.map((route) => {
-          return route.isPrivate ? (
+          return (
             <Route
               key={route.name}
               path={route.path}
               component={route.component}
             />
-          ) : (
+          );
+        })}
+        {items.map((route) => {
+          return (
             <Route
               key={route.name}
               path={route.path}
@@ -76,7 +88,7 @@ export const App: React.FC = () => {
         <AdminHeader setLogIn={setLogIn} />
       ) : (
         <Header
-          routes={routes}
+          routes={items}
           statusCheckbox={statusCheckbox}
           setStatusCheckbox={setStatusCheckbox}
           setNumberCategory={setNumberCategory}
