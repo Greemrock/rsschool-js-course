@@ -2,7 +2,8 @@
   "name": "english-for-kids",
   "private": true,
   "scripts": {
-    "start": "ts-node ./server/app.ts",
+    "start-node": "ts-node ./server/app.ts",
+    "start": "react-scripts start",
     "watch": "nodemon",
     "build": "react-scripts build",
     "test": "react-scripts test",

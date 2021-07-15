@@ -3,6 +3,8 @@ export interface ICardProps {
   translation: string;
   image: string;
   audioSrc: string;
+  categoryId: number;
+  id: number;
 }
 
 export interface ICategory {
@@ -21,10 +23,10 @@ export interface IGameCardProps {
 }
 
 export interface IRoutes {
+  id: number;
   path: string;
   name: string;
   component?: React.FC;
-  isPrivate?: boolean;
 }
 
 export interface ICardsProps {
@@ -40,7 +42,7 @@ export interface IMenuProps {
 }
 
 export interface ICategoryCardsProps {
-  routes: ICategory[];
+  routes: IRoutes[];
   setNumberCategory: (number: number) => void;
 }
 
