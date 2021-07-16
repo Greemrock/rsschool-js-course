@@ -46,7 +46,7 @@ export const Rotate = styled.div`
   position: absolute;
   width: 50px;
   height: 50px;
-  background-image: url(${`${process.env.PUBLIC_URL}/assets/img/rotate.svg`});
+  background-image: url(${`${process.env.PUBLIC_URL}/assets/images/rotate.svg`});
   background-size: 32px;
   background-repeat: no-repeat;
   background-position: center;
@@ -131,8 +131,8 @@ export const Button = styled.button<{ play: boolean }>`
   ${({ play }) =>
     play
       ? `
-      width: 90px; font-size: 0; 
-      background-image: url(${process.env.PUBLIC_URL}/assets/img/repeat.svg),
+      width: 90px; font-size: 0;
+      background-image: url(${process.env.PUBLIC_URL}/assets/images/repeat.svg),
         linear-gradient(180deg, #0099ae 0%, #00bf82 100%);
       background-repeat: no-repeat;
       background-size: 70px 70px, cover;

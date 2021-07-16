@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { Main } from "./components/Main/Main";
 import { Header } from "./components/Header/Header";
-import { routePage, routes } from "./components/Shared/routes";
+import { routePages } from "./components/Shared/routes";
 import { store } from "./components/Shared/store";
 import {
   CardsContainer,
@@ -12,6 +12,7 @@ import { CategoryCards } from "./components/Main/CategoryCard/CategoryCards";
 import { Footer } from "./components/Footer/Footer";
 import { Login } from "./components/Main/Login/Login";
 import { AdminHeader } from "./AdminPage/AdminHeader/AdminHeader";
+import { categoriesStore } from "./components/Shared/categoriesStore";
 // import { getCategories } from "./AdminPage/api/api";
 // import { ICategory } from "./components/Shared/interface";
 
@@ -35,14 +36,9 @@ export const App: React.FC = () => {
         <Route
           exact
           path="/"
-          render={() => (
-            <CategoryCards
-              routes={routes}
-              setNumberCategory={setNumberCategory}
-            />
-          )}
+          render={() => <CategoryCards setNumberCategory={setNumberCategory} />}
         />
-        {routePage.map((route) => {
+        {routePages.map((route) => {
           return (
             <Route
               key={route.name}
@@ -51,11 +47,11 @@ export const App: React.FC = () => {
             />
           );
         })}
-        {routes.map((route) => {
+        {categoriesStore.map((category) => {
           return (
             <Route
-              key={route.name}
-              path={route.path}
+              key={category.name}
+              path={category.path}
               render={() => <Main category={numberCategory} />}
             />
           );
@@ -88,7 +84,7 @@ export const App: React.FC = () => {
         <AdminHeader setLogIn={setLogIn} />
       ) : (
         <Header
-          routes={routes}
+          routes={categoriesStore}
           statusCheckbox={statusCheckbox}
           setStatusCheckbox={setStatusCheckbox}
           setNumberCategory={setNumberCategory}

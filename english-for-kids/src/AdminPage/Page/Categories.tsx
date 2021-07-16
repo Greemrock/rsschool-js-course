@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 // import { ICategory } from "../../components/Shared/interface";
 // import { getCategories } from "../api/api";
-import { routes } from "../../components/Shared/routes";
+import { routePages } from "../../components/Shared/routes";
 import { CategoriesItem } from "../components/CategoriesItem";
 import { CategoriesItemCreate } from "../components/CategoriesItemCreate";
 
@@ -17,7 +17,7 @@ export const Categories: React.FC = () => {
 
   return (
     <>
-      {routes.map((item) => {
+      {routePages.map((item) => {
         return (
           <CategoriesItem key={item.id} name={item.name} idCategory={item.id} />
         );

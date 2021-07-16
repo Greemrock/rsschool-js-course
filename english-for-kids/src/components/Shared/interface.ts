@@ -11,6 +11,7 @@ export interface ICategory {
   id: number;
   name: string;
   path: string;
+  iconSrc: string;
 }
 
 export interface IGameCardProps {
@@ -26,7 +27,7 @@ export interface IRoutes {
   id: number;
   path: string;
   name: string;
-  component?: React.FC;
+  component: React.FC;
 }
 
 export interface ICardsProps {
@@ -36,13 +37,12 @@ export interface ICardsProps {
 }
 
 export interface IMenuProps {
-  routes: IRoutes[];
+  routes: ICategory[];
   setNumberCategory: (number: number) => void;
   setModal: (stateModal: boolean) => void;
 }
 
 export interface ICategoryCardsProps {
-  routes: IRoutes[];
   setNumberCategory: (number: number) => void;
 }
 
@@ -55,7 +55,7 @@ export interface CategoryCardProps {
 }
 
 export interface IHeaderProps {
-  routes: IRoutes[];
+  routes: ICategory[];
   statusCheckbox: boolean;
   setStatusCheckbox: (statusCheckbox: boolean) => void;
   setNumberCategory: (number: number) => void;

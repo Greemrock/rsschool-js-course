@@ -1,30 +1,24 @@
 import { CategoryCard } from "./CategoryCard";
-import { ICardProps, ICategoryCardsProps } from "../../Shared/interface";
+import { ICategoryCardsProps } from "../../Shared/interface";
 import { Page } from "../Styled/Card.styled";
-import { collectionCards } from "../../Shared/collectionCards";
+import { categoriesStore } from "../../Shared/categoriesStore";
 
 export const CategoryCards: React.FC<ICategoryCardsProps> = ({
-  routes,
   setNumberCategory,
 }) => {
   return (
     <>
       <Page>Main page</Page>
-      {routes.map((route) => {
-        // eslint-disable-next-line consistent-return
-        const findSrc = (elem: ICardProps) => {
-          return elem.categoryId === route.id ? elem.categoryId : "";
-        };
-        const srcImg = collectionCards.find(findSrc);
+      {categoriesStore.map((category) => {
         return (
           <>
             <CategoryCard
-              key={route.name}
-              name={route.name}
-              link={route.path}
-              image={`${process.env.PUBLIC_URL}${srcImg?.image}`}
+              key={category.name}
+              name={category.name}
+              link={category.path}
+              image={`${process.env.PUBLIC_URL}${category.iconSrc}`}
               setNumberCategory={setNumberCategory}
-              index={route.id}
+              index={category.id}
             />
           </>
         );

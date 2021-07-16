@@ -1,8 +1,8 @@
 // import { useEffect, useState } from "react";
-import { routes } from "../Shared/routes";
+import { categoriesStore } from "../Shared/categoriesStore";
 import { randomizer } from "../Shared/randomizer";
 import { GameCards } from "./GameMode/GameCards";
-import { collectionCards } from "../Shared/collectionCards";
+import { collectionsStore } from "../Shared/collectionsStore";
 import { ICardProps } from "../Shared/interface";
 // import { ICardProps } from "../Shared/interface";
 // import { getWords } from "../../AdminPage/api/api";
@@ -21,7 +21,7 @@ export const Main: React.FC<IMainP> = ({ category }) => {
   //   data();
   // }, [items]);
   const collection: ICardProps[] = [];
-  collectionCards.map((card) =>
+  collectionsStore.map((card) =>
     card.categoryId === category ? collection.push(card) : ""
   );
   const randomCards = randomizer(collection).slice();
@@ -30,7 +30,7 @@ export const Main: React.FC<IMainP> = ({ category }) => {
     <>
       <GameCards
         cards={collection}
-        title={routes[category].name}
+        title={categoriesStore[category].name}
         randomCards={randomCards}
       />
     </>

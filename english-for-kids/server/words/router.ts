@@ -1,25 +1,25 @@
 import { Router } from "express";
-import { StatusCodes } from "../common";
-import {
-  // createWord,
-  // deleteWord,
-  // getWordByName,
-  getWords,
-  // updateWord,
-} from "./repository";
+// import { StatusCodes } from "../common";
+// import {
+// createWord,
+// deleteWord,
+// getWordByName,
+// getWords,
+// updateWord,
+// } from "./repository";
 // import { Card } from './words';
 // import { getCategoryById } from '../category/repository';
 
 const router = Router();
 
-router.get("/", async (req, res) => {
-  try {
-    const data = await getWords();
-    return res.json(data);
-  } catch (e) {
-    return res.status(StatusCodes.BadRequest).send(e);
-  }
-});
+// router.get("/", async (req, res) => {
+//   try {
+//     const data = await getWords();
+//     return res.json(data);
+//   } catch (e) {
+//     return res.status(StatusCodes.BadRequest).send(e);
+//   }
+// });
 
 // router.get("/:id", async (req, res) => {
 //   try {

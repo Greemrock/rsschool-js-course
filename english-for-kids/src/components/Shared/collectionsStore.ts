@@ -1,6 +1,6 @@
 import { ICardProps } from "./interface";
 
-export const collectionCards: ICardProps[] = [
+export const collectionsStore: ICardProps[] = [
   {
     word: "cry",
     translation: "плакать",

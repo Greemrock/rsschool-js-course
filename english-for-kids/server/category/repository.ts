@@ -4,42 +4,42 @@ const categories: Category[] = [
   {
     id: 0,
     name: "Action setA",
-    path: "Action setA",
+    path: "action_a",
   },
   {
     id: 1,
     name: "Action setB",
-    path: "Action setB",
+    path: "action_b",
   },
   {
     id: 2,
     name: "Animal setA",
-    path: "Animal setA",
+    path: "animal_a",
   },
   {
     id: 3,
     name: "Animal setB",
-    path: "Animal setB",
+    path: "animal_b",
   },
   {
     id: 4,
     name: "Clothes",
-    path: "Clothes",
+    path: "clothes",
   },
   {
     id: 5,
     name: "Emotions",
-    path: "Emotions",
+    path: "emotions",
   },
   {
     id: 6,
     name: "Body Parts",
-    path: "Body Parts",
+    path: "body_parts",
   },
   {
     id: 7,
     name: "Vegetable",
-    path: "Vegetable",
+    path: "vegetable",
   },
 ];
 
