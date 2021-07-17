@@ -5,6 +5,7 @@ import {
   getCategoryById,
   createCategory,
   deleteCategory,
+  updateCategory,
 } from "./repository";
 import { Category } from "./category";
 
@@ -38,6 +39,21 @@ router.post("/", async (req, res) => {
     return res.json(newCategory);
   } catch (e) {
     return res.status(StatusCodes.BadRequest).send(e);
+  }
+});
+
+// Update category
+router.put("/categories/:id", async (request, response) => {
+  const catId = request.params.id;
+  if (!catId) {
+    return response.sendStatus(404);
+  }
+  const categoryData = request.body as Category;
+  try {
+    const newCategoryData = await updateCategory(+catId, categoryData);
+    return response.json(newCategoryData);
+  } catch (error) {
+    return response.status(400).send(error);
   }
 });
 

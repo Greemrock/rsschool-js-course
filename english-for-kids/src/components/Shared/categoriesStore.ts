@@ -3,25 +3,25 @@ import { ICategory } from "./interface";
 export const categoriesStore: ICategory[] = [
   {
     id: 1,
-    path: "/Action setA",
+    path: "/action_a",
     name: "Action setA",
     iconSrc: "assets/images/cry.jpg",
   },
   {
     id: 2,
-    path: "/action_set_b",
+    path: "/action_b",
     name: "Action setB",
     iconSrc: "assets/images/open.jpg",
   },
   {
     id: 3,
-    path: "/animal_set_a",
+    path: "/animal_a",
     name: "Animal setA",
     iconSrc: "assets/images/cat.jpg",
   },
   {
     id: 4,
-    path: "/animal_set_b",
+    path: "/animal_b",
     name: "Animal setB",
     iconSrc: "assets/images/bird.jpg",
   },

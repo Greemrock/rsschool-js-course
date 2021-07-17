@@ -1,6 +1,6 @@
-import { Card } from "./words";
+import { Word } from "./word";
 
-export const collectionCards: Card[] = [
+export const collectionCards: Word[] = [
   {
     word: "cry",
     translation: "плакать",
@@ -527,46 +527,72 @@ export const collectionCards: Card[] = [
   },
 ];
 
-// export function getWords(): Promise<Card[]> {
-//   return Promise.resolve<Card[]>(cards);
-// }
+export const getCategoryWords = (categoryId: number): Promise<Word[]> => {
+  const cards = collectionCards.filter(
+    (card) => card.categoryId === categoryId
+  );
+  return Promise.resolve<Word[]>(cards);
+};
 
-// export function getWordByName(id: number): Promise<Card[] | undefined> {
-//   return Promise.resolve(cards.find((it) => cards.indexOf(it) === id));
-// }
+export const createWord = (
+  categoryId: number,
+  cardData: Word
+): Promise<Word> => {
+  const selectedCategoryCards = collectionCards.filter(
+    (card) => card.categoryId === categoryId
+  );
+  const isExist =
+    selectedCategoryCards.findIndex((card) => card.word === cardData.word) >= 0;
+  if (isExist) {
+    return Promise.reject(new Error(`Word ${cardData.word} already exists`));
+  }
+  const id = collectionCards.length + 1;
+  const newCard: Word = { ...cardData, id };
+  collectionCards.push(newCard);
+  return Promise.resolve(newCard);
+};
 
-// export function getWordByName(name: string): Promise<Card | undefined> {
-//   return Promise.resolve(cards[0].find((it) => it.word.toLowerCase() === name.toLowerCase()));
-// }
+export const deleteWord = (
+  categoryId: number,
+  cardId: number
+): Promise<void> => {
+  const selectedCategoryCards = collectionCards.filter(
+    (card) => card.categoryId === categoryId
+  );
+  if (selectedCategoryCards.length > 0) {
+    const cardIdx = selectedCategoryCards.findIndex(
+      (card) => card.id === cardId
+    );
+    if (cardIdx < 0) {
+      return Promise.reject(new Error("Word is not found"));
+    }
+    selectedCategoryCards.splice(cardIdx, 1);
+    return Promise.resolve();
+  }
+  throw new Error("Category is not found");
+};
 
-// export function createWord(item: Card): Promise<Card> {
-//   const isExist = typeof cards.find((it) => it.word.toLowerCase() === item.word.toLowerCase()) !== 'undefined';
-//   if (isExist) {
-//     return Promise.reject(new Error(`Item with name ${item.word} is already exists.`));
-//   }
-//   cards.push(item);
-//   return Promise.resolve(item);
-// }
-
-// export function updateWord(item: Card): Promise<Card> {
-//   const itemIndex = cards.findIndex((it) => it.word.toLowerCase() === item.word.toLowerCase());
-//   if (itemIndex < 0) {
-//     return Promise.reject(new Error('Item not found'));
-//   }
-//   const existsItem = cards.splice(itemIndex, 1)[0];
-//   const newItem: Card = {
-//     ...existsItem,
-//     ...item,
-//   };
-//   cards.push(newItem);
-//   return Promise.resolve(newItem);
-// }
-
-// export function deleteWord(name: string): Promise<void> {
-//   const index = cards.findIndex((it) => it.word.toLowerCase() === name.toLowerCase());
-//   if (index < 0) {
-//     Promise.reject(new Error('Item not found.'));
-//   }
-//   cards.splice(index, 1);
-//   return Promise.resolve();
-// }
+export const updateWord = (
+  categoryId: number,
+  cardData: Word,
+  cardId: number
+): Promise<Word> => {
+  const selectedCategoryCards = collectionCards.filter(
+    (card) => card.categoryId === categoryId
+  );
+  if (selectedCategoryCards) {
+    const cardIdx = selectedCategoryCards.findIndex(
+      (card) => card.id === cardId
+    );
+    if (cardIdx < 0) {
+      return Promise.reject(new Error("Word is not found"));
+    }
+    const selectedCard = selectedCategoryCards[cardIdx];
+    selectedCard.word = cardData.word;
+    selectedCard.translation = cardData.translation;
+    selectedCard.audioSrc = cardData.audioSrc;
+    selectedCard.image = cardData.image;
+    return Promise.resolve(selectedCard);
+  }
+  throw new Error("Category is not found");
+};

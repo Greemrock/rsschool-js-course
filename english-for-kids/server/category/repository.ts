@@ -1,61 +1,69 @@
 import { Category } from "./category";
 
-const categories: Category[] = [
-  {
-    id: 0,
-    name: "Action setA",
-    path: "action_a",
-  },
+export const categoriesStore: Category[] = [
   {
     id: 1,
-    name: "Action setB",
-    path: "action_b",
+    path: "/action_a",
+    name: "Action setA",
+    iconSrc: "assets/images/cry.jpg",
   },
   {
     id: 2,
-    name: "Animal setA",
-    path: "animal_a",
+    path: "/action_b",
+    name: "Action setB",
+    iconSrc: "assets/images/open.jpg",
   },
   {
     id: 3,
-    name: "Animal setB",
-    path: "animal_b",
+    path: "/animal_a",
+    name: "Animal setA",
+    iconSrc: "assets/images/cat.jpg",
   },
   {
     id: 4,
-    name: "Clothes",
-    path: "clothes",
+    path: "/animal_b",
+    name: "Animal setB",
+    iconSrc: "assets/images/bird.jpg",
   },
   {
     id: 5,
-    name: "Emotions",
-    path: "emotions",
+    path: "/clothes",
+    name: "Clothes",
+    iconSrc: "assets/images/skirt.jpg",
   },
   {
     id: 6,
-    name: "Body Parts",
-    path: "body_parts",
+    path: "/emotions",
+    name: "Emotions",
+    iconSrc: "assets/images/sad.jpg",
   },
   {
     id: 7,
+    path: "/body_parts",
+    name: "Body Parts",
+    iconSrc: "assets/images/eye.jpg",
+  },
+  {
+    id: 8,
+    path: "/vegetable",
     name: "Vegetable",
-    path: "vegetable",
+    iconSrc: "assets/images/cabbage.jpg",
   },
 ];
 
 export function getCategories(): Promise<Category[]> {
-  return Promise.resolve<Category[]>(categories);
+  return Promise.resolve<Category[]>(categoriesStore);
 }
 
 export function getCategoryById(
   categoryId: number
 ): Promise<Category | undefined> {
-  return Promise.resolve(categories.find((cat) => cat.id === categoryId));
+  return Promise.resolve(categoriesStore.find((cat) => cat.id === categoryId));
 }
 
 export function createCategory(category: Category): Promise<Category> {
   const isExist =
-    typeof categories.find(
+    typeof categoriesStore.find(
       (cat) => cat.name.toLowerCase() === category.name.toLowerCase()
     ) !== "undefined";
   if (isExist) {
@@ -64,18 +72,36 @@ export function createCategory(category: Category): Promise<Category> {
     );
   }
 
-  const id = categories.length + 1;
+  const id = categoriesStore.length + 1;
   const model = { ...category, id };
-  categories.push(model);
+  categoriesStore.push(model);
 
   return Promise.resolve(model);
 }
 
+export function updateCategory(
+  id: number,
+  categoryData: Category
+): Promise<Category> {
+  const selectedCategory = categoriesStore.find(
+    (category) => category.id === categoryData.id
+  );
+  if (selectedCategory === undefined) {
+    return Promise.reject(
+      new Error(`Category with id ${categoryData.id} doesn't exist`)
+    );
+  }
+
+  selectedCategory.name = categoryData.name;
+  selectedCategory.iconSrc = categoryData.iconSrc;
+  return Promise.resolve(selectedCategory);
+}
+
 export function deleteCategory(id: number): Promise<void> {
-  const index = categories.findIndex((cat) => cat.id === id);
+  const index = categoriesStore.findIndex((cat) => cat.id === id);
   if (index < 0) {
     Promise.reject(new Error("Category not found"));
   }
-  categories.splice(index, 1);
+  categoriesStore.splice(index, 1);
   return Promise.resolve();
 }
