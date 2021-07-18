@@ -11,7 +11,7 @@ import { Word } from "./word";
 const router = Router();
 
 // Get words category
-router.get("/:categoryId/words", async (req, res) => {
+router.get("/:categoryId/", async (req, res) => {
   const { categoryId } = req.params;
   if (!categoryId) {
     return res.sendStatus(StatusCodes.BadRequest);
@@ -24,7 +24,7 @@ router.get("/:categoryId/words", async (req, res) => {
 });
 
 // Create word
-router.post("/:categoryId/words", async (req, res) => {
+router.post("/:categoryId/", async (req, res) => {
   const catId = req.params.categoryId;
   const cardData = req.body as Word;
   if (!cardData.word) {
@@ -40,7 +40,7 @@ router.post("/:categoryId/words", async (req, res) => {
 });
 
 // Delete word
-router.delete("/:categoryId/words/:wordId", async (request, response) => {
+router.delete("/:categoryId/:wordId", async (request, response) => {
   const catId = request.params.categoryId;
   const selectedWordId = request.params.wordId;
 
@@ -56,7 +56,7 @@ router.delete("/:categoryId/words/:wordId", async (request, response) => {
 });
 
 // update word
-router.put("/:categoryId/words/:wordId", async (request, response) => {
+router.put("/:categoryId/:wordId", async (request, response) => {
   const catId = request.params.categoryId;
   const selectedWordId = request.params.wordId;
   const wordData = request.body as Word;
