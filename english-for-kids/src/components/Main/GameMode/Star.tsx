@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IStarProps } from "../../Shared/interface";
+import { IStarProps } from "../../shared/interface";
 
 export const Rating = styled.div`
   position: relative;

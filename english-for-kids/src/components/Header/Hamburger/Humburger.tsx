@@ -1,4 +1,4 @@
-import { IHamburgerProps } from "../../Shared/interface";
+import { IHamburgerProps } from "../../shared/interface";
 import { StyledHamburger } from "../Styled/Humburger.styled";
 
 export const Hamburger: React.FC<IHamburgerProps> = ({ open, setOpen }) => {

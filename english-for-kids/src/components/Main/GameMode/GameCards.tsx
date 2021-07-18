@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import { GameCard, GameCardActive } from "./GameCard";
-import { ICardsProps } from "../../Shared/interface";
 import { Button, Page, PlayContainer, Container } from "../Styled/Card.styled";
 import { Star } from "./Star";
 import { WinnerScoreboard } from "./WinnerScoreboard";
-import { store } from "../../Shared/store";
+import { store } from "../../shared/store";
+import { ICardsProps } from "../../shared/interface";
 
 export const GameCards: React.FC<ICardsProps> = ({
   cards,

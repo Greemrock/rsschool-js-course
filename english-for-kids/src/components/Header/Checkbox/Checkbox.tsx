@@ -1,4 +1,4 @@
-import { IButtonProps } from "../../Shared/interface";
+import { IButtonProps } from "../../shared/interface";
 import {
   StyledCheckbox,
   SwitchButton,

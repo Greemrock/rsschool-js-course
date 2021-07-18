@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 // import { ICategory } from "../../components/Shared/interface";
 // import { getCategories } from "../api/api";
-import { routePages } from "../../components/Shared/routes";
+import { routePages } from "../../components/shared/routes";
 import { CategoriesItem } from "../components/CategoriesItem";
 import { CategoriesItemCreate } from "../components/CategoriesItemCreate";
 

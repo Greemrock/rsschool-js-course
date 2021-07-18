@@ -1,4 +1,4 @@
-import { ICardProps } from "../../components/Shared/interface";
+import { ICardProps } from "../../components/shared/interface";
 /* eslint-disable @typescript-eslint/no-unused-vars */
 const CATEGORIES = "categories";
 const WORDS = "words";
@@ -18,9 +18,16 @@ export const getCategories = async (): Promise<ICategory[]> => {
   return data;
 };
 
-export const getWords = async (): Promise<ICardProps[][]> => {
+export const deleteCategory = async ({ id }: { id: number }): Promise<void> => {
+  await fetch(url(`${CATEGORIES}/${id}`), {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
+export const getWords = async (): Promise<ICardProps[]> => {
   const response = await fetch(url(WORDS));
-  const data: ICardProps[][] = await response.json();
+  const data: ICardProps[] = await response.json();
   return data;
 };
 
@@ -32,17 +39,3 @@ export const createCategory = async (data: string): Promise<void> => {
     body: JSON.stringify(body),
   });
 };
-
-export const deleteCategory = ({ id }: { id: number }): void => {
-  fetch(url(`${CATEGORIES}/${id}`), {
-    method: "DELETE",
-  });
-};
-
-// export const postLogin = async (name: string, pass: string): Promise<void> => {
-//   const body = { username: name, password: pass };
-//   await fetch(url(""), {
-//     method: "POST",
-//     body: JSON.stringify(body),
-//   });
-// };

@@ -1,17 +1,18 @@
 // import { useEffect, useState } from "react";
-import { categoriesStore } from "../Shared/categoriesStore";
-import { randomizer } from "../Shared/randomizer";
+import { categoriesStore } from "../shared/categoriesStore";
+import { randomizer } from "../shared/randomizer";
 import { GameCards } from "./GameMode/GameCards";
-import { collectionsStore } from "../Shared/collectionsStore";
-import { ICardProps } from "../Shared/interface";
+import { collectionsStore } from "../shared/collectionsStore";
+
 // import { ICardProps } from "../Shared/interface";
 // import { getWords } from "../../AdminPage/api/api";
 
 interface IMainP {
-  category: number;
+  // category: number;
+  match: any;
 }
 
-export const Main: React.FC<IMainP> = ({ category }) => {
+export const Main: React.FC<IMainP> = ({ match }) => {
   // const [items, setItems] = useState<ICardProps[][]>([]);
   // useEffect(() => {
   //   const categories = getWords();
@@ -20,19 +21,18 @@ export const Main: React.FC<IMainP> = ({ category }) => {
   //   };
   //   data();
   // }, [items]);
-  const collection: ICardProps[] = [];
-  collectionsStore.map((card) =>
-    card.categoryId === category ? collection.push(card) : ""
+  const {
+    params: { id },
+  } = match;
+  const collection = collectionsStore.filter(
+    (card) => String(card.categoryId) === id
   );
-  const randomCards = randomizer(collection).slice();
-
+  const randomCards = randomizer(collection);
   return (
-    <>
-      <GameCards
-        cards={collection}
-        title={categoriesStore[category].name}
-        randomCards={randomCards}
-      />
-    </>
+    <GameCards
+      cards={collection}
+      title={categoriesStore[id - 1].name}
+      randomCards={randomCards}
+    />
   );
 };

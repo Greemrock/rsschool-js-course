@@ -1,22 +1,18 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useOnClickOutside } from "../../../hooks";
+// import { useOnClickOutside } from "../../../hooks";
 import { Hamburger } from "../Hamburger/Humburger";
-import { IMenuProps } from "../../Shared/interface";
+import { IMenuProps } from "../../shared/interface";
 import { LoginBtn, StyledLink, StyledMenu } from "../Styled/Menu.styled";
 import { fixed } from "../../Main/Login/Login";
 
-export const Menu: React.FC<IMenuProps> = ({
-  routes,
-  setNumberCategory,
-  setModal,
-}) => {
+export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const node = useRef<HTMLDivElement>(null);
   const close = () => setOpen(false);
 
-  useOnClickOutside(node, () => setOpen(false));
+  // useOnClickOutside(node, () => setOpen(false));
   const closeModal = () => {
     fixed(true);
     setModal(true);
@@ -45,9 +41,8 @@ export const Menu: React.FC<IMenuProps> = ({
             return (
               <>
                 <Link
-                  to={route.path}
-                  key={route.path}
-                  onClick={() => setNumberCategory(routes.indexOf(route))}
+                  to={`/cards/${String(route.id)}`}
+                  key={route.id}
                   style={
                     window.location.pathname === route.path
                       ? {

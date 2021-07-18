@@ -38,7 +38,7 @@ export interface ICardsProps {
 
 export interface IMenuProps {
   routes: ICategory[];
-  setNumberCategory: (number: number) => void;
+  // setNumberCategory: (number: number) => void;
   setModal: (stateModal: boolean) => void;
 }
 
@@ -50,15 +50,15 @@ export interface CategoryCardProps {
   name: string;
   image: string;
   link: string;
-  setNumberCategory: (number: number) => void;
-  index: number;
+  // setNumberCategory: (number: number) => void;
+  // index: number;
 }
 
 export interface IHeaderProps {
   routes: ICategory[];
   statusCheckbox: boolean;
   setStatusCheckbox: (statusCheckbox: boolean) => void;
-  setNumberCategory: (number: number) => void;
+  // setNumberCategory: (number: number) => void;
   setModal: (stateModal: boolean) => void;
 }
 

@@ -7,8 +7,8 @@ import {
   CardTitle,
   Rotate,
 } from "../Styled/Card.styled";
-import { IGameCardProps } from "../../Shared/interface";
-import { store } from "../../Shared/store";
+import { IGameCardProps } from "../../shared/interface";
+import { store } from "../../shared/store";
 
 export const GameCard: React.FC<IGameCardProps> = ({
   translation,
@@ -33,7 +33,7 @@ export const GameCard: React.FC<IGameCardProps> = ({
     >
       <CardFront
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}${image})`,
+          backgroundImage: `url(${image})`,
         }}
       >
         {store.playMode ? (
@@ -46,7 +46,7 @@ export const GameCard: React.FC<IGameCardProps> = ({
       </CardFront>
       <CardBack
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}${image})`,
+          backgroundImage: `url(${image})`,
         }}
       >
         <CardTitle>{translation}</CardTitle>

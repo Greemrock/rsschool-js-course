@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import useSound from "use-sound";
-import { IWinProps } from "../../Shared/interface";
+import { IWinProps } from "../../shared/interface";
 import { Scoreboard } from "../Styled/Win.styled";
 
 export const WinnerScoreboard: React.FC<IWinProps> = ({ win, mistake }) => {
