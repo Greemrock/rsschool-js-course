@@ -1,4 +1,4 @@
-import { ICardProps } from "./interface";
+import { ICardProps } from "./interface/interface";
 
 export const collectionsStore: ICardProps[] = [
   {

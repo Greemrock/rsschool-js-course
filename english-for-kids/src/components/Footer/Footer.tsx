@@ -1,4 +1,4 @@
-import { FooterConteiner, GitHub, Rss } from "./Styled/Footer.styled";
+import { FooterConteiner, GitHub, Rss } from "./Footer.styled";
 
 export const Footer: React.FC = () => {
   return (

@@ -1,10 +1,14 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-// import { useOnClickOutside } from "../../../hooks";
-import { Hamburger } from "../Hamburger/Humburger";
-import { IMenuProps } from "../../shared/interface";
-import { LoginBtn, StyledLink, StyledMenu } from "../Styled/Menu.styled";
+import { Hamburger } from "../Hamburger/Hamburger";
+import { ICategory } from "../../shared/interface/interface";
+import { LoginBtn, StyledLink, StyledMenu } from "./Menu.styled";
 import { fixed } from "../../Main/Login/Login";
+
+interface IMenuProps {
+  routes: ICategory[];
+  setModal: (stateModal: boolean) => void;
+}
 
 export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
   const [open, setOpen] = useState<boolean>(false);
@@ -12,7 +16,6 @@ export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
   const node = useRef<HTMLDivElement>(null);
   const close = () => setOpen(false);
 
-  // useOnClickOutside(node, () => setOpen(false));
   const closeModal = () => {
     fixed(true);
     setModal(true);

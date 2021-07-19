@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { CategoryCardProps } from "../../shared/interface";
-import { Card, CardFront, CardTitle } from "../Styled/Card.styled";
+import { CategoryCardProps } from "../../shared/interface/interface";
+import { Card, CardFront, CardTitle } from "../GameCard/GameCard.styled";
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({
   name,

@@ -1,6 +1,6 @@
 import { Menu } from "./Menu/Menu";
-import { IHeaderProps } from "../shared/interface";
-import { StyledHeader } from "./Styled/Header.styled";
+import { IHeaderProps } from "../shared/interface/interface";
+import { StyledHeader } from "./Header.styled";
 import { Checkbox } from "./Checkbox/Checkbox";
 
 export const Header: React.FC<IHeaderProps> = ({

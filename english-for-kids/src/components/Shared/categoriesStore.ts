@@ -1,4 +1,4 @@
-import { ICategory } from "./interface";
+import { ICategory } from "./interface/interface";
 
 export const categoriesStore: ICategory[] = [
   {
