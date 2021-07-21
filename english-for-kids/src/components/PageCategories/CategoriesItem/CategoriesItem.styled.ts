@@ -27,7 +27,7 @@ export const ItemStyled = styled.li`
     width: calc(100% / 2 - 25px);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 845px) {
     width: 100%;
   }
 `;
@@ -88,7 +88,7 @@ export const ButtonContainer = styled.div`
   background-color: #4fbe79;
   padding: 15px;
 
-  @media (max-width: 750px) {
+  @media (max-width: 845px) {
     align-items: center;
     flex-direction: column;
   }
@@ -168,7 +168,7 @@ export const InputContainer = styled.div`
   background-color: #4fbe79;
   padding: 15px;
 
-  @media (max-width: 750px) {
+  @media (max-width: 845px) {
     align-items: center;
     flex-direction: column;
   }

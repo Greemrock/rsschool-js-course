@@ -11,7 +11,9 @@ import { AddStyled, FormNewCardStyled } from "./CategoriesItemCreate.styled";
 export const CategoriesItemCreate: React.FC = () => {
   const [update, setUpdate] = useState(false);
   const [newCategoryValue, setNewCategoryValue] = useState("");
-
+  const newCategory = async () => {
+    await createCategory({ name: newCategoryValue });
+  };
   return (
     <ItemStyled>
       <TitleNameStyled>Create new Category</TitleNameStyled>
@@ -22,7 +24,9 @@ export const CategoriesItemCreate: React.FC = () => {
       <FormNewCardStyled
         onSubmit={(event) => {
           event.preventDefault();
-          createCategory(newCategoryValue);
+          newCategory();
+          setNewCategoryValue("");
+          setUpdate(false);
         }}
         update={update}
       >
@@ -37,7 +41,10 @@ export const CategoriesItemCreate: React.FC = () => {
         </fieldset>
         <InputContainer>
           <input
-            onClick={() => setUpdate(false)}
+            onClick={() => {
+              setUpdate(false);
+              setNewCategoryValue("");
+            }}
             type="button"
             value="Cancel"
           />

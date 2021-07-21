@@ -9,10 +9,16 @@ export const AdminHeader: React.FC<IAdminHeaderProps> = ({ setLogIn }) => {
   return (
     <AdminHeaderStyled>
       <div>
-        <span>Categories</span>
+        <Link to="/edit_category">Categories</Link>
         <span>Words</span>
       </div>
-      <Link to="/" onClick={() => setLogIn(false)}>
+      <Link
+        to="/"
+        onClick={() => {
+          setLogIn(false);
+          localStorage.removeItem("login");
+        }}
+      >
         LogOut
       </Link>
     </AdminHeaderStyled>

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
   ItemStyled,
   TitleNameStyled,
@@ -9,30 +10,73 @@ import {
   InputContainer,
 } from "./CategoriesItem.styled";
 import { CloseItem } from "../../shared/CloseItem/CloseItem";
+import { getCategoryWords, updateCategory } from "../../api/api";
+import { ICardProps } from "../../shared/interface/interface";
 
-export const CategoriesItem: React.FC<{ name: string; idCategory: number }> = ({
+interface ICategoriesItem {
+  name: string;
+  idCategory: number;
+}
+
+export const CategoriesItem: React.FC<ICategoriesItem> = ({
   name,
   idCategory,
 }) => {
   const [update, setUpdate] = useState(false);
+  const [categoryWords, setCategoryWords] = useState<ICardProps[]>([]);
+  const [newCategoryValue, setNewCategoryValue] = useState("");
+  const history = useHistory();
+
+  useEffect(() => {
+    const words = async () => {
+      setCategoryWords(await getCategoryWords(idCategory));
+    };
+
+    words();
+  }, []);
+
+  const updateCat = async () => {
+    const data = { id: idCategory, name: newCategoryValue };
+    await updateCategory(data);
+  };
+
+  const goToPage = () => {
+    const path = `/edit_category/${idCategory}`;
+    history.push(path);
+  };
 
   return (
     <ItemStyled>
       <CloseItem id={idCategory} />
       <InformationStyled update={update}>
         <TitleNameStyled>{name}</TitleNameStyled>
-        <span>WORDS: 7</span>
+        <span>{`WORDS: ${categoryWords.length}`}</span>
         <ButtonContainer>
           <button onClick={() => setUpdate(true)} type="button">
             Update
           </button>
-          <button type="button">Add words</button>
+          <button type="button" onClick={() => goToPage()}>
+            Add words
+          </button>
         </ButtonContainer>
       </InformationStyled>
-      <FormCardStyled update={update}>
+      <FormCardStyled
+        update={update}
+        onSubmit={(event) => {
+          event.preventDefault();
+          updateCat();
+          setUpdate(false);
+          setNewCategoryValue("");
+        }}
+      >
         <fieldset>
           <legend>Category Name:</legend>
-          <InputStyled type="text" required />
+          <InputStyled
+            type="text"
+            required
+            value={newCategoryValue}
+            onChange={(event) => setNewCategoryValue(event.target.value)}
+          />
         </fieldset>
         <InputContainer>
           <input
@@ -40,7 +84,7 @@ export const CategoriesItem: React.FC<{ name: string; idCategory: number }> = ({
             type="button"
             value="Cancel"
           />
-          <input type="button" value="Create" />
+          <input type="submit" value="Create" />
         </InputContainer>
       </FormCardStyled>
     </ItemStyled>

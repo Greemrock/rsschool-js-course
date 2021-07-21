@@ -10,7 +10,6 @@ export interface ICardProps {
 export interface ICategory {
   id: number;
   name: string;
-  path: string;
   iconSrc: string;
 }
 
@@ -30,12 +29,6 @@ export interface IRoutes {
   component: React.FC;
 }
 
-export interface ICardsProps {
-  cards: ICardProps[];
-  title: string;
-  randomCards: ICardProps[];
-}
-
 export interface ICategoryCardsProps {
   setNumberCategory: (number: number) => void;
 }
@@ -44,13 +37,6 @@ export interface CategoryCardProps {
   name: string;
   image: string;
   link: string;
-}
-
-export interface IHeaderProps {
-  routes: ICategory[];
-  statusCheckbox: boolean;
-  setStatusCheckbox: (statusCheckbox: boolean) => void;
-  setModal: (stateModal: boolean) => void;
 }
 
 export interface IButtonProps {

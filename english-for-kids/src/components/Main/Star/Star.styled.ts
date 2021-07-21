@@ -19,7 +19,7 @@ export const StarEmpty = styled.div`
   min-width: 40px;
   height: 40px;
   background-size: 40px 40px;
-  background-image: url(${process.env.PUBLIC_URL}/assets/img/star.svg);
+  background-image: url(/assets/images/star.svg);
 `;
 
 export const StarWin = styled.div`
@@ -28,6 +28,6 @@ export const StarWin = styled.div`
   min-width: 40px;
   height: 40px;
   background-size: 40px 40px;
-  background-image: url(${process.env.PUBLIC_URL}/assets/img/star-win.svg);
+  background-image: url(/assets/images/star-win.svg);
   background-color: #fefefefe;
 `;

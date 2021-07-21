@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { logIn } from "../../auth/authorization";
 import {
   Bg,
@@ -11,11 +12,9 @@ import {
   Modal,
 } from "./Login.styled";
 
-interface IPopup {
+interface ILoginProps {
   statusModal: boolean;
   setModal: (statusModal: boolean) => void;
-  login: boolean;
-  setLogIn: (status: boolean) => void;
 }
 
 export const fixed = (status: boolean): void => {
@@ -26,16 +25,15 @@ export const fixed = (status: boolean): void => {
   }
 };
 
-export const Login: React.FC<IPopup> = ({
-  statusModal,
-  setModal,
-  login,
-  setLogIn,
-}) => {
+export const Login: React.FC<ILoginProps> = ({ statusModal, setModal }) => {
   const [usernameValue, setUsernameValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [error, setError] = useState("");
-
+  const history = useHistory();
+  const routeChange = () => {
+    const path = "/edit_category/";
+    history.push(path);
+  };
   const closeModal = () => {
     fixed(false);
     setModal(false);
@@ -43,16 +41,13 @@ export const Login: React.FC<IPopup> = ({
   const post = async () => {
     const message = await logIn(usernameValue, passwordValue);
     if (message) {
-      setLogIn(true);
       setError("");
+      localStorage.setItem("login", "true");
+      routeChange();
     } else {
-      setLogIn(false);
       setError("Incorrect username or password.");
     }
   };
-  if (login) {
-    closeModal();
-  }
   return (
     <Bg stateModal={statusModal}>
       <Modal>
@@ -63,6 +58,7 @@ export const Login: React.FC<IPopup> = ({
             post();
             setUsernameValue("");
             setPasswordValue("");
+            closeModal();
           }}
         >
           <Label>Login</Label>

@@ -14,7 +14,17 @@ import {
 } from "./WordsItem.styled";
 import { CloseItem } from "../../shared/CloseItem/CloseItem";
 
-export const WordsItem: React.FC = () => {
+interface IWordItemProps {
+  word: string;
+  translation: string;
+  image: string;
+}
+
+export const WordsItem: React.FC<IWordItemProps> = ({
+  word,
+  translation,
+  image,
+}) => {
   const [update, setUpdate] = useState(false);
 
   return (
@@ -23,11 +33,11 @@ export const WordsItem: React.FC = () => {
       <InformationStyled update={update}>
         <DivWordStyled>
           <b>Word: </b>
-          <span>Draw</span>
+          <span>{word}</span>
         </DivWordStyled>
         <DivWordStyled>
           <b>Translation: </b>
-          <span>Рисовать</span>
+          <span>{translation}</span>
         </DivWordStyled>
         <DivWordStyled>
           <b>Sound file: </b>
@@ -36,7 +46,7 @@ export const WordsItem: React.FC = () => {
         <DivWordStyled>
           <b>Image:</b>
         </DivWordStyled>
-        <ImgCardStyled src="#" alt="img" />
+        <ImgCardStyled src={image} alt="img" />
         <ButtonWordContainerStyled>
           <button onClick={() => setUpdate(true)} type="button">
             Change

@@ -46,14 +46,14 @@ router.post("/", async (req, res) => {
 router.put("/categories/:id", async (request, response) => {
   const catId = request.params.id;
   if (!catId) {
-    return response.sendStatus(404);
+    return response.sendStatus(StatusCodes.NotFound);
   }
   const categoryData = request.body as Category;
   try {
     const newCategoryData = await updateCategory(+catId, categoryData);
     return response.json(newCategoryData);
   } catch (error) {
-    return response.status(400).send(error);
+    return response.status(StatusCodes.BadRequest).send(error);
   }
 });
 

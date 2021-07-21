@@ -5,10 +5,16 @@ import { Button, Page, PlayContainer, Container } from "./GameCards.styled";
 import { Star } from "../Star/Star";
 import { WinnerScoreboard } from "../WinnerScoreboard/WinnerScoreboard";
 import { store } from "../../shared/store/store";
-import { ICardsProps } from "../../shared/interface/interface";
+import { ICardProps } from "../../shared/interface/interface";
+
+interface ICardsProps {
+  categoryWords: ICardProps[];
+  title: string | undefined;
+  randomCards: ICardProps[];
+}
 
 export const GameCards: React.FC<ICardsProps> = ({
-  cards,
+  categoryWords,
   title,
   randomCards,
 }) => {
@@ -19,12 +25,8 @@ export const GameCards: React.FC<ICardsProps> = ({
   const [win, setWin] = useState(false);
   const inner = play ? "" : "Start";
   const [playSound] = useSound(randomCards[countCard].audioSrc);
-  const [playError] = useSound(
-    `${process.env.PUBLIC_URL}/assets/audio/error.mp3`
-  );
-  const [playCorrect] = useSound(
-    `${process.env.PUBLIC_URL}/assets/audio/correct.mp3`
-  );
+  const [playError] = useSound("/assets/audio/error.mp3");
+  const [playCorrect] = useSound("/assets/audio/correct.mp3");
   useEffect(() => {
     if (countCard > 0) {
       setTimeout(() => playSound(), 1000);
@@ -35,7 +37,6 @@ export const GameCards: React.FC<ICardsProps> = ({
     store.star = [];
     store.matchCards = [];
   }
-
   const handleClick = (wordCard: string, id: number) => {
     if (wordCard === randomCards[countCard].word && play) {
       if (countCard !== NUMBER_OF_CARDS) {
@@ -63,28 +64,26 @@ export const GameCards: React.FC<ICardsProps> = ({
         <Star arrStar={store.star} />
       </Container>
       <WinnerScoreboard win={win} mistake={mistake} />
-      {cards.map((card) => {
+      {categoryWords.map((card) => {
         return (
           <>
-            {store.matchCards.indexOf(cards.indexOf(card)) !== -1 ? (
+            {store.matchCards.indexOf(categoryWords.indexOf(card)) !== -1 ? (
               <GameCardActive
-                key={card.word}
                 word={card.word}
                 translation={card.translation}
                 image={card.image}
                 audioSrc={card.audioSrc}
                 handleClick={handleClick}
-                id={cards.indexOf(card)}
+                id={categoryWords.indexOf(card)}
               />
             ) : (
               <GameCard
-                key={card.word}
                 word={card.word}
                 translation={card.translation}
                 image={card.image}
                 audioSrc={card.audioSrc}
                 handleClick={handleClick}
-                id={cards.indexOf(card)}
+                id={categoryWords.indexOf(card)}
               />
             )}
           </>

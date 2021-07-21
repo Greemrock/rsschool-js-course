@@ -13,6 +13,15 @@ export const AdminHeaderStyled = styled.div`
   background: #00bf82;
   margin-bottom: 40px;
 
+  span {
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    color: #ffffff;
+  }
+
   a {
     text-decoration: none;
     margin: 0 20px;

@@ -1,12 +1,19 @@
 import { CategoryCard } from "../CategoryCard/CategoryCard";
 import { Page } from "../GameCards/GameCards.styled";
-import { categoriesStore } from "../../shared/categoriesStore";
+// import { categoriesStore } from "../../shared/categoriesStore";
+import { ICategory } from "../../shared/interface/interface";
 
-export const CategoryCards: React.FC = () => {
+interface ICategoryCardsProps {
+  categories: ICategory[];
+}
+
+export const CategoryCards: React.FC<ICategoryCardsProps> = ({
+  categories,
+}) => {
   return (
     <>
       <Page>Main page</Page>
-      {categoriesStore.map((category) => {
+      {categories.map((category) => {
         return (
           <CategoryCard
             key={category.name}

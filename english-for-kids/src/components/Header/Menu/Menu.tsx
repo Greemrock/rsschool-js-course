@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Hamburger } from "../Hamburger/Hamburger";
 import { ICategory } from "../../shared/interface/interface";
 import { LoginBtn, StyledLink, StyledMenu } from "./Menu.styled";
@@ -12,11 +12,12 @@ interface IMenuProps {
 
 export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
   const [open, setOpen] = useState<boolean>(false);
+  const location = useLocation();
 
   const node = useRef<HTMLDivElement>(null);
   const close = () => setOpen(false);
 
-  const closeModal = () => {
+  const stateModal = () => {
     fixed(true);
     setModal(true);
   };
@@ -28,7 +29,7 @@ export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
           <Link
             to="/"
             style={
-              window.location.pathname === `/`
+              location.pathname === `/`
                 ? {
                     textDecoration: "underline",
                     textDecorationColor: "#2b5a71",
@@ -42,28 +43,33 @@ export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
           </Link>
           {routes.map((route) => {
             return (
-              <>
-                <Link
-                  to={`/cards/${String(route.id)}`}
-                  key={route.id}
-                  style={
-                    window.location.pathname === route.path
-                      ? {
-                          textDecoration: "underline",
-                          textDecorationColor: "#2b5a71",
-                        }
-                      : {
-                          textDecoration: "none",
-                        }
-                  }
-                >
-                  <StyledLink onClick={() => close()}>{route.name}</StyledLink>
-                </Link>
-              </>
+              <Link
+                to={`/category/${String(route.id)}`}
+                key={route.id}
+                style={
+                  location.pathname === `/cards/${String(route.id)}`
+                    ? {
+                        textDecoration: "underline",
+                        textDecorationColor: "#2b5a71",
+                      }
+                    : {
+                        textDecoration: "none",
+                      }
+                }
+              >
+                <StyledLink onClick={() => close()}>{route.name}</StyledLink>
+              </Link>
             );
           })}
         </div>
-        <LoginBtn onClick={() => closeModal()}>Login</LoginBtn>
+        <LoginBtn
+          onClick={() => {
+            stateModal();
+            alert("login: admin; pass: 12345");
+          }}
+        >
+          Login
+        </LoginBtn>
       </StyledMenu>
     </>
   );

@@ -9,7 +9,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 }) => {
   return (
     <Card>
-      <Link to={`cards/${link}`}>
+      <Link to={`category/${link}`}>
         <CardFront style={{ backgroundImage: `url(${image})` }}>
           <CardTitle>{name}</CardTitle>
         </CardFront>
