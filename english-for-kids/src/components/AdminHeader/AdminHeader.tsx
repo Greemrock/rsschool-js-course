@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 import { AdminHeaderStyled } from "./AdminHeader.styled";
 
-interface IAdminHeaderProps {
-  setLogIn: (status: boolean) => void;
-}
-
-export const AdminHeader: React.FC<IAdminHeaderProps> = ({ setLogIn }) => {
+export const AdminHeader: React.FC = () => {
   return (
     <AdminHeaderStyled>
       <div>
@@ -15,7 +11,6 @@ export const AdminHeader: React.FC<IAdminHeaderProps> = ({ setLogIn }) => {
       <Link
         to="/"
         onClick={() => {
-          setLogIn(false);
           localStorage.removeItem("login");
         }}
       >

@@ -1,4 +1,4 @@
-import { ICardProps } from "../../shared/interface/interface";
+import { ICardProps } from "../shared/interface/interface";
 
 // Fisher–Yates shuffle
 export const randomizer = (arr: ICardProps[]): ICardProps[] => {

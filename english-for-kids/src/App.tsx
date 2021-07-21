@@ -17,7 +17,6 @@ export const App: React.FC = () => {
   const [statusCheckbox, setStatusCheckbox] = useState<boolean>(false);
   store.playMode = statusCheckbox;
   const [statusModal, setModal] = useState(false);
-  const [login, setLogIn] = useState<boolean>(false);
   const location = useLocation();
   const [categories, setCategories] = useState<ICategory[]>([]);
   useEffect(() => {
@@ -28,12 +27,12 @@ export const App: React.FC = () => {
   }, [categories]);
   return (
     <>
-      {(location.pathname === "/categories" ||
-        location.pathname === "/words") &&
-        !login && <Redirect to="/" />}
+      {(location.pathname === "/edit_category" ||
+        location.pathname === "/words/:id") &&
+        !localStorage.getItem("login") && <Redirect to="/" />}
 
       {localStorage.getItem("login") ? (
-        <AdminHeader setLogIn={setLogIn} />
+        <AdminHeader />
       ) : (
         <>
           <Login statusModal={statusModal} setModal={setModal} />
@@ -53,9 +52,9 @@ export const App: React.FC = () => {
               path="/"
               render={() => <CategoryCards categories={categories} />}
             />
-            <Route path="/edit_category/" component={PageCategories} />
+            <Route path="/edit_category" component={PageCategories} />
             <Route
-              path="/edit_category/:id"
+              path="/words/:id"
               render={(routeProps) => <PageWords matchId={routeProps.match} />}
             />
             <Route

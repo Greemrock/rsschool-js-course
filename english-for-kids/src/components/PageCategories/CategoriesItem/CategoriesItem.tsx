@@ -41,7 +41,7 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
   };
 
   const goToPage = () => {
-    const path = `/edit_category/${idCategory}`;
+    const path = `/words/${idCategory}`;
     history.push(path);
   };
 
