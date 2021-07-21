@@ -2,12 +2,12 @@ import { match } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { randomizer } from "../service/randomizer";
 import { GameCards } from "./GameCards/GameCards";
-import { ICardProps, ICategory } from "../shared/interface/interface";
+import {
+  DetailParams,
+  ICardProps,
+  ICategory,
+} from "../shared/interface/interface";
 import { getCategories, getCategoryWords } from "../api/api";
-
-interface DetailParams {
-  id: string;
-}
 
 interface IMainProps {
   matchId: match<DetailParams>;

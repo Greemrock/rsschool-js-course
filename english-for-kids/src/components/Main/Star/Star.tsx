@@ -1,5 +1,8 @@
-import { IStarProps } from "../../shared/interface/interface";
 import { Rating, StarEmpty, StarWin } from "./Star.styled";
+
+interface IStarProps {
+  arrStar: boolean[];
+}
 
 export const Star: React.FC<IStarProps> = ({ arrStar }) => {
   return (

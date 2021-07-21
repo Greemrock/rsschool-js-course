@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { match } from "react-router-dom";
 import { getCategories, getCategoryWords } from "../api/api";
 import { findId } from "../service/findId";
-import { ICardProps, ICategory } from "../shared/interface/interface";
+import {
+  DetailParams,
+  ICardProps,
+  ICategory,
+} from "../shared/interface/interface";
 import { TitleCategoryStyled } from "./PageWords.styled";
 import { WordsItem } from "./WordsItem/WordsItem";
 import { WordsItemCreate } from "./WordsItemCreate/WordsItemCreate";
-
-interface DetailParams {
-  id: string;
-}
 
 interface IPageWordsProps {
   matchId: match<DetailParams>;

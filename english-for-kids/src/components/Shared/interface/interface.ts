@@ -44,10 +44,6 @@ export interface IButtonProps {
   setStatusCheckbox: () => void;
 }
 
-export interface IStarProps {
-  arrStar: boolean[];
-}
-
 export interface IPlayButtonProps {
   play: boolean;
   setPlay: (x: boolean) => void;
@@ -56,4 +52,8 @@ export interface IPlayButtonProps {
 export interface IWinProps {
   win: boolean;
   mistake: number;
+}
+
+export interface DetailParams {
+  id: string;
 }

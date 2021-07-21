@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Hamburger } from "../Hamburger/Hamburger";
 import { ICategory } from "../../shared/interface/interface";
 import { LoginBtn, StyledLink, StyledMenu } from "./Menu.styled";
-import { fixed } from "../../Main/Login/Login";
+import { fixBody } from "../../service/fixBody";
 
 interface IMenuProps {
   routes: ICategory[];
@@ -18,7 +18,7 @@ export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
   const close = () => setOpen(false);
 
   const stateModal = () => {
-    fixed(true);
+    fixBody(true);
     setModal(true);
   };
   return (

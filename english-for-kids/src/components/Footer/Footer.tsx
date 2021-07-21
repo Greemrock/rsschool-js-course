@@ -1,8 +1,8 @@
-import { FooterConteiner, GitHub, Rss } from "./Footer.styled";
+import { FooterContainer, GitHub, Rss } from "./Footer.styled";
 
 export const Footer: React.FC = () => {
   return (
-    <FooterConteiner>
+    <FooterContainer>
       <div>
         <GitHub
           href="https://github.com/greemrock"
@@ -18,6 +18,6 @@ export const Footer: React.FC = () => {
           rel="noopener noreferrer"
         />
       </div>
-    </FooterConteiner>
+    </FooterContainer>
   );
 };

@@ -27,7 +27,8 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   }
 `;
 
-export const StyledLink = styled.div`
+export const StyledLink = styled.span`
+  display: block;
   padding: 0 2rem;
   font-size: 2rem;
   color: #fdf2e9;

@@ -7,12 +7,7 @@ interface IHamburgerProps {
 
 export const Hamburger: React.FC<IHamburgerProps> = ({ open, setOpen }) => {
   return (
-    <StyledHamburger
-      open={open}
-      onClick={() => {
-        return setOpen(!open);
-      }}
-    >
+    <StyledHamburger open={open} onClick={() => setOpen(!open)}>
       <div />
       <div />
       <div />

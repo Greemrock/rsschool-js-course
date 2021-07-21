@@ -5,7 +5,7 @@ export const WordsItemCreate: React.FC = () => {
   return (
     <WordsItemStyled>
       <TitleNewCard>Add new word</TitleNewCard>
-      <AddWordStyled update={false}>
+      <AddWordStyled open={false}>
         <div />
         <div />
       </AddWordStyled>

@@ -29,5 +29,5 @@ export const StarWin = styled.div`
   height: 40px;
   background-size: 40px 40px;
   background-image: url(/assets/images/star-win.svg);
-  background-color: #fefefefe;
+  background-color: #fefefe;
 `;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { logIn } from "../../auth/authorization";
+import { fixBody } from "../../service/fixBody";
 import {
   Bg,
   Button,
@@ -17,14 +18,6 @@ interface ILoginProps {
   setModal: (statusModal: boolean) => void;
 }
 
-export const fixed = (status: boolean): void => {
-  if (status) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "visible";
-  }
-};
-
 export const Login: React.FC<ILoginProps> = ({ statusModal, setModal }) => {
   const [usernameValue, setUsernameValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
@@ -35,7 +28,7 @@ export const Login: React.FC<ILoginProps> = ({ statusModal, setModal }) => {
     history.push(path);
   };
   const closeModal = () => {
-    fixed(false);
+    fixBody(false);
     setModal(false);
   };
   const post = async () => {
