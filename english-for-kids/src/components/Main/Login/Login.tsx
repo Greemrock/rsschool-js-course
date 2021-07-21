@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { logIn } from "../../auth/authorization";
-import { fixBody } from "../../service/fixBody";
 import {
   Bg,
   Button,
@@ -28,7 +27,6 @@ export const Login: React.FC<ILoginProps> = ({ statusModal, setModal }) => {
     history.push(path);
   };
   const closeModal = () => {
-    fixBody(false);
     setModal(false);
   };
   const post = async () => {

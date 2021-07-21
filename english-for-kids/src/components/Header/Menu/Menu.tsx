@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Hamburger } from "../Hamburger/Hamburger";
 import { ICategory } from "../../shared/interface/interface";
 import { LoginBtn, StyledLink, StyledMenu } from "./Menu.styled";
-import { fixBody } from "../../service/fixBody";
 
 interface IMenuProps {
   routes: ICategory[];
@@ -13,32 +12,31 @@ interface IMenuProps {
 export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
   const [open, setOpen] = useState<boolean>(false);
   const location = useLocation();
-
   const node = useRef<HTMLDivElement>(null);
+
   const close = () => setOpen(false);
 
   const stateModal = () => {
-    fixBody(true);
     setModal(true);
   };
+
+  const changeStyleLink = (link: string) => {
+    return location.pathname === `${link}`
+      ? {
+          textDecoration: "underline",
+          textDecorationColor: "#2b5a71",
+        }
+      : {
+          textDecoration: "none",
+        };
+  };
+
   return (
     <>
       <Hamburger open={open} setOpen={setOpen} />
       <StyledMenu open={open} ref={node}>
         <div>
-          <Link
-            to="/"
-            style={
-              location.pathname === `/`
-                ? {
-                    textDecoration: "underline",
-                    textDecorationColor: "#2b5a71",
-                  }
-                : {
-                    textDecoration: "none",
-                  }
-            }
-          >
+          <Link to="/" style={changeStyleLink("/")}>
             <StyledLink onClick={() => close()}>Main page</StyledLink>
           </Link>
           {routes.map((route) => {
@@ -46,16 +44,7 @@ export const Menu: React.FC<IMenuProps> = ({ routes, setModal }) => {
               <Link
                 to={`/category/${String(route.id)}`}
                 key={route.id}
-                style={
-                  location.pathname === `/cards/${String(route.id)}`
-                    ? {
-                        textDecoration: "underline",
-                        textDecorationColor: "#2b5a71",
-                      }
-                    : {
-                        textDecoration: "none",
-                      }
-                }
+                style={changeStyleLink(`/category/${String(route.id)}`)}
               >
                 <StyledLink onClick={() => close()}>{route.name}</StyledLink>
               </Link>
