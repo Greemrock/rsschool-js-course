@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const AddStyled = styled.div<{ update: boolean }>`
+export const AddStyled = styled.div<{ open: boolean }>`
   position: relative;
   width: 85px;
   height: 85px;
-  display: ${({ update }) => (update ? "none" : "flex")};
+  display: ${({ open }) => (open ? "none" : "flex")};
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -40,8 +40,8 @@ export const AddStyled = styled.div<{ update: boolean }>`
   }
 `;
 
-export const FormNewCardStyled = styled.form<{ update: boolean }>`
-  display: ${({ update }) => (!update ? "none" : "flex")};
+export const FormNewCardStyled = styled.form<{ open: boolean }>`
+  display: ${({ open }) => (!open ? "none" : "flex")};
   position: relative;
   flex-direction: column;
   align-items: center;

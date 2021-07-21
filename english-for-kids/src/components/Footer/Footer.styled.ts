@@ -29,7 +29,7 @@ export const FooterConteiner = styled.div`
 export const GitHub = styled.a`
   height: 45px;
   padding-left: 45px;
-  background-image: url(${`${process.env.PUBLIC_URL}/assets/img/github.svg`});
+  background-image: url(${`/assets/images/github.svg`});
   background-size: 35px;
   background-repeat: no-repeat;
   background-position: left center;
@@ -40,7 +40,7 @@ export const GitHub = styled.a`
 export const Rss = styled.a`
   width: 86px;
   height: 32px;
-  background-image: url(${`${process.env.PUBLIC_URL}/assets/img/rss.svg`});
+  background-image: url(${`/assets/images/rss.svg`});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;

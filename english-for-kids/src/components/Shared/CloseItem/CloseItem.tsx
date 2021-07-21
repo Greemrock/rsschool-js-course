@@ -1,9 +1,26 @@
 import { deleteCategory } from "../../api/api";
 import { Close } from "./CloseItem.styled";
 
-export const CloseItem: React.FC<{ id: number }> = (id) => {
+interface ICloseItemProps {
+  id: number;
+  getAllCategories: () => Promise<void>;
+}
+
+export const CloseItem: React.FC<ICloseItemProps> = ({
+  id,
+  getAllCategories,
+}) => {
+  const delCategory = async () => {
+    await deleteCategory({ id });
+  };
   return (
-    <Close onClick={() => deleteCategory(id)}>
+    <Close
+      onClick={() => {
+        delCategory();
+        getAllCategories();
+        getAllCategories();
+      }}
+    >
       <div />
       <div />
     </Close>

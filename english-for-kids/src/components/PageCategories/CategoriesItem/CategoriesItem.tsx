@@ -16,23 +16,25 @@ import { ICardProps } from "../../shared/interface/interface";
 interface ICategoriesItem {
   name: string;
   idCategory: number;
+  getAllCategories: () => Promise<void>;
 }
 
 export const CategoriesItem: React.FC<ICategoriesItem> = ({
   name,
   idCategory,
+  getAllCategories,
 }) => {
   const [update, setUpdate] = useState(false);
   const [categoryWords, setCategoryWords] = useState<ICardProps[]>([]);
   const [newCategoryValue, setNewCategoryValue] = useState("");
   const history = useHistory();
 
-  useEffect(() => {
-    const words = async () => {
-      setCategoryWords(await getCategoryWords(idCategory));
-    };
+  const getWords = async () => {
+    setCategoryWords(await getCategoryWords(idCategory));
+  };
 
-    words();
+  useEffect(() => {
+    getWords();
   }, []);
 
   const updateCat = async () => {
@@ -44,10 +46,9 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
     const path = `/words/${idCategory}`;
     history.push(path);
   };
-
   return (
     <ItemStyled>
-      <CloseItem id={idCategory} />
+      <CloseItem id={idCategory} getAllCategories={getAllCategories} />
       <InformationStyled update={update}>
         <TitleNameStyled>{name}</TitleNameStyled>
         <span>{`WORDS: ${categoryWords.length}`}</span>
@@ -65,6 +66,8 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
         onSubmit={(event) => {
           event.preventDefault();
           updateCat();
+          getAllCategories();
+          getAllCategories();
           setUpdate(false);
           setNewCategoryValue("");
         }}

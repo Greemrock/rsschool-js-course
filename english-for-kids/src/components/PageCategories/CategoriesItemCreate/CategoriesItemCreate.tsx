@@ -8,8 +8,14 @@ import {
 } from "../CategoriesItem/CategoriesItem.styled";
 import { AddStyled, FormNewCardStyled } from "./CategoriesItemCreate.styled";
 
-export const CategoriesItemCreate: React.FC = () => {
-  const [update, setUpdate] = useState(false);
+interface ICategoriesItemCreate {
+  getAllCategories: () => Promise<void>;
+}
+
+export const CategoriesItemCreate: React.FC<ICategoriesItemCreate> = ({
+  getAllCategories,
+}) => {
+  const [open, setOpen] = useState(false);
   const [newCategoryValue, setNewCategoryValue] = useState("");
   const newCategory = async () => {
     await createCategory({ name: newCategoryValue });
@@ -17,7 +23,7 @@ export const CategoriesItemCreate: React.FC = () => {
   return (
     <ItemStyled>
       <TitleNameStyled>Create new Category</TitleNameStyled>
-      <AddStyled onClick={() => setUpdate(true)} update={update}>
+      <AddStyled onClick={() => setOpen(true)} open={open}>
         <div />
         <div />
       </AddStyled>
@@ -25,10 +31,12 @@ export const CategoriesItemCreate: React.FC = () => {
         onSubmit={(event) => {
           event.preventDefault();
           newCategory();
+          getAllCategories();
+          getAllCategories();
           setNewCategoryValue("");
-          setUpdate(false);
+          setOpen(false);
         }}
-        update={update}
+        open={open}
       >
         <fieldset>
           <legend>Category Name:</legend>
@@ -36,19 +44,25 @@ export const CategoriesItemCreate: React.FC = () => {
             type="text"
             required
             value={newCategoryValue}
-            onChange={(event) => setNewCategoryValue(event.target.value)}
+            onChange={(event) => {
+              setNewCategoryValue(event.target.value);
+            }}
           />
         </fieldset>
         <InputContainer>
           <input
             onClick={() => {
-              setUpdate(false);
+              setOpen(false);
               setNewCategoryValue("");
             }}
             type="button"
             value="Cancel"
           />
-          <input type="submit" value="Create" />
+          <input
+            type="submit"
+            value="Create"
+            onClick={() => getAllCategories()}
+          />
         </InputContainer>
       </FormNewCardStyled>
     </ItemStyled>

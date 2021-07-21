@@ -18,18 +18,20 @@ interface IWordItemProps {
   word: string;
   translation: string;
   image: string;
+  getAllCategories: () => Promise<void>;
 }
 
 export const WordsItem: React.FC<IWordItemProps> = ({
   word,
   translation,
   image,
+  getAllCategories,
 }) => {
   const [update, setUpdate] = useState(false);
 
   return (
     <WordsItemStyled>
-      <CloseItem id={0} />
+      <CloseItem id={0} getAllCategories={getAllCategories} />
       <InformationStyled update={update}>
         <DivWordStyled>
           <b>Word: </b>

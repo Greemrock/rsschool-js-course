@@ -7,22 +7,27 @@ import { CategoriesItemCreate } from "./CategoriesItemCreate/CategoriesItemCreat
 export const PageCategories: React.FC = () => {
   const [categories, setCategories] = useState<ICategory[]>([]);
 
-  useEffect(() => {
-    const allCategories = async () => {
-      setCategories(await getCategories());
-    };
+  const getAllCategories = async () => {
+    setCategories(await getCategories());
+  };
 
-    allCategories();
-  }, [categories]);
+  useEffect(() => {
+    getAllCategories();
+  }, [setCategories]);
 
   return (
     <>
-      {categories.map((item) => {
+      {categories.map((category) => {
         return (
-          <CategoriesItem key={item.id} name={item.name} idCategory={item.id} />
+          <CategoriesItem
+            key={category.id}
+            name={category.name}
+            idCategory={category.id}
+            getAllCategories={getAllCategories}
+          />
         );
       })}
-      <CategoriesItemCreate />
+      <CategoriesItemCreate getAllCategories={getAllCategories} />
     </>
   );
 };

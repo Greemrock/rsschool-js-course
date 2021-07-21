@@ -24,7 +24,7 @@ export const App: React.FC = () => {
       setCategories(await getCategories());
     };
     allCategories();
-  }, [categories]);
+  }, []);
   return (
     <>
       {(location.pathname === "/edit_category" ||
