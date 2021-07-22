@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCategories } from "../api/api";
+import { getCategories } from "../api/api-category";
 import { ICategory } from "../shared/interface/interface";
 import { CategoriesItem } from "./CategoriesItem/CategoriesItem";
 import { CategoriesItemCreate } from "./CategoriesItemCreate/CategoriesItemCreate";

@@ -106,3 +106,21 @@ export const UploadFileStyled = styled.div`
     }
   }
 `;
+
+export const ReapiteButton = styled.button`
+  position: relative;
+  top: 5px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: none;
+  background-image: url("/assets/images/repeat.svg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+
+  :hover {
+    filter: invert(10%) sepia(98%) saturate(4593%) hue-rotate(333deg)
+      brightness(95%) contrast(106%);
+  }
+`;

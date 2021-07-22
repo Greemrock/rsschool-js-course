@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createCategory } from "../../api/api";
+import { createCategory } from "../../api/api-category";
 import {
   ItemStyled,
   TitleNameStyled,
@@ -32,7 +32,7 @@ export const CategoriesItemCreate: React.FC<ICategoriesItemCreate> = ({
           event.preventDefault();
           newCategory();
           getAllCategories();
-          getAllCategories();
+          // getAllCategories();
           setNewCategoryValue("");
           setOpen(false);
         }}

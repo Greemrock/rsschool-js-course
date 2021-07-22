@@ -1,4 +1,4 @@
-import { deleteCategory } from "../../api/api";
+import { deleteCategory } from "../../api/api-category";
 import { Close } from "./CloseItem.styled";
 
 interface ICloseItemProps {
@@ -18,7 +18,7 @@ export const CloseItem: React.FC<ICloseItemProps> = ({
       onClick={() => {
         delCategory();
         getAllCategories();
-        getAllCategories();
+        // getAllCategories();
       }}
     >
       <div />

@@ -7,7 +7,8 @@ import {
   ICardProps,
   ICategory,
 } from "../shared/interface/interface";
-import { getCategories, getCategoryWords } from "../api/api";
+import { getCategories } from "../api/api-category";
+import { getCategoryWords } from "../api/api-word";
 
 interface IMainProps {
   matchId: match<DetailParams>;

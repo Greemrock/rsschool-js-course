@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { match } from "react-router-dom";
-import { getCategories, getCategoryWords } from "../api/api";
+import { getCategories } from "../api/api-category";
+import { getCategoryWords } from "../api/api-word";
 import { findId } from "../service/findId";
 import {
   DetailParams,
@@ -46,6 +47,7 @@ export const PageWords: React.FC<IPageWordsProps> = ({ matchId }) => {
           <WordsItem
             word={word.word}
             translation={word.translation}
+            audio={word.audioSrc}
             image={word.image}
             getAllCategories={getAllCategories}
           />

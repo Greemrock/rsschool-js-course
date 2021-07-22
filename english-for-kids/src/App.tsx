@@ -9,7 +9,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Login } from "./components/Main/Login/Login";
 import { AdminHeader } from "./components/AdminHeader/AdminHeader";
 import { ICategory } from "./components/shared/interface/interface";
-import { getCategories } from "./components/api/api";
+import { getCategories } from "./components/api/api-category";
 import { PageCategories } from "./components/PageCategories/PageCategories";
 import { PageWords } from "./components/PageWords/PageWords";
 

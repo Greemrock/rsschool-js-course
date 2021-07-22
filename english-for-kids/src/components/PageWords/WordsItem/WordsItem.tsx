@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useSound from "use-sound";
 import {
   FormCardStyled,
   InformationStyled,
@@ -11,6 +12,7 @@ import {
   WordsItemStyled,
   UploadFileStyled,
   CancelInputStyled,
+  ReapiteButton,
 } from "./WordsItem.styled";
 import { CloseItem } from "../../shared/CloseItem/CloseItem";
 
@@ -18,6 +20,7 @@ interface IWordItemProps {
   word: string;
   translation: string;
   image: string;
+  audio: string;
   getAllCategories: () => Promise<void>;
 }
 
@@ -26,9 +29,11 @@ export const WordsItem: React.FC<IWordItemProps> = ({
   translation,
   image,
   getAllCategories,
+  audio,
 }) => {
   const [update, setUpdate] = useState(false);
-
+  const [play] = useSound(audio);
+  const audioName = audio.split("/").slice(3, 4);
   return (
     <WordsItemStyled>
       <CloseItem id={0} getAllCategories={getAllCategories} />
@@ -43,7 +48,8 @@ export const WordsItem: React.FC<IWordItemProps> = ({
         </DivWordStyled>
         <DivWordStyled>
           <b>Sound file: </b>
-          <span>draw.mp3</span>
+          <span>{audioName}</span>
+          <ReapiteButton onClick={() => play()} />
         </DivWordStyled>
         <DivWordStyled>
           <b>Image:</b>
@@ -82,9 +88,10 @@ export const WordsItem: React.FC<IWordItemProps> = ({
         <CancelInputStyled>
           <input
             onClick={() => setUpdate(false)}
-            type="submit"
+            type="button"
             value="Cancel"
           />
+          <input type="submit" value="Update" />
         </CancelInputStyled>
       </FormCardStyled>
     </WordsItemStyled>

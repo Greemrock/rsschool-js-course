@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { logIn } from "../../auth/authorization";
+import { fixBody } from "../../service/fixBody";
 import {
   Bg,
   Button,
@@ -34,6 +35,7 @@ export const Login: React.FC<ILoginProps> = ({ statusModal, setModal }) => {
     if (message) {
       setError("");
       localStorage.setItem("login", "true");
+      fixBody(false);
       routeChange();
     } else {
       setError("Incorrect username or password.");

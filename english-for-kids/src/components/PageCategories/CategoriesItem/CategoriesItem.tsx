@@ -10,7 +10,8 @@ import {
   InputContainer,
 } from "./CategoriesItem.styled";
 import { CloseItem } from "../../shared/CloseItem/CloseItem";
-import { getCategoryWords, updateCategory } from "../../api/api";
+import { updateCategory } from "../../api/api-category";
+import { getCategoryWords } from "../../api/api-word";
 import { ICardProps } from "../../shared/interface/interface";
 
 interface ICategoriesItem {
@@ -67,7 +68,7 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
           event.preventDefault();
           updateCat();
           getAllCategories();
-          getAllCategories();
+          // getAllCategories();
           setUpdate(false);
           setNewCategoryValue("");
         }}
