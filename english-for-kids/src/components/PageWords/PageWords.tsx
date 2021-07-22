@@ -39,10 +39,9 @@ export const PageWords: React.FC<IPageWordsProps> = ({ matchId }) => {
 
   return categories.length ? (
     <>
-      <TitleCategoryStyled>{`Category: ${findId(
-        categories,
-        id
-      )}`}</TitleCategoryStyled>
+      <TitleCategoryStyled>{`Category: ${
+        findId(categories, id)?.name
+      }`}</TitleCategoryStyled>
       {categoryWords.map((word) => {
         return (
           <WordsItem
@@ -57,7 +56,10 @@ export const PageWords: React.FC<IPageWordsProps> = ({ matchId }) => {
           />
         );
       })}
-      <WordsItemCreate />
+      <WordsItemCreate
+        idCategory={findId(categories, id)}
+        getAllWords={getAllWords}
+      />
     </>
   ) : null;
 };

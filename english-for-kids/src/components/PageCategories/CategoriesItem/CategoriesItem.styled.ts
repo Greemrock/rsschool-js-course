@@ -113,16 +113,16 @@ export const ButtonContainer = styled.div`
   }
 `;
 
-export const InformationStyled = styled.div<{ update: boolean }>`
-  display: ${({ update }) => (update ? "none" : "flex")};
+export const InformationStyled = styled.div<{ open: boolean }>`
+  display: ${({ open }) => (open ? "none" : "flex")};
   flex-direction: column;
   align-items: center;
 `;
 
 export const FormCardStyled = styled.form<{
-  update: boolean;
+  open: boolean;
 }>`
-  display: ${({ update }) => (!update ? "none" : "flex")};
+  display: ${({ open }) => (!open ? "none" : "flex")};
   position: relative;
   flex-direction: column;
   align-items: center;

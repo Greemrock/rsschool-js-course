@@ -25,7 +25,7 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
   idCategory,
   getAllCategories,
 }) => {
-  const [update, setUpdate] = useState(false);
+  const [open, setOpen] = useState(false);
   const [categoryWords, setCategoryWords] = useState<ICardProps[]>([]);
   const [newCategoryValue, setNewCategoryValue] = useState("");
   const history = useHistory();
@@ -63,11 +63,11 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
         <div />
         <div />
       </Close>
-      <InformationStyled update={update}>
+      <InformationStyled open={open}>
         <TitleNameStyled>{name}</TitleNameStyled>
         <span>{`WORDS: ${categoryWords.length}`}</span>
         <ButtonContainer>
-          <button onClick={() => setUpdate(true)} type="button">
+          <button onClick={() => setOpen(true)} type="button">
             Update
           </button>
           <button type="button" onClick={() => goToPage()}>
@@ -76,12 +76,12 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
         </ButtonContainer>
       </InformationStyled>
       <FormCardStyled
-        update={update}
+        open={open}
         onSubmit={async (event) => {
           event.preventDefault();
           await updateCat();
           await getAllCategories();
-          setUpdate(false);
+          setOpen(false);
           setNewCategoryValue("");
         }}
       >
@@ -95,11 +95,7 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
           />
         </fieldset>
         <InputContainer>
-          <input
-            onClick={() => setUpdate(false)}
-            type="button"
-            value="Cancel"
-          />
+          <input onClick={() => setOpen(false)} type="button" value="Cancel" />
           <input type="submit" value="Create" />
         </InputContainer>
       </FormCardStyled>

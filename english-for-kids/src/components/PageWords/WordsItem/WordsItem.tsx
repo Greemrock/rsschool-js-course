@@ -36,7 +36,7 @@ export const WordsItem: React.FC<IWordItemProps> = ({
   idCategory,
   getAllWords,
 }) => {
-  const [update, setUpdate] = useState(false);
+  const [open, setOpen] = useState(false);
   const [play] = useSound(audioCard);
   const [wordValue, setWordValue] = useState("");
   const [translationValue, setTranslationValue] = useState("");
@@ -80,7 +80,7 @@ export const WordsItem: React.FC<IWordItemProps> = ({
         <div />
         <div />
       </Close>
-      <InformationStyled update={update}>
+      <InformationStyled open={open}>
         <DivWordStyled>
           <b>Word: </b>
           <span>{wordCard}</span>
@@ -99,18 +99,18 @@ export const WordsItem: React.FC<IWordItemProps> = ({
         </DivWordStyled>
         <ImgCardStyled src={imageCard} alt="img" />
         <ButtonWordContainerStyled>
-          <button onClick={() => setUpdate(true)} type="button">
+          <button onClick={() => setOpen(true)} type="button">
             Change
           </button>
         </ButtonWordContainerStyled>
       </InformationStyled>
       <FormCardStyled
-        update={update}
+        open={open}
         onSubmit={async (event) => {
           event.preventDefault();
           await updateCard();
           await getAllWords();
-          setUpdate(false);
+          setOpen(false);
         }}
       >
         <fieldset>
@@ -147,11 +147,7 @@ export const WordsItem: React.FC<IWordItemProps> = ({
           />
         </UploadFileStyled>
         <CancelInputStyled>
-          <input
-            onClick={() => setUpdate(false)}
-            type="button"
-            value="Cancel"
-          />
+          <input onClick={() => setOpen(false)} type="button" value="Cancel" />
           <input type="submit" value="Update" />
         </CancelInputStyled>
       </FormCardStyled>

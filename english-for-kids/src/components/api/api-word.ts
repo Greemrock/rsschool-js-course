@@ -9,7 +9,7 @@ export const getCategoryWords = async (id: number): Promise<ICardProps[]> => {
   return data;
 };
 
-export const createCategory = async (data: {
+export const createWord = async (data: {
   categoryId: number;
   cardData: ICardProps;
   cardId: number;
