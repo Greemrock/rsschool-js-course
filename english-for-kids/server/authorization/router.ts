@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Router } from "express";
-import { StatusCodes } from "../common";
-import { Authorization } from "./authorization";
-import { logIn } from "./repository";
+import { Router } from 'express';
+import { StatusCodes } from '../common';
+import { Authorization } from './authorization';
+import { logIn } from './repository';
 
 const router = Router();
 
 // Get password and login
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   const data = req.body as Authorization;
 
   const authorization = logIn(data.username, data.password);
