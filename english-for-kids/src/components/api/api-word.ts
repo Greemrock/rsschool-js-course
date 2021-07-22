@@ -9,37 +9,37 @@ export const getCategoryWords = async (id: number): Promise<ICardProps[]> => {
   return data;
 };
 
-export const createCategory = async (
-  categoryId: number,
-  cardData: ICardProps,
-  cardId: number
-): Promise<void> => {
-  await fetch(`${urlServer(WORDS)}/${categoryId}/${cardId}`, {
+export const createCategory = async (data: {
+  categoryId: number;
+  cardData: ICardProps;
+  cardId: number;
+}): Promise<void> => {
+  await fetch(`${urlServer(WORDS)}/${data.categoryId}/${data.cardId}`, {
     method: "POST",
     mode: "cors",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(cardData),
+    body: JSON.stringify(data.cardData),
   });
 };
 
-export const updateWord = async (
-  categoryId: number,
-  cardData: ICardProps,
-  cardId: number
-): Promise<void> => {
-  await fetch(`${urlServer(WORDS)}/${categoryId}/${cardId}`, {
+export const updateWord = async (data: {
+  categoryId: number;
+  cardData: ICardProps;
+  cardId: number;
+}): Promise<void> => {
+  await fetch(`${urlServer(WORDS)}/${data.categoryId}/${data.cardId}`, {
     method: "PUT",
     mode: "cors",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(cardData),
+    body: JSON.stringify(data.cardData),
   });
 };
 
-export const deleteWord = async (
-  categoryId: number,
-  cardId: number
-): Promise<void> => {
-  await fetch(urlServer(`${WORDS}//${categoryId}/${cardId}`), {
+export const deleteWord = async (data: {
+  categoryId: number;
+  cardId: number;
+}): Promise<void> => {
+  await fetch(urlServer(`${WORDS}//${data.categoryId}/${data.cardId}`), {
     method: "DELETE",
     mode: "cors",
     headers: { "Content-Type": "application/json" },

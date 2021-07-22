@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useSound from "use-sound";
+import { deleteWord, updateWord } from "../../api/api-word";
 import {
   Close,
   FormCardStyled,
@@ -17,36 +18,76 @@ import {
 } from "./WordsItem.styled";
 
 interface IWordItemProps {
-  word: string;
-  translation: string;
-  image: string;
-  audio: string;
-  getAllCategories: () => Promise<void>;
+  idCard: number;
+  wordCard: string;
+  translationCard: string;
+  imageCard: string;
+  audioCard: string;
+  idCategory: number;
+  getAllWords: () => void;
 }
 
 export const WordsItem: React.FC<IWordItemProps> = ({
-  word,
-  translation,
-  image,
-  audio,
+  idCard,
+  wordCard,
+  translationCard,
+  imageCard,
+  audioCard,
+  idCategory,
+  getAllWords,
 }) => {
   const [update, setUpdate] = useState(false);
-  const [play] = useSound(audio);
-  const audioName = audio.split("/").slice(3, 4);
+  const [play] = useSound(audioCard);
+  const [wordValue, setWordValue] = useState("");
+  const [translationValue, setTranslationValue] = useState("");
+
+  const audioName = audioCard.split("/").slice(3, 4);
+
+  const newCardData = {
+    id: idCard,
+    word: wordValue,
+    translation: translationValue,
+    image: imageCard,
+    audioSrc: audioCard,
+    categoryId: idCategory,
+  };
+
+  const updateCard = async () => {
+    const data = {
+      categoryId: idCategory,
+      cardData: newCardData,
+      cardId: idCard,
+    };
+    await updateWord(data);
+  };
+
+  const deleteCard = async () => {
+    const data = {
+      categoryId: idCategory,
+      cardId: idCard,
+    };
+    await deleteWord(data);
+  };
+
   return (
     <WordsItemStyled>
-      <Close>
+      <Close
+        onClick={async () => {
+          await deleteCard();
+          await getAllWords();
+        }}
+      >
         <div />
         <div />
       </Close>
       <InformationStyled update={update}>
         <DivWordStyled>
           <b>Word: </b>
-          <span>{word}</span>
+          <span>{wordCard}</span>
         </DivWordStyled>
         <DivWordStyled>
           <b>Translation: </b>
-          <span>{translation}</span>
+          <span>{translationCard}</span>
         </DivWordStyled>
         <DivWordStyled>
           <b>Sound file: </b>
@@ -56,21 +97,39 @@ export const WordsItem: React.FC<IWordItemProps> = ({
         <DivWordStyled>
           <b>Image:</b>
         </DivWordStyled>
-        <ImgCardStyled src={image} alt="img" />
+        <ImgCardStyled src={imageCard} alt="img" />
         <ButtonWordContainerStyled>
           <button onClick={() => setUpdate(true)} type="button">
             Change
           </button>
         </ButtonWordContainerStyled>
       </InformationStyled>
-      <FormCardStyled update={update}>
+      <FormCardStyled
+        update={update}
+        onSubmit={async (event) => {
+          event.preventDefault();
+          await updateCard();
+          await getAllWords();
+          setUpdate(false);
+        }}
+      >
         <fieldset>
           <legend>Word:</legend>
-          <InputStyled type="text" required />
+          <InputStyled
+            type="text"
+            required
+            value={wordValue}
+            onChange={(event) => setWordValue(event.target.value)}
+          />
         </fieldset>
         <fieldset>
           <legend>Translation:</legend>
-          <InputStyled type="text" required />
+          <InputStyled
+            type="text"
+            required
+            value={translationValue}
+            onChange={(event) => setTranslationValue(event.target.value)}
+          />
         </fieldset>
         <UploadFileStyled>
           <span>Sound: </span>

@@ -24,16 +24,17 @@ export const PageWords: React.FC<IPageWordsProps> = ({ matchId }) => {
     params: { id },
   } = matchId;
 
-  const getWords = async () => {
+  const getAllWords = async () => {
     setCategoryWords(await getCategoryWords(+id));
   };
+
   const getAllCategories = async () => {
     setCategories(await getCategories());
   };
 
   useEffect(() => {
     getAllCategories();
-    getWords();
+    getAllWords();
   }, []);
 
   return categories.length ? (
@@ -46,11 +47,13 @@ export const PageWords: React.FC<IPageWordsProps> = ({ matchId }) => {
         return (
           <WordsItem
             key={word.id}
-            word={word.word}
-            translation={word.translation}
-            audio={word.audioSrc}
-            image={word.image}
-            getAllCategories={getAllCategories}
+            idCard={word.id}
+            wordCard={word.word}
+            translationCard={word.translation}
+            audioCard={word.audioSrc}
+            imageCard={word.image}
+            idCategory={categories[word.categoryId - 1].id}
+            getAllWords={getAllWords}
           />
         );
       })}
