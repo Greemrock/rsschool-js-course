@@ -45,6 +45,7 @@ export const PageWords: React.FC<IPageWordsProps> = ({ matchId }) => {
       {categoryWords.map((word) => {
         return (
           <WordsItem
+            key={word.id}
             word={word.word}
             translation={word.translation}
             audio={word.audioSrc}

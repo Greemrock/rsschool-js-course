@@ -8,9 +8,9 @@ import {
   FormCardStyled,
   InputStyled,
   InputContainer,
+  Close,
 } from "./CategoriesItem.styled";
-import { CloseItem } from "../../shared/CloseItem/CloseItem";
-import { updateCategory } from "../../api/api-category";
+import { deleteCategory, updateCategory } from "../../api/api-category";
 import { getCategoryWords } from "../../api/api-word";
 import { ICardProps } from "../../shared/interface/interface";
 
@@ -34,22 +34,35 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
     setCategoryWords(await getCategoryWords(idCategory));
   };
 
-  useEffect(() => {
-    getWords();
-  }, []);
-
   const updateCat = async () => {
     const data = { id: idCategory, name: newCategoryValue };
     await updateCategory(data);
+  };
+
+  const delCategory = async () => {
+    await deleteCategory(idCategory);
   };
 
   const goToPage = () => {
     const path = `/words/${idCategory}`;
     history.push(path);
   };
+
+  useEffect(() => {
+    getWords();
+  }, []);
+
   return (
     <ItemStyled>
-      <CloseItem id={idCategory} getAllCategories={getAllCategories} />
+      <Close
+        onClick={async () => {
+          await delCategory();
+          await getAllCategories();
+        }}
+      >
+        <div />
+        <div />
+      </Close>
       <InformationStyled update={update}>
         <TitleNameStyled>{name}</TitleNameStyled>
         <span>{`WORDS: ${categoryWords.length}`}</span>
@@ -64,11 +77,10 @@ export const CategoriesItem: React.FC<ICategoriesItem> = ({
       </InformationStyled>
       <FormCardStyled
         update={update}
-        onSubmit={(event) => {
+        onSubmit={async (event) => {
           event.preventDefault();
-          updateCat();
-          getAllCategories();
-          // getAllCategories();
+          await updateCat();
+          await getAllCategories();
           setUpdate(false);
           setNewCategoryValue("");
         }}

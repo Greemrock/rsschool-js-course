@@ -17,9 +17,11 @@ export const CategoriesItemCreate: React.FC<ICategoriesItemCreate> = ({
 }) => {
   const [open, setOpen] = useState(false);
   const [newCategoryValue, setNewCategoryValue] = useState("");
+
   const newCategory = async () => {
     await createCategory({ name: newCategoryValue });
   };
+
   return (
     <ItemStyled>
       <TitleNameStyled>Create new Category</TitleNameStyled>
@@ -28,11 +30,10 @@ export const CategoriesItemCreate: React.FC<ICategoriesItemCreate> = ({
         <div />
       </AddStyled>
       <FormNewCardStyled
-        onSubmit={(event) => {
+        onSubmit={async (event) => {
           event.preventDefault();
-          newCategory();
-          getAllCategories();
-          // getAllCategories();
+          await newCategory();
+          await getAllCategories();
           setNewCategoryValue("");
           setOpen(false);
         }}
@@ -58,11 +59,7 @@ export const CategoriesItemCreate: React.FC<ICategoriesItemCreate> = ({
             type="button"
             value="Cancel"
           />
-          <input
-            type="submit"
-            value="Create"
-            onClick={() => getAllCategories()}
-          />
+          <input type="submit" value="Create" />
         </InputContainer>
       </FormNewCardStyled>
     </ItemStyled>

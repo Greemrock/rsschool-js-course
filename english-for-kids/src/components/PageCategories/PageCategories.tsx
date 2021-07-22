@@ -13,7 +13,7 @@ export const PageCategories: React.FC = () => {
 
   useEffect(() => {
     getAllCategories();
-  }, [setCategories]);
+  }, []);
 
   return (
     <>

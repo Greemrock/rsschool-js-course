@@ -9,7 +9,7 @@ export const getCategories = async (): Promise<ICategory[]> => {
   return data;
 };
 
-export const deleteCategory = async ({ id }: { id: number }): Promise<void> => {
+export const deleteCategory = async (id: number): Promise<void> => {
   await fetch(urlServer(`${CATEGORIES}/${id}`), {
     method: "DELETE",
     mode: "cors",

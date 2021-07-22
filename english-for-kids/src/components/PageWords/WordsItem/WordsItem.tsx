@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useSound from "use-sound";
 import {
+  Close,
   FormCardStyled,
   InformationStyled,
   InputStyled,
@@ -14,7 +15,6 @@ import {
   CancelInputStyled,
   ReapiteButton,
 } from "./WordsItem.styled";
-import { CloseItem } from "../../shared/CloseItem/CloseItem";
 
 interface IWordItemProps {
   word: string;
@@ -28,7 +28,6 @@ export const WordsItem: React.FC<IWordItemProps> = ({
   word,
   translation,
   image,
-  getAllCategories,
   audio,
 }) => {
   const [update, setUpdate] = useState(false);
@@ -36,7 +35,10 @@ export const WordsItem: React.FC<IWordItemProps> = ({
   const audioName = audio.split("/").slice(3, 4);
   return (
     <WordsItemStyled>
-      <CloseItem id={0} getAllCategories={getAllCategories} />
+      <Close>
+        <div />
+        <div />
+      </Close>
       <InformationStyled update={update}>
         <DivWordStyled>
           <b>Word: </b>
