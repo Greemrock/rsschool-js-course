@@ -1,7 +1,5 @@
 "use strict";
 
-window.alert('Если возникли вопросы по слайдерам пишите в Discord GreemRock#2253');
-
 // cange color theme
 
 let checkbox = document.querySelector('.theme__toggle');
