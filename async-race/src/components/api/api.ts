@@ -12,7 +12,7 @@ import {
 export class Api {
   cars = [];
 
-  private readonly base = 'http://localhost:3000';
+  private readonly base = 'https://async-race-greemrock.herokuapp.com';
 
   private readonly path = {
     garage: `${this.base}/garage`,
@@ -41,6 +41,7 @@ export class Api {
     (
       await fetch(this.path.garage, {
         method: 'POST',
+        mode: 'cors',
         body: JSON.stringify(body),
         headers: {
           'Content-Type': 'application/json',
@@ -52,6 +53,7 @@ export class Api {
   async deleteCar(id: number): Promise<void> {
     (
       await fetch(`${this.path.garage}/${id}`, {
+        mode: 'cors',
         method: 'DELETE',
       })
     ).json();
@@ -66,6 +68,7 @@ export class Api {
     (
       await fetch(`${this.path.garage}/${id}`, {
         method: 'PUT',
+        mode: 'cors',
         body: JSON.stringify(body),
         headers: {
           'Content-Type': 'application/json',
@@ -107,6 +110,7 @@ export class Api {
     (
       await fetch(this.path.winnres, {
         method: 'POST',
+        mode: 'cors',
         body: JSON.stringify(body),
         headers: {
           'Content-Type': 'application/json',
@@ -123,6 +127,7 @@ export class Api {
     (
       await fetch(`${this.path.winnres}/${id}`, {
         method: 'DELETE',
+        mode: 'cors',
       })
     ).json();
   }
@@ -131,6 +136,7 @@ export class Api {
     (
       await fetch(`${this.path.winnres}/${id}`, {
         method: 'PUT',
+        mode: 'cors',
         body: JSON.stringify(body),
         headers: {
           'Content-Type': 'application/json',
