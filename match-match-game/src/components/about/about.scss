@@ -1,0 +1,80 @@
+.main {
+  width: 80%;
+  height: 800px;
+  max-width: 1000px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  margin: 30px auto;
+  padding: 30px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  text-align: center;
+}
+
+.how-to-play {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 380px;
+    grid-gap: 12px;
+  }
+  &__block {
+    display: flex;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.flex-direction {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.first {
+  height: 4rem;
+  flex: 0 0 20%;
+  background-image: url(../../assets/icon/first.svg);
+  background-repeat: no-repeat;
+}
+
+.second {
+  height: 4rem;
+  flex: 0 0 20%;
+  background-image: url(../../assets/icon/second.svg);
+  background-repeat: no-repeat;
+}
+
+.third {
+  height: 4rem;
+  flex: 0 0 20%;
+  background-image: url(../../assets/icon/third.svg);
+  background-repeat: no-repeat;
+}
+
+.example-img {
+  width: 330px;
+  height: 240px;
+  background-image: url(../../assets/image/example.png);
+  background-repeat: no-repeat;
+  margin-top: 5px;
+}
