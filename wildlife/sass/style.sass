@@ -1,0 +1,404 @@
+@import "reset.scss"
+
+@mixin maketWidth($size)
+
+@mixin contentWidth($size)
+	max-width: $size
+
+%search-btn 
+	width: 32px
+	height: 32px
+	cursor: pointer
+	margin: auto
+	text-decoration: none
+	border: none
+	background: url(../assets/img/search.png) no-repeat
+
+$bgColor_main: #ccc
+$textColor_white: #F7F7F7
+$activeColor: #8F5613
+$hoverColor: #CD6326
+$hoverColor-link: #ff7c30
+$xxlMaket: 1440px
+$xxlContent: 1200px
+
+body 
+	font-family: 'Open Sans', 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+	font-weight: 400
+	color: #222222
+	margin: auto
+
+.wrapper 
+	max-width: 1440px
+	margin: 0 auto
+
+.bg-header 
+	background: #02160b
+	background: url(../assets/img/header-fox.svg) no-repeat
+	height: 779px
+	background-position: center
+
+.header 
+	max-width: 1200px
+	padding-top: 19px
+	margin: auto
+	display: flex
+	justify-content: space-between
+
+.logo 
+	height: 60px
+	margin-right: 30px
+	display: flex
+	justify-content: space-between
+	text-decoration: none
+	
+	&:hover svg path, &:hover .logo__text
+		fill: #ff7c30
+		color: #ebc574
+
+	&__text
+		font-family: 'Roboto'
+		color: $textColor_white
+		font-size: 32px
+		font-weight: 400
+		text-transform: uppercase
+		margin-left: 16px
+		display: flex
+		align-items: center
+
+.navbar
+	margin-left: auto
+
+	&__box 
+		display: flex
+		width: 480px
+		height: 60px
+		justify-content: space-between
+
+	&__item 
+		display: flex
+		align-items: center;
+
+	&__item-link 
+		color: $textColor_white
+		font-size: 23px
+		font-weight: 400
+		box-sizing: border-box
+		margin: auto
+		cursor: pointer
+
+		&:hover, &__item-link:focus 
+			color: $hoverColor-link
+
+		&:active 
+			color: $activeColor
+			text-shadow: none
+
+.navbar_footer
+	margin: auto
+
+.btn_signin:hover, .btn_signin:focus 
+	background-color: $hoverColor
+	color: $textColor_white
+
+.btn_signin:active 
+	background-color: $activeColor
+	border: 2px solid $activeColor
+
+.search 
+	position: relative
+
+	&__img 
+		@extend %search-btn
+		display: block
+
+		&:hover, &:focus 
+			background-position: -32px 0
+
+	&__btn 
+		@extend %search-btn
+		background-position: -32px 0
+		box-shadow: none
+		appearance: none
+		position: relative
+		z-index: 2
+		display: none
+
+	&__dropdown
+		width: 220px
+		box-shadow: 0 0 10px 0 #000
+		border: 2px solid $hoverColor;
+		background-color: $textColor_white
+		font-size: 12px
+		line-height: 35px
+		border-radius: 4px
+		position: absolute
+		padding-right: 40px
+		padding-left: 10px
+		right: -6px
+		top: 9px
+		opacity: 0
+		z-index: -1
+		transition-duration: 0.5s
+		transition-property: opacity
+
+.search--active
+
+	.search__dropdown
+		opacity: 1
+		z-index: 1
+	
+	.search__btn
+		display: block
+
+	.search__img
+		display: none
+
+.signin 
+	font-family: 'Roboto', sans-serif
+	border: 2px solid $hoverColor
+	border-radius: 5px
+	width: 120px
+	height: 50px
+	display: flex
+	flex-direction: row
+	align-items: center
+	justify-content: center
+
+.survival 
+	@include contentWidth($size: $xxlContent)
+	padding-top: 120px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+	& h2 
+		font-size: 48px
+		font-weight: 400
+		letter-spacing: 2px
+		color: $hoverColor
+		
+	& p 
+		width: 274px
+		font-size: 18px
+		padding: 51px 0 49px
+		color: white
+
+	&__btn 
+		font-family: 'Roboto', sans-serif
+		font-size: 23px
+		color: $textColor_white
+		font-weight: 400
+		background: $hoverColor
+		border-radius: 5px
+		width: 160px
+		height: 60px
+		display: flex
+		flex-direction: row
+		align-items: center
+		justify-content: center
+		border: none
+		cursor: pointer;
+
+.btn_orange:hover, .btn_orange:focus 
+	border: 2px solid #E39128
+	background: #E39128
+
+.btn_orange:active 
+	background-color: $activeColor
+	border: 2px solid $activeColor
+
+.container 
+	width: 1200px
+	margin: 0 auto
+
+.main
+	padding: 120px 0 239px 0
+	background-color: #cccccc
+
+.latestArticles 
+	background-color: #cccccc
+
+	&__title 
+		text-align: center
+
+		& h2 
+			font-size: 48px
+			font-weight: 400
+			color: #333
+
+		& p 
+			font-size: 24px
+			font-weight: 400
+			color: #666
+			padding-top: 20px
+
+	&__slider 
+		margin-top: 120px
+
+.btn_arrow 
+	display: inline-block
+	width: 30px
+	height: 70px
+	background: url(../assets/img/btn-arrow.png) no-repeat
+	border: none
+	cursor: pointer
+
+.slider
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	&__btn
+		display: flex
+		justify-content: start
+
+	&__btnRight 
+		background-position: -60px 0
+
+	&__btnLeft:hover, &__btnLeft:focus 
+		background-position: -30px 0
+
+	&__btnRight:hover, &__btnRight:focus 
+		background-position: -90px 0
+
+	&__box 
+		width: 300px
+		height: 360px
+		position: relative
+		transition: 0.3s
+
+	&__box:after 
+		content: ''
+		position: absolute
+		width: 100%
+		height: 50%
+		background: linear-gradient(0deg, #bababa48, #ffffff00)
+		left: 0
+		top: 180px
+		transition: opacity 0.6s
+		opacity: 0
+	
+	&__box:hover, &__box:focus
+		position: relative
+		opacity: 1
+		transform: scale(1.1)
+		box-shadow: 0 0 10px 0 #000
+
+	&__container 
+		width: 90%
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		justify-items: center
+
+	&__link-name 
+		width: 100%
+		position: absolute
+		text-align: center
+		top: 250px
+
+		& h4 
+			font-size: 22px
+			font-weight: 400
+			color: $textColor_white
+
+		& p 
+			font-size: 17px
+			font-weight: 400
+			color: $textColor_white
+			padding-top: 10px
+
+.getNotified 
+	padding-top: 240px;
+	background-color: $bgColor_main
+
+	&__title 
+		font-size: 27px
+		font-weight: 400
+		color: #333
+		text-align: center
+
+	&__form 
+		width: 55%
+		padding-top: 59px
+		margin-left: auto
+		margin-right: auto
+
+	&__form-email 
+		font-family: 'Roboto', sans-serif
+		box-sizing: border-box
+		background-color: $bgColor_main
+		width: 540px
+		height: 62px
+		font-size: 23px
+		padding-left: 15px
+		border: 1px solid #666
+		border-right: 0px
+		outline: none
+
+	&__form-send 
+		font-family: 'Roboto', sans-serif
+		background: $hoverColor
+		border-radius: 0px 6px 6px 0px;
+		border: 0px
+		font-size: 23px
+		color: $textColor_white
+		position: absolute
+		box-sizing: border-box
+		width: 122px
+		height: 62px
+		outline: none
+		cursor: pointer
+
+.bg-footer 
+	background: #181617
+	background: url(../assets/img/footer-fox.svg)
+	background-position: center
+
+.footer
+	@include contentWidth($size: $xxlContent)
+	height: 360px
+	margin: auto
+	display: flex
+	justify-content: space-between
+	align-items: center	
+	flex-wrap: wrap
+
+.social 
+	margin-left: 15px
+
+	&__box
+		width: 240px
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	&__icon
+		display: flex
+		align-items: center
+
+	&__btn 
+		display: inline-block
+
+.icon
+	width: 40px
+	height: 40px
+.icon-fb
+	background: url(../assets/img/fb.svg)
+	&:hover
+		background: url(../assets/img/fb-active.svg)
+
+.icon-inst
+	background: url(../assets/img/inst.svg)
+	&:hover
+		background: url(../assets/img/inst-active.svg)
+
+.icon-pint
+	background: url(../assets/img/pint.svg)
+	&:hover
+		background: url(../assets/img/pint-active.svg)
+
+.icon-tg
+	background: url(../assets/img/tg.svg)
+	&:hover
+		background: url(../assets/img/tg-active.svg)
