@@ -1,0 +1,33 @@
+.table {
+  color: #dddddd;
+}
+
+.car-winner {
+  position: relative;
+  & svg {
+    transform: scale(0.7);
+  }
+}
+
+.table-btn {
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    color: #4a9a56;
+  }
+  &::after {
+    content: '\2B06';
+    position: relative;
+    left: 10px;
+    color: rgb(193, 194, 117);
+  }
+  &.click::after {
+    content: '\2B07';
+  }
+}
+
+td,
+tr,
+th {
+  user-select: none;
+}

@@ -1,0 +1,18 @@
+@font-face {
+  font-family: NFSfont;
+  src: url(./fonts/nfs.ttf);
+}
+
+body {
+  width: 100%;
+  font-family: NFSfont, Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #dddddd;
+}
+
+#root {
+  margin: 35px 50px 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
