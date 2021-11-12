@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/desctop_page/css/normalize.css">
+  <link rel="stylesheet" href="./pages/desctop_page/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous"></script>
+  <title>online-zoo</title>
+</head>
+<body>
+  <h1 class="visuallyhidden">zoo online</h1>
+  <header class="header" id="header">
+    <div class="header__wrapper">
+      <a class="logo" href="./index.html">
+        <span class="logo__zoo">zoo</span>
+        <span class="logo__online">online</span>
+      </a>
+      <nav class="navbar navbar_header">
+        <ul class="navbar__list navbar__list_header">
+          <li class="navbar__item navbar__item-margin navbar__item-active">
+            <a class="navbar__item-link" href="#header">
+              <span class="navbar__item-text">about</span>
+            </a>
+          </li>
+          <li class="navbar__item navbar__item-margin">
+            <a class="navbar__item-link" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+              <span class="navbar__item-text">zoos</span>
+            </a>
+          </li>
+          <li class="navbar__item navbar__item-margin">
+            <a class="navbar__item-link" href="./pages/intermediate_page/html/map.html">
+              <span class="navbar__item-text">map</span>
+            </a>
+          </li>
+          <li class="navbar__item navbar__item-margin">
+            <a class="navbar__item-link" href="#footer">
+              <span class="navbar__item-text">contact us</span>
+            </a>
+          </li>
+          <li class="navbar__item navbar__item-margin">
+            <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp">
+              <span class="navbar__item-text">design</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="theme">
+        <input class="theme__toggle" type="checkbox" id="switch" name="theme" />
+        <label class="theme__label" for="switch"></label>
+      </div>
+      <div class="header__burger">
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="main__wrapper bg-mainPage">
+      <ul class="social social-mainPage">
+        <li class="social__item">
+          <a class="social__link" href="https://www.instagram.com/" target="_blank">
+            <img class="social__img social__inst" src="./assets/icons/social/inst.svg" alt="inst">
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://twitter.com/" target="_blank">
+            <img class="social__img sotial__twitter" src="./assets/icons/social/twit.svg" alt="twitter">
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://youtube.com/" target="_blank">
+            <img class="social__img sotial__youtube" src="./assets/icons/social/youtube.svg" alt="youtube">
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://vk.com/" target="_blank">
+            <img class="social__img sotial__vk" src="./assets/icons/social/vk.svg" alt="vk">
+          </a>
+        </li>
+      </ul>
+      <section class="mainPage">
+        <h2 class="mainPage__title">Watch your favorite animal online</h2>
+        <div class="btn btn-main">
+          <a class="btn__color" href="./pages/intermediate_page/html/map.html">
+            <div class="btn__img">
+              <img class="btn__img-size" src="./assets/icons/play.svg" alt="donate">
+            </div>
+            <span class="btn__title btn__title-main">Watch online</span>
+          </a>
+        </div>
+        <div class="slider slider-mainPage">
+          <ul class="slider__list slider__list-mainPage">
+            <li class="slider__item slider__item-mainPage" data-number="1">
+              <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="eagle">
+              <div class="animal animal_main-page">
+                <div class="animal__about">
+                  <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                </div>
+                <div class="btn">
+                  <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                    <div class="btn__img">
+                      <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                    </div>
+                    <span class="btn__title btn__title-play">watch online</span>
+                  </a>
+                  <a class="btn__poster btn__poster-donate" href="#">
+                    <div class="btn__img">
+                      <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                    </div>
+                    <span class="btn__title btn__title-donate">donate</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="slider__item slider__item-mainPage slider__item-active" data-number="2">
+              <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="panda">
+              <div class="animal animal_main-page">
+                <div class="animal__about">
+                  <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                </div>
+                <div class="btn">
+                  <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                    <div class="btn__img">
+                      <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                    </div>
+                    <span class="btn__title btn__title-play">watch online</span>
+                  </a>
+                  <a class="btn__poster btn__poster-donate" href="#">
+                    <div class="btn__img">
+                      <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                    </div>
+                    <span class="btn__title btn__title-donate">donate</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="slider__item slider__item-mainPage" data-number="3">
+              <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+              <div class="animal animal_main-page">
+                <div class="animal__wrapper">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="slider__item slider__item-mainPage" data-number="4">
+              <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="alligator">
+              <div class="animal animal_main-page">
+                <div class="animal__wrapper">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <button class="btn__poster btn__poster-donate" type="button">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="slider__item slider__item-mainPage" data-number="5">
+              <img class="slider__img" src="./assets/images/animals/animal_5.jpeg" alt="tiger">
+              <div class="animal animal_main-page">
+                <div class="animal__wrapper">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The tiger's name is Lucky. It's 2 years old. Lucky from the forests of Asia. It loves Meat and fish.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-tiger/tiger.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="slider__item slider__item-mainPage" data-number="6">
+              <img class="slider__img" src="./assets/images/animals/animal_6.jpeg" alt="Elephant">
+              <div class="animal animal_main-page">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">Elephant’s name is Kandula. She is 7 years old. Kandula is from India.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+              </div>
+            </li>
+            <li class="slider__item slider__item-mainPage" data-number="7">
+              <img class="slider__img" src="./assets/images/animals/animal_7.jpeg" alt="lion">
+              <div class="animal animal_main-page">
+                <div class="animal__wrapper">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Lion’s name is Liony. He is 5 years old. Liony is from Africa. He loves meat.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="slider__item slider__item-mainPage" data-number="8">
+              <img class="slider__img" src="./assets/images/animals/animal_8.jpeg" alt="zebra">
+              <div class="animal animal_main-page">
+                <div class="animal__wrapper">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Zebra’s name is Black. He is 3 years old. Black is from Africa. He loves grass and shrub.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="swipe"></div>
+          <div class="slider__string">
+          </div>
+          <div class="counter counter_mainPage">
+            <div class="counter__numbers">
+              <span class="counter__current counter__current-mainPage" id="current-mainPage">02</span>/
+              <span class="counter__total counter__total-mainPage" id="total-mainPage">08</span>
+            </div>
+            <input class="range range__main-size" type="range" name="range" id="" min="1" max="8" value="2">
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="main__wrapper color-first">
+      <section class="howItWorks">
+        <h3 class="howItWorks__title main-title">How it works?</h3>
+        <p class="howItWorks__about main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat, and we are determined to assist in all aspects, including providing veterinary support and raising much-needed emergency funds. Zoo Online saves wildlife and inspires everyone to make conservation a priority in their lives. Animals have the right to a pain-free and happy life. They have equal claim to the resources of this planet, and deserve a life of dignity and compassion.As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+        <div class="slider slider__howItWorks" >
+          <div id="slider-how">
+            <div class="slider__list-how">
+              <img class="slider__img-howItWorks slider__img_object-left" src="./assets/images/howItWorks/img_0.jpg" alt="Deers">
+              <img class="slider__img-howItWorks slider__img_object-left" src="./assets/images/howItWorks/img_1.jpg" alt="Panda">
+              <img class="slider__img-howItWorks slider__img_object-left" src="./assets/images/howItWorks/img_2.jpg" alt="Makaka">
+              <img class="slider__img-howItWorks slider__img_object-left" src="./assets/images/howItWorks/img_3.jpg" alt="Monkeys">
+            </div>
+          </div>
+        </div>
+        <div class="counter counter-blackThumb">
+          <div class="counter__numbers">
+            <span class="counter__current counter__current-white" id="current-how">01</span>/
+            <span class="counter__total counter__total-white" id="total-how">04</span>
+          </div>
+          <input class="range range-black range-bigThumb" type="range" name="range" id="range-how" min="1" max="4" value="1"/>
+        </div>
+        <div class="btn btn__position">
+          <a class="btn__color" href="./pages/intermediate_page/html/map.html">
+            <div class="btn__img">
+              <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+            </div>
+            <span class="btn__title btn__title-main">Watch online</span>
+          </a>
+        </div>
+      </section>
+    </div>
+    <div class="main__wrapper color-second">
+        <div class="whatInspiringUs">
+            <div class="whatInspiringUs__box">
+                <div class="whatInspiringUs__wrapper">
+                    <img class="whatInspiringUs__box-img" src="./assets/images/whatInspiringUs/light.svg" alt="inspiry">
+                </div>
+                <h4 class="whatInspiringUs__box-title main-smallTitle">What inspires us?</h4>
+                <p class="whatInspiringUs__box-text main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat, and we are determined to assist in all aspects.</p>
+            </div>
+            <div class="whatInspiringUs__box">
+                <div class="whatInspiringUs__wrapper">
+                    <img class="whatInspiringUs__box-img" src="./assets/images/whatInspiringUs/flag.svg" alt="inspiry">
+                </div>
+                <h4 class="whatInspiringUs__box-title main-smallTitle">Our mission</h4>
+                <p class="whatInspiringUs__box-text main-text">Zoo Online saves wildlife and inspires everyone to make conservation a priority in their lives.</p>
+            </div>
+            <div class="whatInspiringUs__box">
+                <div class="whatInspiringUs__wrapper">
+                    <img class="whatInspiringUs__box-img" src="./assets/images/whatInspiringUs/heart.svg" alt="inspiry">
+                </div>
+                <h4 class="whatInspiringUs__box-title main-smallTitle">What we believe in?</h4>
+                <p class="whatInspiringUs__box-text main-text">Animals have the right to a pain-free and happy life. They have equal claim to the resources of this planet, and deserve a life of dignity and compassion.</p>
+            </div>
+        </div>
+    </div>
+    <div class="main__wrapper color-first">
+      <section class="petsInZoo">
+        <h3 class="petsInZoo__title main-title">Pets in Zoo</h3>
+        <div class="slider slider-petsInZoo">
+          <button class="slider__arrow slider__arrow-left" id="prev-pets">
+            <img src="./assets/icons/btn_left.svg" alt="left">
+          </button>
+          <div id="slider-pets">
+            <ul class="slider__list slider__list-petsInZoo">
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="eagle">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="panda">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="crocodile">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <button class="btn__poster btn__poster-donate" type="button">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="eagle">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="panda">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="crocodile">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <button class="btn__poster btn__poster-donate" type="button">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="eagle">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="panda">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="crocodile">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <button class="btn__poster btn__poster-donate" type="button">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="eagle">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="panda">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="crocodile">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <button class="btn__poster btn__poster-donate" type="button">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="eagle">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="panda">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="crocodile">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <button class="btn__poster btn__poster-donate" type="button">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="eagle">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="panda">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="crocodile">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <button class="btn__poster btn__poster-donate" type="button">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="eagle">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="panda">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="crocodile">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <button class="btn__poster btn__poster-donate" type="button">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_2.jpeg" alt="eagle">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_1.jpeg" alt="panda">
+                <div class="animal animal__padding">
+                  <div class="animal__about">
+                    <span class="animal__about-text">The eagle's name is Sparky. It's 7 years old. Sparky from Spain. It loves rabbits and squirrels.</span>
+                  </div>
+                  <div class="btn">
+                    <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-eagle/eagle.html">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                      </div>
+                      <span class="btn__title btn__title-play">watch online</span>
+                    </a>
+                    <a class="btn__poster btn__poster-donate" href="#">
+                      <div class="btn__img">
+                        <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                      </div>
+                      <span class="btn__title btn__title-donate">donate</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_3.jpeg" alt="gorilla">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The gorilla's name is Tina. It's 11 years old. Tina from The forests of Central Africa. Tina is very funny and sociable. It loves plants and nuts.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-gorilla/gorilla.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <a class="btn__poster btn__poster-donate" href="#">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item slider__item-petsInZoo">
+                <img class="slider__img" src="./assets/images/animals/animal_4.jpeg" alt="crocodile">
+                <div class="animal animal__padding">
+                  <div class="animal__wrapper">
+                    <div class="animal__about">
+                      <span class="animal__about-text">The alligator's name is Samson. It's 55 years old. It's length is 5 meters. In past Samson lived In the tropics. It loves meat.</span>
+                    </div>
+                    <div class="btn">
+                      <a class="btn__poster btn__poster-play" href="./pages/live_brodcast/html/brodcast-crocodile/crocodile.html">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+                        </div>
+                        <span class="btn__title btn__title-play">watch online</span>
+                      </a>
+                      <button class="btn__poster btn__poster-donate" type="button">
+                        <div class="btn__img">
+                          <img class="btn__img-size" src="./assets/icons/donate.svg" alt="donate">
+                        </div>
+                        <span class="btn__title btn__title-donate">donate</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <button class="slider__arrow slider__arrow-right"  id="next-pets">
+            <img src="./assets/icons/btn_right.svg" alt="right">
+          </button>
+        </div>
+        <div class="counter counter-petsInZoo">
+          <div class="counter__numbers">
+            <span class="counter__current counter__current-white" id="current-pets">01</span>/
+            <span class="counter__total counter__total-white" id="total-pets">08</span>
+          </div>
+          <input class="range range-black range-petsInZoo" type="range" name="range" id="range-pets" min="1" max="8" value="1"/>
+        </div>
+        <div class="btn">
+          <a class="btn__color" href="./pages/intermediate_page/html/map.html">
+            <span class="btn__title btn__title-main">Choose your favorite</span>
+          </a>
+        </div>
+      </section>
+    </div>
+    <div class="main__wrapper color-second">
+        <section class="payAndFeed">
+            <h3 class="payAndFeed__title main-title">Pay and feed</h3>
+            <p class="payAndFeed__about main-text">The opportunity to easily and naturally (but as often as possible) donate to the needs of animals that you like.</p>
+            <div class="payAndFeed__map">
+                <div class="payAndFeed__circle">
+                  <div class="payAndFeed__wrapper">
+                    <div class="payAndFeed__img payAndFeed__img-card"></div>
+                    <div class="payAndFeed__name main-smallTitle">You pay with a VISA card</div>
+                  </div>
+                </div>
+                <div class="payAndFeed__arrow">
+                    <div class="payAndFeed__arrow-box"></div>
+                </div>
+                <div class="payAndFeed__circle">
+                  <div class="payAndFeed__wrapper">
+                    <div class="payAndFeed__img payAndFeed__img-zoo"></div>
+                    <div class="payAndFeed__name main-smallTitle">Payment goes to the Zoo</div>
+                  </div>
+                </div>
+                <div class="payAndFeed__arrow">
+                    <div class="payAndFeed__arrow-box"></div>
+                </div>
+                <div class="payAndFeed__circle">
+                  <div class="payAndFeed__wrapper">
+                    <div class="payAndFeed__img payAndFeed__img-panda"></div>
+                    <div class="payAndFeed__name main-smallTitle">Panda gets the bamboo</div>
+                  </div>
+                </div>
+            </div>
+            <div class="btn">
+                <button class="btn__color" type="button" name="donate">
+                    <span class="btn__title btn__title-main">donate</span>
+                </button>
+            </div>
+        </section>
+    </div>
+    <div class="main__wrapper color-first">
+      <section class="testimonials">
+        <h3 class="testimonials__title main-title">Testimonials</h3>
+        <div class="slider slider-testimonials">
+          <button class="slider__arrow slider__arrow-left" id="prev-testimonials">
+            <img src="./assets/icons/btn_left.svg" alt="left">
+          </button>
+          <div id="slider-testimonials">
+            <ul class="slider__list slider__list-testimonials">
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user.svg" alt="user">
+                  </div>
+                  <div class="user__name">Tanya Sidorova</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user_2.svg" alt="user">
+                  </div>
+                  <div class="user__name main-smallTitle">Vlad Kim</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user.svg" alt="user">
+                  </div>
+                  <div class="user__name">Tanya Sidorova</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user_2.svg" alt="user">
+                  </div>
+                  <div class="user__name main-smallTitle">Vlad Kim</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user.svg" alt="user">
+                  </div>
+                  <div class="user__name">Tanya Sidorova</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user_2.svg" alt="user">
+                  </div>
+                  <div class="user__name main-smallTitle">Vlad Kim</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user.svg" alt="user">
+                  </div>
+                  <div class="user__name">Tanya Sidorova</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user_2.svg" alt="user">
+                  </div>
+                  <div class="user__name main-smallTitle">Vlad Kim</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user.svg" alt="user">
+                  </div>
+                  <div class="user__name">Tanya Sidorova</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user_2.svg" alt="user">
+                  </div>
+                  <div class="user__name main-smallTitle">Vlad Kim</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user.svg" alt="user">
+                  </div>
+                  <div class="user__name">Tanya Sidorova</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user_2.svg" alt="user">
+                  </div>
+                  <div class="user__name main-smallTitle">Vlad Kim</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user.svg" alt="user">
+                  </div>
+                  <div class="user__name">Tanya Sidorova</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user_2.svg" alt="user">
+                  </div>
+                  <div class="user__name main-smallTitle">Vlad Kim</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user.svg" alt="user">
+                  </div>
+                  <div class="user__name">Tanya Sidorova</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+              <li class="slider__slide slider__item-testimonials">
+                <div class="slider__block user">
+                  <div class="user__wrapper">
+                    <img class="user__icon" src="./assets/icons/user_2.svg" alt="user">
+                  </div>
+                  <div class="user__name main-smallTitle">Vlad Kim</div>
+                  <p class="user__revue main-text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button class="slider__arrow slider__arrow-right" id="next-testimonials">
+            <img src="./assets/icons/btn_right.svg" alt="right">
+          </button>
+        </div>
+        <div class="counter counter-testimonials">
+          <div class="counter__numbers">
+            <span class="counter__current counter__current-white" id="current-testimonials">01</span>/
+            <span class="counter__total counter__total-white" id="total-testimonials">08</span>
+          </div>
+          <input class="range range-black range-testimonials" type="range" name="range" id="range-testimonials" min="1" max="8" value="1"/>
+        </div>
+        <div class="btn">
+          <button class="btn__color" type="button" name="feedback">
+            <span class="btn__title btn__title-main">leave feedback</span>
+          </button>
+        </div>
+      </section>
+    </div>
+    <div class="main__wrapper color-second">
+      <section class="map">
+        <h3 class="map__title main-title">Map</h3>
+        <div class="map__world">
+          <img class="map__world_img" src="./assets/images/map/map.svg" alt="map">
+          <ul class="map__label label">
+            <li class="map__wrapper">
+              <div class="map__animal label__position label__position-eagle">
+                <div class="label__wrapper">
+                  <img class="label__img" src="./assets/images/animals/eagle.jpg" alt="eagle">
+                </div>
+                <div class="label__window window window-eagle">
+                  <div class="window__img">
+                    <img src="./assets/images/map/label/eagle.png" alt="eagle">
+                  </div>
+                  <div class="window__information">
+                    <p class="window__title">West End Bald Eagle</p>
+                    <div class="window__about">
+                      <div class="window__about-text">
+                        <span class="window__about-textbold">Region:</span>
+                        <span class="window__about-textregular">on an island near Los Angeles</span>
+                      </div>
+                      <div class="window__about-text">
+                        <span class="window__about-textbold">Population:</span>
+                        <span class="window__about-textregular">more than 270 pairs in 2013</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="map__wrapper">
+              <div class="map__animal label__position label__position-crocodile">
+                <div class="label__wrapper">
+                  <img class="label__img" src="./assets/images/map/crocodile.png" alt="crocodile">
+                </div>
+                <div class="label__window window window-crocodile">
+                  <div class="window__img">
+                    <img src="./assets/images/map/label/eagle.png" alt="eagle">
+                  </div>
+                  <div class="window__information">
+                    <p class="window__title">West End Bald Eagle</p>
+                    <div class="window__about">
+                      <div class="window__about-text">
+                        <span class="window__about-textbold">Region:</span>
+                        <span class="window__about-textregular">on an island near Los Angeles</span>
+                      </div>
+                      <div class="window__about-text">
+                        <span class="window__about-textbold">Population:</span>
+                        <span class="window__about-textregular">more than 270 pairs in 2013</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="map__wrapper">
+              <div class="map__animal label__position label__position-gorilla">
+                <div class="label__wrapper">
+                  <img class="label__img" src="./assets/images/map/gorilla.png" alt="gorilla">
+                </div>
+                <div class="label__window window window-gorilla">
+                  <div class="window__img">
+                    <img src="./assets/images/map/label/eagle.png" alt="eagle">
+                  </div>
+                  <div class="window__information">
+                    <p class="window__title">West End Bald Eagle</p>
+                    <div class="window__about">
+                      <div class="window__about-text">
+                        <span class="window__about-textbold">Region:</span>
+                        <span class="window__about-textregular">on an island near Los Angeles</span>
+                      </div>
+                      <div class="window__about-text">
+                        <span class="window__about-textbold">Population:</span>
+                        <span class="window__about-textregular">more than 270 pairs in 2013</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="map__wrapper">
+              <div class="map__animal label__position label__position-panda">
+                <div class="label__wrapper">
+                  <img class="label__img" src="./assets/images/map/panda.png" alt="panda">
+                </div>
+                <div class="label__window window window-panda">
+                  <div class="window__img">
+                    <img src="./assets/images/map/label/eagle.png" alt="eagle">
+                  </div>
+                  <div class="window__information">
+                    <p class="window__title">West End Bald Eagle</p>
+                    <div class="window__about">
+                      <div class="window__about-text">
+                        <span class="window__about-textbold">Region:</span>
+                        <span class="window__about-textregular">on an island near Los Angeles</span>
+                      </div>
+                      <div class="window__about-text">
+                        <span class="window__about-textbold">Population:</span>
+                        <span class="window__about-textregular">more than 270 pairs in 2013</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="btn">
+          <a class="btn__color" href="./pages/intermediate_page/html/map.html">
+            <div class="btn__img">
+              <img class="btn__img-size" src="./assets/icons/play.svg" alt="play">
+            </div>
+            <span class="btn__title btn__title-main">Watch online</span>
+          </a>
+        </div>
+      </section> 
+    </div>
+  </main>
+  <footer class="footer" id="footer">
+    <div class="footer__wrapper">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <div class="footer__logo-wrapper">
+            <a class="logo" href="./index.html">
+              <span class="logo__zoo">zoo</span>
+              <span class="logo__online">online</span>
+            </a>  
+          </div>
+        </div>
+        <nav class="footer__navbar navbar">
+          <ul class="navbar__list navbar__footer">
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="#header">
+                <span class="navbar__item-text">about</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="./pages/live_brodcast/html/brodcast-panda/panda.html">
+                <span class="navbar__item-text">zoos</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="./pages/intermediate_page/html/map.html">
+                <span class="navbar__item-text">map</span>
+              </a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__item-link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp">
+                <span class="navbar__item-text">design</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <form  class="footer__form contactUs" action="" method="post">
+          <p class="footer__form-title">Contact us</p>
+          <input class="contactUs__inf" type="text" name="name" placeholder="Name" required>
+          <input class="contactUs__inf" type="email" name="email" placeholder="Email" required>
+          <fieldset class="contactUs__fieldset">
+            <legend class="contactUs__fieldset-toptext">Please enter your message</legend>
+            <textarea class="contactUs__fieldset-textarea" cols="50" name="request" maxlength="280" required></textarea>
+          </fieldset>
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" id="checkbox" required="">
+            <label class="checkbox__label" for="checkbox">I agree to the processing of Personal Data</label>
+          </label>
+          <div class="contactUs__wrapper-send">
+            <input class="contactUs__send" type="submit" name="commit" value="send">
+          </div>
+        </form>
+        <div class="footer__contacts contact">
+          <h5 class="contact__title">ZOO Online Centre</h5>
+          <div class="contact__wrapper">
+            <address class="contact__text">132, Address District, Street</address>
+            <p class="contact__text">Open Daily 10:00 am - 5:00 pm</p>
+          </div>
+          <div class="contact__wrapper">
+            <a class="contact__text"href="tel:T(702) 163-3433">T(702) 163-3433</a>
+            <a class="contact__text" href="mailto:zoo.online@gmail.com">zoo.online@gmail.com</a>    
+          </div>
+          <ul class="social">
+            <li class="social__item">
+              <a class="social__link" href="https://www.instagram.com/" target="_blank">
+                <img class="social__img social__inst" src="./assets/icons/social/inst.svg" alt="inst">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://twitter.com/" target="_blank">
+                <img class="social__img social__twitter" src="./assets/icons/social/twit.svg" alt="twitter">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://vk.com/" target="_blank">
+                <img class="social__img social__vk" src="./assets/icons/social/vk.svg" alt="vk">
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="https://youtube.com/" target="_blank">
+                <img class="social__img social__youtube" src="./assets/icons/social/youtube.svg" alt="youtube">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__donate">
+          <button class="btn__color btn__color-footer" type="button" name="donate">
+            <span class="btn__title btn__title-main">donate for volunteers</span>
+          </button>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <p class="footer__copyright-text">©Noora Sagnayeva</p>
+        <p class="footer__copyright-text">©RSSchool and ©Yem Digital - 2021</p>    
+      </div>
+    </div>
+  </footer>
+  <script src="./pages/desctop_page/js/script.js"></script>
+  <!-- <script src="http://hammerjs.github.io/dist/hammer.min.js"></script> -->
+</body>
+</html>

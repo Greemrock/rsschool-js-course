@@ -1,0 +1,68 @@
+.slider__list-mainPage {
+  transition: all 0.3s;
+}
+
+.step-1 {
+  transform: translateX(186px);
+}
+
+.step-2 {
+  transform: translateX(0);
+}
+
+.step-3 {
+  transform: translateX(-186px);
+}
+
+.step-4 {
+  transform: translateX(calc(-186px * 2));
+}
+
+.step-5 {
+  transform: translateX(calc(-186px * 3));
+}
+
+.step-6 {
+  transform: translateX(calc(-186px * 4));
+}
+
+.step-7 {
+  transform: translateX(calc(-186px * 5));
+}
+
+.step-8 {
+  transform: translateX(calc(-186px * 6));
+}
+
+.hide {
+  opacity: 0;
+}
+
+#slider-pets {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+#slider-testimonials {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+#slider-how {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  border-radius: 5px;
+}
+
+.slider__item-petsInZoo:hover.slider__item::after {
+  opacity: 1;
+}
+
+.slider__item-petsInZoo:hover .animal {
+  opacity: 1; 
+  top: 0;
+}
